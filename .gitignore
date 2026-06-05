@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local secrets
+config/config.yaml
+.env
+
+# Experiment outputs
+experiments/runs/
+experiments/smoke/
+outputs/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

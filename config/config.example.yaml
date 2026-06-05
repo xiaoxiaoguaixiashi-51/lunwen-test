@@ -1,0 +1,19 @@
+# LLM API
+llm:
+  # 支持 OpenAI 兼容格式的 API（DeepSeek、vLLM 等）
+  base_url: "http://localhost:8000/v1"
+  api_key: "your-api-key"
+  model: "deepseek-coder-v2"
+  temperature: 0.2
+  max_tokens: 4096
+
+# Java 环境
+java:
+  home: ""  # 留空则使用系统 JAVA_HOME
+  compile_timeout: 30  # 秒
+  test_timeout: 60  # 秒
+
+# Pipeline 配置
+pipeline:
+  max_fix_iterations: 3  # 编译失败后最大修复轮数
+  feedback_enabled: true

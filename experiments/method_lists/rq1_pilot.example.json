@@ -1,0 +1,7 @@
+[
+  {
+    "id": "java-demo-update-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserEmail"
+  }
+]
