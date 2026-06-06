@@ -83,7 +83,10 @@ class Pipeline:
         # Step 3: 生成测试代码
         print("[3/4] GenerationAgent: 生成测试代码...")
         result.generated_test = self.generation_agent.generate(
-            result.test_plan, source_code, result.dependency_analysis
+            result.test_plan,
+            source_code,
+            result.dependency_analysis,
+            source_file=java_file_path,
         )
         result.final_test = result.generated_test
         print(f"      生成代码长度: {len(result.generated_test)} 字符")
@@ -130,7 +133,10 @@ class Pipeline:
 
             # 让 GenerationAgent 修复
             current_code = self.generation_agent.fix_compilation_error(
-                current_code, compile_result.errors, source_code
+                current_code,
+                compile_result.errors,
+                source_code,
+                source_file=source_file,
             )
 
         return current_code, False, self.max_fix_iterations, compile_results
