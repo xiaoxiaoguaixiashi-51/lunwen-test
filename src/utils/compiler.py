@@ -113,10 +113,58 @@ class JavaCompiler:
             if classpath:
                 cp_parts.append(classpath)
             if source_file:
-                cp_parts.append(str(Path(source_file).parent))
+                cp_parts.extend(self._classpath_for_source_file(source_file))
 
             cp = os.pathsep.join(cp_parts) if cp_parts else None
             return self.compile(str(test_file), classpath=cp, output_dir=tmpdir)
+
+    def _classpath_for_source_file(self, source_file: str) -> list[str]:
+        """Build a useful compile classpath for a Java source file."""
+        source_path = Path(source_file).resolve()
+        project_root = self._find_maven_project_root(source_path)
+        if not project_root:
+            return [str(source_path.parent)]
+
+        cp_parts = [
+            str(project_root / "src" / "main" / "java"),
+            str(project_root / "target" / "classes"),
+        ]
+        maven_cp = self._maven_test_classpath(project_root)
+        if maven_cp:
+            cp_parts.extend(maven_cp.split(os.pathsep))
+        return [part for part in cp_parts if part]
+
+    def _find_maven_project_root(self, path: Path) -> Path | None:
+        """Find the nearest parent directory containing pom.xml."""
+        current = path.parent if path.is_file() else path
+        for candidate in [current, *current.parents]:
+            if (candidate / "pom.xml").exists():
+                return candidate
+        return None
+
+    def _maven_test_classpath(self, project_root: Path) -> str:
+        """Ask Maven for the test classpath when pom.xml is available."""
+        cmd = [
+            "mvn",
+            "-q",
+            "dependency:build-classpath",
+            "-Dmdep.outputFile=/dev/stdout",
+            "-Dmdep.includeScope=test",
+        ]
+        try:
+            result = subprocess.run(
+                cmd,
+                cwd=str(project_root),
+                capture_output=True,
+                text=True,
+                timeout=self.compile_timeout,
+            )
+        except (subprocess.TimeoutExpired, FileNotFoundError):
+            return ""
+
+        if result.returncode != 0:
+            return ""
+        return result.stdout.strip()
 
     def _extract_class_name(self, java_code: str) -> str:
         """从 Java 代码中提取类名。"""
