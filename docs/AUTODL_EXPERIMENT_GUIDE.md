@@ -126,12 +126,28 @@ bash scripts/autodl_smoke.sh
 experiments/method_lists/rq1_pilot.example.json
 ```
 
+先计算 DCCI，并筛选 DCCI >= 1 的方法：
+
+```bash
+source .venv/bin/activate
+python -m src.metrics.dcci \
+  --input experiments/method_lists/rq1_pilot.example.json \
+  --output experiments/method_lists/rq1_pilot.scored.json
+
+python scripts/build_method_list.py \
+  --input experiments/method_lists/rq1_pilot.scored.json \
+  --output experiments/method_lists/rq1_pilot.json \
+  --min-dcci 1.0 \
+  --limit 10 \
+  --runner-only
+```
+
 运行命令：
 
 ```bash
 source .venv/bin/activate
 python -m src.core.batch_runner \
-  --methods experiments/method_lists/rq1_pilot.example.json \
+  --methods experiments/method_lists/rq1_pilot.json \
   --output experiments/runs/rq1_pilot
 ```
 
