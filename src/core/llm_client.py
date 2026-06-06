@@ -56,7 +56,18 @@ class LLMClient:
             temperature=temperature or self.temperature,
             max_tokens=max_tokens or self.max_tokens,
         )
-        return response.choices[0].message.content
+        choice = response.choices[0]
+        content = choice.message.content or ""
+        if content.strip():
+            return content
+
+        reasoning = getattr(choice.message, "reasoning_content", None) or ""
+        finish_reason = getattr(choice, "finish_reason", "unknown")
+        raise RuntimeError(
+            "LLM returned empty message content "
+            f"(finish_reason={finish_reason}, reasoning_preview={reasoning[:200]!r}). "
+            "Use a non-reasoning chat model or increase max_tokens."
+        )
 
     def generate(self, system_prompt: str, user_prompt: str, **kwargs) -> str:
         """便捷方法：system + user 消息组合。"""

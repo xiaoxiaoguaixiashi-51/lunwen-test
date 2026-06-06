@@ -85,10 +85,23 @@ class JavaCompiler:
 
     def compile_test(self, test_code: str, source_file: str = None, classpath: str = None) -> CompileResult:
         """编译测试代码字符串，返回编译结果。"""
+        if not test_code or not test_code.strip():
+            return CompileResult(
+                success=False,
+                output="",
+                errors="Generated test code is empty",
+                return_code=-1,
+            )
+
         # 从代码中提取类名
         class_name = self._extract_class_name(test_code)
         if not class_name:
-            class_name = "GeneratedTest"
+            return CompileResult(
+                success=False,
+                output="",
+                errors="Generated test code does not contain a Java class declaration",
+                return_code=-1,
+            )
 
         # 写入临时文件
         with tempfile.TemporaryDirectory() as tmpdir:
