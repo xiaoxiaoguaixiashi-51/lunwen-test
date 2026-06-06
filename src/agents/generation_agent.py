@@ -2,6 +2,7 @@
 
 import json
 from src.core.llm_client import LLMClient
+from src.utils.llm_output import extract_fenced_block
 
 
 SYSTEM_PROMPT = """你是一个 Java 单元测试代码生成专家。你的任务是根据测试计划生成可编译、可运行的 JUnit 5 测试代码。
@@ -93,12 +94,4 @@ class GenerationAgent:
 
     def _extract_code(self, response: str) -> str:
         """从 LLM 回复中提取 Java 代码。"""
-        if "```java" in response:
-            start = response.index("```java") + 7
-            end = response.index("```", start)
-            return response[start:end].strip()
-        elif "```" in response:
-            start = response.index("```") + 3
-            end = response.index("```", start)
-            return response[start:end].strip()
-        return response.strip()
+        return extract_fenced_block(response, "java")

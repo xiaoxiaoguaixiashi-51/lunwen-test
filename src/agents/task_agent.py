@@ -3,6 +3,7 @@
 import json
 from src.core.llm_client import LLMClient
 from src.utils.java_parser import extract_dependencies, DependencyInfo
+from src.utils.llm_output import extract_fenced_block
 from pathlib import Path
 
 
@@ -70,17 +71,7 @@ class TaskAgent:
 
     def _parse_llm_response(self, response: str) -> dict:
         """尝试从 LLM 回复中提取 JSON。"""
-        # 尝试提取 ```json ... ``` 块
-        if "```json" in response:
-            start = response.index("```json") + 7
-            end = response.index("```", start)
-            json_str = response[start:end].strip()
-        elif "```" in response:
-            start = response.index("```") + 3
-            end = response.index("```", start)
-            json_str = response[start:end].strip()
-        else:
-            json_str = response.strip()
+        json_str = extract_fenced_block(response, "json")
 
         try:
             return json.loads(json_str)

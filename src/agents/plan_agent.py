@@ -2,6 +2,7 @@
 
 import json
 from src.core.llm_client import LLMClient
+from src.utils.llm_output import extract_fenced_block
 
 
 SYSTEM_PROMPT = """你是一个 Java 单元测试设计专家。你的任务是根据目标方法的依赖分析结果，设计完整的测试计划。
@@ -71,16 +72,7 @@ class PlanAgent:
 
     def _parse_plan(self, response: str) -> dict:
         """从 LLM 回复中提取测试计划 JSON。"""
-        if "```json" in response:
-            start = response.index("```json") + 7
-            end = response.index("```", start)
-            json_str = response[start:end].strip()
-        elif "```" in response:
-            start = response.index("```") + 3
-            end = response.index("```", start)
-            json_str = response[start:end].strip()
-        else:
-            json_str = response.strip()
+        json_str = extract_fenced_block(response, "json")
 
         try:
             return json.loads(json_str)
