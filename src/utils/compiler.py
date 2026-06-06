@@ -144,27 +144,29 @@ class JavaCompiler:
 
     def _maven_test_classpath(self, project_root: Path) -> str:
         """Ask Maven for the test classpath when pom.xml is available."""
-        cmd = [
-            "mvn",
-            "-q",
-            "dependency:build-classpath",
-            "-Dmdep.outputFile=/dev/stdout",
-            "-Dmdep.includeScope=test",
-        ]
-        try:
-            result = subprocess.run(
-                cmd,
-                cwd=str(project_root),
-                capture_output=True,
-                text=True,
-                timeout=self.compile_timeout,
-            )
-        except (subprocess.TimeoutExpired, FileNotFoundError):
-            return ""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            cp_file = Path(tmpdir) / "test-classpath.txt"
+            cmd = [
+                "mvn",
+                "-q",
+                "dependency:build-classpath",
+                f"-Dmdep.outputFile={cp_file}",
+                "-Dmdep.includeScope=test",
+            ]
+            try:
+                result = subprocess.run(
+                    cmd,
+                    cwd=str(project_root),
+                    capture_output=True,
+                    text=True,
+                    timeout=max(self.compile_timeout, 120),
+                )
+            except (subprocess.TimeoutExpired, FileNotFoundError):
+                return ""
 
-        if result.returncode != 0:
-            return ""
-        return result.stdout.strip()
+            if result.returncode != 0 or not cp_file.exists():
+                return ""
+            return cp_file.read_text(encoding="utf-8").strip()
 
     def _extract_class_name(self, java_code: str) -> str:
         """从 Java 代码中提取类名。"""

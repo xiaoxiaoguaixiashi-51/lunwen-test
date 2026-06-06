@@ -27,6 +27,16 @@ class CompilerValidationTest(unittest.TestCase):
 
         self.assertIn(str(PROJECT_ROOT / "examples" / "java-demo" / "src" / "main" / "java"), cp_parts)
 
+    def test_splits_maven_test_dependencies_when_available(self):
+        compiler = JavaCompiler()
+        cp = f"/repo/junit.jar{__import__('os').pathsep}/repo/mockito.jar"
+        compiler._maven_test_classpath = lambda project_root: cp
+
+        cp_parts = compiler._classpath_for_source_file(str(TARGET))
+
+        self.assertIn("/repo/junit.jar", cp_parts)
+        self.assertIn("/repo/mockito.jar", cp_parts)
+
 
 if __name__ == "__main__":
     unittest.main()
