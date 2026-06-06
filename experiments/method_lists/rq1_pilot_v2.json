@@ -1,0 +1,65 @@
+[
+  {
+    "id": "java-demo-register-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "registerUser",
+    "dcci": 2.3,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-update-user-profile",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserProfile",
+    "dcci": 2.3,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-update-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserEmail",
+    "dcci": 2.275,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-deactivate-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "deactivateUser",
+    "dcci": 2.275,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-verify-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "verifyUserEmail",
+    "dcci": 2.275,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-record-failed-login",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "recordFailedLogin",
+    "dcci": 2.275,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-reactivate-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "reactivateUser",
+    "dcci": 2.275,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-delete-inactive-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "deleteInactiveUser",
+    "dcci": 2.275,
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-reset-password-request",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "resetPasswordRequest",
+    "dcci": 2.25,
+    "source": "java-demo"
+  }
+]

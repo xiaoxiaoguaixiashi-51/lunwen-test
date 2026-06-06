@@ -1,0 +1,56 @@
+[
+  {
+    "id": "java-demo-update-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserEmail",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-register-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "registerUser",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-deactivate-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "deactivateUser",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-update-user-profile",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserProfile",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-reset-password-request",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "resetPasswordRequest",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-verify-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "verifyUserEmail",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-record-failed-login",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "recordFailedLogin",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-reactivate-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "reactivateUser",
+    "source": "java-demo"
+  },
+  {
+    "id": "java-demo-delete-inactive-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "deleteInactiveUser",
+    "source": "java-demo"
+  }
+]

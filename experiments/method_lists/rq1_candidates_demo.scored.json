@@ -1,0 +1,236 @@
+[
+  {
+    "id": "java-demo-update-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserEmail",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.275,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.0
+    },
+    "dependency_summary": {
+      "external_calls": 17,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 2,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-register-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "registerUser",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.3,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.5
+    },
+    "dependency_summary": {
+      "external_calls": 22,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 3,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-deactivate-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "deactivateUser",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.275,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.0
+    },
+    "dependency_summary": {
+      "external_calls": 17,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 2,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-update-user-profile",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "updateUserProfile",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.3,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.5
+    },
+    "dependency_summary": {
+      "external_calls": 19,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 3,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-reset-password-request",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "resetPasswordRequest",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.25,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 0.5
+    },
+    "dependency_summary": {
+      "external_calls": 16,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 1,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-verify-user-email",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "verifyUserEmail",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.275,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.0
+    },
+    "dependency_summary": {
+      "external_calls": 13,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 2,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-record-failed-login",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "recordFailedLogin",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.275,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.0
+    },
+    "dependency_summary": {
+      "external_calls": 14,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 2,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-reactivate-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "reactivateUser",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.275,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.0
+    },
+    "dependency_summary": {
+      "external_calls": 14,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 2,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  },
+  {
+    "id": "java-demo-delete-inactive-user",
+    "target": "examples/java-demo/src/main/java/com/example/service/UserService.java",
+    "method": "deleteInactiveUser",
+    "source": "java-demo",
+    "class_name": "UserService",
+    "dcci": 2.275,
+    "dcci_breakdown": {
+      "external_calls": 3.0,
+      "dependency_classes": 2.0,
+      "injection_difficulty": 2.3333333333333335,
+      "state_dependency": 2.5,
+      "resource_dependency": 0.5,
+      "oracle_difficulty": 3.0,
+      "parameter_complexity": 1.0
+    },
+    "dependency_summary": {
+      "external_calls": 11,
+      "field_dependencies": 4,
+      "constructor_params": 3,
+      "parameters": 2,
+      "has_time_dependency": true,
+      "has_random_dependency": false,
+      "has_io_dependency": false
+    }
+  }
+]
