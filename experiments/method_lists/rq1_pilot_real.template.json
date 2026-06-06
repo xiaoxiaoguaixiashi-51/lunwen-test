@@ -1,0 +1,11 @@
+[
+  {
+    "id": "defects4j-<project>-<bug>-<class>-<method>",
+    "target": "defects4j/<project>/<bug>/src/main/java/<package>/<Class>.java",
+    "method": "<methodName>",
+    "source": "defects4j",
+    "project": "<Defects4J project id>",
+    "bug_id": "<bug id>",
+    "notes": "Replace with a real checked-out Defects4J focal method before scoring."
+  }
+]

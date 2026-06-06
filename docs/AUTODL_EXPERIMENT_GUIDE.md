@@ -182,6 +182,62 @@ python -m src.core.batch_runner \
 tmux attach -t rq1
 ```
 
+## 8.1 结果汇总表
+
+批量实验完成后，先把 `summary.json` 和每个方法目录下的 `status.json`、`*_report.json` 汇总成表格：
+
+```bash
+source .venv/bin/activate
+python scripts/summarize_run.py \
+  --run-dir experiments/runs/rq1_pilot_v2 \
+  --csv experiments/runs/rq1_pilot_v2/summary_table.csv \
+  --markdown experiments/runs/rq1_pilot_v2/summary_table.md
+```
+
+真实 pilot 建议使用同样方式生成：
+
+```bash
+python scripts/summarize_run.py \
+  --run-dir experiments/runs/rq1_pilot_real \
+  --csv experiments/runs/rq1_pilot_real/summary_table.csv \
+  --markdown experiments/runs/rq1_pilot_real/summary_table.md
+```
+
+这张表用于导师展示和失败原因复盘；`experiments/runs/` 仍然不要提交到 Git。
+
+## 8.2 从 demo pilot_v2 过渡到真实 Defects4J pilot
+
+真实 RQ1 pilot 的最小闭环建议如下：
+
+1. 在 AutoDL 上 checkout 或复制 5-10 个 Defects4J 真实项目/bug 版本。
+2. 按 `experiments/method_lists/rq1_pilot_real.template.json` 的字段格式记录候选方法。
+3. 运行 DCCI 评分：
+
+```bash
+python -m src.metrics.dcci \
+  --input experiments/method_lists/rq1_candidates_real.json \
+  --output experiments/method_lists/rq1_candidates_real.scored.json
+```
+
+4. 筛选真实 pilot 方法：
+
+```bash
+python scripts/build_method_list.py \
+  --input experiments/method_lists/rq1_candidates_real.scored.json \
+  --output experiments/method_lists/rq1_pilot_real.json \
+  --min-dcci 1.0 \
+  --limit 10 \
+  --runner-only
+```
+
+5. 执行真实 pilot：
+
+```bash
+python -m src.core.batch_runner \
+  --methods experiments/method_lists/rq1_pilot_real.json \
+  --output experiments/runs/rq1_pilot_real
+```
+
 ## 9. 实验保存规则
 
 每次正式实验至少保存：
