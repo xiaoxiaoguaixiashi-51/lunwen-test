@@ -49,9 +49,9 @@ def classify_failure(log_text: str) -> tuple[str, str]:
     if "Java 11 is required!" in log_text:
         return "environment_java_version", "Defects4J requires Java 11"
 
-    compile_match = re.search(r"\[javac\]\s+(.+)", log_text)
-    if compile_match:
-        return "compile_failure", clean_evidence(compile_match.group(1))
+    compile_evidence = extract_compile_evidence(log_text)
+    if compile_evidence:
+        return "compile_failure", compile_evidence
 
     if "Compilation failed in require" in log_text or "Cannot run tests!" in log_text:
         return "compile_or_harness_failure", first_matching_line(
@@ -85,6 +85,34 @@ def extract_assertion_evidence(log_text: str) -> str:
         match = re.search(pattern, log_text)
         if match:
             return clean_evidence(match.group(0))
+    return ""
+
+
+def extract_compile_evidence(log_text: str) -> str:
+    lines = log_text.splitlines()
+    specific_markers = [
+        " error:",
+        ": error:",
+        "cannot find symbol",
+        "has private access",
+        "is not public",
+        "cannot be accessed",
+        "incompatible types",
+        "no suitable method",
+        "constructor ",
+    ]
+    for line in lines:
+        if "[javac]" in line and any(marker in line for marker in specific_markers):
+            return clean_evidence(line)
+
+    for index, line in enumerate(lines):
+        if "[javac]" not in line:
+            continue
+        if "Compiling " in line:
+            continue
+        if index + 1 < len(lines) and "[javac]" in lines[index + 1]:
+            return clean_evidence(f"{line} {lines[index + 1]}")
+        return clean_evidence(line)
     return ""
 
 

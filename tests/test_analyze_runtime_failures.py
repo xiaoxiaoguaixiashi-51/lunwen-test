@@ -6,6 +6,7 @@ from pathlib import Path
 from scripts.analyze_runtime_failures import (
     analyze_failures,
     classify_failure,
+    extract_compile_evidence,
     write_category_summary,
 )
 
@@ -22,6 +23,18 @@ class AnalyzeRuntimeFailuresTest(unittest.TestCase):
 
         self.assertEqual("compile_failure", category)
         self.assertIn("cannot find symbol", evidence)
+
+    def test_extract_compile_evidence_skips_generic_compiling_line(self):
+        log = """
+[javac] Compiling 1 source file to /tmp/target/tests
+[javac] /tmp/DemoTest.java:10: error: cannot find symbol
+[javac]     missing();
+"""
+
+        evidence = extract_compile_evidence(log)
+
+        self.assertIn("cannot find symbol", evidence)
+        self.assertNotIn("Compiling 1 source file", evidence)
 
     def test_classifies_harness_failure(self):
         category, evidence = classify_failure("Cannot run tests! at /root/defects4j/framework/bin/d4j/d4j-test line 135.")
