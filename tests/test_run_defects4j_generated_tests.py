@@ -4,10 +4,13 @@ from pathlib import Path
 
 from scripts.run_defects4j_generated_tests import (
     classify_test_status,
+    install_generated_test,
     MethodRun,
     discover_generated_tests,
     parse_failing_tests,
     parse_generated_test,
+    rewrite_test_source_for_install,
+    unique_generated_class_name,
     write_class_summary,
 )
 
@@ -39,6 +42,7 @@ public class ExampleTest {
             self.assertEqual("ExampleTest", parsed.class_name)
             self.assertEqual("org.example.ExampleTest", parsed.fqcn)
             self.assertEqual(["test_one", "test_two"], parsed.methods)
+            self.assertTrue(parsed.package_declared)
 
     def test_parse_generated_test_uses_default_package_when_missing(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -59,6 +63,61 @@ public class NoPackageTest {
 
             self.assertEqual("org.example", parsed.package)
             self.assertEqual("org.example.NoPackageTest", parsed.fqcn)
+            self.assertFalse(parsed.package_declared)
+
+    def test_rewrite_test_source_renames_class_and_inserts_missing_package(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "NoPackageTest.java"
+            path.write_text(
+                """
+import org.junit.Test;
+
+public class NoPackageTest {
+    @Test
+    public void test_missing_package() {}
+}
+""",
+                encoding="utf-8",
+            )
+            parsed = parse_generated_test(path, default_package="org.example")
+
+            rewritten = rewrite_test_source_for_install(parsed, "D4jGeneratedNoPackageTest")
+
+            self.assertTrue(rewritten.startswith("package org.example;"))
+            self.assertIn("public class D4jGeneratedNoPackageTest", rewritten)
+            self.assertNotIn("public class NoPackageTest", rewritten)
+
+    def test_install_generated_test_uses_prefixed_class_name(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            source = root / "ClassUtilsTest.java"
+            source.write_text(
+                """
+package org.example;
+import org.junit.Test;
+public class ClassUtilsTest {
+    @Test
+    public void test_collision() {}
+}
+""",
+                encoding="utf-8",
+            )
+            defects4j_dir = root / "checkout"
+            parsed = parse_generated_test(source)
+
+            installed = install_generated_test(parsed, defects4j_dir)
+
+            self.assertEqual("D4jGeneratedClassUtilsTest", installed.class_name)
+            self.assertEqual("org.example.D4jGeneratedClassUtilsTest", installed.fqcn)
+            self.assertTrue(installed.target_path.exists())
+            self.assertTrue(str(installed.target_path).endswith("D4jGeneratedClassUtilsTest.java"))
+
+    def test_unique_generated_class_name_is_idempotent(self):
+        self.assertEqual("D4jGeneratedClassUtilsTest", unique_generated_class_name("ClassUtilsTest", "D4jGenerated"))
+        self.assertEqual(
+            "D4jGeneratedClassUtilsTest",
+            unique_generated_class_name("D4jGeneratedClassUtilsTest", "D4jGenerated"),
+        )
 
     def test_discover_generated_tests_reads_nested_batch_outputs(self):
         with tempfile.TemporaryDirectory() as tmpdir:

@@ -31,6 +31,20 @@ class GeneratedTest:
     package: str
     class_name: str
     methods: list[str]
+    package_declared: bool = True
+
+    @property
+    def fqcn(self) -> str:
+        return f"{self.package}.{self.class_name}" if self.package else self.class_name
+
+
+@dataclass
+class InstalledTest:
+    generated: GeneratedTest
+    package: str
+    class_name: str
+    methods: list[str]
+    target_path: Path
 
     @property
     def fqcn(self) -> str:
@@ -76,6 +90,7 @@ def parse_generated_test(path: Path, default_package: str = "") -> GeneratedTest
         package=package,
         class_name=class_match.group(1),
         methods=methods,
+        package_declared=package_match is not None,
     )
 
 
@@ -86,23 +101,49 @@ def discover_generated_tests(run_dir: Path, default_package: str = "") -> list[G
     return tests
 
 
-def install_generated_test(test: GeneratedTest, defects4j_dir: Path, overwrite: bool = False) -> Path:
+def install_generated_test(
+    test: GeneratedTest,
+    defects4j_dir: Path,
+    overwrite: bool = False,
+    class_prefix: str = "D4jGenerated",
+) -> InstalledTest:
     package_path = Path(*test.package.split(".")) if test.package else Path()
     target_dir = defects4j_dir / "src" / "test" / "java" / package_path
     target_dir.mkdir(parents=True, exist_ok=True)
-    target_path = target_dir / f"{test.class_name}.java"
+    installed_class_name = unique_generated_class_name(test.class_name, class_prefix)
+    target_path = target_dir / f"{installed_class_name}.java"
 
     if target_path.exists() and not overwrite:
         existing = target_path.read_text(encoding="utf-8", errors="ignore")
-        generated = test.source_path.read_text(encoding="utf-8")
+        generated = rewrite_test_source_for_install(test, installed_class_name)
         if existing != generated:
             raise FileExistsError(
                 f"Refusing to overwrite existing test class: {target_path}. "
                 "Use --overwrite to replace it."
             )
 
-    shutil.copyfile(test.source_path, target_path)
-    return target_path
+    target_path.write_text(rewrite_test_source_for_install(test, installed_class_name), encoding="utf-8")
+    return InstalledTest(
+        generated=test,
+        package=test.package,
+        class_name=installed_class_name,
+        methods=test.methods,
+        target_path=target_path,
+    )
+
+
+def rewrite_test_source_for_install(test: GeneratedTest, installed_class_name: str) -> str:
+    text = test.source_path.read_text(encoding="utf-8")
+    text = CLASS_PATTERN.sub(f"public class {installed_class_name}", text, count=1)
+    if test.package and not test.package_declared:
+        text = f"package {test.package};\n\n{text}"
+    return text
+
+
+def unique_generated_class_name(class_name: str, class_prefix: str) -> str:
+    if class_name.startswith(class_prefix):
+        return class_name
+    return f"{class_prefix}{class_name}"
 
 
 def run_generated_tests(
@@ -116,41 +157,44 @@ def run_generated_tests(
     rows: list[MethodRun] = []
 
     for test in generated_tests:
-        install_generated_test(test, defects4j_dir, overwrite=overwrite)
-        class_log_dir = output_dir / safe_name(test.fqcn)
-        class_log_dir.mkdir(parents=True, exist_ok=True)
+        installed = install_generated_test(test, defects4j_dir, overwrite=overwrite)
+        try:
+            class_log_dir = output_dir / safe_name(installed.fqcn)
+            class_log_dir.mkdir(parents=True, exist_ok=True)
 
-        for method in test.methods:
-            log_path = class_log_dir / f"{method}.log"
-            cmd = ["defects4j", "test", "-t", f"{test.fqcn}::{method}"]
-            try:
-                proc = subprocess.run(
-                    cmd,
-                    cwd=str(defects4j_dir),
-                    capture_output=True,
-                    text=True,
-                    timeout=timeout,
-                )
-                output = (proc.stdout or "") + (proc.stderr or "")
-                return_code = proc.returncode
-            except subprocess.TimeoutExpired as exc:
-                output = (exc.stdout or "") + (exc.stderr or "") + "\nTIMEOUT\n"
-                return_code = -1
+            for method in installed.methods:
+                log_path = class_log_dir / f"{method}.log"
+                cmd = ["defects4j", "test", "-t", f"{installed.fqcn}::{method}"]
+                try:
+                    proc = subprocess.run(
+                        cmd,
+                        cwd=str(defects4j_dir),
+                        capture_output=True,
+                        text=True,
+                        timeout=timeout,
+                    )
+                    output = (proc.stdout or "") + (proc.stderr or "")
+                    return_code = proc.returncode
+                except subprocess.TimeoutExpired as exc:
+                    output = (exc.stdout or "") + (exc.stderr or "") + "\nTIMEOUT\n"
+                    return_code = -1
 
-            log_path.write_text(output, encoding="utf-8")
-            failing_tests = parse_failing_tests(output)
-            status = classify_test_status(failing_tests)
-            rows.append(
-                MethodRun(
-                    source_file=str(test.source_path),
-                    test_class=test.fqcn,
-                    test_method=method,
-                    status=status,
-                    failing_tests=failing_tests,
-                    return_code=return_code,
-                    log_file=str(log_path),
+                log_path.write_text(output, encoding="utf-8")
+                failing_tests = parse_failing_tests(output)
+                status = classify_test_status(failing_tests)
+                rows.append(
+                    MethodRun(
+                        source_file=str(test.source_path),
+                        test_class=installed.fqcn,
+                        test_method=method,
+                        status=status,
+                        failing_tests=failing_tests,
+                        return_code=return_code,
+                        log_file=str(log_path),
+                    )
                 )
-            )
+        finally:
+            installed.target_path.unlink(missing_ok=True)
 
     return rows
 
