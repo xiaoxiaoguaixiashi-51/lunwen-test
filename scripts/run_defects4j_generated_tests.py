@@ -139,7 +139,7 @@ def run_generated_tests(
 
             log_path.write_text(output, encoding="utf-8")
             failing_tests = parse_failing_tests(output)
-            status = "passed" if return_code == 0 and failing_tests == 0 else "failed"
+            status = classify_test_status(failing_tests)
             rows.append(
                 MethodRun(
                     source_file=str(test.source_path),
@@ -160,6 +160,16 @@ def parse_failing_tests(output: str) -> int | None:
     if not match:
         return None
     return int(match.group(1))
+
+
+def classify_test_status(failing_tests: int | None) -> str:
+    """Classify Defects4J single-test output.
+
+    Defects4J can emit a non-zero process status even when the test log clearly
+    reports ``Failing tests: 0``. The log result is the stable experimental
+    signal we need for Test Pass Rate.
+    """
+    return "passed" if failing_tests == 0 else "failed"
 
 
 def write_csv(rows: list[MethodRun], output_path: Path):

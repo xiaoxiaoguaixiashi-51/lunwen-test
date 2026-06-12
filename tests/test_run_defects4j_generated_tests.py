@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from scripts.run_defects4j_generated_tests import (
+    classify_test_status,
     MethodRun,
     discover_generated_tests,
     parse_failing_tests,
@@ -85,6 +86,11 @@ public class GeneratedTest {
         self.assertEqual(0, parse_failing_tests("Running ant\nFailing tests: 0\n"))
         self.assertEqual(3, parse_failing_tests("Failing tests: 3\n  - a::b"))
         self.assertIsNone(parse_failing_tests("Cannot run tests!"))
+
+    def test_classify_test_status_uses_failing_test_count(self):
+        self.assertEqual("passed", classify_test_status(0))
+        self.assertEqual("failed", classify_test_status(1))
+        self.assertEqual("failed", classify_test_status(None))
 
     def test_write_class_summary_groups_rows(self):
         with tempfile.TemporaryDirectory() as tmpdir:
