@@ -7,7 +7,7 @@
 - AutoDL 服务器目录：`/root/lunwen-test`
 - Defects4J 工作目录：`/root/defects4j-work`
 - GitHub 仓库：`https://github.com/xiaoxiaoguaixiashi-51/lunwen-test.git`
-- 当前本地 `main` 最新已知提交：`6072dfb Add run analysis table builder`
+- 当前本地 `main` 最新已知提交：`3776831 Allow forcing Java home for Defects4J runtime checks`
 
 ## 2026-06-12 当前推进状态
 
@@ -15,13 +15,23 @@
 - 已确认 `rq1_pilot_real_v2` 编译阶段结果：10/10 `completed/success=true`。
 - 已重新打包编译阶段证据：`/root/rq1_pilot_real_v2_20260612.tar.gz`。
 - 已恢复 AutoDL Java 11 环境，`/root/defects4j-work/Lang-1b` 下 `defects4j compile` 成功；`defects4j test` 有 Defects4J buggy 版本预期失败用例 `NumberUtilsTest::TestLang747`。
-- 已开始补充运行阶段验证，当前手工抽查结果：
-  - `LocaleUtils.toLocale`：25/25 generated test methods passed。
-  - `ClassUtils.getPublicMethod`：2/7 generated test methods passed，出现 security/runtime failure。
-  - `NumberUtils.createBigInteger`：20/25 generated test methods passed。
-  - `NumberUtils.createNumber`：40/41 generated test methods passed。
-  - 当前 runtime 抽查合计：87/98，约 88.8%。
-- 新增计划：用脚本自动化“复制生成测试到 Defects4J、逐个运行 `defects4j test -t Class::method`、输出 runtime summary”的流程，避免继续手工敲命令。
+- 已补充自动化运行阶段验证脚本：`scripts/run_defects4j_generated_tests.py`。
+  - 脚本会给生成测试类加 `D4jGenerated` 前缀，避免覆盖 Defects4J 原测试类。
+  - 脚本支持 `--java-home`，用于强制 Defects4J 子进程使用 Java 11，避免 AutoDL `PATH` 中 Java 17 抢先。
+  - 缺少 package 的生成测试可通过 `--default-package org.apache.commons.lang3` 补齐。
+- 已在干净 checkout 的 `/root/defects4j-work/Lang-1b` 上运行 `runtime_check_auto_v5`：
+  - Runtime Pass Rate：128/170，75.3%。
+  - `LocaleUtils.toLocale`：25/25。
+  - `NumberUtils.createNumber`：40/41。
+  - `CreateBigInteger`：20/25。
+  - `StringUtils.getLevenshteinDistance`：13/13。
+  - `DateUtils.isSameLocalTime`：8/8。
+  - `ClassUtils.getPublicMethod`：2/7。
+  - `ClassUtils.getShortClassName`：0/13。
+  - `CsvEscaper.translate`：5/7。
+  - `StringUtils.substringsBetween`：15/18。
+  - `ExtendedMessageFormat.applyPattern`：0/13。
+- 当前已经形成两层 RQ1 pilot 证据：Compilation Pass Rate = 10/10；Runtime Pass Rate = 128/170 generated test methods。
 
 ## 2026-06-11 实验方案调整决策
 
