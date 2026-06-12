@@ -32,6 +32,8 @@
   - `StringUtils.substringsBetween`：15/18。
   - `ExtendedMessageFormat.applyPattern`：0/13。
 - 当前已经形成两层 RQ1 pilot 证据：Compilation Pass Rate = 10/10；Runtime Pass Rate = 128/170 generated test methods。
+- 已固定 runtime v5 证据包：`/root/rq1_pilot_real_v2_runtime_v5_20260612.tar.gz`，大小约 190K。
+- 已新增简报文档：`docs/RQ1_PILOT_RUNTIME_REPORT.md`。
 
 ## 2026-06-11 实验方案调整决策
 
