@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
 import re
 import shutil
 import subprocess
@@ -152,9 +153,11 @@ def run_generated_tests(
     output_dir: Path,
     overwrite: bool = False,
     timeout: int = 180,
+    java_home: str = "",
 ) -> list[MethodRun]:
     output_dir.mkdir(parents=True, exist_ok=True)
     rows: list[MethodRun] = []
+    env = build_subprocess_env(java_home)
 
     for test in generated_tests:
         installed = install_generated_test(test, defects4j_dir, overwrite=overwrite)
@@ -172,6 +175,7 @@ def run_generated_tests(
                         capture_output=True,
                         text=True,
                         timeout=timeout,
+                        env=env,
                     )
                     output = (proc.stdout or "") + (proc.stderr or "")
                     return_code = proc.returncode
@@ -197,6 +201,22 @@ def run_generated_tests(
             installed.target_path.unlink(missing_ok=True)
 
     return rows
+
+
+def build_subprocess_env(java_home: str = "") -> dict[str, str] | None:
+    """Build an environment for Defects4J subprocesses.
+
+    AutoDL shells may have ``JAVA_HOME`` set to Java 11 while ``PATH`` still
+    resolves ``java`` to Java 17. Defects4J checks the actual Java executable,
+    so put the requested Java home first in PATH for every subprocess.
+    """
+    if not java_home:
+        return None
+
+    env = os.environ.copy()
+    env["JAVA_HOME"] = java_home
+    env["PATH"] = str(Path(java_home) / "bin") + os.pathsep + env.get("PATH", "")
+    return env
 
 
 def parse_failing_tests(output: str) -> int | None:
@@ -290,6 +310,11 @@ def main():
     )
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing target test files")
     parser.add_argument("--timeout", type=int, default=180, help="Timeout per test method in seconds")
+    parser.add_argument(
+        "--java-home",
+        default="",
+        help="JAVA_HOME to force for defects4j subprocesses, e.g. /usr/lib/jvm/java-11-openjdk-amd64",
+    )
     args = parser.parse_args()
 
     run_dir = Path(args.run_dir)
@@ -303,6 +328,7 @@ def main():
         output_dir,
         overwrite=args.overwrite,
         timeout=args.timeout,
+        java_home=args.java_home,
     )
 
     write_csv(rows, output_dir / "runtime_summary.csv")

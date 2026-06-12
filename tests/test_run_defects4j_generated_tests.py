@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from scripts.run_defects4j_generated_tests import (
+    build_subprocess_env,
     classify_test_status,
     install_generated_test,
     MethodRun,
@@ -150,6 +151,15 @@ public class GeneratedTest {
         self.assertEqual("passed", classify_test_status(0))
         self.assertEqual("failed", classify_test_status(1))
         self.assertEqual("failed", classify_test_status(None))
+
+    def test_build_subprocess_env_prefers_java_home_bin(self):
+        env = build_subprocess_env("/opt/jdk-11")
+
+        self.assertEqual("/opt/jdk-11", env["JAVA_HOME"])
+        self.assertTrue(env["PATH"].startswith(str(Path("/opt/jdk-11") / "bin")))
+
+    def test_build_subprocess_env_returns_none_without_java_home(self):
+        self.assertIsNone(build_subprocess_env(""))
 
     def test_write_class_summary_groups_rows(self):
         with tempfile.TemporaryDirectory() as tmpdir:
