@@ -129,6 +129,32 @@ export PATH=$JAVA_HOME/bin:$PATH
 hash -r
 ```
 
+The next coverage run can use the automated runner. Start it inside `screen`
+on AutoDL so the process survives SSH disconnects:
+
+```bash
+cd /root/lunwen-test
+git -c http.version=HTTP/1.1 pull --ff-only
+source .venv/bin/activate
+
+screen -S rq1_coverage_localeutils
+python scripts/run_defects4j_generated_coverage.py \
+  --run-dir experiments/runs/rq1_pilot_real_v2 \
+  --defects4j-dir /root/defects4j-work/Lang-1b \
+  --output-dir experiments/runs/rq1_pilot_real_v2/coverage_check_auto_v1 \
+  --default-package org.apache.commons.lang3 \
+  --include-class-name LocaleUtils \
+  --instrument-class org.apache.commons.lang3.LocaleUtils \
+  --java-home /usr/lib/jvm/java-11-openjdk-amd64 \
+  --overwrite
+```
+
+Expected outputs:
+
+- `experiments/runs/rq1_pilot_real_v2/coverage_check_auto_v1/coverage_summary.csv`
+- `experiments/runs/rq1_pilot_real_v2/coverage_check_auto_v1/coverage_summary.md`
+- `experiments/runs/rq1_pilot_real_v2/coverage_check_auto_v1/coverage_class_summary.md`
+
 ## Current Interpretation
 
 The current pilot supports two claims:

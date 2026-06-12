@@ -42,6 +42,11 @@
   - 覆盖率证据包：`/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`，大小约 22K。
   - 单测试方法行覆盖率范围：4.1% 到 21.4%；条件覆盖率范围：1.4% 到 20.8%。
   - 高覆盖示例：`D4jGeneratedLocaleUtilsToLocaleTest::test_valid_language_country_variant`，行覆盖率 21.4%，条件覆盖率 20.8%。
+- 已新增覆盖率自动化脚本：`scripts/run_defects4j_generated_coverage.py`。
+  - 复用生成测试安装逻辑，自动添加 `D4jGenerated` 前缀，避免覆盖 Defects4J 原测试。
+  - 支持 `--java-home` 强制 Java 11。
+  - 支持 `--include-class-name`，可先只跑 `LocaleUtils`，避免一开始直接跑满 170 个 coverage 命令。
+  - 输出 `coverage_summary.csv`、`coverage_summary.md` 和 `coverage_class_summary.md`。
 
 ## 2026-06-11 实验方案调整决策
 
@@ -93,6 +98,7 @@
 - `scripts/autodl_smoke.sh`
 - `src/metrics/dcci.py`
 - `scripts/build_method_list.py`
+- `scripts/run_defects4j_generated_coverage.py`
 - `src/utils/llm_output.py`
 - `src/core/llm_client.py`
 - `src/utils/compiler.py`
