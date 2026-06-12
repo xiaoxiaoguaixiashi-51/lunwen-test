@@ -18,10 +18,17 @@ AutoDL evidence package:
 /root/rq1_pilot_real_v2_runtime_v5_20260612.tar.gz
 ```
 
+Coverage pilot evidence package:
+
+```text
+/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz
+```
+
 Package size observed on AutoDL:
 
 ```text
-190K
+runtime: 190K
+coverage pilot: 22K
 ```
 
 ## Compilation Result
@@ -73,16 +80,66 @@ Observed failure evidence includes Java source-level incompatibility in the Defe
 diamond operator is not supported in -source 6
 ```
 
+## Coverage Pilot
+
+A coverage pilot was completed for `LocaleUtils.toLocale` using Defects4J's built-in coverage command:
+
+```text
+defects4j coverage -t <Class::method> -i <instrument_classes>
+```
+
+The pilot instruments:
+
+```text
+org.apache.commons.lang3.LocaleUtils
+```
+
+Coverage was measured for the 25 generated methods in:
+
+```text
+org.apache.commons.lang3.D4jGeneratedLocaleUtilsToLocaleTest
+```
+
+Coverage outputs:
+
+- `experiments/runs/rq1_pilot_real_v2/coverage_check/localeutils_methods`
+- `experiments/runs/rq1_pilot_real_v2/coverage_check/localeutils_coverage_summary.csv`
+- `experiments/runs/rq1_pilot_real_v2/coverage_check/localeutils_coverage_summary.md`
+
+Observed single-test-method coverage range:
+
+| metric | min | max |
+| --- | ---: | ---: |
+| Line coverage | 4.1% | 21.4% |
+| Condition coverage | 1.4% | 20.8% |
+
+Representative high-coverage method:
+
+```text
+org.apache.commons.lang3.D4jGeneratedLocaleUtilsToLocaleTest::test_valid_language_country_variant
+Lines covered: 21/98 = 21.4%
+Conditions covered: 15/72 = 20.8%
+```
+
+Environment note: Defects4J `Lang-1b` must run with Java 11. On AutoDL, force it before coverage commands:
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+hash -r
+```
+
 ## Current Interpretation
 
 The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified the measurement chain on one generated test class.
 
 ## Next Step
 
-Keep the current result as the first runtime-validated pilot evidence. The next mainline task is to decide whether to:
+Keep the current result as the first runtime-validated pilot evidence. The next mainline task is to:
 
-- extend runtime validation to a larger Defects4J method set, or
-- add coverage measurement for the current pilot before expanding.
+- extend coverage measurement from the `LocaleUtils.toLocale` pilot to class-level or aggregate coverage for the current 10-method pilot, then
+- expand runtime and coverage validation to a larger Defects4J method set.

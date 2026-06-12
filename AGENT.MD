@@ -7,7 +7,7 @@
 - AutoDL 服务器目录：`/root/lunwen-test`
 - Defects4J 工作目录：`/root/defects4j-work`
 - GitHub 仓库：`https://github.com/xiaoxiaoguaixiashi-51/lunwen-test.git`
-- 当前本地 `main` 最新已知提交：`3776831 Allow forcing Java home for Defects4J runtime checks`
+- 当前本地 `main` 最新已知提交：`8fa7f43 Add coverage log summarizer`
 
 ## 2026-06-12 当前推进状态
 
@@ -34,6 +34,14 @@
 - 当前已经形成两层 RQ1 pilot 证据：Compilation Pass Rate = 10/10；Runtime Pass Rate = 128/170 generated test methods。
 - 已固定 runtime v5 证据包：`/root/rq1_pilot_real_v2_runtime_v5_20260612.tar.gz`，大小约 190K。
 - 已新增简报文档：`docs/RQ1_PILOT_RUNTIME_REPORT.md`。
+- 已完成 `LocaleUtils.toLocale` 的覆盖率 pilot：
+  - Defects4J coverage 支持 `defects4j coverage -t <Class::method> -i <instrument_classes>`。
+  - 必须强制 Java 11：`JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH defects4j coverage ...`。
+  - 覆盖率日志目录：`experiments/runs/rq1_pilot_real_v2/coverage_check/localeutils_methods`。
+  - 覆盖率汇总：`experiments/runs/rq1_pilot_real_v2/coverage_check/localeutils_coverage_summary.csv` 和 `.md`。
+  - 覆盖率证据包：`/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`，大小约 22K。
+  - 单测试方法行覆盖率范围：4.1% 到 21.4%；条件覆盖率范围：1.4% 到 20.8%。
+  - 高覆盖示例：`D4jGeneratedLocaleUtilsToLocaleTest::test_valid_language_country_variant`，行覆盖率 21.4%，条件覆盖率 20.8%。
 
 ## 2026-06-11 实验方案调整决策
 
@@ -103,7 +111,7 @@
   - 符号缺失。
   - Java 兼容性 warning。
 - 当前结果证明真实 Defects4J 方法上的“生成、编译、反馈修复”链路已打通。
-- 目前仍只验证到 compilation success；后续还需要补测试运行、覆盖率、断言质量和 mutation score。
+- 目前已验证到 compilation success、runtime pass rate 和一个方法类的 coverage pilot；后续还需要扩展覆盖率统计、断言质量和 mutation score。
 
 ## 当前进度判断
 
@@ -121,7 +129,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 接入覆盖率统计，优先 JaCoCo 或 Defects4J 自带相关能力。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，先从 current pilot 的 class-level/aggregate coverage 自动化开始。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。
@@ -136,7 +144,7 @@
    - `experiments/runs/rq1_pilot_real_v2/summary_table.md`
 2. 生成 `rq1_pilot_real_v2` 结果分析表。
 3. 补一个 failure/repair reason 聚合脚本或手工表。
-4. 开始实现“测试运行通过率”统计。
+4. 扩展 coverage pilot：先验证单类聚合覆盖率，再决定是否覆盖全部 10 个方法类。
 5. 为导师展示整理 6 页左右材料。
 
 ## 使用提醒
