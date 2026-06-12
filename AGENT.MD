@@ -7,7 +7,37 @@
 - AutoDL 服务器目录：`/root/lunwen-test`
 - Defects4J 工作目录：`/root/defects4j-work`
 - GitHub 仓库：`https://github.com/xiaoxiaoguaixiashi-51/lunwen-test.git`
-- 当前远程 `main` 最新提交：`71497d0 Use JUnit4 prompts for Defects4J targets`
+- 当前本地 `main` 最新已知提交：`6072dfb Add run analysis table builder`
+
+## 2026-06-12 当前推进状态
+
+- 已在 AutoDL 找回 `rq1_pilot_real_v2` 结果目录，包含 10 个真实 Defects4J Lang-1b 方法的生成测试、`summary_table` 和 `analysis_table`。
+- 已确认 `rq1_pilot_real_v2` 编译阶段结果：10/10 `completed/success=true`。
+- 已重新打包编译阶段证据：`/root/rq1_pilot_real_v2_20260612.tar.gz`。
+- 已恢复 AutoDL Java 11 环境，`/root/defects4j-work/Lang-1b` 下 `defects4j compile` 成功；`defects4j test` 有 Defects4J buggy 版本预期失败用例 `NumberUtilsTest::TestLang747`。
+- 已开始补充运行阶段验证，当前手工抽查结果：
+  - `LocaleUtils.toLocale`：25/25 generated test methods passed。
+  - `ClassUtils.getPublicMethod`：2/7 generated test methods passed，出现 security/runtime failure。
+  - `NumberUtils.createBigInteger`：20/25 generated test methods passed。
+  - `NumberUtils.createNumber`：40/41 generated test methods passed。
+  - 当前 runtime 抽查合计：87/98，约 88.8%。
+- 新增计划：用脚本自动化“复制生成测试到 Defects4J、逐个运行 `defects4j test -t Class::method`、输出 runtime summary”的流程，避免继续手工敲命令。
+
+## 2026-06-11 实验方案调整决策
+
+- 已决定收缩当前论文实验范围，优先形成可交付、可解释、可运行的实验闭环。
+- 主实验聚焦 `Defects4J`，使用 DCCI 筛选高依赖复杂 Java 方法。
+- `MACO 41` 不作为主实验数据，而作为对齐实验：若作者提供原始清单，则使用 `MACO original 41`；若未提供，则按 MACO 论文 MDCI 规则构建 `MACO-aligned 41`。
+- 当前实验删除/后置：`SF110`、`ChatUniTest` 可运行实验、`w/o EvoSuite`、`w/o AssertionEnhancer`。
+- `EvoSuite` 降级为传统自动测试生成 baseline，不再作为 `Ours Full` 的内部模块。
+- 断言增强、Mutation Score、Assertion Quality 不作为当前主线指标，放入补充实验或 Future Work。
+- 当前保留的正式 baseline：`EvoSuite`、`RAG + LLM`、`Ours Full`。
+- 当前保留的核心消融：`w/o Knowledge Graph / LightRAG`、`w/o StaticGuard`、`w/o Feedback Repair`。
+- 下一步优先任务：
+  - 联系 MACO 作者获取原始 41 方法。
+  - 固定 Defects4J 主实验方法集。
+  - 实现测试运行通过率和覆盖率统计。
+  - 构建 MACO-aligned fallback。
 
 ## 2026-06-07 已完成的任务
 
@@ -100,7 +130,7 @@
 ## 使用提醒
 
 - 这份文件主要服务新开 Codex 对话时快速恢复上下文。
-- 本归档写在内层仓库 `D:\lunwen test\lunwen-test\AGENT.MD`。
-- 外层工作区也有一份同步归档：`D:\lunwen test\AGENT.MD`。
+- 本归档写在外层 `D:\lunwen test\AGENT.MD`。
+- 内层仓库也有一份同步归档：`D:\lunwen test\lunwen-test\AGENT.MD`。
 - 不包含 API key 或敏感配置。
 - 不要把外层 `D:\lunwen test` 和内层 `D:\lunwen test\lunwen-test` 混用：内层是实际推送到 GitHub 的仓库，外层是当前工作区归档位置。
