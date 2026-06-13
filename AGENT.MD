@@ -50,6 +50,10 @@
   - covered 数量与既有 runtime 结果 2/7 一致；新增 `coverage_failed` 需要保留日志原因。
   - 唯一 coverage_failed 方法：`testGetPublicMethodSecurityException`。
   - 原因：Defects4J/Ant coverage harness 抛出 `java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "setIO")`，导致 `Couldn't obtain coverage results!`。
+- 已完成 `ClassUtils.getShortClassName` 的 coverage 验证：
+  - `coverage_check_auto_getshortclassname_v1`。
+  - coverage 分类结果：0/13 covered，13/13 coverage_failed，coverage success rate 0.0%。
+  - 与既有 runtime 结果 0/13 一致，但需要继续定位 coverage_failed 的具体日志原因。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
@@ -183,7 +187,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成八个 pilot 类，其中三个全通过类、四个包含失败测试类、一个含 coverage_failed 分类；下一步先定位 `ClassUtils.getPublicMethod` 的 coverage_failed 日志，再继续剩余 pilot 类。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成九个 pilot 类，其中三个全通过类、四个包含失败测试类、两个含 coverage_failed 分类；下一步先定位 `ClassUtils.getShortClassName` 的 coverage_failed 日志，再跑最后一个 `ExtendedMessageFormat.applyPattern`。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。

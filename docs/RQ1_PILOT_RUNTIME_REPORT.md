@@ -178,7 +178,8 @@ The coverage runner was validated on three generated test classes whose runtime 
 | `StringUtils.substringsBetween` | `coverage_check_auto_substringsbetween_v1` | 15 | 18 | 83.3% | 1.5% | 0.9% |
 | `CsvEscaper.translate` | `coverage_check_auto_csvtranslate_v1` | 5 | 7 | 71.4% | 63.6% | 16.7% |
 | `ClassUtils.getPublicMethod` | `coverage_check_auto_getpublicmethod_v1` | 2 | 7 | 28.6% | 11.7% | 0.4% |
-| **Total** |  | **128** | **144** | **88.9%** |  |  |
+| `ClassUtils.getShortClassName` | `coverage_check_auto_getshortclassname_v1` | 0 | 13 | 0.0% |  |  |
+| **Total** |  | **128** | **157** | **81.5%** |  |  |
 
 The successful two-class evidence package is:
 
@@ -211,6 +212,8 @@ java.security.AccessControlException: access denied ("java.lang.RuntimePermissio
 Couldn't obtain coverage results!
 ```
 
+The `ClassUtils.getShortClassName` run produced `0 covered` and `13 coverage_failed`, matching its earlier runtime result of 0/13 at the covered-count level. The specific coverage failure cause still needs to be preserved from the per-method coverage logs.
+
 The single failed coverage method was:
 
 ```text
@@ -236,7 +239,7 @@ The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified successful coverage collection, failure-aware classification, and one coverage-command failure across eight generated test classes.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified successful coverage collection, failure-aware classification, and coverage-command failures across nine generated test classes.
 
 ## Next Step
 
