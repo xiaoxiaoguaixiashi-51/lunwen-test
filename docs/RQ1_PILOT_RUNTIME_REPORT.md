@@ -176,7 +176,8 @@ The coverage runner was validated on three generated test classes whose runtime 
 | `NumberUtils.createNumber` | `coverage_check_auto_createnumber_v1` | 40 | 41 | 97.6% | 17.1% | 9.5% |
 | `NumberUtils.createBigInteger` | `coverage_check_auto_createbiginteger_v1` | 20 | 25 | 80.0% | 8.5% | 2.4% |
 | `StringUtils.substringsBetween` | `coverage_check_auto_substringsbetween_v1` | 15 | 18 | 83.3% | 1.5% | 0.9% |
-| **Total** |  | **121** | **130** | **93.1%** |  |  |
+| `CsvEscaper.translate` | `coverage_check_auto_csvtranslate_v1` | 5 | 7 | 71.4% | 63.6% | 16.7% |
+| **Total** |  | **126** | **137** | **92.0%** |  |  |
 
 The successful two-class evidence package is:
 
@@ -191,6 +192,8 @@ The `NumberUtils.createNumber` run produced `40 covered` and `1 test_failed`. Th
 The `NumberUtils.createBigInteger` run produced `20 covered` and `5 test_failed`. This also matches its earlier runtime result of 20/25, adding a second failure-aware coverage validation case.
 
 The `StringUtils.substringsBetween` run produced `15 covered` and `3 test_failed`, matching its earlier runtime result of 15/18 and adding a third failure-aware coverage validation case.
+
+The `CsvEscaper.translate` run produced `5 covered` and `2 test_failed`, matching its earlier runtime result of 5/7. It also produced the highest max line coverage observed so far in the automated coverage runs: 63.6%.
 
 The single failed coverage method was:
 
@@ -217,7 +220,7 @@ The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified both successful coverage collection and failure-aware classification across six generated test classes.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified both successful coverage collection and failure-aware classification across seven generated test classes.
 
 ## Next Step
 
