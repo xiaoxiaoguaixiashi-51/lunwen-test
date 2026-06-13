@@ -198,6 +198,19 @@ The `CsvEscaper.translate` run produced `5 covered` and `2 test_failed`, matchin
 
 The `ClassUtils.getPublicMethod` run produced `2 covered`, `4 test_failed`, and `1 coverage_failed`. The `covered` count matches its earlier runtime result of 2/7; the single `coverage_failed` case should be preserved as separate infrastructure/harness evidence.
 
+The single `coverage_failed` method was:
+
+```text
+org.apache.commons.lang3.D4jGeneratedClassUtilsGetPublicMethodTest::testGetPublicMethodSecurityException
+```
+
+The test itself executed without JUnit failures, but Defects4J/Ant failed while obtaining coverage results:
+
+```text
+java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "setIO")
+Couldn't obtain coverage results!
+```
+
 The single failed coverage method was:
 
 ```text
