@@ -54,6 +54,7 @@
   - `coverage_check_auto_getshortclassname_v1`。
   - coverage 分类结果：0/13 covered，13/13 coverage_failed，coverage success rate 0.0%。
   - 与既有 runtime 结果 0/13 一致，但需要继续定位 coverage_failed 的具体日志原因。
+  - 典型原因：测试编译阶段失败，`diamond operator is not supported in -source 6`，属于 Defects4J Lang-1b Java source-level 兼容性问题。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。

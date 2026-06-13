@@ -212,7 +212,14 @@ java.security.AccessControlException: access denied ("java.lang.RuntimePermissio
 Couldn't obtain coverage results!
 ```
 
-The `ClassUtils.getShortClassName` run produced `0 covered` and `13 coverage_failed`, matching its earlier runtime result of 0/13 at the covered-count level. The specific coverage failure cause still needs to be preserved from the per-method coverage logs.
+The `ClassUtils.getShortClassName` run produced `0 covered` and `13 coverage_failed`, matching its earlier runtime result of 0/13 at the covered-count level. A representative failure occurs during test compilation:
+
+```text
+diamond operator is not supported in -source 6
+Cannot compile test suite!
+```
+
+This is a Defects4J `Lang-1b` source-level compatibility issue rather than a coverage parser issue.
 
 The single failed coverage method was:
 
