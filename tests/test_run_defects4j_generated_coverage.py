@@ -18,10 +18,11 @@ from scripts.run_defects4j_generated_tests import GeneratedTest
 
 class RunDefects4jGeneratedCoverageTest(unittest.TestCase):
     def test_build_coverage_command_with_instrument_file(self):
+        instrument_file = Path("/tmp/instrument.txt")
         cmd = build_coverage_command(
             "org.example.D4jGeneratedExampleTest",
             "test_one",
-            Path("/tmp/instrument.txt"),
+            instrument_file,
         )
 
         self.assertEqual(
@@ -31,7 +32,7 @@ class RunDefects4jGeneratedCoverageTest(unittest.TestCase):
                 "-t",
                 "org.example.D4jGeneratedExampleTest::test_one",
                 "-i",
-                str(Path("/tmp/instrument.txt")),
+                str(instrument_file.resolve()),
             ],
             cmd,
         )

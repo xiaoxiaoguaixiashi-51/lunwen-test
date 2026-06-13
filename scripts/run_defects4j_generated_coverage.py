@@ -115,7 +115,7 @@ def filter_generated_tests(generated_tests: list[GeneratedTest], include_class_n
 def build_coverage_command(test_class: str, test_method: str, instrument_file: Path | None = None) -> list[str]:
     cmd = ["defects4j", "coverage", "-t", f"{test_class}::{test_method}"]
     if instrument_file:
-        cmd.extend(["-i", str(instrument_file)])
+        cmd.extend(["-i", str(instrument_file.resolve())])
     return cmd
 
 
