@@ -175,7 +175,8 @@ The coverage runner was validated on three generated test classes whose runtime 
 | `StringUtils.getLevenshteinDistance` | `coverage_check_auto_levenshtein_v1` | 13 | 13 | 100.0% | 1.9% | 1.1% |
 | `NumberUtils.createNumber` | `coverage_check_auto_createnumber_v1` | 40 | 41 | 97.6% | 17.1% | 9.5% |
 | `NumberUtils.createBigInteger` | `coverage_check_auto_createbiginteger_v1` | 20 | 25 | 80.0% | 8.5% | 2.4% |
-| **Total** |  | **106** | **112** | **94.6%** |  |  |
+| `StringUtils.substringsBetween` | `coverage_check_auto_substringsbetween_v1` | 15 | 18 | 83.3% | 1.5% | 0.9% |
+| **Total** |  | **121** | **130** | **93.1%** |  |  |
 
 The successful two-class evidence package is:
 
@@ -188,6 +189,8 @@ Important implementation note: the Defects4J coverage runner now passes the inst
 The `NumberUtils.createNumber` run produced `40 covered` and `1 test_failed`. This matches its earlier runtime result of 40/41 and confirms that the coverage runner preserves test-failure classification instead of treating every completed Defects4J coverage command as successful coverage.
 
 The `NumberUtils.createBigInteger` run produced `20 covered` and `5 test_failed`. This also matches its earlier runtime result of 20/25, adding a second failure-aware coverage validation case.
+
+The `StringUtils.substringsBetween` run produced `15 covered` and `3 test_failed`, matching its earlier runtime result of 15/18 and adding a third failure-aware coverage validation case.
 
 The single failed coverage method was:
 
@@ -214,7 +217,7 @@ The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified both successful coverage collection and failure-aware classification across five generated test classes.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified both successful coverage collection and failure-aware classification across six generated test classes.
 
 ## Next Step
 

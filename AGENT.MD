@@ -33,6 +33,11 @@
   - coverage 分类结果：20/25 covered，5/25 test_failed，coverage success rate 80.0%。
   - max line coverage 8.5%，max condition coverage 2.4%。
   - coverage 分类与既有 runtime 结果 20/25 一致。
+- 已完成第三个包含 runtime 失败测试的 coverage 验证：
+  - `StringUtils.substringsBetween`：`coverage_check_auto_substringsbetween_v1`。
+  - coverage 分类结果：15/18 covered，3/18 test_failed，coverage success rate 83.3%。
+  - max line coverage 1.5%，max condition coverage 0.9%。
+  - coverage 分类与既有 runtime 结果 15/18 一致。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
@@ -148,7 +153,7 @@
   - 符号缺失。
   - Java 兼容性 warning。
 - 当前结果证明真实 Defects4J 方法上的“生成、编译、反馈修复”链路已打通。
-- 目前已验证到 compilation success、runtime pass rate、一个方法类的手动 coverage pilot、三个 runtime 100% 方法类的自动化 coverage，以及两个包含失败测试类的 failure-aware coverage；后续还需要扩展覆盖率统计、断言质量和 mutation score。
+- 目前已验证到 compilation success、runtime pass rate、一个方法类的手动 coverage pilot、三个 runtime 100% 方法类的自动化 coverage，以及三个包含失败测试类的 failure-aware coverage；后续还需要扩展覆盖率统计、断言质量和 mutation score。
 
 ## 当前进度判断
 
@@ -166,7 +171,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成三个稳定类和两个 NumberUtils failure-aware coverage，下一步可继续分批覆盖剩余 pilot 类。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成六个 pilot 类，其中三个全通过类、三个包含失败测试类；下一步可继续分批覆盖剩余 pilot 类。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。
