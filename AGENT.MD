@@ -21,6 +21,11 @@
 - 已完成第三类生成测试的自动化 coverage：
   - `StringUtils.getLevenshteinDistance`：`coverage_check_auto_levenshtein_v1`，13/13 coverage commands success，max line coverage 1.9%，max condition coverage 1.1%。
   - 三个 runtime 100% 类合计：46/46 coverage commands success。
+- 已完成首个包含 runtime 失败测试的 coverage 验证：
+  - `NumberUtils.createNumber`：`coverage_check_auto_createnumber_v1`。
+  - coverage 分类结果：40/41 covered，1/41 test_failed，coverage success rate 97.6%。
+  - max line coverage 17.1%，max condition coverage 9.5%。
+  - coverage 分类与既有 runtime 结果 40/41 一致，证明 runner 能区分覆盖率成功和测试失败。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
@@ -136,7 +141,7 @@
   - 符号缺失。
   - Java 兼容性 warning。
 - 当前结果证明真实 Defects4J 方法上的“生成、编译、反馈修复”链路已打通。
-- 目前已验证到 compilation success、runtime pass rate、一个方法类的手动 coverage pilot，以及三个 runtime 100% 方法类的自动化 coverage；后续还需要扩展覆盖率统计、断言质量和 mutation score。
+- 目前已验证到 compilation success、runtime pass rate、一个方法类的手动 coverage pilot、三个 runtime 100% 方法类的自动化 coverage，以及一个包含失败测试类的 failure-aware coverage；后续还需要扩展覆盖率统计、断言质量和 mutation score。
 
 ## 当前进度判断
 
@@ -154,7 +159,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成 `LocaleUtils`、`DateUtils` 与 `StringUtils.getLevenshteinDistance` 三个稳定类，下一步可进入非 100% runtime 类的分批 coverage。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成三个稳定类和 `NumberUtils.createNumber` failure-aware coverage，下一步可继续分批覆盖剩余 pilot 类。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。
@@ -169,7 +174,7 @@
    - `experiments/runs/rq1_pilot_real_v2/summary_table.md`
 2. 生成 `rq1_pilot_real_v2` 结果分析表。
 3. 补一个 failure/repair reason 聚合脚本或手工表。
-4. 扩展 coverage pilot：下一步选择 runtime 40/41 的 `NumberUtils.createNumber`，验证 coverage runner 对包含失败测试的类是否能正确统计。
+4. 扩展 coverage pilot：定位 `NumberUtils.createNumber` 唯一 test_failed 方法并保存证据，然后继续覆盖剩余 pilot 类。
 5. 为导师展示整理 6 页左右材料。
 
 ## 使用提醒

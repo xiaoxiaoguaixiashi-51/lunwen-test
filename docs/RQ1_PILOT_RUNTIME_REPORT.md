@@ -173,7 +173,8 @@ The coverage runner was validated on three generated test classes whose runtime 
 | `LocaleUtils.toLocale` | `coverage_check_auto_v4` | 25 | 25 | 100.0% | 21.4% | 20.8% |
 | `DateUtils.isSameLocalTime` | `coverage_check_auto_dateutils_v1` | 8 | 8 | 100.0% | 3.1% | 4.5% |
 | `StringUtils.getLevenshteinDistance` | `coverage_check_auto_levenshtein_v1` | 13 | 13 | 100.0% | 1.9% | 1.1% |
-| **Total** |  | **46** | **46** | **100.0%** |  |  |
+| `NumberUtils.createNumber` | `coverage_check_auto_createnumber_v1` | 40 | 41 | 97.6% | 17.1% | 9.5% |
+| **Total** |  | **86** | **87** | **98.9%** |  |  |
 
 The successful two-class evidence package is:
 
@@ -183,17 +184,19 @@ The successful two-class evidence package is:
 
 Important implementation note: the Defects4J coverage runner now passes the instrument classes file as an absolute path. This is required because Defects4J executes inside the checked-out project directory, not the `/root/lunwen-test` repository directory.
 
+The `NumberUtils.createNumber` run produced `40 covered` and `1 test_failed`. This matches its earlier runtime result of 40/41 and confirms that the coverage runner preserves test-failure classification instead of treating every completed Defects4J coverage command as successful coverage.
+
 ## Current Interpretation
 
 The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified the measurement chain on three generated test classes.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified both successful coverage collection and failure-aware classification across four generated test classes.
 
 ## Next Step
 
 Keep the current result as the first runtime-validated pilot evidence. The next mainline task is to:
 
-- extend coverage measurement to `NumberUtils.createNumber`, whose runtime result is 40/41, to validate failure-aware coverage classification, then
-- decide whether to run coverage for all 10 current pilot classes in batches before expanding to a larger Defects4J method set.
+- identify and preserve the single `NumberUtils.createNumber` coverage failure, then
+- run coverage for the remaining current pilot classes in batches before expanding to a larger Defects4J method set.
