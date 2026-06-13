@@ -24,11 +24,20 @@ Coverage pilot evidence package:
 /root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz
 ```
 
+Automated coverage evidence packages:
+
+```text
+/root/rq1_pilot_real_v2_coverage_auto_v4_20260613.tar.gz
+/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz
+```
+
 Package size observed on AutoDL:
 
 ```text
 runtime: 190K
 coverage pilot: 22K
+coverage auto LocaleUtils: 60K
+coverage auto two classes: 61K
 ```
 
 ## Compilation Result
@@ -155,17 +164,34 @@ Expected outputs:
 - `experiments/runs/rq1_pilot_real_v2/coverage_check_auto_v1/coverage_summary.md`
 - `experiments/runs/rq1_pilot_real_v2/coverage_check_auto_v1/coverage_class_summary.md`
 
+## Automated Coverage Result
+
+The coverage runner was validated on two generated test classes whose runtime pass rate was 100%.
+
+| focal method | output_dir | covered | total | coverage_success_rate | max_line_coverage | max_condition_coverage |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| `LocaleUtils.toLocale` | `coverage_check_auto_v4` | 25 | 25 | 100.0% | 21.4% | 20.8% |
+| `DateUtils.isSameLocalTime` | `coverage_check_auto_dateutils_v1` | 8 | 8 | 100.0% | 3.1% | 4.5% |
+
+The successful two-class evidence package is:
+
+```text
+/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz
+```
+
+Important implementation note: the Defects4J coverage runner now passes the instrument classes file as an absolute path. This is required because Defects4J executes inside the checked-out project directory, not the `/root/lunwen-test` repository directory.
+
 ## Current Interpretation
 
 The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified the measurement chain on one generated test class.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified the measurement chain on two generated test classes.
 
 ## Next Step
 
 Keep the current result as the first runtime-validated pilot evidence. The next mainline task is to:
 
-- extend coverage measurement from the `LocaleUtils.toLocale` pilot to class-level or aggregate coverage for the current 10-method pilot, then
-- expand runtime and coverage validation to a larger Defects4J method set.
+- extend coverage measurement to the next runtime-stable generated test class, such as `StringUtils.getLevenshteinDistance`, then
+- decide whether to run coverage for all 10 current pilot classes in batches before expanding to a larger Defects4J method set.
