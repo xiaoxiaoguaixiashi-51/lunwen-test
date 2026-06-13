@@ -224,6 +224,26 @@ This is a Defects4J `Lang-1b` source-level compatibility issue rather than a cov
 
 The `ExtendedMessageFormat.applyPattern` run produced `0 covered` and `13 coverage_failed`, also matching its earlier runtime result of 0/13 at the covered-count level.
 
+Final coverage summary outputs:
+
+```text
+experiments/runs/rq1_pilot_real_v2/coverage_final_summary.csv
+experiments/runs/rq1_pilot_real_v2/coverage_final_summary.md
+```
+
+Final status totals:
+
+| status | count |
+| --- | ---: |
+| covered | 128 |
+| test_failed | 15 |
+| coverage_failed | 27 |
+| environment_error | 0 |
+| timeout | 0 |
+| total | 170 |
+
+The maximum observed line coverage was 63.6%, and the maximum observed condition coverage was 20.8%.
+
 The single failed coverage method was:
 
 ```text

@@ -61,6 +61,11 @@
 - 当前 10/10 个 RQ1 pilot 类的 coverage 已全部跑完：
   - covered 合计：128/170，coverage success rate 75.3%。
   - 这个 covered 计数与 runtime pass rate 128/170 一致。
+- 已生成最终 coverage 总表：
+  - `experiments/runs/rq1_pilot_real_v2/coverage_final_summary.csv`
+  - `experiments/runs/rq1_pilot_real_v2/coverage_final_summary.md`
+  - 总计：128 covered，15 test_failed，27 coverage_failed，0 environment_error，0 timeout，total 170，coverage success rate 75.3%。
+  - max line coverage：63.6%；max condition coverage：20.8%。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
@@ -194,7 +199,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，当前 10 个 pilot 类已全部完成；下一步固定最终 coverage 证据包，并整理最终汇总表/图表材料。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，当前 10 个 pilot 类已全部完成；最终 coverage 总表已生成，下一步整理图表/汇报材料。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。
