@@ -166,12 +166,14 @@ Expected outputs:
 
 ## Automated Coverage Result
 
-The coverage runner was validated on two generated test classes whose runtime pass rate was 100%.
+The coverage runner was validated on three generated test classes whose runtime pass rate was 100%.
 
 | focal method | output_dir | covered | total | coverage_success_rate | max_line_coverage | max_condition_coverage |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | `LocaleUtils.toLocale` | `coverage_check_auto_v4` | 25 | 25 | 100.0% | 21.4% | 20.8% |
 | `DateUtils.isSameLocalTime` | `coverage_check_auto_dateutils_v1` | 8 | 8 | 100.0% | 3.1% | 4.5% |
+| `StringUtils.getLevenshteinDistance` | `coverage_check_auto_levenshtein_v1` | 13 | 13 | 100.0% | 1.9% | 1.1% |
+| **Total** |  | **46** | **46** | **100.0%** |  |  |
 
 The successful two-class evidence package is:
 
@@ -187,11 +189,11 @@ The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified the measurement chain on two generated test classes.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified the measurement chain on three generated test classes.
 
 ## Next Step
 
 Keep the current result as the first runtime-validated pilot evidence. The next mainline task is to:
 
-- extend coverage measurement to the next runtime-stable generated test class, such as `StringUtils.getLevenshteinDistance`, then
+- extend coverage measurement to `NumberUtils.createNumber`, whose runtime result is 40/41, to validate failure-aware coverage classification, then
 - decide whether to run coverage for all 10 current pilot classes in batches before expanding to a larger Defects4J method set.

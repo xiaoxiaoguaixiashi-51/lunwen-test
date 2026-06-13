@@ -18,6 +18,9 @@
 - 已完成两类生成测试的自动化 coverage 复现：
   - `LocaleUtils.toLocale`：`coverage_check_auto_v4`，25/25 coverage commands success，max line coverage 21.4%，max condition coverage 20.8%。
   - `DateUtils.isSameLocalTime`：`coverage_check_auto_dateutils_v1`，8/8 coverage commands success，max line coverage 3.1%，max condition coverage 4.5%。
+- 已完成第三类生成测试的自动化 coverage：
+  - `StringUtils.getLevenshteinDistance`：`coverage_check_auto_levenshtein_v1`，13/13 coverage commands success，max line coverage 1.9%，max condition coverage 1.1%。
+  - 三个 runtime 100% 类合计：46/46 coverage commands success。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
@@ -133,7 +136,7 @@
   - 符号缺失。
   - Java 兼容性 warning。
 - 当前结果证明真实 Defects4J 方法上的“生成、编译、反馈修复”链路已打通。
-- 目前已验证到 compilation success、runtime pass rate、一个方法类的手动 coverage pilot，以及两个 runtime 100% 方法类的自动化 coverage；后续还需要扩展覆盖率统计、断言质量和 mutation score。
+- 目前已验证到 compilation success、runtime pass rate、一个方法类的手动 coverage pilot，以及三个 runtime 100% 方法类的自动化 coverage；后续还需要扩展覆盖率统计、断言质量和 mutation score。
 
 ## 当前进度判断
 
@@ -151,7 +154,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成 `LocaleUtils` 与 `DateUtils` 两个稳定类，下一步可继续扩展到 `StringUtils.getLevenshteinDistance` 或尝试当前 10 类的分批 coverage。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成 `LocaleUtils`、`DateUtils` 与 `StringUtils.getLevenshteinDistance` 三个稳定类，下一步可进入非 100% runtime 类的分批 coverage。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。
@@ -166,7 +169,7 @@
    - `experiments/runs/rq1_pilot_real_v2/summary_table.md`
 2. 生成 `rq1_pilot_real_v2` 结果分析表。
 3. 补一个 failure/repair reason 聚合脚本或手工表。
-4. 扩展 coverage pilot：优先继续跑 runtime 100% 的 `StringUtils.getLevenshteinDistance`，再决定是否覆盖全部 10 个方法类。
+4. 扩展 coverage pilot：下一步选择 runtime 40/41 的 `NumberUtils.createNumber`，验证 coverage runner 对包含失败测试的类是否能正确统计。
 5. 为导师展示整理 6 页左右材料。
 
 ## 使用提醒
