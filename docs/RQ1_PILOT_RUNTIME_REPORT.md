@@ -179,7 +179,8 @@ The coverage runner was validated on three generated test classes whose runtime 
 | `CsvEscaper.translate` | `coverage_check_auto_csvtranslate_v1` | 5 | 7 | 71.4% | 63.6% | 16.7% |
 | `ClassUtils.getPublicMethod` | `coverage_check_auto_getpublicmethod_v1` | 2 | 7 | 28.6% | 11.7% | 0.4% |
 | `ClassUtils.getShortClassName` | `coverage_check_auto_getshortclassname_v1` | 0 | 13 | 0.0% |  |  |
-| **Total** |  | **128** | **157** | **81.5%** |  |  |
+| `ExtendedMessageFormat.applyPattern` | `coverage_check_auto_applypattern_v1` | 0 | 13 | 0.0% |  |  |
+| **Total** |  | **128** | **170** | **75.3%** |  |  |
 
 The successful two-class evidence package is:
 
@@ -221,6 +222,8 @@ Cannot compile test suite!
 
 This is a Defects4J `Lang-1b` source-level compatibility issue rather than a coverage parser issue.
 
+The `ExtendedMessageFormat.applyPattern` run produced `0 covered` and `13 coverage_failed`, also matching its earlier runtime result of 0/13 at the covered-count level.
+
 The single failed coverage method was:
 
 ```text
@@ -246,11 +249,11 @@ The current pilot supports two claims:
 
 1. The generation, compilation, and feedback-repair chain is working on real Defects4J methods.
 2. Compilation success alone is not sufficient; runtime validation exposes additional issues from project source-level constraints, test harness behavior, and behavioral oracle mismatches.
-3. Defects4J coverage is usable for this pipeline, and the current pilot has verified successful coverage collection, failure-aware classification, and coverage-command failures across nine generated test classes.
+3. Defects4J coverage is usable for this pipeline, and the current pilot has verified successful coverage collection, failure-aware classification, and coverage-command failures across all 10 generated test classes.
 
 ## Next Step
 
 Keep the current result as the first runtime-validated pilot evidence. The next mainline task is to:
 
-- identify and preserve the single `NumberUtils.createNumber` coverage failure, then
-- run coverage for the remaining current pilot classes in batches before expanding to a larger Defects4J method set.
+- preserve the final 10-class coverage evidence package, then
+- prepare a compact summary table or visualization for reporting before expanding to a larger Defects4J method set.

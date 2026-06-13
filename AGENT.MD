@@ -55,6 +55,12 @@
   - coverage 分类结果：0/13 covered，13/13 coverage_failed，coverage success rate 0.0%。
   - 与既有 runtime 结果 0/13 一致，但需要继续定位 coverage_failed 的具体日志原因。
   - 典型原因：测试编译阶段失败，`diamond operator is not supported in -source 6`，属于 Defects4J Lang-1b Java source-level 兼容性问题。
+- 已完成最后一个 pilot 类 `ExtendedMessageFormat.applyPattern` 的 coverage 验证：
+  - `coverage_check_auto_applypattern_v1`。
+  - coverage 分类结果：0/13 covered，13/13 coverage_failed，coverage success rate 0.0%。
+- 当前 10/10 个 RQ1 pilot 类的 coverage 已全部跑完：
+  - covered 合计：128/170，coverage success rate 75.3%。
+  - 这个 covered 计数与 runtime pass rate 128/170 一致。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
@@ -188,7 +194,7 @@
 
 - 生成 RQ1 real pilot v2 结果分析表：方法、DCCI、生成长度、修复轮数、是否成功、修复/失败原因。
 - 补充测试运行阶段，不只停在 `javac` 编译成功。
-- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，目前已完成九个 pilot 类，其中三个全通过类、四个包含失败测试类、两个含 coverage_failed 分类；下一步先定位 `ClassUtils.getShortClassName` 的 coverage_failed 日志，再跑最后一个 `ExtendedMessageFormat.applyPattern`。
+- 扩展覆盖率统计：优先沿用 Defects4J 自带 `coverage`，当前 10 个 pilot 类已全部完成；下一步固定最终 coverage 证据包，并整理最终汇总表/图表材料。
 - 设计断言质量统计字段。
 - 后续再接 PIT mutation score。
 - 扩展真实数据集：Defects4J 更多项目、MACO 41、SF110。
