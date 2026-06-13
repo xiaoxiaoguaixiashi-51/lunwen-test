@@ -186,6 +186,25 @@ Important implementation note: the Defects4J coverage runner now passes the inst
 
 The `NumberUtils.createNumber` run produced `40 covered` and `1 test_failed`. This matches its earlier runtime result of 40/41 and confirms that the coverage runner preserves test-failure classification instead of treating every completed Defects4J coverage command as successful coverage.
 
+The single failed coverage method was:
+
+```text
+org.apache.commons.lang3.math.D4jGeneratedNumberUtilsCreateNumberTest::test_suffix_D_infinite_falls_to_big_decimal
+```
+
+It still produced coverage metrics:
+
+```text
+Lines covered: 54/375 = 14.4%
+Conditions covered: 23/338 = 6.8%
+```
+
+Defects4J also emitted:
+
+```text
+WARNING: Some tests failed (see /root/defects4j-work/Lang-1b/failing_tests)!
+```
+
 ## Current Interpretation
 
 The current pilot supports two claims:

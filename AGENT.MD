@@ -26,6 +26,8 @@
   - coverage 分类结果：40/41 covered，1/41 test_failed，coverage success rate 97.6%。
   - max line coverage 17.1%，max condition coverage 9.5%。
   - coverage 分类与既有 runtime 结果 40/41 一致，证明 runner 能区分覆盖率成功和测试失败。
+  - 唯一失败方法：`test_suffix_D_infinite_falls_to_big_decimal`。
+  - 该失败方法仍产生覆盖率指标：line coverage 14.4%，condition coverage 6.8%，但 Defects4J 输出 `WARNING: Some tests failed`。
 - 已固定两类自动化 coverage 证据包：`/root/rq1_pilot_real_v2_coverage_two_classes_20260613.tar.gz`，大小约 61K。
 - 当前 coverage 证据分层：
   - `/root/rq1_pilot_real_v2_coverage_pilot_20260612.tar.gz`：手动 coverage pilot。
