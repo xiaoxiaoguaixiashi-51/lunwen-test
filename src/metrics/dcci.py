@@ -112,10 +112,16 @@ def score_method(target: str, method: str | None = None) -> dict:
     }
 
 
-def score_method_list(items: list[dict]) -> list[dict]:
+def score_method_list(items: list[dict], skip_errors: bool = False) -> list[dict]:
     scored = []
     for item in items:
-        result = score_method(item["target"], item.get("method"))
+        try:
+            result = score_method(item["target"], item.get("method"))
+        except Exception as exc:
+            if not skip_errors:
+                raise
+            scored.append({**item, "dcci_error": f"{type(exc).__name__}: {exc}"})
+            continue
         scored.append({**item, **result})
     return scored
 
@@ -126,11 +132,12 @@ def main():
     parser.add_argument("--method", help="Target method name")
     parser.add_argument("--input", help="Input method-list JSON")
     parser.add_argument("--output", help="Output scored JSON")
+    parser.add_argument("--skip-errors", action="store_true", help="Keep scoring remaining methods after parse errors")
     args = parser.parse_args()
 
     if args.input:
         items = json.loads(Path(args.input).read_text(encoding="utf-8"))
-        result = score_method_list(items)
+        result = score_method_list(items, skip_errors=args.skip_errors)
     elif args.target:
         result = score_method(args.target, args.method)
     else:
