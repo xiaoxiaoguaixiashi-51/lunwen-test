@@ -1,5 +1,6 @@
 """GenerationAgent：根据测试计划生成 Java 单元测试代码。"""
 
+import os
 import json
 from src.core.llm_client import LLMClient
 from src.utils.llm_output import extract_fenced_block
@@ -153,9 +154,14 @@ class GenerationAgent:
     def _prompts_for_source(self, source_file: str = None) -> tuple[str, str]:
         """Select test framework guidance from the target project context."""
         if source_file and self._looks_like_defects4j(source_file):
-            return JUNIT4_SYSTEM_PROMPT + "\n" + DEFECTS4J_JAVA6_COMPATIBILITY_PROMPT, "JUnit 4"
+            if self._java6_guard_enabled():
+                return JUNIT4_SYSTEM_PROMPT + "\n" + DEFECTS4J_JAVA6_COMPATIBILITY_PROMPT, "JUnit 4"
+            return JUNIT4_SYSTEM_PROMPT, "JUnit 4"
         return JUNIT5_SYSTEM_PROMPT, "JUnit 5"
 
     def _looks_like_defects4j(self, source_file: str) -> bool:
         normalized = source_file.replace("\\", "/").lower()
         return "/defects4j-work/" in normalized or "/defects4j/" in normalized
+
+    def _java6_guard_enabled(self) -> bool:
+        return os.environ.get("LUNWEN_ENABLE_JAVA6_GUARD", "").lower() in {"1", "true", "yes", "on"}

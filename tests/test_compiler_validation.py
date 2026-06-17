@@ -1,5 +1,6 @@
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from src.utils.compiler import JavaCompiler
 
@@ -44,10 +45,11 @@ public class ExampleTest {
     private Map<String, String> values = new HashMap<>();
 }
 """
-        result = JavaCompiler().compile_test(
-            code,
-            source_file="/root/defects4j-work/Lang-1b/src/main/java/org/apache/commons/lang3/StringUtils.java",
-        )
+        with patch.dict("os.environ", {"LUNWEN_ENABLE_JAVA6_GUARD": "1"}):
+            result = JavaCompiler().compile_test(
+                code,
+                source_file="/root/defects4j-work/Lang-1b/src/main/java/org/apache/commons/lang3/StringUtils.java",
+            )
 
         self.assertFalse(result.success)
         self.assertIn("Java 6 source-compatible", result.errors)

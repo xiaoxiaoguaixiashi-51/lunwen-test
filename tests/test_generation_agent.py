@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 
 from src.agents.generation_agent import GenerationAgent
 
@@ -36,6 +37,16 @@ class GenerationAgentTest(unittest.TestCase):
         self.assertIn("JUnit 4", system_prompt)
         self.assertIn("JUnit 4", user_prompt)
         self.assertIn("禁止 import org.junit.jupiter.api", system_prompt)
+        self.assertNotIn("Java 6 source-compatible", system_prompt)
+
+    def test_java6_guard_prompt_is_opt_in_for_defects4j(self):
+        llm = RecordingLLM()
+        agent = GenerationAgent(llm)
+
+        with patch.dict("os.environ", {"LUNWEN_ENABLE_JAVA6_GUARD": "1"}):
+            agent.generate({}, "class Example {}", {}, source_file="/root/defects4j-work/Lang-1b/src/main/java/Example.java")
+
+        system_prompt, _, _ = llm.calls[0]
         self.assertIn("Java 6 source-compatible", system_prompt)
         self.assertIn("diamond operators", system_prompt)
 

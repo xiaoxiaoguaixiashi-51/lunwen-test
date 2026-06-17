@@ -155,6 +155,9 @@ class JavaCompiler:
         return None
 
     def _requires_java6_compatibility(self, source_file: str) -> bool:
+        enabled = os.environ.get("LUNWEN_ENABLE_JAVA6_GUARD", "").lower() in {"1", "true", "yes", "on"}
+        if not enabled:
+            return False
         normalized = str(source_file).replace("\\", "/").lower()
         return "/defects4j-work/" in normalized and "/lang-1b/" in normalized
 
