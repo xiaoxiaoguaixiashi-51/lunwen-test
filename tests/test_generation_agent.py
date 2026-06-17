@@ -36,6 +36,8 @@ class GenerationAgentTest(unittest.TestCase):
         self.assertIn("JUnit 4", system_prompt)
         self.assertIn("JUnit 4", user_prompt)
         self.assertIn("禁止 import org.junit.jupiter.api", system_prompt)
+        self.assertIn("Java 6 source-compatible", system_prompt)
+        self.assertIn("diamond operators", system_prompt)
 
     def test_fix_prompt_keeps_junit4_constraint_for_defects4j(self):
         llm = RecordingLLM()

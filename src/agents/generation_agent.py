@@ -33,6 +33,16 @@ JUNIT4_SYSTEM_PROMPT = """你是一个 Java 单元测试代码生成专家。你
 只输出完整的 Java 测试类代码。不要输出解释文字，不要省略任何 import、方法体或结尾大括号。"""
 
 
+DEFECTS4J_JAVA6_COMPATIBILITY_PROMPT = """
+Defects4J Lang-1b compatibility requirements:
+1. Generate Java 6 source-compatible JUnit 4 code.
+2. Do not use diamond operators such as new HashMap<>() or new ArrayList<>().
+3. Do not use lambdas, method references, var, try-with-resources, multi-catch, or JUnit 5 APIs.
+4. Use explicit generic types, for example new HashMap<String, Object>().
+5. Prefer simple loops and anonymous classes when needed.
+"""
+
+
 USER_PROMPT_TEMPLATE = """## 测试框架
 
 {test_framework}
@@ -143,7 +153,7 @@ class GenerationAgent:
     def _prompts_for_source(self, source_file: str = None) -> tuple[str, str]:
         """Select test framework guidance from the target project context."""
         if source_file and self._looks_like_defects4j(source_file):
-            return JUNIT4_SYSTEM_PROMPT, "JUnit 4"
+            return JUNIT4_SYSTEM_PROMPT + "\n" + DEFECTS4J_JAVA6_COMPATIBILITY_PROMPT, "JUnit 4"
         return JUNIT5_SYSTEM_PROMPT, "JUnit 5"
 
     def _looks_like_defects4j(self, source_file: str) -> bool:

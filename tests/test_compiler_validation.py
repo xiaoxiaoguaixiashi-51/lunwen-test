@@ -37,6 +37,22 @@ class CompilerValidationTest(unittest.TestCase):
         self.assertIn("/repo/junit.jar", cp_parts)
         self.assertIn("/repo/mockito.jar", cp_parts)
 
+    def test_defects4j_lang_rejects_java7_diamond_operator(self):
+        code = """
+import java.util.*;
+public class ExampleTest {
+    private Map<String, String> values = new HashMap<>();
+}
+"""
+        result = JavaCompiler().compile_test(
+            code,
+            source_file="/root/defects4j-work/Lang-1b/src/main/java/org/apache/commons/lang3/StringUtils.java",
+        )
+
+        self.assertFalse(result.success)
+        self.assertIn("Java 6 source-compatible", result.errors)
+        self.assertIn("diamond_operator", result.errors)
+
 
 if __name__ == "__main__":
     unittest.main()

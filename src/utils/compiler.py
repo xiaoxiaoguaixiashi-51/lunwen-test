@@ -6,6 +6,8 @@ import os
 from pathlib import Path
 from dataclasses import dataclass
 
+from src.utils.java_compat import format_java6_compatibility_errors
+
 
 @dataclass
 class CompileResult:
@@ -103,6 +105,16 @@ class JavaCompiler:
                 return_code=-1,
             )
 
+        if source_file and self._requires_java6_compatibility(source_file):
+            compatibility_errors = format_java6_compatibility_errors(test_code)
+            if compatibility_errors:
+                return CompileResult(
+                    success=False,
+                    output="",
+                    errors=compatibility_errors,
+                    return_code=2,
+                )
+
         # 写入临时文件
         with tempfile.TemporaryDirectory() as tmpdir:
             test_file = Path(tmpdir) / f"{class_name}.java"
@@ -141,6 +153,10 @@ class JavaCompiler:
             if (candidate / "pom.xml").exists():
                 return candidate
         return None
+
+    def _requires_java6_compatibility(self, source_file: str) -> bool:
+        normalized = str(source_file).replace("\\", "/").lower()
+        return "/defects4j-work/" in normalized and "/lang-1b/" in normalized
 
     def _maven_test_classpath(self, project_root: Path) -> str:
         """Ask Maven for the test classpath when pom.xml is available."""
