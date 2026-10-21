@@ -19,9 +19,10 @@ JAVA6_PATTERNS: list[tuple[str, str]] = [
 
 def java6_compatibility_errors(java_code: str) -> list[str]:
     """Return Java 6 source-level compatibility errors for generated tests."""
+    scan_code = _strip_string_and_char_literals(java_code)
     errors: list[str] = []
     for name, pattern in JAVA6_PATTERNS:
-        match = re.search(pattern, java_code)
+        match = re.search(pattern, scan_code)
         if match:
             errors.append(f"{name}: Java 6 / Defects4J Lang-1b does not support `{match.group(0)[:80]}`")
     return errors
@@ -38,3 +39,9 @@ def format_java6_compatibility_errors(java_code: str) -> str:
     ]
     lines.extend(f"- {error}" for error in errors)
     return "\n".join(lines)
+
+
+def _strip_string_and_char_literals(java_code: str) -> str:
+    """Mask Java string and char literals before syntax-token scanning."""
+    literal_pattern = r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\''
+    return re.sub(literal_pattern, '""', java_code)

@@ -28,6 +28,8 @@ USER_PROMPT_TEMPLATE = """## 依赖分析结果
 {dependency_analysis}
 ```
 
+{knowledge_section}
+
 ## 源代码
 
 ```java
@@ -54,16 +56,38 @@ USER_PROMPT_TEMPLATE = """## 依赖分析结果
 }}"""
 
 
+KNOWLEDGE_SECTION_TEMPLATE = """## Retrieved Dependency Construction Knowledge
+
+Use these retrieved dependency-construction examples as prior experience when
+designing setup, mocks, edge cases, and assertions. Prefer examples whose
+class/method and dependency types match the target.
+
+```json
+{retrieved_knowledge}
+```"""
+
+
 class PlanAgent:
     """根据依赖分析生成结构化测试计划。"""
 
     def __init__(self, llm_client: LLMClient = None):
         self.llm = llm_client or LLMClient()
 
-    def generate_plan(self, dependency_analysis: dict, source_code: str) -> dict:
+    def generate_plan(
+        self,
+        dependency_analysis: dict,
+        source_code: str,
+        retrieved_knowledge: list[dict] | None = None,
+    ) -> dict:
         """生成测试计划。"""
+        knowledge_section = ""
+        if retrieved_knowledge:
+            knowledge_section = KNOWLEDGE_SECTION_TEMPLATE.format(
+                retrieved_knowledge=json.dumps(retrieved_knowledge, indent=2, ensure_ascii=False)
+            )
         user_prompt = USER_PROMPT_TEMPLATE.format(
             dependency_analysis=json.dumps(dependency_analysis, indent=2, ensure_ascii=False),
+            knowledge_section=knowledge_section,
             source_code=source_code,
         )
 

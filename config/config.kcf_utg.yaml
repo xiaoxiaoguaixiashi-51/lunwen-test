@@ -1,0 +1,25 @@
+# Route-aligned configuration for new KCF-UTG runs.
+# Historical Ours-v3/Ours Full runs keep their original configuration.
+llm:
+  base_url: "http://localhost:8000/v1"
+  api_key: "your-api-key"
+  model: "deepseek-coder-v2"
+  temperature: 0.2
+  max_tokens: 8192
+
+java:
+  home: ""
+  compile_timeout: 30
+  test_timeout: 60
+
+pipeline:
+  max_fix_iterations: 3
+  feedback_enabled: true
+
+retrieval:
+  enabled: true
+  knowledge_path: "experiments/knowledge/dependency_construction_knowledge.jsonl"
+  max_examples: 3
+
+static_guard:
+  enabled: true

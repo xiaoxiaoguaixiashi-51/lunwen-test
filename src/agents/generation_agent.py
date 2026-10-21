@@ -44,6 +44,20 @@ Defects4J Lang-1b compatibility requirements:
 """
 
 
+STAGE_B_JUNIT4_PROJECT_PROMPT = """
+Stage B MACO-aligned project requirements:
+1. Use JUnit 4 only.
+2. Do not use Mockito at all. Do not import org.mockito.* or static org.mockito.Mockito.*.
+3. Prefer real objects, builders, simple stubs, package-visible helpers, or lightweight fake implementations.
+4. Keep tests self-contained and compatible with javac -source 1.8 -target 1.8.
+"""
+
+UNGUARDED_SYSTEM_PROMPT = """You are a Java unit test generation assistant.
+Generate a complete Java test class based on the provided test plan and source code.
+Do not add explanations outside the Java code.
+"""
+
+
 USER_PROMPT_TEMPLATE = """## 测试框架
 
 {test_framework}
@@ -68,7 +82,7 @@ USER_PROMPT_TEMPLATE = """## 测试框架
 
 请生成完整的 {test_framework} 测试类代码。要求：
 1. 所有 import 完整
-2. 使用 Mockito mock 所有外部依赖
+2. Do not import Mockito unless the target project already provides it; prefer real objects, builders, simple stubs, or lightweight fake implementations for library-project dependencies
 3. 每个测试场景一个 @Test 方法
 4. 断言具体且有意义
 5. 代码可直接编译运行
@@ -77,11 +91,34 @@ USER_PROMPT_TEMPLATE = """## 测试框架
 8. 如果测试框架是 JUnit 4，禁止使用 org.junit.jupiter.api 或 @ExtendWith"""
 
 
+UNGUARDED_USER_PROMPT_TEMPLATE = """## Test Plan
+
+```json
+{test_plan}
+```
+
+## Source Code
+
+```java
+{source_code}
+```
+
+## Dependency Analysis
+
+```json
+{dependency_info}
+```
+
+Generate a Java test class. Output only one complete Java file.
+"""
+
+
 class GenerationAgent:
     """根据测试计划生成 Java 单元测试代码。"""
 
-    def __init__(self, llm_client: LLMClient = None):
+    def __init__(self, llm_client: LLMClient = None, static_guard_enabled: bool | None = None):
         self.llm = llm_client or LLMClient()
+        self.static_guard_enabled = static_guard_enabled
 
     def generate(
         self,
@@ -92,12 +129,19 @@ class GenerationAgent:
     ) -> str:
         """生成测试代码。"""
         system_prompt, test_framework = self._prompts_for_source(source_file)
-        user_prompt = USER_PROMPT_TEMPLATE.format(
-            test_framework=test_framework,
-            test_plan=json.dumps(test_plan, indent=2, ensure_ascii=False),
-            source_code=source_code,
-            dependency_info=json.dumps(dependency_info, indent=2, ensure_ascii=False),
-        )
+        if self._static_guard_enabled():
+            user_prompt = USER_PROMPT_TEMPLATE.format(
+                test_framework=test_framework,
+                test_plan=json.dumps(test_plan, indent=2, ensure_ascii=False),
+                source_code=source_code,
+                dependency_info=json.dumps(dependency_info, indent=2, ensure_ascii=False),
+            )
+        else:
+            user_prompt = UNGUARDED_USER_PROMPT_TEMPLATE.format(
+                test_plan=json.dumps(test_plan, indent=2, ensure_ascii=False),
+                source_code=source_code,
+                dependency_info=json.dumps(dependency_info, indent=2, ensure_ascii=False),
+            )
 
         response = self.llm.generate(system_prompt, user_prompt, max_tokens=8192)
         return self._extract_code(response)
@@ -153,6 +197,10 @@ class GenerationAgent:
 
     def _prompts_for_source(self, source_file: str = None) -> tuple[str, str]:
         """Select test framework guidance from the target project context."""
+        if not self._static_guard_enabled():
+            return UNGUARDED_SYSTEM_PROMPT, "Java"
+        if source_file and self._looks_like_stage_b_project(source_file):
+            return JUNIT4_SYSTEM_PROMPT + "\n" + STAGE_B_JUNIT4_PROJECT_PROMPT, "JUnit 4"
         if source_file and self._looks_like_defects4j(source_file):
             if self._java6_guard_enabled():
                 return JUNIT4_SYSTEM_PROMPT + "\n" + DEFECTS4J_JAVA6_COMPATIBILITY_PROMPT, "JUnit 4"
@@ -163,5 +211,15 @@ class GenerationAgent:
         normalized = source_file.replace("\\", "/").lower()
         return "/defects4j-work/" in normalized or "/defects4j/" in normalized
 
+    def _looks_like_stage_b_project(self, source_file: str) -> bool:
+        normalized = source_file.replace("\\", "/").lower()
+        return "/maco-aligned-projects/" in normalized
+
     def _java6_guard_enabled(self) -> bool:
         return os.environ.get("LUNWEN_ENABLE_JAVA6_GUARD", "").lower() in {"1", "true", "yes", "on"}
+
+    def _static_guard_enabled(self) -> bool:
+        if self.static_guard_enabled is not None:
+            return self.static_guard_enabled
+        disabled = os.environ.get("LUNWEN_DISABLE_STATIC_GUARD", "").lower() in {"1", "true", "yes", "on"}
+        return not disabled

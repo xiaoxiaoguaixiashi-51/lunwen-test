@@ -55,6 +55,70 @@ public class ExampleTest {
         self.assertIn("Java 6 source-compatible", result.errors)
         self.assertIn("diamond_operator", result.errors)
 
+    def test_defects4j_generated_test_requires_public_class(self):
+        code = """
+import org.junit.Test;
+class ExampleTest {
+    @Test
+    public void testExample() {}
+}
+"""
+        result = JavaCompiler().compile_test(
+            code,
+            source_file="/root/defects4j-work/Lang-1b/src/main/java/org/apache/commons/lang3/StringUtils.java",
+        )
+
+        self.assertFalse(result.success)
+        self.assertIn("public test class", result.errors)
+
+    def test_static_guard_disabled_allows_package_private_defects4j_test_class(self):
+        code = """
+import org.junit.Test;
+class ExampleTest {
+    @Test
+    public void testExample() {}
+}
+"""
+        compiler = JavaCompiler(static_guard_enabled=False)
+        compiler.compile = lambda java_file, classpath=None, output_dir=None: __import__(
+            "src.utils.compiler", fromlist=["CompileResult"]
+        ).CompileResult(True, "ok", "", 0)
+
+        result = compiler.compile_test(
+            code,
+            source_file="/root/defects4j-work/Lang-1b/src/main/java/org/apache/commons/lang3/StringUtils.java",
+        )
+
+        self.assertTrue(result.success)
+
+    def test_class_name_scan_ignores_javadoc_text(self):
+        code = """
+/**
+ * Test class for {@link org.apache.commons.lang3.math.Fraction#equals(Object)}.
+ */
+public class FractionEqualsTest {
+}
+"""
+        compiler = JavaCompiler()
+
+        self.assertEqual("FractionEqualsTest", compiler._extract_class_name(code))
+        self.assertTrue(compiler._has_public_class(code, "FractionEqualsTest"))
+
+    def test_non_defects4j_demo_allows_package_private_class_for_offline_tests(self):
+        code = """
+class ExampleTest {
+    void testExample() {}
+}
+"""
+        compiler = JavaCompiler()
+        compiler.compile = lambda java_file, classpath=None, output_dir=None: __import__(
+            "src.utils.compiler", fromlist=["CompileResult"]
+        ).CompileResult(True, "ok", "", 0)
+
+        result = compiler.compile_test(code, source_file=str(TARGET))
+
+        self.assertTrue(result.success)
+
 
 if __name__ == "__main__":
     unittest.main()

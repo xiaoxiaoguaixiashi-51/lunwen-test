@@ -10,6 +10,7 @@ from pathlib import Path
 
 from src.core.llm_client import load_config
 from src.core.pipeline import Pipeline
+from src.utils.experiment_metadata import write_run_metadata
 
 
 def load_method_list(method_list_path: str) -> list[dict]:
@@ -95,6 +96,26 @@ def main():
 
     methods = load_method_list(args.methods)
     config = load_config(args.config)
+    config_path = args.config or str(Path(__file__).resolve().parents[2] / "config" / "config.yaml")
+    output_dir = Path(args.output)
+    retrieval = config.get("retrieval", {})
+    static_guard = config.get("static_guard", {})
+    write_run_metadata(
+        output_dir,
+        stage="initial_generation",
+        method_list=args.methods,
+        config_path=config_path,
+        config=config,
+        knowledge_path=retrieval.get("knowledge_path"),
+        settings={
+            "method_count": len(methods),
+            "resume": not args.no_resume,
+            "knowledge_retrieval_enabled": bool(retrieval.get("enabled", False)),
+            "static_guard_enabled": bool(static_guard.get("enabled", True)),
+            "feedback_enabled": bool(config.get("pipeline", {}).get("feedback_enabled", True)),
+            "max_fix_iterations": config.get("pipeline", {}).get("max_fix_iterations", 3),
+        },
+    )
     summary = run_batch(methods, args.output, config, resume=not args.no_resume)
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 

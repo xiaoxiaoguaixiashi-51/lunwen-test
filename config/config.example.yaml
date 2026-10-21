@@ -17,3 +17,9 @@ java:
 pipeline:
   max_fix_iterations: 3  # 编译失败后最大修复轮数
   feedback_enabled: true
+
+# KG/LightRAG retrieval for Ours-v3. Keep disabled for Ours-v2 and baselines.
+retrieval:
+  enabled: false
+  knowledge_path: "experiments/knowledge/dependency_construction_knowledge.jsonl"
+  max_examples: 3

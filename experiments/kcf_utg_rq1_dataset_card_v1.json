@@ -1,0 +1,26 @@
+{
+  "dataset_id": "six_project_high_dependency_41_v1",
+  "paper_route": "KCF-UTG RQ1/RQ2",
+  "method_count": 41,
+  "project_counts": {
+    "commons-cli": 6,
+    "commons-codec": 5,
+    "commons-collections4": 14,
+    "commons-csv": 5,
+    "jdom2": 9,
+    "windward": 2
+  },
+  "source_manifest": "experiments\\method_lists\\maco_aligned_41_windward_resolved_20260628.json",
+  "source_manifest_sha256": "25ec6fa191481c47d87747e0e1a041dd950d39fe87bc43c28e569fc5402f2b3b",
+  "project_manifest": "experiments/maco_aligned_41_projects.json",
+  "project_manifest_sha256": "70319e5f1673dbc4a7dca417a6c1ea214e5a1296717b0ee4667cfae175005b9a",
+  "project_pins": [
+    {"project_id": "commons-cli", "repository": "https://github.com/apache/commons-cli.git", "candidate_ref": "commons-cli-1.5.0", "version": "1.5.0"},
+    {"project_id": "commons-csv", "repository": "https://github.com/apache/commons-csv.git", "candidate_ref": "commons-csv-1.10.0", "version": "1.10.0"},
+    {"project_id": "commons-codec", "repository": "https://github.com/apache/commons-codec.git", "candidate_ref": "3a6873e", "version": "3a6873e"},
+    {"project_id": "commons-collections4", "repository": "https://github.com/apache/commons-collections.git", "candidate_ref": "commons-collections-4.5.0", "version": "4.5.0"},
+    {"project_id": "jdom2", "repository": "https://github.com/hunterhacker/jdom.git", "candidate_ref": "JDOM-2.0.6", "version": "2.0.6"},
+    {"project_id": "windward", "repository": "https://github.com/Flmelody/windward.git", "candidate_ref": "66b45be081c3a2968de18d6cfcb395472ac1e9cc", "version": "1.5.1-RELEASE", "note": "Independent resolution; verify the full checkout commit and build before using this dataset version in formal evaluation."}
+  ],
+  "selection_note": "Derived from the archived six-project method list; DCCI/MDCI scores are omitted from the runner manifest and are not paper metrics. Candidate refs are not a substitute for recording each checkout's resolved commit SHA."
+}

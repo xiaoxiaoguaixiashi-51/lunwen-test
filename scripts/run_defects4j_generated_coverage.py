@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import shutil
 import re
 import subprocess
 import sys
@@ -66,11 +67,14 @@ def run_generated_coverage(
     defects4j_dir: Path,
     output_dir: Path,
     instrument_file: Path | None = None,
+    xml_output_dir: Path | None = None,
     overwrite: bool = False,
     timeout: int = 240,
     java_home: str = "",
 ) -> list[CoverageRun]:
     output_dir.mkdir(parents=True, exist_ok=True)
+    if xml_output_dir:
+        xml_output_dir.mkdir(parents=True, exist_ok=True)
     env = build_subprocess_env(java_home)
     rows: list[CoverageRun] = []
 
@@ -83,6 +87,7 @@ def run_generated_coverage(
             for method in installed.methods:
                 log_path = class_log_dir / f"{method}.coverage.log"
                 cmd = build_coverage_command(installed.fqcn, method, instrument_file)
+                remove_stale_coverage_xml(defects4j_dir)
                 try:
                     proc = subprocess.run(
                         cmd,
@@ -99,6 +104,8 @@ def run_generated_coverage(
                     return_code = -1
 
                 log_path.write_text(output, encoding="utf-8")
+                if xml_output_dir:
+                    copy_coverage_xml(defects4j_dir, xml_output_dir, installed.fqcn, method)
                 rows.append(build_coverage_row(test.source_path, installed.fqcn, method, output, return_code, log_path))
         finally:
             installed.target_path.unlink(missing_ok=True)
@@ -117,6 +124,23 @@ def build_coverage_command(test_class: str, test_method: str, instrument_file: P
     if instrument_file:
         cmd.extend(["-i", str(instrument_file.resolve())])
     return cmd
+
+
+def coverage_xml_path(defects4j_dir: Path) -> Path:
+    return defects4j_dir / "coverage.xml"
+
+
+def remove_stale_coverage_xml(defects4j_dir: Path):
+    coverage_xml_path(defects4j_dir).unlink(missing_ok=True)
+
+
+def copy_coverage_xml(defects4j_dir: Path, xml_output_dir: Path, test_class: str, test_method: str):
+    source = coverage_xml_path(defects4j_dir)
+    if not source.exists():
+        return
+    target_dir = xml_output_dir / safe_name(test_class)
+    target_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, target_dir / f"{test_method}.coverage.xml")
 
 
 def write_instrument_file(instrument_classes: list[str], output_path: Path) -> Path:
@@ -278,6 +302,11 @@ def main():
         default="",
         help="Existing Defects4J instrument_classes file. Overrides --instrument-class when provided.",
     )
+    parser.add_argument(
+        "--xml-output-dir",
+        default="",
+        help="Optional directory for preserving per-test coverage.xml files.",
+    )
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing target test files")
     parser.add_argument(
         "--include-class-name",
@@ -295,6 +324,7 @@ def main():
     run_dir = Path(args.run_dir)
     defects4j_dir = Path(args.defects4j_dir)
     output_dir = Path(args.output_dir)
+    xml_output_dir = Path(args.xml_output_dir) if args.xml_output_dir else None
 
     instrument_file = Path(args.instrument_file) if args.instrument_file else None
     if not instrument_file and args.instrument_class:
@@ -312,6 +342,7 @@ def main():
         defects4j_dir,
         output_dir,
         instrument_file=instrument_file,
+        xml_output_dir=xml_output_dir,
         overwrite=args.overwrite,
         timeout=args.timeout,
         java_home=args.java_home,

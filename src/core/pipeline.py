@@ -2,6 +2,7 @@
 
 import json
 import argparse
+import re
 from pathlib import Path
 from dataclasses import dataclass, field
 
@@ -9,6 +10,12 @@ from src.core.llm_client import LLMClient, load_config
 from src.agents.task_agent import TaskAgent
 from src.agents.plan_agent import PlanAgent
 from src.agents.generation_agent import GenerationAgent
+from src.retrieval.dependency_knowledge import (
+    DEFAULT_KNOWLEDGE_PATH,
+    kg_lightrag_enabled,
+    knowledge_ids,
+    retrieve_dependency_knowledge,
+)
 from src.utils.compiler import JavaCompiler, CompileResult
 
 
@@ -18,6 +25,7 @@ class PipelineResult:
     target_file: str
     method_name: str
     dependency_analysis: dict = field(default_factory=dict)
+    retrieved_knowledge: list = field(default_factory=list)
     test_plan: dict = field(default_factory=dict)
     generated_test: str = ""
     compile_results: list = field(default_factory=list)
@@ -30,6 +38,8 @@ class PipelineResult:
             "target_file": self.target_file,
             "method_name": self.method_name,
             "dependency_analysis": self.dependency_analysis,
+            "retrieved_knowledge_ids": knowledge_ids(self.retrieved_knowledge),
+            "retrieved_knowledge": self.retrieved_knowledge,
             "test_plan": self.test_plan,
             "generated_test_length": len(self.generated_test),
             "compile_attempts": len(self.compile_results),
@@ -49,14 +59,21 @@ class Pipeline:
         self.llm = llm_client or LLMClient(config or load_config())
         self.task_agent = TaskAgent(self.llm)
         self.plan_agent = PlanAgent(self.llm)
-        self.generation_agent = GenerationAgent(self.llm)
+        static_guard_config = config.get("static_guard", {})
+        self.static_guard_enabled = static_guard_config.get("enabled", True)
+        self.generation_agent = GenerationAgent(self.llm, static_guard_enabled=self.static_guard_enabled)
         self.compiler = compiler or JavaCompiler(
             java_home=config.get("java", {}).get("home", ""),
             compile_timeout=config.get("java", {}).get("compile_timeout", 30),
             test_timeout=config.get("java", {}).get("test_timeout", 60),
+            static_guard_enabled=self.static_guard_enabled,
         )
         self.max_fix_iterations = config.get("pipeline", {}).get("max_fix_iterations", 3)
         self.feedback_enabled = config.get("pipeline", {}).get("feedback_enabled", True)
+        retrieval_config = config.get("retrieval", {})
+        self.kg_lightrag_enabled = retrieval_config.get("enabled", kg_lightrag_enabled())
+        self.knowledge_path = retrieval_config.get("knowledge_path", str(DEFAULT_KNOWLEDGE_PATH))
+        self.max_knowledge_examples = retrieval_config.get("max_examples", 3)
 
     def run(self, java_file_path: str, method_name: str = None, output_dir: str = None) -> PipelineResult:
         """执行完整 pipeline。"""
@@ -71,9 +88,20 @@ class Pipeline:
         print(f"      外部调用数: {len(result.dependency_analysis['static_analysis']['external_calls'])}")
 
         # Step 2: 生成测试计划
+        if self.kg_lightrag_enabled:
+            result.retrieved_knowledge = retrieve_dependency_knowledge(
+                result.dependency_analysis,
+                source_code,
+                result.method_name,
+                knowledge_path=self.knowledge_path,
+                max_examples=self.max_knowledge_examples,
+            )
+            print(f"      KG/LightRAG 检索经验: {len(result.retrieved_knowledge)} 条")
         print("[2/4] PlanAgent: 生成测试计划...")
         result.test_plan = self.plan_agent.generate_plan(
-            result.dependency_analysis, source_code
+            result.dependency_analysis,
+            source_code,
+            retrieved_knowledge=result.retrieved_knowledge,
         )
         if "test_cases" in result.test_plan:
             print(f"      生成测试场景: {len(result.test_plan['test_cases'])} 个")
@@ -146,8 +174,11 @@ class Pipeline:
         out_path = Path(output_dir)
         out_path.mkdir(parents=True, exist_ok=True)
 
-        # 保存测试代码
-        test_file = out_path / f"{result.method_name}Test.java"
+        # Save using the generated class name so javac accepts public test classes.
+        class_name = self._extract_class_name(result.final_test) or f"{result.method_name}Test"
+        if not class_name.endswith("Test"):
+            class_name = f"{class_name}Test"
+        test_file = out_path / f"{class_name}.java"
         test_file.write_text(result.final_test, encoding="utf-8")
 
         # 保存分析报告
@@ -157,6 +188,17 @@ class Pipeline:
             encoding="utf-8",
         )
         print(f"\n结果已保存到: {out_path}")
+
+    def _extract_class_name(self, java_code: str) -> str:
+        """Extract a Java class declaration name from generated test code."""
+        code = re.sub(r"/\*.*?\*/", " ", java_code or "", flags=re.DOTALL)
+        code = re.sub(r"//.*", " ", code)
+        match = re.search(
+            r"\b(?:public|protected|private|abstract|final|static|\s)*class\s+"
+            r"([A-Za-z_$][A-Za-z0-9_$]*)\b",
+            code,
+        )
+        return match.group(1) if match else ""
 
 
 def main():

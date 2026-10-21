@@ -1,0 +1,126 @@
+[
+  {
+    "project_id": "commons-cli",
+    "name": "Commons-CLI",
+    "version": "1.5.0",
+    "java": 8,
+    "target_methods": 6,
+    "repo_url": "https://github.com/apache/commons-cli.git",
+    "refs": [
+      "commons-cli-1.5.0",
+      "rel/commons-cli-1.5.0",
+      "CLI_1_5_0",
+      "CLI_1_5"
+    ],
+    "source_roots": [
+      "src/main/java"
+    ],
+    "build_commands": [
+      [
+        "mvn",
+        "-q",
+        "-DskipTests",
+        "test-compile"
+      ]
+    ],
+    "notes": "Buildable subset fallback while Windward source URL is unresolved."
+  },
+  {
+    "project_id": "commons-csv",
+    "name": "Commons-CSV",
+    "version": "1.10.0",
+    "java": 8,
+    "target_methods": 5,
+    "repo_url": "https://github.com/apache/commons-csv.git",
+    "refs": [
+      "commons-csv-1.10.0",
+      "rel/commons-csv-1.10.0",
+      "CSV_1_10_0"
+    ],
+    "source_roots": [
+      "src/main/java"
+    ],
+    "build_commands": [
+      [
+        "mvn",
+        "-q",
+        "-DskipTests",
+        "test-compile"
+      ]
+    ],
+    "notes": "Requires --allow-fill for one below-threshold MDCI fallback row under the current heuristic."
+  },
+  {
+    "project_id": "commons-codec",
+    "name": "Commons-codec",
+    "version": "3a6873e",
+    "java": 8,
+    "target_methods": 5,
+    "repo_url": "https://github.com/apache/commons-codec.git",
+    "refs": [
+      "3a6873e"
+    ],
+    "source_roots": [
+      "src/main/java"
+    ],
+    "build_commands": [
+      [
+        "mvn",
+        "-q",
+        "-DskipTests",
+        "test-compile"
+      ]
+    ]
+  },
+  {
+    "project_id": "commons-collections4",
+    "name": "Commons-collections4",
+    "version": "4.5.0",
+    "java": 8,
+    "target_methods": 14,
+    "repo_url": "https://github.com/apache/commons-collections.git",
+    "refs": [
+      "commons-collections-4.5.0",
+      "rel/commons-collections-4.5.0",
+      "COLLECTIONS_4_5_0"
+    ],
+    "source_roots": [
+      "src/main/java"
+    ],
+    "build_commands": [
+      [
+        "mvn",
+        "-q",
+        "-DskipTests",
+        "test-compile"
+      ]
+    ]
+  },
+  {
+    "project_id": "jdom2",
+    "name": "JDom2",
+    "version": "2.0.6",
+    "java": 17,
+    "target_methods": 9,
+    "repo_url": "https://github.com/hunterhacker/jdom.git",
+    "refs": [
+      "JDOM-2.0.6",
+      "jdom-2.0.6",
+      "2.0.6"
+    ],
+    "source_roots": [
+      "core/src/java",
+      "src/java",
+      "src/main/java"
+    ],
+    "build_commands": [
+      [
+        "ant",
+        "-Dcompile.source=1.6",
+        "-Dcompile.target=1.6",
+        "compile.core"
+      ]
+    ],
+    "notes": "Ant build output is build/core; Stage B classpath discovery records it explicitly."
+  }
+]

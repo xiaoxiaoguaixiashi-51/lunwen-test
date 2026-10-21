@@ -3,6 +3,7 @@
 import subprocess
 import tempfile
 import os
+import re
 from pathlib import Path
 from dataclasses import dataclass
 
@@ -30,10 +31,17 @@ class TestRunResult:
 class JavaCompiler:
     """Java 编译和测试运行工具。"""
 
-    def __init__(self, java_home: str = None, compile_timeout: int = 30, test_timeout: int = 60):
+    def __init__(
+        self,
+        java_home: str = None,
+        compile_timeout: int = 30,
+        test_timeout: int = 60,
+        static_guard_enabled: bool | None = None,
+    ):
         self.java_home = java_home or os.environ.get("JAVA_HOME", "")
         self.compile_timeout = compile_timeout
         self.test_timeout = test_timeout
+        self.static_guard_enabled = static_guard_enabled
 
     @property
     def javac(self) -> str:
@@ -105,6 +113,22 @@ class JavaCompiler:
                 return_code=-1,
             )
 
+        if (
+            self._static_guard_enabled()
+            and source_file
+            and self._looks_like_defects4j(source_file)
+            and not self._has_public_class(test_code, class_name)
+        ):
+            return CompileResult(
+                success=False,
+                output="",
+                errors=(
+                    "Generated Defects4J JUnit test code must declare a public test class "
+                    f"named {class_name}. Use 'public class {class_name}' so Defects4J/JUnit can run it."
+                ),
+                return_code=3,
+            )
+
         if source_file and self._requires_java6_compatibility(source_file):
             compatibility_errors = format_java6_compatibility_errors(test_code)
             if compatibility_errors:
@@ -155,11 +179,28 @@ class JavaCompiler:
         return None
 
     def _requires_java6_compatibility(self, source_file: str) -> bool:
+        if not self._static_guard_enabled():
+            return False
         enabled = os.environ.get("LUNWEN_ENABLE_JAVA6_GUARD", "").lower() in {"1", "true", "yes", "on"}
         if not enabled:
             return False
         normalized = str(source_file).replace("\\", "/").lower()
         return "/defects4j-work/" in normalized and "/lang-1b/" in normalized
+
+    def _static_guard_enabled(self) -> bool:
+        if self.static_guard_enabled is not None:
+            return self.static_guard_enabled
+        disabled = os.environ.get("LUNWEN_DISABLE_STATIC_GUARD", "").lower() in {"1", "true", "yes", "on"}
+        return not disabled
+
+    def _looks_like_defects4j(self, source_file: str) -> bool:
+        normalized = str(source_file).replace("\\", "/").lower()
+        return "/defects4j-work/" in normalized or "/defects4j/" in normalized
+
+    def _has_public_class(self, java_code: str, class_name: str) -> bool:
+        code = self._strip_comments_for_class_scan(java_code)
+        pattern = rf"\bpublic\s+class\s+{re.escape(class_name)}\b"
+        return re.search(pattern, code) is not None
 
     def _maven_test_classpath(self, project_root: Path) -> str:
         """Ask Maven for the test classpath when pom.xml is available."""
@@ -189,11 +230,15 @@ class JavaCompiler:
 
     def _extract_class_name(self, java_code: str) -> str:
         """从 Java 代码中提取类名。"""
-        for line in java_code.split("\n"):
-            line = line.strip()
-            if "class " in line and ("{" in line or line.endswith("{")):
-                parts = line.split("class ")
-                if len(parts) > 1:
-                    name = parts[1].split()[0].strip("{").strip()
-                    return name
-        return None
+        code = self._strip_comments_for_class_scan(java_code)
+        match = re.search(
+            r"\b(?:public|protected|private|abstract|final|static|\s)*class\s+"
+            r"([A-Za-z_$][A-Za-z0-9_$]*)\b",
+            code,
+        )
+        return match.group(1) if match else None
+
+    def _strip_comments_for_class_scan(self, java_code: str) -> str:
+        """Remove Java comments before scanning for class declarations."""
+        without_block_comments = re.sub(r"/\*.*?\*/", " ", java_code, flags=re.DOTALL)
+        return re.sub(r"//.*", " ", without_block_comments)

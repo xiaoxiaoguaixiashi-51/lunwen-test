@@ -39,6 +39,40 @@ class GenerationAgentTest(unittest.TestCase):
         self.assertIn("禁止 import org.junit.jupiter.api", system_prompt)
         self.assertNotIn("Java 6 source-compatible", system_prompt)
 
+    def test_uses_junit4_for_stage_b_maco_projects(self):
+        llm = RecordingLLM()
+        agent = GenerationAgent(llm)
+
+        agent.generate(
+            {},
+            "class Parser {}",
+            {},
+            source_file="/root/maco-aligned-projects/commons-cli/src/main/java/org/apache/commons/cli/Parser.java",
+        )
+
+        system_prompt, user_prompt, _ = llm.calls[0]
+        self.assertIn("JUnit 4", system_prompt)
+        self.assertIn("JUnit 4", user_prompt)
+        self.assertIn("Do not use Mockito at all", system_prompt)
+        self.assertIn("Do not import Mockito", user_prompt)
+        self.assertNotIn("Java 6 source-compatible", system_prompt)
+
+    def test_static_guard_can_be_disabled_for_stage_b_maco_projects(self):
+        llm = RecordingLLM()
+        agent = GenerationAgent(llm, static_guard_enabled=False)
+
+        agent.generate(
+            {},
+            "class Parser {}",
+            {},
+            source_file="/root/maco-aligned-projects/commons-cli/src/main/java/org/apache/commons/cli/Parser.java",
+        )
+
+        system_prompt, user_prompt, _ = llm.calls[0]
+        self.assertNotIn("JUnit 4", system_prompt)
+        self.assertNotIn("Do not use Mockito at all", system_prompt)
+        self.assertNotIn("Do not import Mockito", user_prompt)
+
     def test_java6_guard_prompt_is_opt_in_for_defects4j(self):
         llm = RecordingLLM()
         agent = GenerationAgent(llm)
