@@ -37,7 +37,7 @@ def main():
         raise ValueError("Invalid start index")
     selected = selected[args.start_index:]
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    with args.output.open("x", encoding="utf-8") as handle:
+    with args.output.open("x", encoding="utf-8", newline="\n") as handle:
         handle.write(json.dumps(selected, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps({"targets": len(selected), "sha256": hashlib.sha256(args.output.read_bytes()).hexdigest()}))
 

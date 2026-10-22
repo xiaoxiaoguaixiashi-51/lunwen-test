@@ -1,0 +1,301 @@
+{
+  "kind": "six_project_initial_workflow_pilot_not_formal_rq1_or_rq2",
+  "methods_total": 6,
+  "method_list_sha256": "94c2ba0a393c5bf7dccfbfc57fcabfab51b0a06d5f1006d7c1138a28c14b1db2",
+  "evaluated_compile_successes": 5,
+  "passing_suites": 2,
+  "per_method": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "project_id": "commons-cli",
+      "method": "processArgs",
+      "status": "ok",
+      "evaluated_compile_success": true,
+      "pipeline_generation_success": "True",
+      "junit": {
+        "tests_run": 9,
+        "failures": 0
+      },
+      "calls_including_interrupted_attempts": {
+        "logical_calls": 4,
+        "successful_calls": 4,
+        "calls_without_final_status": 0,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 25.844916,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 24015,
+            "unknown_call_count": 0
+          },
+          "completion_tokens": {
+            "known_sum": 7944,
+            "unknown_call_count": 0
+          },
+          "total_tokens": {
+            "known_sum": 31959,
+            "unknown_call_count": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "method": "printComment",
+      "status": "test_failed",
+      "evaluated_compile_success": true,
+      "pipeline_generation_success": "False",
+      "junit": {
+        "tests_run": 16,
+        "failures": 1
+      },
+      "calls_including_interrupted_attempts": {
+        "logical_calls": 6,
+        "successful_calls": 6,
+        "calls_without_final_status": 0,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 53.146629,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 61528,
+            "unknown_call_count": 0
+          },
+          "completion_tokens": {
+            "known_sum": 17181,
+            "unknown_call_count": 0
+          },
+          "total_tokens": {
+            "known_sum": 78709,
+            "unknown_call_count": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "method": "colognePhonetic",
+      "status": "test_failed",
+      "evaluated_compile_success": true,
+      "pipeline_generation_success": "True",
+      "junit": {
+        "tests_run": 31,
+        "failures": 5
+      },
+      "calls_including_interrupted_attempts": {
+        "logical_calls": 6,
+        "successful_calls": 5,
+        "calls_without_final_status": 1,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 48.202177,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 42136,
+            "unknown_call_count": 1
+          },
+          "completion_tokens": {
+            "known_sum": 12913,
+            "unknown_call_count": 1
+          },
+          "total_tokens": {
+            "known_sum": 55049,
+            "unknown_call_count": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "method": "transform",
+      "status": "ok",
+      "evaluated_compile_success": true,
+      "pipeline_generation_success": "True",
+      "junit": {
+        "tests_run": 20,
+        "failures": 0
+      },
+      "calls_including_interrupted_attempts": {
+        "logical_calls": 3,
+        "successful_calls": 3,
+        "calls_without_final_status": 0,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 22.127154,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 14903,
+            "unknown_call_count": 0
+          },
+          "completion_tokens": {
+            "known_sum": 6356,
+            "unknown_call_count": 0
+          },
+          "total_tokens": {
+            "known_sum": 21259,
+            "unknown_call_count": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "method": "construct",
+      "status": "test_failed",
+      "evaluated_compile_success": true,
+      "pipeline_generation_success": "True",
+      "junit": {
+        "tests_run": 13,
+        "failures": 1
+      },
+      "calls_including_interrupted_attempts": {
+        "logical_calls": 3,
+        "successful_calls": 3,
+        "calls_without_final_status": 0,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 17.358098,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 13459,
+            "unknown_call_count": 0
+          },
+          "completion_tokens": {
+            "known_sum": 4917,
+            "unknown_call_count": 0
+          },
+          "total_tokens": {
+            "known_sum": 18376,
+            "unknown_call_count": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "method": "html",
+      "status": "compile_failed",
+      "evaluated_compile_success": false,
+      "pipeline_generation_success": "False",
+      "junit": {
+        "tests_run": null,
+        "failures": null
+      },
+      "calls_including_interrupted_attempts": {
+        "logical_calls": 6,
+        "successful_calls": 6,
+        "calls_without_final_status": 0,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 54.496103,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 33427,
+            "unknown_call_count": 0
+          },
+          "completion_tokens": {
+            "known_sum": 19138,
+            "unknown_call_count": 0
+          },
+          "total_tokens": {
+            "known_sum": 52565,
+            "unknown_call_count": 0
+          }
+        }
+      }
+    }
+  ],
+  "all_costs_including_interrupted_attempt": {
+    "logical_calls": 28,
+    "successful_calls": 27,
+    "calls_without_final_status": 1,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "api_elapsed_seconds_sum": 221.175077,
+    "usage": {
+      "prompt_tokens": {
+        "known_sum": 189468,
+        "unknown_call_count": 1
+      },
+      "completion_tokens": {
+        "known_sum": 68449,
+        "unknown_call_count": 1
+      },
+      "total_tokens": {
+        "known_sum": 257917,
+        "unknown_call_count": 1
+      }
+    }
+  },
+  "source_runs": [
+    {
+      "run_dir": "experiments/runs/six_project_pilot_20261022",
+      "repository_revision": "1a56c55e885a632d0bff3de61689a993125cbc67",
+      "method_list_sha256": "94c2ba0a393c5bf7dccfbfc57fcabfab51b0a06d5f1006d7c1138a28c14b1db2",
+      "calls": {
+        "logical_calls": 13,
+        "successful_calls": 12,
+        "calls_without_final_status": 1,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 101.792804,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 100014,
+            "unknown_call_count": 1
+          },
+          "completion_tokens": {
+            "known_sum": 30284,
+            "unknown_call_count": 1
+          },
+          "total_tokens": {
+            "known_sum": 130298,
+            "unknown_call_count": 1
+          }
+        }
+      }
+    },
+    {
+      "run_dir": "experiments/runs/six_project_remaining4_20261022",
+      "repository_revision": "2c892fb17d6f83baab45ca62c0ed5d504da01563",
+      "method_list_sha256": "2722747c1d3412ba6a5e0bf5ad0ab028e1c92b9a309e3b4b2fe481ad19f6c788",
+      "calls": {
+        "logical_calls": 15,
+        "successful_calls": 15,
+        "calls_without_final_status": 0,
+        "returned_models": [
+          "deepseek-flash"
+        ],
+        "api_elapsed_seconds_sum": 119.382273,
+        "usage": {
+          "prompt_tokens": {
+            "known_sum": 89454,
+            "unknown_call_count": 0
+          },
+          "completion_tokens": {
+            "known_sum": 38165,
+            "unknown_call_count": 0
+          },
+          "total_tokens": {
+            "known_sum": 127619,
+            "unknown_call_count": 0
+          }
+        }
+      }
+    }
+  ],
+  "coverage_policy": "Passing suites only is conservative valid-suite coverage. All XML including failing suites is diagnostic only. Fixed denominator retains all six targets."
+}

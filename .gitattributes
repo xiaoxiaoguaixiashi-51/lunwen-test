@@ -1,0 +1,5 @@
+# Keep new pilot inputs stable across Windows and Linux checkouts.
+/experiments/method_lists/kcf_six_project*.json text eol=lf
+# Exact executed input bytes are evidence, not platform-converted text.
+/results/six_project_pilot_20261022/executed_pilot_methods.json -text
+/results/six_project_pilot_20261022/executed_remaining4_methods.json -text

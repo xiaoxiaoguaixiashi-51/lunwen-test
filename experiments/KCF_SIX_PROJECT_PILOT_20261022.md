@@ -2,7 +2,7 @@
 
 在观察本轮 API 结果前固定以下六个 v2 目标，不按覆盖结果替换：Parser.processArgs、CSVPrinter.printComment、ColognePhonetic.colognePhonetic、InvokerTransformer.transform、ReflectionConstructor.construct、AbstractHttpWindwardContext.html。每项目一个，覆盖解析、I/O、编码算法、反射、Ant 构建和 Web 框架依赖；不是统计代表性抽样，不据此推断总体效果。此前 OptionGroup smoke 不合并为本轮成功目标。
 
-清单 `method_lists/kcf_six_project_pilot_20261022.json`，SHA-256 `8c5d64c0a33f2323b0b0890e467ab457eb046c07b6ade6a4cfeaffbfdb987894`。保留完整 v2 owner/signature/source SHA-256。
+清单 `method_lists/kcf_six_project_pilot_20261022.json`。Linux 实际运行输入及 Git blob 的 LF 字节 SHA-256 为 `94c2ba0a393c5bf7dccfbfc57fcabfab51b0a06d5f1006d7c1138a28c14b1db2`；Windows 首次生成的 CRLF 工作副本为 `8c5d64c0a33f2323b0b0890e467ab457eb046c07b6ade6a4cfeaffbfdb987894`。两者 JSON 内容相同，不应宣称字节哈希相同；正式复现以每次实际输入哈希为准。保留完整 v2 owner/signature/source SHA-256。后续生成器显式输出 LF 防止新清单重复出现换行差异，不覆盖本轮已冻结文件。
 
 本轮仅验证 KCF Full 的初始生成、编译修复、独立 JUnit 与固定分母覆盖率。**不包括覆盖反馈、对比基线或消融效果检验，也不证明新机制有效。** 模型 `deepseek-flash`，显式非思考模式、temperature 0.2、单请求 max_tokens 8192（生成代理可能显式覆盖，应以调用追踪为准）、SDK 重试 0、请求超时 120 秒、编译最多 3 轮，继承单方法 smoke 私有 Full 配置。三个代理 + 最多三个修复请求，6 个目标最多 36 次逻辑模型请求，外层进程超时 1800 秒；未知 token 不当成零，超时/失败不自动整批付费重跑。
 
