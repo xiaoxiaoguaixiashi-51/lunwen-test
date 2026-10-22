@@ -1,0 +1,17 @@
+[
+  {
+    "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+    "decision": "approve",
+    "reviewer": "Codex full-diff and focal-source audit, not an independent human oracle study",
+    "repaired_source_sha256": "214f0ed2ebcf8ae415e839266fa09bc5e5abf87266d419bd523a5016d687ae5a",
+    "reason": "The complete diff preserves all ten tests and changes only the toString invocation check from assertSame to assertEquals, removing the unused assertSame import. The focal method returns Method.invoke(input, iArgs), not the result of a prior independent input.toString() call. Equality of the returned string value is supported; identity between two independently produced toString values is not the transform contract. This corrects an unsupported identity oracle without deleting the check or bypassing invocation. JUnit reports ten tests with zero failures. This review is source-grounded but does not constitute independent human validation of all generated assertions.",
+    "source_evidence": [
+      {
+        "source": "/root/maco-aligned-projects/commons-collections4/src/main/java/org/apache/commons/collections4/functors/InvokerTransformer.java",
+        "sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847",
+        "line_start": 115,
+        "line_end": 141
+      }
+    ]
+  }
+]

@@ -496,6 +496,16 @@ def include_incremental_xml(result: dict, passing_only: bool) -> bool:
         result.get("status") == "ok" and not result.get("semantic_review_required")))
 
 
+def run_initial_generated_test(method, test_file, test_class, execution_dir, args, cp_cache):
+    if args.passing_only:
+        code = test_file.read_text(encoding="utf-8")
+        integrity = check_repair_integrity(code, code)
+        write_json(test_file.parent / "attempt_0_integrity.json", integrity)
+        if not integrity["ok"]:
+            return {"status": "integrity_rejected", "output": str(integrity["errors"]), "xml_file": ""}
+    return run_generated_test(method, test_file, test_class, execution_dir, args, cp_cache)
+
+
 def execution_dir_for(output_root, round_index, attempt, isolated):
     base = Path(output_root) / "incremental_jacoco" / f"round{round_index}"
     return base / f"attempt{attempt}" if isolated else base
@@ -687,12 +697,12 @@ def main():
                                                                      source_context=context)
                 test_file = write_test_file(test_code, gen_dir, test_class)
                 retrieval_log = {"coverage-gap": coverage_kg, "failure-repair": []}
-                result = run_generated_test(method, test_file, test_class,
+                result = run_initial_generated_test(method, test_file, test_class,
                                             execution_dir_for(output_root, round_index, 0, args.passing_only), args, cp_cache)
                 (gen_dir / "attempt_0.java.txt").write_text(test_code, encoding="utf-8")
                 write_json(gen_dir / "attempt_0.json", {"result": result, "retrieved_knowledge": coverage_kg})
                 for repair_index in range(1, args.repair_iterations + 1):
-                    if result["status"] == "ok":
+                    if result["status"] in {"ok", "integrity_rejected"}:
                         break
                     with trace_target(method["id"]):
                         repaired, repair_kg = repair_test(llm, test_code, method, result.get("output", ""), result["status"], records, args,

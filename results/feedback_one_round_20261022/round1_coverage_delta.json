@@ -1,0 +1,29 @@
+{
+  "round": 1,
+  "line_delta": 18,
+  "branch_delta": 15,
+  "previous": {
+    "approach": "KCF_UTG",
+    "methods_total": 6,
+    "methods_with_coverage_data": 3,
+    "ambiguous_methods": 0,
+    "focal_lines_total": 136,
+    "focal_lines_covered": 39,
+    "focal_line_rate": "28.7%",
+    "focal_branches_total": 90,
+    "focal_branches_covered": 14,
+    "focal_branch_rate": "15.6%"
+  },
+  "current": {
+    "approach": "KCF_UTG",
+    "methods_total": 6,
+    "methods_with_coverage_data": 4,
+    "ambiguous_methods": 0,
+    "focal_lines_total": 136,
+    "focal_lines_covered": 57,
+    "focal_line_rate": "41.9%",
+    "focal_branches_total": 90,
+    "focal_branches_covered": 29,
+    "focal_branch_rate": "32.2%"
+  }
+}

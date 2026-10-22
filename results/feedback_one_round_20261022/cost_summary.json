@@ -1,0 +1,23 @@
+{
+  "logical_calls": 9,
+  "successful_calls": 9,
+  "calls_without_final_status": 0,
+  "returned_models": [
+    "deepseek-flash"
+  ],
+  "api_elapsed_seconds_sum": 40.076577,
+  "usage": {
+    "prompt_tokens": {
+      "known_sum": 43120,
+      "unknown_call_count": 0
+    },
+    "completion_tokens": {
+      "known_sum": 13118,
+      "unknown_call_count": 0
+    },
+    "total_tokens": {
+      "known_sum": 56238,
+      "unknown_call_count": 0
+    }
+  }
+}

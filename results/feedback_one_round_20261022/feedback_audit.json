@@ -1,0 +1,154 @@
+{
+  "kind": "bounded_feedback_pilot_audit_not_formal_rq1",
+  "incremental_suites": [
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "round": 1,
+      "first_attempt_status": "test_failed",
+      "final_status": "test_failed",
+      "semantic_review_required": true,
+      "adopted_automatically": false,
+      "integrity": {
+        "ok": true,
+        "errors": [],
+        "test_count_before": 42,
+        "test_count_after": 42,
+        "semantic_review_required": true
+      },
+      "junit": {
+        "tests_run": 42,
+        "failures": 1
+      },
+      "final_source": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/generated_tests/round1/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic/attempt_1.java.txt",
+      "final_source_sha256": "664f423137cccee00fc15e3163450acba4942aebba3b9aafdbce6b4fe58a2dbb",
+      "xml_file": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/incremental_jacoco/round1/attempt1/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/xml/jacoco.xml",
+      "xml_sha256": "8a74410b66e6c4f141adcca8aa28848d0d569fecb0e32b3d8453bd1a64ca28c3",
+      "last_recorded_attempt_status": "test_failed"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "round": 1,
+      "first_attempt_status": "test_failed",
+      "final_status": "ok",
+      "semantic_review_required": true,
+      "adopted_automatically": false,
+      "integrity": {
+        "ok": true,
+        "errors": [],
+        "test_count_before": 10,
+        "test_count_after": 10,
+        "semantic_review_required": true
+      },
+      "junit": {
+        "tests_run": 10,
+        "failures": 0
+      },
+      "final_source": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/generated_tests/round1/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform/attempt_1.java.txt",
+      "final_source_sha256": "214f0ed2ebcf8ae415e839266fa09bc5e5abf87266d419bd523a5016d687ae5a",
+      "xml_file": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/incremental_jacoco/round1/attempt1/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform-org.apache.commons.collections4.functors.InvokerTransformer/xml/jacoco.xml",
+      "xml_sha256": "3210db64873c4440e25ab750502f1b14524d7542b19cba36396de9ed430d7b62",
+      "last_recorded_attempt_status": "ok"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "round": 1,
+      "first_attempt_status": "ok",
+      "final_status": "ok",
+      "semantic_review_required": false,
+      "adopted_automatically": true,
+      "integrity": {
+        "ok": true,
+        "errors": [],
+        "test_count_before": 11,
+        "test_count_after": 11,
+        "semantic_review_required": true
+      },
+      "junit": {
+        "tests_run": 11,
+        "failures": 0
+      },
+      "final_source": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/generated_tests/round1/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/attempt_0.java.txt",
+      "final_source_sha256": "76cdc08f212b177f0816c631711dcca4471e3ceb6305e81d6892fbc835665bb3",
+      "xml_file": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/incremental_jacoco/round1/attempt0/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml",
+      "xml_sha256": "e98ba700da72a55027a5f813c0c3331dcc34417bb545fcd0d38c171f7a02d445",
+      "last_recorded_attempt_status": "ok"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "round": 1,
+      "first_attempt_status": "test_failed",
+      "final_status": "test_failed",
+      "semantic_review_required": true,
+      "adopted_automatically": false,
+      "integrity": {
+        "ok": true,
+        "errors": [],
+        "test_count_before": 12,
+        "test_count_after": 12,
+        "semantic_review_required": true
+      },
+      "junit": {
+        "tests_run": 12,
+        "failures": 1
+      },
+      "final_source": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/generated_tests/round1/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/attempt_1.java.txt",
+      "final_source_sha256": "a5339585520f52b1077342928a471ffbf0b4dd7e0f57e062712ae81795da8114",
+      "xml_file": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/incremental_jacoco/round1/attempt1/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+      "xml_sha256": "45fadb69fbf07dfa666ba7b396ed77070ac7ce10b3ed727f5255b65226d48167",
+      "last_recorded_attempt_status": "test_failed"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "round": 1,
+      "first_attempt_status": "compile_failed",
+      "final_status": "compile_failed",
+      "semantic_review_required": true,
+      "adopted_automatically": false,
+      "integrity": {
+        "ok": true,
+        "errors": [],
+        "test_count_before": 7,
+        "test_count_after": 7,
+        "semantic_review_required": true
+      },
+      "junit": {
+        "tests_run": null,
+        "failures": null
+      },
+      "final_source": "/root/autodl-tmp/lunwen-test/experiments/runs/feedback_one_round_20261022/generated_tests/round1/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html/attempt_1.java.txt",
+      "final_source_sha256": "56fd1f1db4af8113446a98e7ed05bfe95425fc60c6eeb5ee684b0cf895d739ff",
+      "xml_file": "",
+      "xml_sha256": null,
+      "last_recorded_attempt_status": "compile_failed"
+    }
+  ],
+  "incremental_suite_count": 5,
+  "cost_observations": {
+    "logical_calls": 9,
+    "successful_calls": 9,
+    "calls_without_final_status": 0,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "api_elapsed_seconds_sum": 40.076577,
+    "usage": {
+      "prompt_tokens": {
+        "known_sum": 43120,
+        "unknown_call_count": 0
+      },
+      "completion_tokens": {
+        "known_sum": 13118,
+        "unknown_call_count": 0
+      },
+      "total_tokens": {
+        "known_sum": 56238,
+        "unknown_call_count": 0
+      }
+    }
+  }
+}
