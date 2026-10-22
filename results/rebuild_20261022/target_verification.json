@@ -1,0 +1,628 @@
+{
+  "method_count": 41,
+  "unique_ids": 41,
+  "targets_missing": 0,
+  "methods_unmatched": 0,
+  "ambiguous_methods": 1,
+  "methods": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "project_id": "commons-cli",
+      "method": "processArgs",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/Parser.java",
+      "exists": true,
+      "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+      "ranges": [
+        {
+          "start": 225,
+          "end": 248
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "project_id": "commons-cli",
+      "method": "toString",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/OptionGroup.java",
+      "exists": true,
+      "source_sha256": "49c76c02df88195d02a2ab986f9552e3a023e35ba0623106b4a8fc76d299cb47",
+      "ranges": [
+        {
+          "start": 122,
+          "end": 154
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-option-tostring",
+      "project_id": "commons-cli",
+      "method": "toString",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/Option.java",
+      "exists": true,
+      "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe",
+      "ranges": [
+        {
+          "start": 867,
+          "end": 894
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject",
+      "project_id": "commons-cli",
+      "method": "createObject",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/TypeHandler.java",
+      "exists": true,
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "ranges": [
+        {
+          "start": 110,
+          "end": 124
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern",
+      "project_id": "commons-cli",
+      "method": "parsePattern",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/PatternOptionBuilder.java",
+      "exists": true,
+      "source_sha256": "18e868e6eafe771342912ff88b95d1ff6a86f8a9124d14d56d1eb1cfd7d661be",
+      "ranges": [
+        {
+          "start": 153,
+          "end": 192
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+      "project_id": "commons-cli",
+      "method": "createNumber",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/TypeHandler.java",
+      "exists": true,
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "ranges": [
+        {
+          "start": 92,
+          "end": 101
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring",
+      "project_id": "commons-csv",
+      "method": "toString",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-csv/src/main/java/org/apache/commons/csv/CSVFormat.java",
+      "exists": true,
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "ranges": [
+        {
+          "start": 2213,
+          "end": 2260
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+      "project_id": "commons-csv",
+      "method": "equals",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-csv/src/main/java/org/apache/commons/csv/CSVFormat.java",
+      "exists": true,
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "ranges": [
+        {
+          "start": 1456,
+          "end": 1473
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "method": "printComment",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-csv/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+      "exists": true,
+      "source_sha256": "3d25f081a271d783a5cc48bb172a72687494e36d2e7e6d272319e6060f783e9f",
+      "ranges": [
+        {
+          "start": 194,
+          "end": 222
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+      "project_id": "commons-csv",
+      "method": "format",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-csv/src/main/java/org/apache/commons/csv/CSVFormat.java",
+      "exists": true,
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "ranges": [
+        {
+          "start": 1481,
+          "end": 1492
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline",
+      "project_id": "commons-csv",
+      "method": "readLine",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-csv/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+      "exists": true,
+      "source_sha256": "117dc55b49c9aab03f636811b20d0fc67044a993519fc2e13bdcb3ebae697237",
+      "ranges": [
+        {
+          "start": 212,
+          "end": 232
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource",
+      "project_id": "commons-codec",
+      "method": "loadFromResource",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-codec/src/main/java/org/apache/commons/codec/language/bm/Lang.java",
+      "exists": true,
+      "source_sha256": "d9bd107f5dd72ede692349877d48d44c90322254eecf607f2376c5434dbf1f5c",
+      "ranges": [
+        {
+          "start": 136,
+          "end": 182
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "method": "colognePhonetic",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-codec/src/main/java/org/apache/commons/codec/language/ColognePhonetic.java",
+      "exists": true,
+      "source_sha256": "09c82bd7bbf95609f7688b90c851cad361dc2603353374f27bee089ff69ccc2a",
+      "ranges": [
+        {
+          "start": 317,
+          "end": 395
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone",
+      "project_id": "commons-codec",
+      "method": "metaphone",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-codec/src/main/java/org/apache/commons/codec/language/Metaphone.java",
+      "exists": true,
+      "source_sha256": "b1339dc3015430f5999d60c1990a2b172fd66dbb9afc50c7dbe2778dd0a3217d",
+      "ranges": [
+        {
+          "start": 160,
+          "end": 380
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis",
+      "project_id": "commons-codec",
+      "method": "nysiis",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-codec/src/main/java/org/apache/commons/codec/language/Nysiis.java",
+      "exists": true,
+      "source_sha256": "51f351390fb30e717239235c994980083fdffba901be68f8857a193ba1d972a0",
+      "ranges": [
+        {
+          "start": 250,
+          "end": 320
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals",
+      "project_id": "commons-codec",
+      "method": "isEncodeEquals",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-codec/src/main/java/org/apache/commons/codec/language/MatchRatingApproachEncoder.java",
+      "exists": true,
+      "source_sha256": "2b5582efb959f8d6f325bc6c17430a9a5922a84b60fb0f22ca194d7882673214",
+      "ranges": [
+        {
+          "start": 211,
+          "end": 263
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall",
+      "project_id": "commons-collections4",
+      "method": "putAll",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/MapUtils.java",
+      "exists": true,
+      "source_sha256": "9a7481df6283a1e6aa412bab37da3f65643c46bfc1c831c803f043f1a3305df6",
+      "ranges": [
+        {
+          "start": 1655,
+          "end": 1690
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "method": "transform",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/functors/InvokerTransformer.java",
+      "exists": true,
+      "source_sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847",
+      "ranges": [
+        {
+          "start": 121,
+          "end": 141
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall",
+      "project_id": "commons-collections4",
+      "method": "addAll",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/list/TreeList.java",
+      "exists": true,
+      "source_sha256": "92093e699520ba2bdf38ef491b8019354b1a9f5069c1943079218feefdec38fb",
+      "ranges": [
+        {
+          "start": 180,
+          "end": 273
+        },
+        {
+          "start": 959,
+          "end": 969
+        }
+      ],
+      "match_count": 2
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices",
+      "project_id": "commons-collections4",
+      "method": "indices",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/bloomfilter/EnhancedDoubleHasher.java",
+      "exists": true,
+      "source_sha256": "284162ae08323a5b8bff13ad4f0375ef07b26ef1fa6776da04a62b1c6a5edd11",
+      "ranges": [
+        {
+          "start": 137,
+          "end": 221
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size",
+      "project_id": "commons-collections4",
+      "method": "size",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/CollectionUtils.java",
+      "exists": true,
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "ranges": [
+        {
+          "start": 1853,
+          "end": 1882
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform",
+      "project_id": "commons-collections4",
+      "method": "transform",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/functors/InstantiateTransformer.java",
+      "exists": true,
+      "source_sha256": "f2b48e80cbad116a4482377c65fe352bcab62ff47815a93787bb96416e0a8483",
+      "ranges": [
+        {
+          "start": 109,
+          "end": 127
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator",
+      "project_id": "commons-collections4",
+      "method": "getIterator",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/IteratorUtils.java",
+      "exists": true,
+      "source_sha256": "9207abddf8b91d5100ea9da6aa82a74f737fc6a78ed56fe13f6c331e371e9afc",
+      "ranges": [
+        {
+          "start": 885,
+          "end": 928
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex",
+      "project_id": "commons-collections4",
+      "method": "bitIndex",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/trie/analyzer/StringKeyAnalyzer.java",
+      "exists": true,
+      "source_sha256": "13080fb348e25efa874390e88ffd93e738b7be0ba8424addbba64b750f4c085b",
+      "ranges": [
+        {
+          "start": 56,
+          "end": 113
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory",
+      "project_id": "commons-collections4",
+      "method": "prototypeFactory",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/functors/PrototypeFactory.java",
+      "exists": true,
+      "source_sha256": "e31e2bbb8ab6426f8613d95a116b162c16275ad5ae9f2c0f477aefafb9c93a95",
+      "ranges": [
+        {
+          "start": 173,
+          "end": 196
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring",
+      "project_id": "commons-collections4",
+      "method": "toString",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/bag/AbstractMapBag.java",
+      "exists": true,
+      "source_sha256": "068ba88bebfdbb0566acbd567cd9b89551c8a4817ca3a8172cbda68d794cb561",
+      "ranges": [
+        {
+          "start": 587,
+          "end": 607
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next",
+      "project_id": "commons-collections4",
+      "method": "next",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/iterators/CartesianProductIterator.java",
+      "exists": true,
+      "source_sha256": "b592df44dc74bbb0fdcf3ba2602c94f1011fe96b6e72112fca3c316893cec8f7",
+      "ranges": [
+        {
+          "start": 127,
+          "end": 150
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring",
+      "project_id": "commons-collections4",
+      "method": "toString",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/properties/OrderedProperties.java",
+      "exists": true,
+      "source_sha256": "33150f093cd26a0006e26d618a56afd318b82926e1068638e31181a58adc487a",
+      "ranges": [
+        {
+          "start": 157,
+          "end": 179
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+      "project_id": "commons-collections4",
+      "method": "removeCount",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/CollectionUtils.java",
+      "exists": true,
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "ranges": [
+        {
+          "start": 1540,
+          "end": 1566
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring",
+      "project_id": "commons-collections4",
+      "method": "toString",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4/src/main/java/org/apache/commons/collections4/trie/AbstractPatriciaTrie.java",
+      "exists": true,
+      "source_sha256": "e4cea76991201e8998893fc411b5efab43976ad7f5b03f101d6c8b661b8251ed",
+      "ranges": [
+        {
+          "start": 1046,
+          "end": 1104
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "method": "construct",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/internal/ReflectionConstructor.java",
+      "exists": true,
+      "source_sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43",
+      "ranges": [
+        {
+          "start": 79,
+          "end": 101
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+      "project_id": "jdom2",
+      "method": "newInstance",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/xpath/XPath.java",
+      "exists": true,
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "ranges": [
+        {
+          "start": 124,
+          "end": 161
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement",
+      "project_id": "jdom2",
+      "method": "startElement",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/input/sax/SAXHandler.java",
+      "exists": true,
+      "source_sha256": "a921a97f49eb12e924f2990e9fa50cdfbec927537004ad5ce396daedf34efb5f",
+      "ranges": [
+        {
+          "start": 572,
+          "end": 724
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass",
+      "project_id": "jdom2",
+      "method": "setXPathClass",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/xpath/XPath.java",
+      "exists": true,
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "ranges": [
+        {
+          "start": 175,
+          "end": 198
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-document-cancontaincontent",
+      "project_id": "jdom2",
+      "method": "canContainContent",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/Document.java",
+      "exists": true,
+      "source_sha256": "606c68f2a68000cb343f1854e4a898ceee862e17913cb9d519828b1e77cc1908",
+      "ranges": [
+        {
+          "start": 791,
+          "end": 836
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapetext",
+      "project_id": "jdom2",
+      "method": "escapeText",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/output/Format.java",
+      "exists": true,
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "ranges": [
+        {
+          "start": 455,
+          "end": 536
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+      "project_id": "jdom2",
+      "method": "escapeAttribute",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/output/Format.java",
+      "exists": true,
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "ranges": [
+        {
+          "start": 346,
+          "end": 430
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata",
+      "project_id": "jdom2",
+      "method": "checkCharacterData",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/Verifier.java",
+      "exists": true,
+      "source_sha256": "ea3c86b9ec67eaf7ea591fa85ecc454524baae768343d72cae5711fa6f2db400",
+      "ranges": [
+        {
+          "start": 433,
+          "end": 496
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "project_id": "jdom2",
+      "method": "getNamespacesInScope",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/jdom2/core/src/java/org/jdom2/Element.java",
+      "exists": true,
+      "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+      "ranges": [
+        {
+          "start": 1711,
+          "end": 1760
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "method": "html",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/windward/src/main/java/org/flmelody/core/context/AbstractHttpWindwardContext.java",
+      "exists": true,
+      "source_sha256": "1dcefd92f83629bcec565ec55c567094522226c3676d76ed919123acb903d144",
+      "ranges": [
+        {
+          "start": 86,
+          "end": 119
+        }
+      ],
+      "match_count": 1
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-netty-nettyhttpserver-run",
+      "project_id": "windward",
+      "method": "run",
+      "source": "/root/autodl-tmp/kcf-projects-20261022/windward/src/main/java/org/flmelody/core/netty/NettyHttpServer.java",
+      "exists": true,
+      "source_sha256": "c60d3629f5342b36544a1f035e8f462ab0cc1aef7f0f86e423bdb8355040ebb1",
+      "ranges": [
+        {
+          "start": 51,
+          "end": 91
+        }
+      ],
+      "match_count": 1
+    }
+  ]
+}

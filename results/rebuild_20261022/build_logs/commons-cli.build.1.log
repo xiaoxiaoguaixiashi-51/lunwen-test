@@ -1,0 +1,805 @@
+Command: mvn -s /root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml -B -DskipTests -Drat.skip=true test-compile
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< commons-cli:commons-cli >-----------------------
+[INFO] Building Apache Commons CLI 1.5.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-remote-resources-plugin/1.7.0/maven-remote-resources-plugin-1.7.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-remote-resources-plugin/1.7.0/maven-remote-resources-plugin-1.7.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-plugins/33/maven-plugins-33.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-plugins/33/maven-plugins-33.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-remote-resources-plugin/1.7.0/maven-remote-resources-plugin-1.7.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-remote-resources-plugin/1.7.0/maven-remote-resources-plugin-1.7.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer/3.0.0-M3/enforcer-3.0.0-M3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer/3.0.0-M3/enforcer-3.0.0-M3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-site-plugin/3.9.1/maven-site-plugin-3.9.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-site-plugin/3.9.1/maven-site-plugin-3.9.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-plugins/34/maven-plugins-34.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-plugins/34/maven-plugins-34.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/34/maven-parent-34.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/34/maven-parent-34.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-site-plugin/3.9.1/maven-site-plugin-3.9.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-site-plugin/3.9.1/maven-site-plugin-3.9.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-jar-plugin/3.2.0/maven-jar-plugin-3.2.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-jar-plugin/3.2.0/maven-jar-plugin-3.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-jar-plugin/3.2.0/maven-jar-plugin-3.2.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-jar-plugin/3.2.0/maven-jar-plugin-3.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/build-helper-maven-plugin/3.2.0/build-helper-maven-plugin-3.2.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/build-helper-maven-plugin/3.2.0/build-helper-maven-plugin-3.2.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/mojo-parent/50/mojo-parent-50.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/mojo-parent/50/mojo-parent-50.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/build-helper-maven-plugin/3.2.0/build-helper-maven-plugin-3.2.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/build-helper-maven-plugin/3.2.0/build-helper-maven-plugin-3.2.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/animal-sniffer-maven-plugin/1.20/animal-sniffer-maven-plugin-1.20.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/animal-sniffer-maven-plugin/1.20/animal-sniffer-maven-plugin-1.20.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/animal-sniffer-parent/1.20/animal-sniffer-parent-1.20.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/animal-sniffer-parent/1.20/animal-sniffer-parent-1.20.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/mojo-parent/61/mojo-parent-61.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/mojo-parent/61/mojo-parent-61.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/animal-sniffer-maven-plugin/1.20/animal-sniffer-maven-plugin-1.20.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/animal-sniffer-maven-plugin/1.20/animal-sniffer-maven-plugin-1.20.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/jacoco/jacoco-maven-plugin/0.8.7/jacoco-maven-plugin-0.8.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/jacoco/jacoco-maven-plugin/0.8.7/jacoco-maven-plugin-0.8.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/jacoco/org.jacoco.build/0.8.7/org.jacoco.build-0.8.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/jacoco/org.jacoco.build/0.8.7/org.jacoco.build-0.8.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/jacoco/jacoco-maven-plugin/0.8.7/jacoco-maven-plugin-0.8.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/jacoco/jacoco-maven-plugin/0.8.7/jacoco-maven-plugin-0.8.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-plugin/0.13/apache-rat-plugin-0.13.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-plugin/0.13/apache-rat-plugin-0.13.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-project/0.13/apache-rat-project-0.13.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-project/0.13/apache-rat-project-0.13.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/18/apache-18.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/18/apache-18.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-plugin/0.13/apache-rat-plugin-0.13.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-plugin/0.13/apache-rat-plugin-0.13.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-antrun-plugin/3.0.0/maven-antrun-plugin-3.0.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/buildnumber-maven-plugin/1.4/buildnumber-maven-plugin-1.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/buildnumber-maven-plugin/1.4/buildnumber-maven-plugin-1.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/mojo-parent/38/mojo-parent-38.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/mojo-parent/38/mojo-parent-38.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/buildnumber-maven-plugin/1.4/buildnumber-maven-plugin-1.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/mojo/buildnumber-maven-plugin/1.4/buildnumber-maven-plugin-1.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-plugins/31/maven-plugins-31.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-plugins/31/maven-plugins-31.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/31/maven-parent-31.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/31/maven-parent-31.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/maven-bundle-plugin/5.1.2/maven-bundle-plugin-5.1.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/maven-bundle-plugin/5.1.2/maven-bundle-plugin-5.1.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/felix-parent/6/felix-parent-6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/felix-parent/6/felix-parent-6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/maven-bundle-plugin/5.1.2/maven-bundle-plugin-5.1.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/felix/maven-bundle-plugin/5.1.2/maven-bundle-plugin-5.1.2.jar (0 B at 0 B/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-api/3.0.0-M3/enforcer-api-3.0.0-M3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-api/3.0.0-M3/enforcer-api-3.0.0-M3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/junit/junit/4.11/junit-4.11.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/junit/junit/4.11/junit-4.11.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-rules/3.0.0-M3/enforcer-rules-3.0.0-M3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-rules/3.0.0-M3/enforcer-rules-3.0.0-M3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-components/33/maven-shared-components-33.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-components/33/maven-shared-components-33.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/30/maven-parent-30.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/30/maven-parent-30.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.5/commons-io-2.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.5/commons-io-2.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.12/commons-codec-1.12.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.12/commons-codec-1.12.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-components/20/maven-shared-components-20.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-components/20/maven-shared-components-20.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/24/maven-parent-24.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/24/maven-parent-24.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/14/apache-14.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/14/apache-14.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver/1.4.1/maven-resolver-1.4.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver/1.4.1/maven-resolver-1.4.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0/maven-model-3.0.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0/maven-core-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0/maven-core-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0/maven-model-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-api/3.0.0-M3/enforcer-api-3.0.0-M3.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/junit/junit/4.11/junit-4.11.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-rules/3.0.0-M3/enforcer-rules-3.0.0-M3.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/junit/junit/4.11/junit-4.11.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.5/commons-io-2.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.5/commons-io-2.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.12/commons-codec-1.12.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.12/commons-codec-1.12.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-api/3.0.0-M3/enforcer-api-3.0.0-M3.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/enforcer/enforcer-rules/3.0.0-M3/enforcer-rules-3.0.0-M3.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-common-artifact-filters/3.1.0/maven-common-artifact-filters-3.1.0.jar (0 B at 0 B/s)
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-3) @ commons-cli ---
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-core/0.13/apache-rat-core-0.13.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-core/0.13/apache-rat-core-0.13.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-api/0.13/apache-rat-api-0.13.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-api/0.13/apache-rat-api-0.13.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.2/commons-io-2.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/24/commons-parent-24.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/9/apache-9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/9/apache-9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/37/commons-parent-37.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/37/commons-parent-37.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/junit/junit/4.12/junit-4.12.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/junit/junit/4.12/junit-4.12.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-core/1.6/doxia-core-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-core/1.6/doxia-core-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia/1.6/doxia-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia/1.6/doxia-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcomponents-client/4.0.2/httpcomponents-client-4.0.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcomponents-client/4.0.2/httpcomponents-client-4.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/project/4.1/project-4.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/project/4.1/project-4.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcomponents-core/4.0.1/httpcomponents-core-4.0.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcomponents-core/4.0.1/httpcomponents-core-4.0.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/project/4.0/project-4.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/project/4.0/project-4.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/5/commons-parent-5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/5/commons-parent-5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.3/commons-codec-1.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.3/commons-codec-1.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xmlunit/xmlunit/1.5/xmlunit-1.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xmlunit/xmlunit/1.5/xmlunit-1.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-sitetools/1.6/doxia-sitetools-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-sitetools/1.6/doxia-sitetools-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-site-renderer/1.6/doxia-site-renderer-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-site-renderer/1.6/doxia-site-renderer-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-xhtml/1.6/doxia-module-xhtml-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-xhtml/1.6/doxia-module-xhtml-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-modules/1.6/doxia-modules-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-modules/1.6/doxia-modules-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-fml/1.6/doxia-module-fml-1.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-fml/1.6/doxia-module-fml-1.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-20/plexus-container-default-1.0-alpha-20.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-container-default/1.0-alpha-20/plexus-container-default-1.0-alpha-20.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-containers/1.0-alpha-20/plexus-containers-1.0-alpha-20.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-containers/1.0-alpha-20/plexus-containers-1.0-alpha-20.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/1.3/plexus-utils-1.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/1.3/plexus-utils-1.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/1.2-alpha-7/plexus-classworlds-1.2-alpha-7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/1.2-alpha-7/plexus-classworlds-1.2-alpha-7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/velocity/velocity/1.5/velocity-1.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/velocity/velocity/1.5/velocity-1.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/javax/servlet/servlet-api/2.3/servlet-api-2.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/javax/servlet/servlet-api/2.3/servlet-api-2.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/sslext/sslext/1.2-0/sslext-1.2-0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/sslext/sslext/1.2-0/sslext-1.2-0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-parent/1.3.8/struts-parent-1.3.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-parent/1.3.8/struts-parent-1.3.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-master/4/struts-master-4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-master/4/struts-master-4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/2/apache-2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/apache/2/apache-2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/antlr/antlr/2.7.2/antlr-2.7.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/antlr/antlr/2.7.2/antlr-2.7.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-core/0.13/apache-rat-core-0.13.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.2/commons-io-2.2.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-api/0.13/apache-rat-api-0.13.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.2/commons-io-2.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-core/1.6/doxia-core-1.6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-api/0.13/apache-rat-api-0.13.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.3/commons-codec-1.3.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/rat/apache-rat-core/0.13/apache-rat-core-0.13.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-core/1.6/doxia-core-1.6.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xmlunit/xmlunit/1.5/xmlunit-1.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-codec/commons-codec/1.3/commons-codec-1.3.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-site-renderer/1.6/doxia-site-renderer-1.6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-logging-api/1.6/doxia-logging-api-1.6.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-xhtml/1.6/doxia-module-xhtml-1.6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/xmlunit/xmlunit/1.5/xmlunit-1.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-fml/1.6/doxia-module-fml-1.6.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-decoration-model/1.6/doxia-decoration-model-1.6.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/velocity/velocity/1.5/velocity-1.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-site-renderer/1.6/doxia-site-renderer-1.6.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/sslext/sslext/1.2-0/sslext-1.2-0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/velocity/velocity/1.5/velocity-1.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/antlr/antlr/2.7.2/antlr-2.7.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/sslext/sslext/1.2-0/sslext-1.2-0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-xhtml/1.6/doxia-module-xhtml-1.6.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/doxia/doxia-module-fml/1.6/doxia-module-fml-1.6.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/antlr/antlr/2.7.2/antlr-2.7.2.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.21/plexus-utils-3.0.21.jar (0 B at 0 B/s)
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/26/maven-parent-26.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-parent/26/maven-parent-26.pom (0 B at 0 B/s)
+[INFO] 
+[INFO] --- maven-antrun-plugin:3.0.0:run (javadoc.resources) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven/3.0.5/maven-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven/3.0.5/maven-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/2.1/plexus-utils-2.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant/1.9.14/ant-1.9.14.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant/1.9.14/ant-1.9.14.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant-parent/1.9.14/ant-parent-1.9.14.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant-parent/1.9.14/ant-parent-1.9.14.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-inject-plexus/2.3.0/sisu-inject-plexus-2.3.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model/3.0.5/maven-model-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-plugin-api/3.0.5/maven-plugin-api-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/sisu/sisu-guava/0.9.9/sisu-guava-0.9.9.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-core/3.0.5/maven-core-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.0.5/maven-settings-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.0.5/maven-repository-metadata-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.0.5/maven-settings-builder-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.0.5/maven-model-builder-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.0.5/maven-aether-provider-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-spi/1.13.1/aether-spi-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-util/1.13.1/aether-util-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant/1.9.14/ant-1.9.14.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/sonatype/aether/aether-api/1.13.1/aether-api-1.13.1.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-artifact/3.0.5/maven-artifact-3.0.5.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant/1.9.14/ant-1.9.14.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/ant/ant-launcher/1.9.14/ant-launcher-1.9.14.jar (0 B at 0 B/s)
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-cli ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-api/1.9.4/maven-scm-api-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-api/1.9.4/maven-scm-api-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm/1.9.4/maven-scm-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm/1.9.4/maven-scm-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-manager-plexus/1.9.4/maven-scm-manager-plexus-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-manager-plexus/1.9.4/maven-scm-manager-plexus-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-managers/1.9.4/maven-scm-managers-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-managers/1.9.4/maven-scm-managers-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-bazaar/1.9.4/maven-scm-provider-bazaar-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-bazaar/1.9.4/maven-scm-provider-bazaar-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers/1.9.4/maven-scm-providers-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers/1.9.4/maven-scm-providers-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svnexe/1.9.4/maven-scm-provider-svnexe-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svnexe/1.9.4/maven-scm-provider-svnexe-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers-svn/1.9.4/maven-scm-providers-svn-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers-svn/1.9.4/maven-scm-providers-svn-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svn-commons/1.9.4/maven-scm-provider-svn-commons-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svn-commons/1.9.4/maven-scm-provider-svn-commons-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-gitexe/1.9.4/maven-scm-provider-gitexe-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-gitexe/1.9.4/maven-scm-provider-gitexe-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers-git/1.9.4/maven-scm-providers-git-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers-git/1.9.4/maven-scm-providers-git-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-git-commons/1.9.4/maven-scm-provider-git-commons-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-git-commons/1.9.4/maven-scm-provider-git-commons-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvsexe/1.9.4/maven-scm-provider-cvsexe-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvsexe/1.9.4/maven-scm-provider-cvsexe-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers-cvs/1.9.4/maven-scm-providers-cvs-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers-cvs/1.9.4/maven-scm-providers-cvs-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.9.4/maven-scm-provider-cvs-commons-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.9.4/maven-scm-provider-cvs-commons-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-starteam/1.9.4/maven-scm-provider-starteam-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-starteam/1.9.4/maven-scm-provider-starteam-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-clearcase/1.9.4/maven-scm-provider-clearcase-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-clearcase/1.9.4/maven-scm-provider-clearcase-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-perforce/1.9.4/maven-scm-provider-perforce-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-perforce/1.9.4/maven-scm-provider-perforce-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-hg/1.9.4/maven-scm-provider-hg-1.9.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-hg/1.9.4/maven-scm-provider-hg-1.9.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/2.1.1/maven-scm-provider-svnjava-2.1.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/2.1.1/maven-scm-provider-svnjava-2.1.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers/1.8/maven-scm-providers-1.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-providers/1.8/maven-scm-providers-1.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm/1.8/maven-scm-1.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm/1.8/maven-scm-1.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.3/plexus-utils-3.0.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.3/plexus-utils-3.0.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/jna/3.5.2/jna-3.5.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/jna/3.5.2/jna-3.5.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.14/plexus-utils-3.0.14.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.14/plexus-utils-3.0.14.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.1/commons-io-2.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/commons-io/commons-io/2.1/commons-io-2.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/22/commons-parent-22.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-parent/22/commons-parent-22.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/svnkit/svnkit/1.8.5/svnkit-1.8.5.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/svnkit/svnkit/1.8.5/svnkit-1.8.5.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.svnkit-trilead-ssh2/0.0.7/jsch.agentproxy.svnkit-trilead-ssh2-0.0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.svnkit-trilead-ssh2/0.0.7/jsch.agentproxy.svnkit-trilead-ssh2-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy/0.0.7/jsch.agentproxy-0.0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy/0.0.7/jsch.agentproxy-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.core/0.0.7/jsch.agentproxy.core-0.0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.core/0.0.7/jsch.agentproxy.core-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/sqljet/sqljet/1.1.10/sqljet-1.1.10.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/sqljet/sqljet/1.1.10/sqljet-1.1.10.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/platform/3.5.2/platform-3.5.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/platform/3.5.2/platform-3.5.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/jna/3.4.0/jna-3.4.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/jna/3.4.0/jna-3.4.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/platform/3.4.0/platform-3.4.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/platform/3.4.0/platform-3.4.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.usocket-nc/0.0.7/jsch.agentproxy.usocket-nc-0.0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.usocket-nc/0.0.7/jsch.agentproxy.usocket-nc-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.sshagent/0.0.7/jsch.agentproxy.sshagent-0.0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.sshagent/0.0.7/jsch.agentproxy.sshagent-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.pageant/0.0.7/jsch.agentproxy.pageant-0.0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.pageant/0.0.7/jsch.agentproxy.pageant-0.0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/de/regnis/q/sequence/sequence-library/1.0.2/sequence-library-1.0.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/de/regnis/q/sequence/sequence-library/1.0.2/sequence-library-1.0.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-api/1.9.4/maven-scm-api-1.9.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svnexe/1.9.4/maven-scm-provider-svnexe-1.9.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-gitexe/1.9.4/maven-scm-provider-gitexe-1.9.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-bazaar/1.9.4/maven-scm-provider-bazaar-1.9.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-manager-plexus/1.9.4/maven-scm-manager-plexus-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-api/1.9.4/maven-scm-api-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-git-commons/1.9.4/maven-scm-provider-git-commons-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svnexe/1.9.4/maven-scm-provider-svnexe-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svn-commons/1.9.4/maven-scm-provider-svn-commons-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-manager-plexus/1.9.4/maven-scm-manager-plexus-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-gitexe/1.9.4/maven-scm-provider-gitexe-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvsexe/1.9.4/maven-scm-provider-cvsexe-1.9.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.9.4/maven-scm-provider-cvs-commons-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-bazaar/1.9.4/maven-scm-provider-bazaar-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-starteam/1.9.4/maven-scm-provider-starteam-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-git-commons/1.9.4/maven-scm-provider-git-commons-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-clearcase/1.9.4/maven-scm-provider-clearcase-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvsexe/1.9.4/maven-scm-provider-cvsexe-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-perforce/1.9.4/maven-scm-provider-perforce-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-starteam/1.9.4/maven-scm-provider-starteam-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-hg/1.9.4/maven-scm-provider-hg-1.9.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-svn-commons/1.9.4/maven-scm-provider-svn-commons-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/2.1.1/maven-scm-provider-svnjava-2.1.1.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.9.4/maven-scm-provider-cvs-commons-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/jna/3.5.2/jna-3.5.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-clearcase/1.9.4/maven-scm-provider-clearcase-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/svnkit/svnkit/1.8.5/svnkit-1.8.5.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-perforce/1.9.4/maven-scm-provider-perforce-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.svnkit-trilead-ssh2/0.0.7/jsch.agentproxy.svnkit-trilead-ssh2-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/2.1.1/maven-scm-provider-svnjava-2.1.1.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.core/0.0.7/jsch.agentproxy.core-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/scm/maven-scm-provider-hg/1.9.4/maven-scm-provider-hg-1.9.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/sqljet/sqljet/1.1.10/sqljet-1.1.10.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/jna/3.5.2/jna-3.5.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/platform/3.5.2/platform-3.5.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/svnkit/svnkit/1.8.5/svnkit-1.8.5.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.connector-factory/0.0.7/jsch.agentproxy.connector-factory-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/tmatesoft/sqljet/sqljet/1.1.10/sqljet-1.1.10.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.usocket-jna/0.0.7/jsch.agentproxy.usocket-jna-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.core/0.0.7/jsch.agentproxy.core-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.usocket-nc/0.0.7/jsch.agentproxy.usocket-nc-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/net/java/dev/jna/platform/3.5.2/platform-3.5.2.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.sshagent/0.0.7/jsch.agentproxy.sshagent-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.connector-factory/0.0.7/jsch.agentproxy.connector-factory-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.pageant/0.0.7/jsch.agentproxy.pageant-0.0.7.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.svnkit-trilead-ssh2/0.0.7/jsch.agentproxy.svnkit-trilead-ssh2-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/de/regnis/q/sequence/sequence-library/1.0.2/sequence-library-1.0.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.usocket-jna/0.0.7/jsch.agentproxy.usocket-jna-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/trilead/trilead-ssh2/1.0.0-build217/trilead-ssh2-1.0.0-build217.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.usocket-nc/0.0.7/jsch.agentproxy.usocket-nc-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.sshagent/0.0.7/jsch.agentproxy.sshagent-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/jcraft/jsch.agentproxy.pageant/0.0.7/jsch.agentproxy.pageant-0.0.7.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/de/regnis/q/sequence/sequence-library/1.0.2/sequence-library-1.0.2.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/trilead/trilead-ssh2/1.0.0-build217/trilead-ssh2-1.0.0-build217.jar (0 B at 0 B/s)
+[INFO] Executing: /bin/sh -c cd '/root/autodl-tmp/kcf-projects-20261022/commons-cli' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /root/autodl-tmp/kcf-projects-20261022/commons-cli
+[INFO] Storing buildNumber: ?????? at timestamp: 1792656475705
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: not a git repository (or any parent up to mount point /root)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+[INFO] Executing: /bin/sh -c cd '/root/autodl-tmp/kcf-projects-20261022/commons-cli' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /root/autodl-tmp/kcf-projects-20261022/commons-cli
+[INFO] Storing buildScmBranch: UNKNOWN_BRANCH
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.jar (0 B at 0 B/s)
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-languages/0.9.10/plexus-languages-0.9.10.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-languages/0.9.10/plexus-languages-0.9.10.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/ow2/asm/asm/6.2/asm-6.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/ow2/asm/asm/6.2/asm-6.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler/2.8.4/plexus-compiler-2.8.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler/2.8.4/plexus-compiler-2.8.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compilers/2.8.4/plexus-compilers-2.8.4.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compilers/2.8.4/plexus-compilers-2.8.4.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/ow2/asm/asm/6.2/asm-6.2.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/ow2/asm/asm/6.2/asm-6.2.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.jar (0 B at 0 B/s)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 23 source files to /root/autodl-tmp/kcf-projects-20261022/commons-cli/target/classes
+[INFO] /root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/DefaultParser.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/autodl-tmp/kcf-projects-20261022/commons-cli/src/main/java/org/apache/commons/cli/DefaultParser.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.2:manifest (bundle-manifest) @ commons-cli ---
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bndlib/6.0.0/biz.aQute.bndlib-6.0.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bndlib/6.0.0/biz.aQute.bndlib-6.0.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bnd.util/6.0.0/biz.aQute.bnd.util-6.0.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bnd.util/6.0.0/biz.aQute.bnd.util-6.0.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.17/plexus-utils-3.0.17.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.17/plexus-utils-3.0.17.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/guava/guava/18.0/guava-18.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/guava/guava/18.0/guava-18.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/inject/guice/4.0/guice-4.0.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/com/google/inject/guice/4.0/guice-4.0.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-components/1.2/plexus-components-1.2.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-components/1.2/plexus-components-1.2.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bndlib/6.0.0/biz.aQute.bndlib-6.0.0.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bnd.util/6.0.0/biz.aQute.bnd.util-6.0.0.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bndlib/6.0.0/biz.aQute.bndlib-6.0.0.jar (0 B at 0 B/s)
+[INFO] Downloading from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/biz/aQute/bnd/biz.aQute.bnd.util/6.0.0/biz.aQute.bnd.util-6.0.0.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.jar (0 B at 0 B/s)
+[INFO] Downloaded from kcf-huaweicloud: https://repo.huaweicloud.com/repository/maven/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar (0 B at 0 B/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ commons-cli ---
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ commons-cli ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 29 source files to /root/autodl-tmp/kcf-projects-20261022/commons-cli/target/test-classes
+[INFO] /root/autodl-tmp/kcf-projects-20261022/commons-cli/src/test/java/org/apache/commons/cli/bug/BugCLI13Test.java: Some input files use or override a deprecated API.
+[INFO] /root/autodl-tmp/kcf-projects-20261022/commons-cli/src/test/java/org/apache/commons/cli/bug/BugCLI13Test.java: Recompile with -Xlint:deprecation for details.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:43 min
+[INFO] Finished at: 2026-10-22T16:08:22+08:00
+[INFO] ------------------------------------------------------------------------

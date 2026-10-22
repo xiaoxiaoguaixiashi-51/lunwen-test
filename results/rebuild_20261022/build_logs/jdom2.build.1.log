@@ -1,0 +1,11 @@
+Command: ant -Dcompile.source=1.6 -Dcompile.target=1.6 compile.core
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+Buildfile: /root/autodl-tmp/kcf-projects-20261022/jdom2/build.xml
+     [echo] ----------- JDOM 2.x-2026.10.22.16.08 ------------
+
+prepare:
+
+compile.core:
+
+BUILD SUCCESSFUL
+Total time: 0 seconds

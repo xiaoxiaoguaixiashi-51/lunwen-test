@@ -1,0 +1,30 @@
+Command: mvn -s /root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml -B -DskipTests test-compile
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] 
+[INFO] -----------------------< org.flmelody:windward >------------------------
+[INFO] Building windward 1.5.1-RELEASE
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ windward ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/autodl-tmp/kcf-projects-20261022/windward/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ windward ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ windward ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/autodl-tmp/kcf-projects-20261022/windward/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ windward ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.994 s
+[INFO] Finished at: 2026-10-22T16:08:21+08:00
+[INFO] ------------------------------------------------------------------------

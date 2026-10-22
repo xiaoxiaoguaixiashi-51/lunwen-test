@@ -1,0 +1,130 @@
+[
+  {
+    "project_id": "commons-cli",
+    "java_home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "commands": [
+      {
+        "argv": [
+          "mvn",
+          "-s",
+          "/root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml",
+          "-B",
+          "-DskipTests",
+          "-Drat.skip=true",
+          "test-compile"
+        ],
+        "return_code": 0,
+        "status": "ok",
+        "log": "experiments/runs/rebuild_20261022/build_final/commons-cli.build.1.log"
+      }
+    ],
+    "status": "ok",
+    "elapsed_seconds": 164.4
+  },
+  {
+    "project_id": "commons-codec",
+    "java_home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "commands": [
+      {
+        "argv": [
+          "mvn",
+          "-s",
+          "/root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml",
+          "-B",
+          "-DskipTests",
+          "-Drat.skip=true",
+          "test-compile"
+        ],
+        "return_code": 0,
+        "status": "ok",
+        "log": "experiments/runs/rebuild_20261022/build_final/commons-codec.build.1.log"
+      }
+    ],
+    "status": "ok",
+    "elapsed_seconds": 100.59
+  },
+  {
+    "project_id": "commons-collections4",
+    "java_home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "commands": [
+      {
+        "argv": [
+          "mvn",
+          "-s",
+          "/root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml",
+          "-B",
+          "-DskipTests",
+          "-Drat.skip=true",
+          "test-compile"
+        ],
+        "return_code": 0,
+        "status": "ok",
+        "log": "experiments/runs/rebuild_20261022/build_final/commons-collections4.build.1.log"
+      }
+    ],
+    "status": "ok",
+    "elapsed_seconds": 116.11
+  },
+  {
+    "project_id": "commons-csv",
+    "java_home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "commands": [
+      {
+        "argv": [
+          "mvn",
+          "-s",
+          "/root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml",
+          "-B",
+          "-DskipTests",
+          "-Drat.skip=true",
+          "test-compile"
+        ],
+        "return_code": 0,
+        "status": "ok",
+        "log": "experiments/runs/rebuild_20261022/build_final/commons-csv.build.1.log"
+      }
+    ],
+    "status": "ok",
+    "elapsed_seconds": 161.14
+  },
+  {
+    "project_id": "jdom2",
+    "java_home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "commands": [
+      {
+        "argv": [
+          "ant",
+          "-Dcompile.source=1.6",
+          "-Dcompile.target=1.6",
+          "compile.core"
+        ],
+        "return_code": 0,
+        "status": "ok",
+        "log": "experiments/runs/rebuild_20261022/build_final/jdom2.build.1.log"
+      }
+    ],
+    "status": "ok",
+    "elapsed_seconds": 0.42
+  },
+  {
+    "project_id": "windward",
+    "java_home": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "commands": [
+      {
+        "argv": [
+          "mvn",
+          "-s",
+          "/root/autodl-tmp/lunwen-test/config/maven.kcf-settings.xml",
+          "-B",
+          "-DskipTests",
+          "test-compile"
+        ],
+        "return_code": 0,
+        "status": "ok",
+        "log": "experiments/runs/rebuild_20261022/build_final/windward.build.1.log"
+      }
+    ],
+    "status": "ok",
+    "elapsed_seconds": 1.82
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "manifest_sha256": "d903270b9cfba3d68dd6c5f08705ee87a61a700b5d70ad62b1372160e579c79e",
+  "projects": [
+    {
+      "project_id": "commons-cli",
+      "status": "ok",
+      "repository": "https://github.com/apache/commons-cli.git",
+      "requested_ref": "commons-cli-1.5.0",
+      "resolved_commit": "e81a871025cd2dd5bc1d3b473c3c495533e7b8f4",
+      "archive_url": "https://codeload.github.com/apache/commons-cli/tar.gz/e81a871025cd2dd5bc1d3b473c3c495533e7b8f4",
+      "archive_sha256": "d16ade206652cefa2efa6cb446b934667a812ffe066ed716e47ce40afbddc90d",
+      "source_dir": "/root/autodl-tmp/kcf-projects-20261022/commons-cli",
+      "checkout_kind": "official_github_archive",
+      "attempts": []
+    },
+    {
+      "project_id": "commons-codec",
+      "status": "ok",
+      "repository": "https://github.com/apache/commons-codec.git",
+      "requested_ref": "3a6873e",
+      "resolved_commit": "3a6873e888fa0678ee6934c0990f7e41c4df6957",
+      "archive_url": "https://codeload.github.com/apache/commons-codec/tar.gz/3a6873e888fa0678ee6934c0990f7e41c4df6957",
+      "archive_sha256": "a24fed6859be6e6aff0487ffe1202c9caf733fe610c41dc063f2f20cc52e9767",
+      "source_dir": "/root/autodl-tmp/kcf-projects-20261022/commons-codec",
+      "checkout_kind": "official_github_archive",
+      "attempts": []
+    },
+    {
+      "project_id": "commons-collections4",
+      "status": "ok",
+      "repository": "https://github.com/apache/commons-collections.git",
+      "requested_ref": "rel/commons-collections-4.5.0",
+      "resolved_commit": "7f7fb0244abc940a2e9dd28b67508c0483a58c3e",
+      "archive_url": "https://codeload.github.com/apache/commons-collections/tar.gz/7f7fb0244abc940a2e9dd28b67508c0483a58c3e",
+      "archive_sha256": "083dd12f77dc40acb3c219ebc73aaf3d6af8f026b953360f6052925a10bbf5f8",
+      "source_dir": "/root/autodl-tmp/kcf-projects-20261022/commons-collections4",
+      "checkout_kind": "official_github_archive",
+      "attempts": [
+        {
+          "ref": "commons-collections-4.5.0",
+          "error": "Command '['curl', '--fail', '--location', '--silent', '--show-error', '--connect-timeout', '10', '--max-time', '90', '--retry', '1', '--output', 'experiments/runs/rebuild_20261022/sources/commons-collections4/commit.json', 'https://api.github.com/repos/apache/commons-collections/commits/commons-collections-4.5.0']' returned non-zero exit status 22."
+        }
+      ]
+    },
+    {
+      "project_id": "commons-csv",
+      "status": "ok",
+      "repository": "https://github.com/apache/commons-csv.git",
+      "requested_ref": "rel/commons-csv-1.10.0",
+      "resolved_commit": "5b99c860986a87f9da664bf47a3a7c0026673123",
+      "archive_url": "https://codeload.github.com/apache/commons-csv/tar.gz/5b99c860986a87f9da664bf47a3a7c0026673123",
+      "archive_sha256": "1f1fd5dd21f6ea4c158a75ae31ac8a08ec6d0d6f8f26060b8bc6706314dd8d05",
+      "source_dir": "/root/autodl-tmp/kcf-projects-20261022/commons-csv",
+      "checkout_kind": "official_github_archive",
+      "attempts": [
+        {
+          "ref": "commons-csv-1.10.0",
+          "error": "Command '['curl', '--fail', '--location', '--silent', '--show-error', '--connect-timeout', '10', '--max-time', '300', '--retry', '0', '--output', 'experiments/runs/rebuild_20261022/sources/commons-csv/commit.json', 'https://api.github.com/repos/apache/commons-csv/commits/commons-csv-1.10.0']' returned non-zero exit status 22."
+        }
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "status": "ok",
+      "repository": "https://github.com/hunterhacker/jdom.git",
+      "requested_ref": "JDOM-2.0.6",
+      "resolved_commit": "2e946f814b5ea255c0a5f861a61f911b83bad28a",
+      "archive_url": "https://codeload.github.com/hunterhacker/jdom/tar.gz/2e946f814b5ea255c0a5f861a61f911b83bad28a",
+      "archive_sha256": "1f8dc9a73102b6a5b83c88776f375816785753cebe0b24ad64d80c8a0e90e2b4",
+      "source_dir": "/root/autodl-tmp/kcf-projects-20261022/jdom2",
+      "checkout_kind": "official_github_archive",
+      "attempts": []
+    },
+    {
+      "project_id": "windward",
+      "status": "ok",
+      "repository": "https://github.com/Flmelody/windward.git",
+      "requested_ref": "1.5.1-RELEASE",
+      "resolved_commit": "66b45be081c3a2968de18d6cfcb395472ac1e9cc",
+      "archive_url": "https://codeload.github.com/Flmelody/windward/tar.gz/66b45be081c3a2968de18d6cfcb395472ac1e9cc",
+      "archive_sha256": "8e6c9b23672204f3b8001c245468588780b5ceb8ef921d3d45c09947e4b82b64",
+      "source_dir": "/root/autodl-tmp/kcf-projects-20261022/windward",
+      "checkout_kind": "official_github_archive",
+      "attempts": []
+    }
+  ]
+}
