@@ -1,5 +1,12 @@
 # KCF-UTG RQ1/RQ2 Run Protocol (Draft Freeze)
 
+Latest offline gate (October 22): see `../results/execution_union_audit_20261022/README.md`.
+The templates below are not yet a turnkey formal launch procedure. In particular,
+use only accepted passing suites, merge JaCoCo execution probes rather than XML
+branch counts, isolate execution output, and freeze total budgets before formal
+comparison. Historical/default feedback behavior must not be used as a formal
+passing-only score. No new formal RQ1/RQ2 run is authorized by this document.
+
 Status: protocol draft; the October 22 owner/signature and canonical-reference revision below supersedes the v1 command templates. No formal new RQ1/RQ2 results are claimed by this file.
 
 The previous cloud instance was released and its uncommitted checkout, dependency

@@ -263,6 +263,13 @@ def parse_prefix_map(value: str) -> tuple[str, str]:
 
 
 def load_coverage_xmls(root: Path) -> CoverageByClass:
+    """Load reports; repeated line branch counts use max, NOT exact probe union.
+
+    For cumulative JaCoCo suites first merge accepted .exec data and report once
+    per project (merge_kcf_execution_coverage.py). XML does not identify which
+    branch was covered, so this historical loader cannot recover complementary
+    branches from multiple reports. Keep it for historical diagnostic replay.
+    """
     coverage: CoverageByClass = {}
     for xml_path in sorted(root.rglob("*.xml")):
         merge_coverage_xml(xml_path, coverage)
