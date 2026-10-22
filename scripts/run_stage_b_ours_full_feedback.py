@@ -35,6 +35,7 @@ from src.retrieval.dependency_knowledge import (
 )
 from src.utils.experiment_metadata import write_run_metadata, sha256_file
 from src.utils.llm_output import extract_fenced_block
+from src.utils.repair_integrity import check_repair_integrity
 
 
 SYSTEM_PROMPT = """You are the coverage-feedback generation stage of Ours Full.
@@ -375,6 +376,7 @@ def repair_test(
     phase: str,
     records: list[dict],
     args,
+    source_context: str = "",
 ) -> tuple[str, list[dict]]:
     package_name = package_from_item(method)
     query = "\n".join([method["fqcn"], method["method"], phase, failure_output[:6000], test_code[:6000]])
@@ -392,6 +394,11 @@ def repair_test(
         failure_output=failure_output[:10000],
         retrieved_knowledge=json.dumps(retrieved, indent=2, ensure_ascii=False),
     )
+    if source_context:
+        prompt += "\n\n## Verified source context (partial; omissions are unknown, not absence)\n" + source_context
+        prompt += ("\nKeep the test class and every existing @Test method. Do not remove assertions, disable tests, "
+                   "add assumptions, or bypass failing paths. Correct an expected value/exception only when justified "
+                   "by the supplied implementation. Do not merely copy actual output into expected values.")
     response = llm.generate(system_prompt, prompt, max_tokens=args.max_tokens)
     return format_generated_code(safe_text(extract_fenced_block(response, "java")), package_name, args), retrieved
 
@@ -478,6 +485,29 @@ def copy_raw_xmls(raw_xml_root: Path, combined_root: Path):
         shutil.copy2(xml, target)
 
 
+def include_incremental_xml(result: dict, passing_only: bool) -> bool:
+    return bool(result.get("xml_file")) and (not passing_only or (
+        result.get("status") == "ok" and not result.get("semantic_review_required")))
+
+
+def validate_passing_seed_index(raw_root: Path, allowed_ids=None):
+    index = read_json(raw_root / "accepted_xml_index.json")
+    names = set()
+    for entry in index:
+        if allowed_ids is not None and entry.get("id") not in allowed_ids:
+            raise ValueError("Seed XML target is outside the frozen manifest")
+        name = entry["xml_name"]
+        if Path(name).name != name or entry["status"] != "ok" or entry.get("semantic_review_required"):
+            raise ValueError("Seed XML is not approved passing-suite evidence")
+        if sha256_file(raw_root / name) != entry["xml_sha256"]:
+            raise ValueError("Passing seed XML hash mismatch")
+        if name in names:
+            raise ValueError("Duplicate seed XML entry")
+        names.add(name)
+    if names != {str(path.relative_to(raw_root)) for path in raw_root.rglob("*.xml")}:
+        raise ValueError("Seed XML directory differs from its acceptance index")
+
+
 def evaluate(method_list: Path, xml_root: Path, output_dir: Path, approach_name: str, timeout: int,
              reference_xml_root: str | None = None):
     summary = output_dir / "focal_method_coverage_summary.json"
@@ -537,6 +567,7 @@ def main():
     parser.add_argument("--max-knowledge-examples", type=int, default=3)
     parser.add_argument("--max-tokens", type=int, default=8192)
     parser.add_argument("--repair-iterations", type=int, default=1)
+    parser.add_argument("--passing-only", action="store_true", help="Require approved passing seed XML and exclude failing incremental suites")
     parser.add_argument(
         "--disable-coverage-gap-retrieval",
         action="store_true",
@@ -563,6 +594,10 @@ def main():
     methods = {item["id"]: item for item in read_methods(method_list)}
     if any(item.get("method_owner") for item in methods.values()) and not args.reference_xml_root:
         raise ValueError("Owner/signature targets require --reference-xml-root before any model call")
+    if args.passing_only:
+        validate_passing_seed_index(Path(args.raw_xml_root), methods.keys())
+        if Path(args.output_dir).exists():
+            raise FileExistsError("Passing-only runs require a fresh output directory; do not reuse legacy XML caches")
     output_root = Path(args.output_dir).resolve()
     combined_xml = output_root / "combined_xml"
     combined_xml.mkdir(parents=True, exist_ok=True)
@@ -590,6 +625,7 @@ def main():
             "max_knowledge_examples": args.max_knowledge_examples,
             "max_tokens": args.max_tokens,
             "repair_iterations": args.repair_iterations,
+            "passing_only": args.passing_only,
         },
         inputs={
             "reference_xml_root": args.reference_xml_root,
@@ -641,13 +677,22 @@ def main():
                     with trace_target(method["id"]):
                         repaired, repair_kg = repair_test(llm, test_code, method, result.get("output", ""), result["status"], records, args)
                     retrieval_log["failure-repair"].append({"iteration": repair_index, "records": repair_kg})
+                    if args.passing_only:
+                        integrity = check_repair_integrity(test_code, repaired)
+                        write_json(gen_dir / f"attempt_{repair_index}_integrity.json", integrity)
+                        if not integrity["ok"]:
+                            (gen_dir / f"attempt_{repair_index}_rejected.java.txt").write_text(repaired, encoding="utf-8")
+                            result = {"status": "integrity_rejected", "output": str(integrity["errors"]), "xml_file": ""}
+                            break
                     test_code = repaired
                     test_file = write_test_file(test_code, gen_dir, test_class)
                     result = run_generated_test(method, test_file, test_class, output_root / "incremental_jacoco" / f"round{round_index}", args, cp_cache)
+                    if args.passing_only:
+                        result["semantic_review_required"] = True
                     (gen_dir / f"attempt_{repair_index}.java.txt").write_text(test_code, encoding="utf-8")
                     write_json(gen_dir / f"attempt_{repair_index}.json", {"result": result, "retrieved_knowledge": repair_kg})
 
-                if result.get("xml_file"):
+                if include_incremental_xml(result, args.passing_only):
                     dest_dir = combined_xml / f"round{round_index}" / method["id"]
                     dest_dir.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(result["xml_file"], dest_dir / "jacoco.xml")
@@ -660,6 +705,7 @@ def main():
                     "status": result["status"],
                     "test_class": result.get("test_class", ""),
                     "xml_file": result.get("xml_file", ""),
+                    "semantic_review_required": result.get("semantic_review_required", False),
                     "retrieval_sources": retrieval_log,
                     "ablation_flags": {
                         "coverage_gap_retrieval_enabled": not args.disable_coverage_gap_retrieval,
