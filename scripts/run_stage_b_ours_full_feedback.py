@@ -25,7 +25,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.maco_stage_b import discover_classpath_entries, safe_name, write_table
-from src.core.llm_client import LLMClient, load_config
+from src.core.llm_client import LLMClient, load_config, trace_target
 from src.retrieval.dependency_knowledge import (
     DEFAULT_KNOWLEDGE_PATH,
     compact_record,
@@ -33,7 +33,7 @@ from src.retrieval.dependency_knowledge import (
     score_record,
     tokenize,
 )
-from src.utils.experiment_metadata import write_run_metadata
+from src.utils.experiment_metadata import write_run_metadata, sha256_file
 from src.utils.llm_output import extract_fenced_block
 
 
@@ -478,10 +478,19 @@ def copy_raw_xmls(raw_xml_root: Path, combined_root: Path):
         shutil.copy2(xml, target)
 
 
-def evaluate(method_list: Path, xml_root: Path, output_dir: Path, approach_name: str, timeout: int):
+def evaluate(method_list: Path, xml_root: Path, output_dir: Path, approach_name: str, timeout: int,
+             reference_xml_root: str | None = None):
     summary = output_dir / "focal_method_coverage_summary.json"
     detail = output_dir / "focal_method_coverage_detail.csv"
     if summary.exists() and detail.exists():
+        if reference_xml_root:
+            marker = output_dir / "evaluation_inputs.json"
+            expected = {"method_list_sha256": sha256_file(method_list), "reference_xml_sha256": {
+                str(p.relative_to(reference_xml_root)): sha256_file(p)
+                for p in sorted(Path(reference_xml_root).rglob("*.xml"))
+            }}
+            if not marker.is_file() or read_json(marker) != expected:
+                raise ValueError("Cached evaluation does not match the fixed targets/reference")
         return
     cmd = [
         sys.executable,
@@ -493,10 +502,19 @@ def evaluate(method_list: Path, xml_root: Path, output_dir: Path, approach_name:
         "--output-dir",
         str(output_dir),
     ]
+    if reference_xml_root:
+        cmd.extend(["--reference-xml-root", reference_xml_root])
     status, code, output = run(cmd, REPO_ROOT, timeout)
     (output_dir / "evaluate.log").write_text(output, encoding="utf-8")
     if status != "ok":
         raise RuntimeError(f"focal coverage evaluation failed: {output[-2000:]}")
+    if reference_xml_root:
+        write_json(output_dir / "evaluation_inputs.json", {
+            "method_list_sha256": sha256_file(method_list), "reference_xml_sha256": {
+                str(p.relative_to(reference_xml_root)): sha256_file(p)
+                for p in sorted(Path(reference_xml_root).rglob("*.xml"))
+            },
+        })
 
 
 def summary_from_output(output_dir: Path) -> dict:
@@ -507,6 +525,7 @@ def summary_from_output(output_dir: Path) -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Run Ours Full coverage-feedback incremental generation")
     parser.add_argument("--method-list", required=True)
+    parser.add_argument("--reference-xml-root", help="Fixed denominator XML, required for owner/signature manifests")
     parser.add_argument("--raw-xml-root", required=True, help="Ours-v3 raw JaCoCo XML root")
     parser.add_argument("--projects-root", required=True)
     parser.add_argument("--output-dir", required=True)
@@ -537,9 +556,13 @@ def main():
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
     parser.add_argument("--timeout", type=int, default=240)
     args = parser.parse_args()
+    os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output_dir).resolve() / "llm_calls.jsonl"))
+    os.environ.setdefault("KCF_EXPERIMENT_STAGE", "coverage_feedback")
 
     method_list = Path(args.method_list)
     methods = {item["id"]: item for item in read_methods(method_list)}
+    if any(item.get("method_owner") for item in methods.values()) and not args.reference_xml_root:
+        raise ValueError("Owner/signature targets require --reference-xml-root before any model call")
     output_root = Path(args.output_dir).resolve()
     combined_xml = output_root / "combined_xml"
     combined_xml.mkdir(parents=True, exist_ok=True)
@@ -569,6 +592,7 @@ def main():
             "repair_iterations": args.repair_iterations,
         },
         inputs={
+            "reference_xml_root": args.reference_xml_root,
             "raw_xml_root": str(Path(args.raw_xml_root).resolve()),
             "raw_xml_count": sum(1 for _ in Path(args.raw_xml_root).rglob("*.xml")),
             "projects_root": str(Path(args.projects_root).resolve()),
@@ -579,7 +603,8 @@ def main():
     all_round_rows: list[dict] = []
 
     copy_raw_xmls(Path(args.raw_xml_root), combined_xml)
-    evaluate(method_list, combined_xml, output_root / "coverage_round0", args.approach_name, args.timeout)
+    evaluate(method_list, combined_xml, output_root / "coverage_round0", args.approach_name, args.timeout,
+             args.reference_xml_root)
     previous_summary = summary_from_output(output_root / "coverage_round0")
 
     for round_index in range(1, args.max_rounds + 1):
@@ -603,18 +628,24 @@ def main():
                 continue
 
             try:
-                test_code, coverage_kg = generate_incremental_test(llm, method, row, round_index, records, args)
+                with trace_target(method["id"]):
+                    test_code, coverage_kg = generate_incremental_test(llm, method, row, round_index, records, args)
                 test_file = write_test_file(test_code, gen_dir, test_class)
                 retrieval_log = {"coverage-gap": coverage_kg, "failure-repair": []}
                 result = run_generated_test(method, test_file, test_class, output_root / "incremental_jacoco" / f"round{round_index}", args, cp_cache)
+                (gen_dir / "attempt_0.java.txt").write_text(test_code, encoding="utf-8")
+                write_json(gen_dir / "attempt_0.json", {"result": result, "retrieved_knowledge": coverage_kg})
                 for repair_index in range(1, args.repair_iterations + 1):
                     if result["status"] == "ok":
                         break
-                    repaired, repair_kg = repair_test(llm, test_code, method, result.get("output", ""), result["status"], records, args)
+                    with trace_target(method["id"]):
+                        repaired, repair_kg = repair_test(llm, test_code, method, result.get("output", ""), result["status"], records, args)
                     retrieval_log["failure-repair"].append({"iteration": repair_index, "records": repair_kg})
                     test_code = repaired
                     test_file = write_test_file(test_code, gen_dir, test_class)
                     result = run_generated_test(method, test_file, test_class, output_root / "incremental_jacoco" / f"round{round_index}", args, cp_cache)
+                    (gen_dir / f"attempt_{repair_index}.java.txt").write_text(test_code, encoding="utf-8")
+                    write_json(gen_dir / f"attempt_{repair_index}.json", {"result": result, "retrieved_knowledge": repair_kg})
 
                 if result.get("xml_file"):
                     dest_dir = combined_xml / f"round{round_index}" / method["id"]
@@ -653,7 +684,8 @@ def main():
             all_round_rows.append(status)
 
         write_table(round_rows, output_root / f"round{round_index}_summary", "coverage_feedback_round")
-        evaluate(method_list, combined_xml, output_root / f"coverage_round{round_index}", args.approach_name, args.timeout)
+        evaluate(method_list, combined_xml, output_root / f"coverage_round{round_index}", args.approach_name, args.timeout,
+                 args.reference_xml_root)
         current_summary = summary_from_output(output_root / f"coverage_round{round_index}")
         previous_lines = int(previous_summary.get("focal_lines_covered", 0) or 0)
         current_lines = int(current_summary.get("focal_lines_covered", 0) or 0)

@@ -1,0 +1,14 @@
+[
+  {
+    "approach": "Reference",
+    "methods_total": 41,
+    "methods_with_coverage_data": 0,
+    "ambiguous_methods": 0,
+    "focal_lines_total": 1042,
+    "focal_lines_covered": 0,
+    "focal_line_rate": "0.0%",
+    "focal_branches_total": 776,
+    "focal_branches_covered": 0,
+    "focal_branch_rate": "0.0%"
+  }
+]

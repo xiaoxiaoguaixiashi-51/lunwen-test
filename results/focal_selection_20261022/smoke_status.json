@@ -1,0 +1,72 @@
+{
+  "kind": "toolchain_smoke_only_not_formal_rq1",
+  "method_id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+  "search_budget_seconds": 10,
+  "commands": [
+    [
+      "/root/autodl-tmp/kcf-venv/bin/python",
+      "scripts/maco_stage_b.py",
+      "evosuite-baseline",
+      "--method-list",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/smoke_method.json",
+      "--projects-root",
+      "/root/maco-aligned-projects",
+      "--evosuite-jar",
+      "/root/tools/evosuite.jar",
+      "--output-dir",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/generated",
+      "--search-budget",
+      "10",
+      "--timeout",
+      "120"
+    ],
+    [
+      "/root/autodl-tmp/kcf-venv/bin/python",
+      "scripts/run_stage_b_evosuite_coverage.py",
+      "--evosuite-summary",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/generated/evosuite_baseline_summary.csv",
+      "--evosuite-dir",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/generated",
+      "--projects-root",
+      "/root/maco-aligned-projects",
+      "--evosuite-jar",
+      "/root/tools/evosuite.jar",
+      "--jacoco-agent",
+      "/root/tools/jacocoagent.jar",
+      "--jacoco-cli",
+      "/root/tools/jacococli.jar",
+      "--output-dir",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/coverage",
+      "--timeout",
+      "120"
+    ],
+    [
+      "/root/autodl-tmp/kcf-venv/bin/python",
+      "scripts/analyze_focal_method_coverage.py",
+      "--method-list",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/smoke_method.json",
+      "--reference-xml-root",
+      "experiments/reference/kcf_utg_v2/xml",
+      "--approach",
+      "EvoSuite_smoke=/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/coverage",
+      "--output-dir",
+      "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/evaluation"
+    ]
+  ],
+  "coverage_statuses": [
+    {
+      "compile_code": "0",
+      "fqcn": "org.apache.commons.cli.OptionGroup",
+      "output_dir": "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/coverage/commons-cli/org.apache.commons.cli.OptionGroup",
+      "project_id": "commons-cli",
+      "source_dir": "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/generated/commons-cli/org.apache.commons.cli.OptionGroup",
+      "status": "ok",
+      "test_class": "org.apache.commons.cli.OptionGroup_ESTest",
+      "test_code": "0",
+      "xml_code": "0",
+      "xml_file": "/root/autodl-tmp/lunwen-test/experiments/runs/toolchain_smoke_20261022/coverage/commons-cli/org.apache.commons.cli.OptionGroup/xml/jacoco.xml"
+    }
+  ],
+  "evaluation_retry_only": true,
+  "ok": true
+}

@@ -1,6 +1,6 @@
 # KCF-UTG RQ1/RQ2 Run Protocol (Draft Freeze)
 
-Status: protocol draft for a future clean environment; no results are claimed by this file.
+Status: protocol draft; the October 22 owner/signature and canonical-reference revision below supersedes the v1 command templates. No formal new RQ1/RQ2 results are claimed by this file.
 
 The previous cloud instance was released and its uncommitted checkout, dependency
 cache, generated tests, and experiment archives are treated as unavailable. GitHub
@@ -77,3 +77,19 @@ For RQ2, use the corresponding initial config from the ablation matrix and appen
 ## Evidence package and claim gate
 
 Archive configs with secrets removed, hashes, project commits, method IDs, raw generated Java, compile/runtime logs, retrieval IDs/effective flags, per-test JaCoCo XML, aggregate CSV/JSON, and cost records. Historical July artifacts remain immutable and must keep their historical labels. No RQ1/RQ2 result or novelty claim is considered updated until the fresh run passes integrity checks and all 41 targets are accounted for in each arm.
+
+## October 22 owner/signature and fixed-reference revision
+
+New runs use `method_lists/kcf_utg_rq1_methods_v2.json`, SHA-256 `0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c`. The same 41 IDs now have explicit declaring types, parameter types and source hashes. TreeList's nested same-named method is excluded; TrieEntry's erroneous top-level class name is explicitly corrected to the compiled nested-class identity. See `../results/focal_selection_20261022/` for the complete comparison; old manifests/results are retained.
+
+The canonical denominator is extracted from the pinned compiled classes with JaCoCo 0.8.12: 1042 focal lines and 776 branches, not the historical 1100/802. The frozen archive `reference/kcf_utg_v2_reference.tgz` expands to `reference/kcf_utg_v2/`. Its SHA-256 is recorded in the tool manifest. Both CLI evaluation and every feedback round must use `--reference-xml-root experiments/reference/kcf_utg_v2/xml`. Missing coverage is zero-covered with a fixed denominator, and remains eligible for feedback. A mismatched denominator is an error.
+
+Replace v1 method-list paths in the earlier templates with v2. For feedback, add the reference flag explicitly. Use Java 8 for all newly validated project builds/runs; the old JDom Java-17/source-6 combination fails on this host. Existing iteration caches must not be reused across changes in targets/reference. The following is a template only; API smoke configuration and budgets must be checked before formal runs:
+
+```bash
+python scripts/run_kcf_utg_feedback.py --method-list experiments/method_lists/kcf_utg_rq1_methods_v2.json --raw-xml-root <run>/kcf/initial_coverage --projects-root /root/maco-aligned-projects --output-dir <run>/kcf/feedback --config config/private/kcf_full.yaml --knowledge-path experiments/knowledge/dependency_construction_knowledge.jsonl --max-knowledge-examples 3 --reference-xml-root experiments/reference/kcf_utg_v2/xml
+```
+
+The independent RAG baseline receives the same declaring-type/signature identity, without KCF agents or guards. Batch and feedback CLI runs now write `llm_calls.jsonl` with target IDs, request/response content, reported token usage (unknown stays null), elapsed time and failure type. Preserve this together with the per-attempt source/error snapshots. New templates set SDK retries to zero so logical call counts do not hide automatic request retries; request timeout is 120 seconds.
+
+Configure provider URL/model/key interactively with `python scripts/configure_kcf_api.py`. It writes ignored `config/private/kcf_{full,a1,a3}.yaml`, hides the key at input and sends no API requests. A2 uses the Full initial config and its feedback retrieval-disable flag. Protect private configs and review/redact exported evidence before uploading it. Initial API smoke starts on one method; it is not a formal comparison or a production applicability-filter experiment.

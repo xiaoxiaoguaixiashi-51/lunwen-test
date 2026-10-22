@@ -6,9 +6,11 @@ independent directory so long experiments can be resumed safely.
 
 import argparse
 import json
+import hashlib
+import os
 from pathlib import Path
 
-from src.core.llm_client import load_config
+from src.core.llm_client import load_config, trace_target
 from src.core.pipeline import Pipeline
 from src.utils.experiment_metadata import write_run_metadata
 
@@ -25,6 +27,10 @@ def load_method_list(method_list_path: str) -> list[dict]:
         missing = required - set(item)
         if missing:
             raise ValueError(f"Method list item #{index} is missing fields: {sorted(missing)}")
+        if item.get("source_sha256"):
+            actual = hashlib.sha256(Path(item["target"]).read_bytes()).hexdigest()
+            if actual != item["source_sha256"]:
+                raise ValueError(f"Frozen source hash mismatch for {item['id']}")
     return items
 
 
@@ -56,7 +62,12 @@ def run_batch(methods: list[dict], output_dir: str, config: dict, resume: bool =
 
         item_dir.mkdir(parents=True, exist_ok=True)
         try:
-            result = pipeline.run(item["target"], item["method"], output_dir=str(item_dir))
+            selector = {}
+            if item.get("method_owner"):
+                selector = {"method_owner": item["method_owner"],
+                            "method_parameter_types": item.get("method_parameter_types")}
+            with trace_target(method_id):
+                result = pipeline.run(item["target"], item["method"], output_dir=str(item_dir), **selector)
             status = {
                 "id": method_id,
                 "target": item["target"],
@@ -93,6 +104,8 @@ def main():
     parser.add_argument("--config", default=None, help="Config file path")
     parser.add_argument("--no-resume", action="store_true", help="Rerun completed items")
     args = parser.parse_args()
+    os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output).resolve() / "llm_calls.jsonl"))
+    os.environ.setdefault("KCF_EXPERIMENT_STAGE", "initial_generation")
 
     methods = load_method_list(args.methods)
     config = load_config(args.config)

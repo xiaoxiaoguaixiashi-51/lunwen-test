@@ -1,0 +1,875 @@
+{
+  "method_count": 41,
+  "unique_ids": 41,
+  "source_manifest_sha256": "9f61b481f0821177a132aa7704927c3245ddf30ee2b2fdd9b79fdebd3c9ab578",
+  "selection_schema": "owner-signature-v1",
+  "targets": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "owner": "org.apache.commons.cli.Parser",
+      "legacy_fqcn": "org.apache.commons.cli.Parser",
+      "parameter_types": [
+        "Option",
+        "ListIterator"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 225,
+          "end": 248
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 225,
+          "end": 248
+        }
+      ],
+      "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "owner": "org.apache.commons.cli.OptionGroup",
+      "legacy_fqcn": "org.apache.commons.cli.OptionGroup",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 122,
+          "end": 154
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 123,
+          "end": 154
+        }
+      ],
+      "source_sha256": "49c76c02df88195d02a2ab986f9552e3a023e35ba0623106b4a8fc76d299cb47"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-option-tostring",
+      "owner": "org.apache.commons.cli.Option",
+      "legacy_fqcn": "org.apache.commons.cli.Option",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 867,
+          "end": 894
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 868,
+          "end": 894
+        }
+      ],
+      "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject",
+      "owner": "org.apache.commons.cli.TypeHandler",
+      "legacy_fqcn": "org.apache.commons.cli.TypeHandler",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 110,
+          "end": 124
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 110,
+          "end": 124
+        }
+      ],
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern",
+      "owner": "org.apache.commons.cli.PatternOptionBuilder",
+      "legacy_fqcn": "org.apache.commons.cli.PatternOptionBuilder",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 153,
+          "end": 192
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 153,
+          "end": 192
+        }
+      ],
+      "source_sha256": "18e868e6eafe771342912ff88b95d1ff6a86f8a9124d14d56d1eb1cfd7d661be"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+      "owner": "org.apache.commons.cli.TypeHandler",
+      "legacy_fqcn": "org.apache.commons.cli.TypeHandler",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 92,
+          "end": 101
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 92,
+          "end": 101
+        }
+      ],
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring",
+      "owner": "org.apache.commons.csv.CSVFormat",
+      "legacy_fqcn": "org.apache.commons.csv.CSVFormat",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 2213,
+          "end": 2260
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 2214,
+          "end": 2260
+        }
+      ],
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+      "owner": "org.apache.commons.csv.CSVFormat",
+      "legacy_fqcn": "org.apache.commons.csv.CSVFormat",
+      "parameter_types": [
+        "Object"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 1456,
+          "end": 1473
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1457,
+          "end": 1473
+        }
+      ],
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "owner": "org.apache.commons.csv.CSVPrinter",
+      "legacy_fqcn": "org.apache.commons.csv.CSVPrinter",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 194,
+          "end": 222
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 194,
+          "end": 222
+        }
+      ],
+      "source_sha256": "3d25f081a271d783a5cc48bb172a72687494e36d2e7e6d272319e6060f783e9f"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+      "owner": "org.apache.commons.csv.CSVFormat",
+      "legacy_fqcn": "org.apache.commons.csv.CSVFormat",
+      "parameter_types": [
+        "Object[]"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 1481,
+          "end": 1492
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1481,
+          "end": 1492
+        }
+      ],
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline",
+      "owner": "org.apache.commons.csv.ExtendedBufferedReader",
+      "legacy_fqcn": "org.apache.commons.csv.ExtendedBufferedReader",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 212,
+          "end": 232
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 213,
+          "end": 232
+        }
+      ],
+      "source_sha256": "117dc55b49c9aab03f636811b20d0fc67044a993519fc2e13bdcb3ebae697237"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource",
+      "owner": "org.apache.commons.codec.language.bm.Lang",
+      "legacy_fqcn": "org.apache.commons.codec.language.bm.Lang",
+      "parameter_types": [
+        "String",
+        "Languages"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 136,
+          "end": 182
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 136,
+          "end": 182
+        }
+      ],
+      "source_sha256": "d9bd107f5dd72ede692349877d48d44c90322254eecf607f2376c5434dbf1f5c"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "owner": "org.apache.commons.codec.language.ColognePhonetic",
+      "legacy_fqcn": "org.apache.commons.codec.language.ColognePhonetic",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 317,
+          "end": 395
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 317,
+          "end": 395
+        }
+      ],
+      "source_sha256": "09c82bd7bbf95609f7688b90c851cad361dc2603353374f27bee089ff69ccc2a"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone",
+      "owner": "org.apache.commons.codec.language.Metaphone",
+      "legacy_fqcn": "org.apache.commons.codec.language.Metaphone",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 160,
+          "end": 380
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 160,
+          "end": 380
+        }
+      ],
+      "source_sha256": "b1339dc3015430f5999d60c1990a2b172fd66dbb9afc50c7dbe2778dd0a3217d"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis",
+      "owner": "org.apache.commons.codec.language.Nysiis",
+      "legacy_fqcn": "org.apache.commons.codec.language.Nysiis",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 250,
+          "end": 320
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 250,
+          "end": 320
+        }
+      ],
+      "source_sha256": "51f351390fb30e717239235c994980083fdffba901be68f8857a193ba1d972a0"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals",
+      "owner": "org.apache.commons.codec.language.MatchRatingApproachEncoder",
+      "legacy_fqcn": "org.apache.commons.codec.language.MatchRatingApproachEncoder",
+      "parameter_types": [
+        "String",
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 211,
+          "end": 263
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 211,
+          "end": 263
+        }
+      ],
+      "source_sha256": "2b5582efb959f8d6f325bc6c17430a9a5922a84b60fb0f22ca194d7882673214"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall",
+      "owner": "org.apache.commons.collections4.MapUtils",
+      "legacy_fqcn": "org.apache.commons.collections4.MapUtils",
+      "parameter_types": [
+        "Map",
+        "Object[]"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 1655,
+          "end": 1690
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1656,
+          "end": 1690
+        }
+      ],
+      "source_sha256": "9a7481df6283a1e6aa412bab37da3f65643c46bfc1c831c803f043f1a3305df6"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "owner": "org.apache.commons.collections4.functors.InvokerTransformer",
+      "legacy_fqcn": "org.apache.commons.collections4.functors.InvokerTransformer",
+      "parameter_types": [
+        "Object"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 121,
+          "end": 141
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 123,
+          "end": 141
+        }
+      ],
+      "source_sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall",
+      "owner": "org.apache.commons.collections4.list.TreeList",
+      "legacy_fqcn": "org.apache.commons.collections4.list.TreeList",
+      "parameter_types": [
+        "Collection"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 180,
+          "end": 273
+        },
+        {
+          "start": 959,
+          "end": 969
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 960,
+          "end": 969
+        }
+      ],
+      "source_sha256": "92093e699520ba2bdf38ef491b8019354b1a9f5069c1943079218feefdec38fb"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices",
+      "owner": "org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher",
+      "legacy_fqcn": "org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher",
+      "parameter_types": [
+        "Shape"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 137,
+          "end": 221
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 138,
+          "end": 221
+        }
+      ],
+      "source_sha256": "284162ae08323a5b8bff13ad4f0375ef07b26ef1fa6776da04a62b1c6a5edd11"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size",
+      "owner": "org.apache.commons.collections4.CollectionUtils",
+      "legacy_fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "parameter_types": [
+        "Object"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 1853,
+          "end": 1882
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1853,
+          "end": 1882
+        }
+      ],
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform",
+      "owner": "org.apache.commons.collections4.functors.InstantiateTransformer",
+      "legacy_fqcn": "org.apache.commons.collections4.functors.InstantiateTransformer",
+      "parameter_types": [
+        "Class"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 109,
+          "end": 127
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 110,
+          "end": 127
+        }
+      ],
+      "source_sha256": "f2b48e80cbad116a4482377c65fe352bcab62ff47815a93787bb96416e0a8483"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator",
+      "owner": "org.apache.commons.collections4.IteratorUtils",
+      "legacy_fqcn": "org.apache.commons.collections4.IteratorUtils",
+      "parameter_types": [
+        "Object"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 885,
+          "end": 928
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 885,
+          "end": 928
+        }
+      ],
+      "source_sha256": "9207abddf8b91d5100ea9da6aa82a74f737fc6a78ed56fe13f6c331e371e9afc"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex",
+      "owner": "org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer",
+      "legacy_fqcn": "org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer",
+      "parameter_types": [
+        "String",
+        "int",
+        "int",
+        "String",
+        "int",
+        "int"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 56,
+          "end": 113
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 57,
+          "end": 113
+        }
+      ],
+      "source_sha256": "13080fb348e25efa874390e88ffd93e738b7be0ba8424addbba64b750f4c085b"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory",
+      "owner": "org.apache.commons.collections4.functors.PrototypeFactory",
+      "legacy_fqcn": "org.apache.commons.collections4.functors.PrototypeFactory",
+      "parameter_types": [
+        "T"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 173,
+          "end": 196
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 174,
+          "end": 196
+        }
+      ],
+      "source_sha256": "e31e2bbb8ab6426f8613d95a116b162c16275ad5ae9f2c0f477aefafb9c93a95"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring",
+      "owner": "org.apache.commons.collections4.bag.AbstractMapBag",
+      "legacy_fqcn": "org.apache.commons.collections4.bag.AbstractMapBag",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 587,
+          "end": 607
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 588,
+          "end": 607
+        }
+      ],
+      "source_sha256": "068ba88bebfdbb0566acbd567cd9b89551c8a4817ca3a8172cbda68d794cb561"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next",
+      "owner": "org.apache.commons.collections4.iterators.CartesianProductIterator",
+      "legacy_fqcn": "org.apache.commons.collections4.iterators.CartesianProductIterator",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 127,
+          "end": 150
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 128,
+          "end": 150
+        }
+      ],
+      "source_sha256": "b592df44dc74bbb0fdcf3ba2602c94f1011fe96b6e72112fca3c316893cec8f7"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring",
+      "owner": "org.apache.commons.collections4.properties.OrderedProperties",
+      "legacy_fqcn": "org.apache.commons.collections4.properties.OrderedProperties",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 157,
+          "end": 179
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 158,
+          "end": 179
+        }
+      ],
+      "source_sha256": "33150f093cd26a0006e26d618a56afd318b82926e1068638e31181a58adc487a"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+      "owner": "org.apache.commons.collections4.CollectionUtils",
+      "legacy_fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "parameter_types": [
+        "Collection",
+        "int",
+        "int"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 1540,
+          "end": 1566
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1540,
+          "end": 1566
+        }
+      ],
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring",
+      "owner": "org.apache.commons.collections4.trie.AbstractPatriciaTrie$TrieEntry",
+      "legacy_fqcn": "org.apache.commons.collections4.trie.TrieEntry",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 1046,
+          "end": 1104
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1047,
+          "end": 1104
+        }
+      ],
+      "source_sha256": "e4cea76991201e8998893fc411b5efab43976ad7f5b03f101d6c8b661b8251ed"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "owner": "org.jdom2.internal.ReflectionConstructor",
+      "legacy_fqcn": "org.jdom2.internal.ReflectionConstructor",
+      "parameter_types": [
+        "String",
+        "Class"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 79,
+          "end": 101
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 79,
+          "end": 101
+        }
+      ],
+      "source_sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+      "owner": "org.jdom2.xpath.XPath",
+      "legacy_fqcn": "org.jdom2.xpath.XPath",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 124,
+          "end": 161
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 124,
+          "end": 161
+        }
+      ],
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement",
+      "owner": "org.jdom2.input.sax.SAXHandler",
+      "legacy_fqcn": "org.jdom2.input.sax.SAXHandler",
+      "parameter_types": [
+        "String",
+        "String",
+        "String",
+        "Attributes"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 572,
+          "end": 724
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 573,
+          "end": 724
+        }
+      ],
+      "source_sha256": "a921a97f49eb12e924f2990e9fa50cdfbec927537004ad5ce396daedf34efb5f"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass",
+      "owner": "org.jdom2.xpath.XPath",
+      "legacy_fqcn": "org.jdom2.xpath.XPath",
+      "parameter_types": [
+        "Class"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 175,
+          "end": 198
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 175,
+          "end": 198
+        }
+      ],
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-document-cancontaincontent",
+      "owner": "org.jdom2.Document",
+      "legacy_fqcn": "org.jdom2.Document",
+      "parameter_types": [
+        "Content",
+        "int",
+        "boolean"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 791,
+          "end": 836
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 792,
+          "end": 836
+        }
+      ],
+      "source_sha256": "606c68f2a68000cb343f1854e4a898ceee862e17913cb9d519828b1e77cc1908"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapetext",
+      "owner": "org.jdom2.output.Format",
+      "legacy_fqcn": "org.jdom2.output.Format",
+      "parameter_types": [
+        "EscapeStrategy",
+        "String",
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 455,
+          "end": 536
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 455,
+          "end": 536
+        }
+      ],
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+      "owner": "org.jdom2.output.Format",
+      "legacy_fqcn": "org.jdom2.output.Format",
+      "parameter_types": [
+        "EscapeStrategy",
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 346,
+          "end": 430
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 346,
+          "end": 430
+        }
+      ],
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata",
+      "owner": "org.jdom2.Verifier",
+      "legacy_fqcn": "org.jdom2.Verifier",
+      "parameter_types": [
+        "String"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 433,
+          "end": 496
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 433,
+          "end": 496
+        }
+      ],
+      "source_sha256": "ea3c86b9ec67eaf7ea591fa85ecc454524baae768343d72cae5711fa6f2db400"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "owner": "org.jdom2.Element",
+      "legacy_fqcn": "org.jdom2.Element",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 1711,
+          "end": 1760
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 1712,
+          "end": 1760
+        }
+      ],
+      "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "owner": "org.flmelody.core.context.AbstractHttpWindwardContext",
+      "legacy_fqcn": "org.flmelody.core.context.AbstractHttpWindwardContext",
+      "parameter_types": [
+        "String",
+        "M"
+      ],
+      "legacy_ranges": [
+        {
+          "start": 86,
+          "end": 119
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 87,
+          "end": 119
+        }
+      ],
+      "source_sha256": "1dcefd92f83629bcec565ec55c567094522226c3676d76ed919123acb903d144"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-netty-nettyhttpserver-run",
+      "owner": "org.flmelody.core.netty.NettyHttpServer",
+      "legacy_fqcn": "org.flmelody.core.netty.NettyHttpServer",
+      "parameter_types": [],
+      "legacy_ranges": [
+        {
+          "start": 51,
+          "end": 91
+        }
+      ],
+      "strict_ranges": [
+        {
+          "start": 52,
+          "end": 91
+        }
+      ],
+      "source_sha256": "c60d3629f5342b36544a1f035e8f462ab0cc1aef7f0f86e423bdb8355040ebb1"
+    }
+  ],
+  "note": "Same focal IDs and source versions; explicit owners exclude unrelated nested methods. Historical results are unchanged."
+}

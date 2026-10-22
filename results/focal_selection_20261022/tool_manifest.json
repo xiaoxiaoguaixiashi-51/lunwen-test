@@ -1,0 +1,11 @@
+{
+  "tools": [
+    {"file": "evosuite.jar", "version": "1.2.0", "source": "https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-1.2.0.jar", "sha256": "0bc0062fdec70c35089ad736c9b88ccf87308c2f0aaaafe43176f3c4a89ddeba"},
+    {"file": "jacococli.jar", "version": "0.8.12", "source": "https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.cli/0.8.12/org.jacoco.cli-0.8.12-nodeps.jar", "sha256": "594c01125b84864a7fc5a9efab19b71b7de36b27346863f6d7cd0cd45400ceb0"},
+    {"file": "jacocoagent.jar", "version": "0.8.12", "source": "https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar", "sha256": "115e8e6e6593ca3a9892dfef695df4d487c706e59e71e64dc0ab95716ee02622"}
+  ],
+  "reference_archive_sha256": "092bfc155b7ef6ad522d06c7a1b85d21e5c3a787985f6e61273fabbe80737c1b",
+  "smoke_archive_sha256": "9d59c035eafe2c1a1c7868b60b2e8315394e6e1f44bdd0c133307fc8c2cb2230",
+  "strict_method_manifest_sha256": "0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c",
+  "note": "Pinned tools for this rebuild, not proof of identical historical tool versions. Smoke is not a formal RQ1/RQ2 run."
+}

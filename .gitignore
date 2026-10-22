@@ -5,6 +5,7 @@ __pycache__/
 
 # Local secrets
 config/config.yaml
+config/private/
 .env
 
 # Experiment outputs

@@ -45,10 +45,17 @@ class TaskAgent:
     def __init__(self, llm_client: LLMClient = None):
         self.llm = llm_client or LLMClient()
 
-    def analyze(self, java_file_path: str, method_name: str = None) -> dict:
+    def analyze(self, java_file_path: str, method_name: str = None, *,
+                method_owner: str = None, method_parameter_types: list[str] = None) -> dict:
         """分析目标方法，返回完整的依赖分析结果。"""
         # Step 1: AST 静态分析
-        dep_info = extract_dependencies(java_file_path, method_name)
+        selector = {}
+        if method_owner:
+            selector = {"method_owner": method_owner, "method_parameter_types": method_parameter_types}
+        dep_info = extract_dependencies(java_file_path, method_name, **selector)
+        static_analysis = dep_info.to_dict()
+        if method_owner:
+            static_analysis.update(selector)
 
         # Step 2: 读取源代码
         source_code = Path(java_file_path).read_text(encoding="utf-8")
@@ -56,14 +63,14 @@ class TaskAgent:
         # Step 3: LLM 补充语义分析
         user_prompt = USER_PROMPT_TEMPLATE.format(
             source_code=source_code,
-            ast_analysis=json.dumps(dep_info.to_dict(), indent=2, ensure_ascii=False),
+            ast_analysis=json.dumps(static_analysis, indent=2, ensure_ascii=False),
         )
 
         llm_response = self.llm.generate(SYSTEM_PROMPT, user_prompt)
 
         # Step 4: 合并结果
         result = {
-            "static_analysis": dep_info.to_dict(),
+            "static_analysis": static_analysis,
             "llm_analysis": self._parse_llm_response(llm_response),
             "raw_llm_response": llm_response,
         }

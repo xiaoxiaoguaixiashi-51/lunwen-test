@@ -75,14 +75,18 @@ class Pipeline:
         self.knowledge_path = retrieval_config.get("knowledge_path", str(DEFAULT_KNOWLEDGE_PATH))
         self.max_knowledge_examples = retrieval_config.get("max_examples", 3)
 
-    def run(self, java_file_path: str, method_name: str = None, output_dir: str = None) -> PipelineResult:
+    def run(self, java_file_path: str, method_name: str = None, output_dir: str = None, *,
+            method_owner: str = None, method_parameter_types: list[str] = None) -> PipelineResult:
         """执行完整 pipeline。"""
         result = PipelineResult(target_file=java_file_path, method_name=method_name or "")
         source_code = Path(java_file_path).read_text(encoding="utf-8")
 
         # Step 1: 依赖分析
         print("[1/4] TaskAgent: 分析依赖...")
-        result.dependency_analysis = self.task_agent.analyze(java_file_path, method_name)
+        selector = {}
+        if method_owner:
+            selector = {"method_owner": method_owner, "method_parameter_types": method_parameter_types}
+        result.dependency_analysis = self.task_agent.analyze(java_file_path, method_name, **selector)
         result.method_name = result.dependency_analysis["static_analysis"]["method_name"]
         print(f"      识别到方法: {result.method_name}")
         print(f"      外部调用数: {len(result.dependency_analysis['static_analysis']['external_calls'])}")
@@ -128,7 +132,8 @@ class Pipeline:
                 result.iterations,
                 result.compile_results,
             ) = self._compile_feedback_loop(
-                result.generated_test, source_code, source_file=java_file_path
+                result.generated_test, source_code, source_file=java_file_path,
+                trace_dir=Path(output_dir) / "compile_trace" if output_dir else None,
             )
             if result.success:
                 print(f"      编译成功（第 {result.iterations} 轮）")
@@ -144,7 +149,7 @@ class Pipeline:
         return result
 
     def _compile_feedback_loop(
-        self, test_code: str, source_code: str, source_file: str = None
+        self, test_code: str, source_code: str, source_file: str = None, trace_dir: Path = None
     ) -> tuple[str, bool, int, list]:
         """编译反馈循环：尝试编译，失败则修复。"""
         current_code = test_code
@@ -153,6 +158,14 @@ class Pipeline:
         for i in range(1, self.max_fix_iterations + 1):
             compile_result = self.compiler.compile_test(current_code, source_file=source_file)
             compile_results.append(compile_result)
+            if trace_dir:
+                trace_dir.mkdir(parents=True, exist_ok=True)
+                (trace_dir / f"attempt_{i}.java.txt").write_text(current_code, encoding="utf-8")
+                (trace_dir / f"attempt_{i}.json").write_text(json.dumps({
+                    "attempt": i, "source_file": source_file, "success": compile_result.success,
+                    "output": compile_result.output, "errors": compile_result.errors,
+                    "return_code": compile_result.return_code,
+                }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
             if compile_result.success:
                 return current_code, True, i, compile_results
@@ -173,6 +186,7 @@ class Pipeline:
         """保存生成结果到文件。"""
         out_path = Path(output_dir)
         out_path.mkdir(parents=True, exist_ok=True)
+        (out_path / "initial_generated.java.txt").write_text(result.generated_test, encoding="utf-8")
 
         # Save using the generated class name so javac accepts public test classes.
         class_name = self._extract_class_name(result.final_test) or f"{result.method_name}Test"

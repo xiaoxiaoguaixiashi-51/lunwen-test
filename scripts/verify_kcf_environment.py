@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scripts.analyze_focal_method_coverage import find_method_ranges
+from scripts.analyze_focal_method_coverage import find_method_ranges, find_owned_method_ranges
 
 
 def write_json(path: Path, data) -> None:
@@ -28,7 +28,11 @@ def inspect_targets(methods: list[dict], projects_root: Path) -> list[dict]:
                "source": str(source), "exists": source.is_file()}
         if source.is_file():
             row["source_sha256"] = hashlib.sha256(source.read_bytes()).hexdigest()
-            ranges = find_method_ranges(source.read_text(encoding="utf-8"), item["method"])
+            text = source.read_text(encoding="utf-8")
+            ranges = (
+                find_owned_method_ranges(text, item["method"], item["method_owner"], item.get("method_parameter_types"))
+                if item.get("method_owner") else find_method_ranges(text, item["method"])
+            )
             row["ranges"] = [{"start": r.start, "end": r.end} for r in ranges]
             row["match_count"] = len(ranges)
         rows.append(row)

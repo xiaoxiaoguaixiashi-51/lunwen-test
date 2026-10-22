@@ -52,13 +52,16 @@ def parse_java_file(file_path: str):
     return javalang.parse.parse(source)
 
 
-def extract_dependencies(file_path: str, method_name: str = None) -> DependencyInfo:
+def extract_dependencies(file_path: str, method_name: str = None, *,
+                         method_owner: str = None, method_parameter_types: list[str] = None) -> DependencyInfo:
     """从 Java 文件中提取目标方法的依赖信息。
 
     如果 method_name 为 None，则分析文件中第一个 public 方法。
     """
     source = Path(file_path).read_text(encoding="utf-8")
     if javalang is None:
+        if method_owner:
+            raise RuntimeError("javalang is required for owner/signature focal selection")
         return _extract_dependencies_fallback(source, method_name, file_path)
 
     tree = parse_java_file(file_path)
@@ -68,12 +71,23 @@ def extract_dependencies(file_path: str, method_name: str = None) -> DependencyI
     for imp in tree.imports:
         info.imports.append(imp.path)
 
-    # 找到目标类
-    for _, class_decl in tree.filter(javalang.tree.ClassDeclaration):
+    # An explicit selector must not silently fall back to a same-named method.
+    selected_method = None
+    if method_owner:
+        from src.utils.focal_target import select_method
+        selected_class, selected_method = select_method(tree, method_name, method_owner, method_parameter_types)
+        classes = [((), selected_class)]
+    else:
+        classes = tree.filter(javalang.tree.ClassDeclaration)
+    for _, class_decl in classes:
         info.class_name = class_decl.name
 
         # 提取构造函数参数（即字段依赖）
-        for _, constructor in class_decl.filter(javalang.tree.ConstructorDeclaration):
+        constructors = (
+            [((), node) for node in (getattr(class_decl, "constructors", None) or [])]
+            if method_owner else class_decl.filter(javalang.tree.ConstructorDeclaration)
+        )
+        for _, constructor in constructors:
             for param in constructor.parameters:
                 param_type = _get_type_name(param.type)
                 info.constructor_params.append({
@@ -82,7 +96,11 @@ def extract_dependencies(file_path: str, method_name: str = None) -> DependencyI
                 })
 
         # 提取字段
-        for _, field_decl in class_decl.filter(javalang.tree.FieldDeclaration):
+        fields = (
+            [((), node) for node in class_decl.fields]
+            if method_owner else class_decl.filter(javalang.tree.FieldDeclaration)
+        )
+        for _, field_decl in fields:
             for declarator in field_decl.declarators:
                 is_static = "static" in (field_decl.modifiers or set())
                 info.field_dependencies.append({
@@ -92,7 +110,8 @@ def extract_dependencies(file_path: str, method_name: str = None) -> DependencyI
                 })
 
         # 找到目标方法
-        for _, method_decl in class_decl.filter(javalang.tree.MethodDeclaration):
+        methods = [((), selected_method)] if selected_method else class_decl.filter(javalang.tree.MethodDeclaration)
+        for _, method_decl in methods:
             if method_name and method_decl.name != method_name:
                 continue
             if not method_name and "public" not in (method_decl.modifiers or set()):

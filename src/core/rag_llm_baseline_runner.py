@@ -15,8 +15,9 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from src.core.llm_client import LLMClient, load_config
+from src.core.llm_client import LLMClient, load_config, trace_target
 from src.utils.llm_output import extract_fenced_block
+from src.utils.experiment_metadata import sha256_file
 
 
 SYSTEM_PROMPT = """You are a Java unit test generation assistant used as a RAG+LLM baseline.
@@ -85,6 +86,8 @@ def load_method_list(method_list_path: str) -> list[dict]:
         missing = required - set(item)
         if missing:
             raise ValueError(f"Method list item #{index} is missing fields: {sorted(missing)}")
+        if item.get("source_sha256") and sha256_file(item["target"]) != item["source_sha256"]:
+            raise ValueError(f"Frozen source hash mismatch for {item['id']}")
     return items
 
 
@@ -173,7 +176,8 @@ class RagLlmBaselineRunner:
         self.max_context_files = max_context_files
         self.max_context_chars = max_context_chars
 
-    def run_one(self, target_file: str, method_name: str, output_dir: str) -> BaselineResult:
+    def run_one(self, target_file: str, method_name: str, output_dir: str, *,
+                method_owner: str = None, method_parameter_types: list[str] = None) -> BaselineResult:
         ensure_java6_guard_disabled()
         target_path = Path(target_file)
         source_files = retrieve_source_context(
@@ -187,6 +191,12 @@ class RagLlmBaselineRunner:
             method_name=method_name,
             retrieved_context=format_retrieved_context(source_files),
         )
+        if method_owner:
+            user_prompt += (
+                "\nExact target declaring type: " + method_owner.replace("$", ".")
+                + "\nExact target parameter types: " + json.dumps(method_parameter_types)
+                + "\nGenerate tests for this declaration, not same-named methods in other classes.\n"
+            )
         response = self.llm.generate(SYSTEM_PROMPT, user_prompt, max_tokens=8192)
         generated_test = extract_fenced_block(response, "java")
         self._save_results(target_path, method_name, source_files, generated_test, output_dir)
@@ -270,7 +280,12 @@ def run_batch(
 
         item_dir.mkdir(parents=True, exist_ok=True)
         try:
-            result = runner.run_one(item["target"], item["method"], str(item_dir))
+            selector = {}
+            if item.get("method_owner"):
+                selector = {"method_owner": item["method_owner"],
+                            "method_parameter_types": item.get("method_parameter_types")}
+            with trace_target(method_id):
+                result = runner.run_one(item["target"], item["method"], str(item_dir), **selector)
             status = {
                 "id": method_id,
                 "target": item["target"],
@@ -312,6 +327,8 @@ def main():
     parser.add_argument("--max-context-files", type=int, default=6, help="Maximum retrieved Java files per method")
     parser.add_argument("--max-context-chars", type=int, default=24000, help="Maximum retrieved context characters")
     args = parser.parse_args()
+    os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output).resolve() / "llm_calls.jsonl"))
+    os.environ.setdefault("KCF_EXPERIMENT_STAGE", "rag_llm_generation")
 
     ensure_java6_guard_disabled()
     methods = load_method_list(args.methods)

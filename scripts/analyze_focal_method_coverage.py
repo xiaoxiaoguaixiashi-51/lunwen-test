@@ -18,6 +18,10 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 
 SUMMARY_FIELDS = [
     "approach",
@@ -182,6 +186,25 @@ def find_method_ranges(source_text: str, method_name: str) -> list[MethodRange]:
     return ranges
 
 
+def find_owned_method_ranges(source_text: str, method_name: str, owner: str,
+                             parameter_types: list[str] | None = None) -> list[MethodRange]:
+    import javalang
+    from src.utils.focal_target import select_method
+
+    tree = javalang.parse.parse(source_text)
+    _, method = select_method(tree, method_name, owner, parameter_types)
+    if method.body is None or method.position is None:
+        raise ValueError(f"Focal declaration has no executable body: {owner}.{method_name}")
+    masked = mask_java_source(source_text)
+    starts = [0] + [index + 1 for index, char in enumerate(masked) if char == "\n"]
+    start = starts[method.position.line - 1] + method.position.column - 1
+    opening = masked.find("{", start)
+    if opening < 0:
+        raise ValueError(f"Focal body not found: {owner}.{method_name}")
+    closing = find_matching_brace_offset(masked, opening)
+    return [MethodRange(method.position.line, line_number_for_offset(starts, closing))]
+
+
 def line_number_for_offset(line_starts: list[int], offset: int) -> int:
     return bisect.bisect_right(line_starts, offset)
 
@@ -205,6 +228,11 @@ def load_focal_methods(method_list: Path, source_root: Path | None, prefix_maps:
         method = str(item.get("method", ""))
         source_path = resolve_target_path(target, source_root, prefix_maps)
         source_text = source_path.read_text(encoding="utf-8", errors="replace")
+        owner = item.get("method_owner")
+        ranges = (
+            find_owned_method_ranges(source_text, method, owner, item.get("method_parameter_types"))
+            if owner else find_method_ranges(source_text, method)
+        )
         focal_methods.append(
             FocalMethod(
                 id=str(item.get("id", "")),
@@ -212,7 +240,7 @@ def load_focal_methods(method_list: Path, source_root: Path | None, prefix_maps:
                 method=method,
                 dcci=str(item.get("dcci", item.get("score", ""))),
                 class_name=class_name_from_source(source_path, source_text),
-                ranges=find_method_ranges(source_text, method),
+                ranges=ranges,
             )
         )
     return focal_methods
@@ -353,14 +381,26 @@ def range_contains(ranges: list[MethodRange], line_no: int) -> bool:
     return any(method_range.start <= line_no <= method_range.end for method_range in ranges)
 
 
-def score_method(method: FocalMethod, coverage: CoverageByClass) -> dict[str, str | int]:
+def score_method(method: FocalMethod, coverage: CoverageByClass,
+                 reference: CoverageByClass | None = None) -> dict[str, str | int]:
     by_line = coverage.get(method.class_name, {})
-    focal_line_numbers = sorted(line_no for line_no in by_line if range_contains(method.ranges, line_no))
+    denominator = reference.get(method.class_name, {}) if reference is not None else by_line
+    focal_line_numbers = sorted(line_no for line_no in denominator if range_contains(method.ranges, line_no))
+    observed_lines = {n for n in by_line if range_contains(method.ranges, n)}
+    if reference is not None:
+        if not focal_line_numbers:
+            raise ValueError(f"No canonical coverage denominator for {method.id}")
+        if observed_lines - set(focal_line_numbers):
+            raise ValueError(f"Observed lines outside canonical denominator for {method.id}")
+        for number in observed_lines:
+            if by_line[number].branch_total != denominator[number].branch_total:
+                raise ValueError(f"Branch denominator mismatch for {method.id}:{number}")
     lines_total = len(focal_line_numbers)
-    lines_covered = sum(1 for line_no in focal_line_numbers if by_line[line_no].hits > 0)
-    branches_total = sum(by_line[line_no].branch_total for line_no in focal_line_numbers)
-    branches_covered = sum(by_line[line_no].branch_covered for line_no in focal_line_numbers)
+    lines_covered = sum(1 for line_no in focal_line_numbers if by_line.get(line_no, LineCoverage()).hits > 0)
+    branches_total = sum(denominator[line_no].branch_total for line_no in focal_line_numbers)
+    branches_covered = sum(by_line.get(line_no, LineCoverage()).branch_covered for line_no in focal_line_numbers)
     return {
+        "coverage_present": bool(observed_lines),
         "lines_total": lines_total,
         "lines_covered": lines_covered,
         "line_rate": format_rate(lines_covered, lines_total),
@@ -370,7 +410,8 @@ def score_method(method: FocalMethod, coverage: CoverageByClass) -> dict[str, st
     }
 
 
-def write_outputs(focal_methods: list[FocalMethod], approaches: list[tuple[str, CoverageByClass]], output_dir: Path):
+def write_outputs(focal_methods: list[FocalMethod], approaches: list[tuple[str, CoverageByClass]], output_dir: Path,
+                  reference: CoverageByClass | None = None):
     output_dir.mkdir(parents=True, exist_ok=True)
     detail_fields = DETAIL_BASE_FIELDS[:]
     for name, _coverage in approaches:
@@ -398,7 +439,7 @@ def write_outputs(focal_methods: list[FocalMethod], approaches: list[tuple[str, 
             "method_match_count": len(method.ranges),
         }
         for name, coverage in approaches:
-            score = score_method(method, coverage)
+            score = score_method(method, coverage, reference)
             row[f"{name}_lines_total"] = score["lines_total"]
             row[f"{name}_lines_covered"] = score["lines_covered"]
             row[f"{name}_line_rate"] = score["line_rate"]
@@ -408,7 +449,7 @@ def write_outputs(focal_methods: list[FocalMethod], approaches: list[tuple[str, 
         details.append(row)
 
     for name, coverage in approaches:
-        method_scores = [score_method(method, coverage) for method in focal_methods]
+        method_scores = [score_method(method, coverage, reference) for method in focal_methods]
         lines_total = sum(int(score["lines_total"]) for score in method_scores)
         lines_covered = sum(int(score["lines_covered"]) for score in method_scores)
         branches_total = sum(int(score["branches_total"]) for score in method_scores)
@@ -417,7 +458,7 @@ def write_outputs(focal_methods: list[FocalMethod], approaches: list[tuple[str, 
             {
                 "approach": name,
                 "methods_total": len(focal_methods),
-                "methods_with_coverage_data": sum(1 for score in method_scores if int(score["lines_total"]) > 0),
+                "methods_with_coverage_data": sum(bool(score["coverage_present"]) for score in method_scores),
                 "ambiguous_methods": sum(1 for method in focal_methods if len(method.ranges) != 1),
                 "focal_lines_total": lines_total,
                 "focal_lines_covered": lines_covered,
@@ -448,6 +489,7 @@ def write_json(path: Path, rows: list[dict]):
 def main():
     parser = argparse.ArgumentParser(description="Compute focal-method coverage from Cobertura XML files")
     parser.add_argument("--method-list", required=True, help="Fixed focal-method JSON list")
+    parser.add_argument("--reference-xml-root", help="Canonical zero-coverage XML from the same compiled project versions")
     parser.add_argument("--source-root", default="", help="Source root used when method targets are from another host")
     parser.add_argument("--prefix-map", action="append", default=[], type=parse_prefix_map, help="Map OLD=NEW target prefixes")
     parser.add_argument("--approach", action="append", required=True, type=parse_approach, help="Approach XML root, NAME=PATH")
@@ -457,7 +499,8 @@ def main():
     source_root = Path(args.source_root) if args.source_root else None
     focal_methods = load_focal_methods(Path(args.method_list), source_root, args.prefix_map)
     approaches = [(name, load_coverage_xmls(root)) for name, root in args.approach]
-    write_outputs(focal_methods, approaches, Path(args.output_dir))
+    reference = load_coverage_xmls(Path(args.reference_xml_root)) if args.reference_xml_root else None
+    write_outputs(focal_methods, approaches, Path(args.output_dir), reference)
 
     for name, coverage in approaches:
         xml_line_count = sum(len(lines) for lines in coverage.values())

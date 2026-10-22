@@ -10,10 +10,38 @@ from scripts.analyze_focal_method_coverage import (
     load_focal_methods,
     load_coverage_xmls,
     write_outputs,
+    FocalMethod,
+    MethodRange,
+    LineCoverage,
+    score_method,
 )
 
 
 class AnalyzeFocalMethodCoverageTest(unittest.TestCase):
+    def test_missing_report_preserves_canonical_denominator(self):
+        method = FocalMethod("m", "A.java", "f", "", "A", [MethodRange(3, 8)])
+        reference = {"A": {3: LineCoverage(0, 2, 0), 5: LineCoverage(0, 0, 0)}}
+        result = score_method(method, {}, reference)
+        self.assertEqual((2, 0, 2, 0), (result["lines_total"], result["lines_covered"],
+                                       result["branches_total"], result["branches_covered"]))
+        self.assertEqual("0.0%", result["line_rate"])
+        self.assertFalse(result["coverage_present"])
+
+    def test_mismatched_instrumentation_is_rejected(self):
+        method = FocalMethod("m", "A.java", "f", "", "A", [MethodRange(3, 8)])
+        with self.assertRaisesRegex(ValueError, "Branch denominator mismatch"):
+            score_method(method, {"A": {3: LineCoverage(1, 4, 2)}}, {"A": {3: LineCoverage(0, 2, 0)}})
+
+    def test_missing_report_is_retained_as_a_feedback_gap(self):
+        from scripts.run_stage_b_ours_full_feedback import read_detail
+        method = FocalMethod("m", "A.java", "f", "", "A", [MethodRange(3, 8)])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_outputs([method], [("KCF", {})], root,
+                          reference={"A": {3: LineCoverage(0, 2, 0)}})
+            gaps = read_detail(root / "focal_method_coverage_detail.csv", "KCF")
+            self.assertEqual(["m"], [row["id"] for row in gaps])
+
     def test_finds_java_method_range(self):
         source = textwrap.dedent(
             """
