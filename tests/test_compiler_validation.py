@@ -1,4 +1,5 @@
 import unittest
+import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -10,6 +11,23 @@ TARGET = PROJECT_ROOT / "examples" / "java-demo" / "src" / "main" / "java" / "co
 
 
 class CompilerValidationTest(unittest.TestCase):
+    def test_ant_core_build_and_local_jars_are_available_without_maven(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "build.xml").write_text("<project />", encoding="utf-8")
+            (root / "build/core").mkdir(parents=True)
+            (root / "core/src/java").mkdir(parents=True)
+            source = root / "core/src/java/Example.java"
+            source.write_text("class Example {}", encoding="utf-8")
+            (root / "lib").mkdir()
+            jar = root / "lib/junit.jar"
+            jar.touch()
+            compiler = JavaCompiler(static_guard_enabled=False)
+            with patch.object(compiler, "_maven_test_classpath", side_effect=AssertionError("Not Maven")):
+                parts = compiler._classpath_for_source_file(str(source))
+            self.assertEqual(str(root / "build/core"), parts[0])
+            self.assertIn(str(jar), parts)
+
     def test_empty_test_code_fails(self):
         result = JavaCompiler().compile_test("")
 

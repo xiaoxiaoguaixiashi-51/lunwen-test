@@ -1,0 +1,131 @@
+[
+  {
+    "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+    "target": "/root/maco-aligned-projects/commons-cli/src/main/java/org/apache/commons/cli/Parser.java",
+    "method": "processArgs",
+    "class_name": "Parser",
+    "package": "org.apache.commons.cli",
+    "fqcn": "org.apache.commons.cli.Parser",
+    "project_id": "commons-cli",
+    "project_name": "Commons-CLI",
+    "project_version": "1.5.0",
+    "java": 8,
+    "target_relative": "src/main/java/org/apache/commons/cli/Parser.java",
+    "source_root": "/root/maco-aligned-projects/commons-cli/src/main/java",
+    "source_root_relative": "src/main/java",
+    "method_owner": "org.apache.commons.cli.Parser",
+    "method_parameter_types": [
+      "Option",
+      "ListIterator"
+    ],
+    "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+    "focal_selection_schema": "owner-signature-v1"
+  },
+  {
+    "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+    "target": "/root/maco-aligned-projects/commons-csv/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+    "method": "printComment",
+    "class_name": "CSVPrinter",
+    "package": "org.apache.commons.csv",
+    "fqcn": "org.apache.commons.csv.CSVPrinter",
+    "project_id": "commons-csv",
+    "project_name": "Commons-CSV",
+    "project_version": "1.10.0",
+    "java": 8,
+    "target_relative": "src/main/java/org/apache/commons/csv/CSVPrinter.java",
+    "source_root": "/root/maco-aligned-projects/commons-csv/src/main/java",
+    "source_root_relative": "src/main/java",
+    "method_owner": "org.apache.commons.csv.CSVPrinter",
+    "method_parameter_types": [
+      "String"
+    ],
+    "source_sha256": "3d25f081a271d783a5cc48bb172a72687494e36d2e7e6d272319e6060f783e9f",
+    "focal_selection_schema": "owner-signature-v1"
+  },
+  {
+    "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+    "target": "/root/maco-aligned-projects/commons-codec/src/main/java/org/apache/commons/codec/language/ColognePhonetic.java",
+    "method": "colognePhonetic",
+    "class_name": "ColognePhonetic",
+    "package": "org.apache.commons.codec.language",
+    "fqcn": "org.apache.commons.codec.language.ColognePhonetic",
+    "project_id": "commons-codec",
+    "project_name": "Commons-codec",
+    "project_version": "3a6873e",
+    "java": 8,
+    "target_relative": "src/main/java/org/apache/commons/codec/language/ColognePhonetic.java",
+    "source_root": "/root/maco-aligned-projects/commons-codec/src/main/java",
+    "source_root_relative": "src/main/java",
+    "method_owner": "org.apache.commons.codec.language.ColognePhonetic",
+    "method_parameter_types": [
+      "String"
+    ],
+    "source_sha256": "09c82bd7bbf95609f7688b90c851cad361dc2603353374f27bee089ff69ccc2a",
+    "focal_selection_schema": "owner-signature-v1"
+  },
+  {
+    "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+    "target": "/root/maco-aligned-projects/commons-collections4/src/main/java/org/apache/commons/collections4/functors/InvokerTransformer.java",
+    "method": "transform",
+    "class_name": "InvokerTransformer",
+    "package": "org.apache.commons.collections4.functors",
+    "fqcn": "org.apache.commons.collections4.functors.InvokerTransformer",
+    "project_id": "commons-collections4",
+    "project_name": "Commons-collections4",
+    "project_version": "4.5.0",
+    "java": 8,
+    "target_relative": "src/main/java/org/apache/commons/collections4/functors/InvokerTransformer.java",
+    "source_root": "/root/maco-aligned-projects/commons-collections4/src/main/java",
+    "source_root_relative": "src/main/java",
+    "method_owner": "org.apache.commons.collections4.functors.InvokerTransformer",
+    "method_parameter_types": [
+      "Object"
+    ],
+    "source_sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847",
+    "focal_selection_schema": "owner-signature-v1"
+  },
+  {
+    "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+    "target": "/root/maco-aligned-projects/jdom2/core/src/java/org/jdom2/internal/ReflectionConstructor.java",
+    "method": "construct",
+    "class_name": "ReflectionConstructor",
+    "package": "org.jdom2.internal",
+    "fqcn": "org.jdom2.internal.ReflectionConstructor",
+    "project_id": "jdom2",
+    "project_name": "JDom2",
+    "project_version": "2.0.6",
+    "java": 17,
+    "target_relative": "core/src/java/org/jdom2/internal/ReflectionConstructor.java",
+    "source_root": "/root/maco-aligned-projects/jdom2/core/src/java",
+    "source_root_relative": "core/src/java",
+    "method_owner": "org.jdom2.internal.ReflectionConstructor",
+    "method_parameter_types": [
+      "String",
+      "Class"
+    ],
+    "source_sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43",
+    "focal_selection_schema": "owner-signature-v1"
+  },
+  {
+    "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+    "target": "/root/maco-aligned-projects/windward/src/main/java/org/flmelody/core/context/AbstractHttpWindwardContext.java",
+    "method": "html",
+    "class_name": "AbstractHttpWindwardContext",
+    "package": "org.flmelody.core.context",
+    "fqcn": "org.flmelody.core.context.AbstractHttpWindwardContext",
+    "project_id": "windward",
+    "project_name": "Windward",
+    "project_version": "1.5.1-RELEASE",
+    "java": 8,
+    "target_relative": "src/main/java/org/flmelody/core/context/AbstractHttpWindwardContext.java",
+    "source_root": "/root/maco-aligned-projects/windward/src/main/java",
+    "source_root_relative": "src/main/java",
+    "method_owner": "org.flmelody.core.context.AbstractHttpWindwardContext",
+    "method_parameter_types": [
+      "String",
+      "M"
+    ],
+    "source_sha256": "1dcefd92f83629bcec565ec55c567094522226c3676d76ed919123acb903d144",
+    "focal_selection_schema": "owner-signature-v1"
+  }
+]

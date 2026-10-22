@@ -45,7 +45,8 @@ def main():
     events = [json.loads(line) for line in trace.read_text(encoding="utf-8").splitlines() if line.strip()]
     with (root / "coverage/ours_jacoco_summary.csv").open(encoding="utf-8", newline="") as handle:
         coverage = list(csv.DictReader(handle))
-    record = {"kind": "single_method_api_smoke_not_formal_rq1",
+    method_count = len(json.loads(args.method_list.read_text(encoding="utf-8")))
+    record = {"kind": "single_method_api_smoke_not_formal_rq1" if method_count == 1 else "multi_project_initial_pilot_not_formal_rq1",
               "requested_model": config["llm"]["model"],
               "initial_generation": json.loads((root / "initial/summary.json").read_text(encoding="utf-8")),
               "cost_observations": summarize_calls(events), "coverage_execution": coverage,

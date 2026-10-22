@@ -159,6 +159,11 @@ class JavaCompiler:
         source_path = Path(source_file).resolve()
         project_root = self._find_maven_project_root(source_path)
         if not project_root:
+            for candidate in source_path.parents:
+                if (candidate / "build.xml").is_file() and (candidate / "build/core").is_dir():
+                    return [str(candidate / "build/core"),
+                            str(candidate / "core/src/java"),
+                            *[str(jar) for jar in sorted((candidate / "lib").glob("*.jar"))]]
             return [str(source_path.parent)]
 
         cp_parts = [
