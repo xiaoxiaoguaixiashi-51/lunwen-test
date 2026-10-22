@@ -12,5 +12,6 @@
 - 模型调用增加逐目标 JSONL：输入/输出、服务端返回模型标识、token 用量、耗时、失败类型；未知 token 用量保留 null。新 KCF 模板显式禁用 SDK 隐式重试，统一请求超时 120 秒。
 - 初始生成和覆盖反馈保存各轮代码及失败快照。API 私有配置采用隐藏输入，放在 Git 忽略的 `config/private/`，目前尚未配置真实 API 或产生模型实验结果。
 - 本地项目虚拟环境完整回归测试 127 项通过；真实云端的工具 smoke 通过，模型调用记录测试使用假客户端，不产生付费调用。
+- 云端代码已快进对齐至 `8338a39`，Python 3.10 环境完整回归测试同样 127 项通过（36.361 秒），原始日志见 `cloud_tests_8338a39.log`。v2 清单及参考归档 SHA-256 与本地一致，已确认 `config/private/` 被 Git 忽略；截至本次检查仍未配置真实 API。
 
 JaCoCo CLI 的 report 支持不传 exec 数据、根据编译类生成报告，参考官方说明：https://www.jacoco.org/jacoco/trunk/doc/cli.html 。工具来源与哈希见 `tool_manifest.json`。
