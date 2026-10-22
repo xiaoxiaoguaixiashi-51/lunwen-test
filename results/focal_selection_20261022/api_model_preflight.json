@@ -1,0 +1,8 @@
+{
+  "check": "authenticated_provider_model_listing",
+  "configured_model": "DeepSeek-V4.1-Flash-1017",
+  "available_models": ["deepseek-flash", "deepseek-v4-pro"],
+  "configured_model_listed": false,
+  "generation_requests_sent": 0,
+  "decision": "Await model selection confirmation; private configuration unchanged."
+}
