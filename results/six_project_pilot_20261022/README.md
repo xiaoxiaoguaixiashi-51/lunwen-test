@@ -46,6 +46,8 @@ Windows `core.autocrlf=true` 造成工作副本 CRLF 与云端 Git checkout LF �
 
 原始包包含输入输出、全部模型调用追踪、各轮源码/编译诊断、JUnit 日志和 XML。导出前已逐文件扫描配置的完整 API key，私有配置未包含在包中。`aggregate` 仅是无模型调用的统计工具输出；它将通过套件 XML 与诊断 XML 分开保存。
 
+本地完整回归 135 项通过；云端同步至 `023bfca` 后同样 135 项通过（3.354 秒），日志见 `cloud_tests.log`。该回归使用假模型客户端，不追加真实模型请求。
+
 | 归档 | SHA-256 |
 |---|---|
 | `six_project_pilot_interrupted_20261022.tgz` | `9af76b9d8ebc886924ed284dcb93b81d4606a67b7f6e94d4592335f662496564` |
