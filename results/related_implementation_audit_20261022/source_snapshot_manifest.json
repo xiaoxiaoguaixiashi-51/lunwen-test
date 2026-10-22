@@ -1,0 +1,32 @@
+{
+  "review_date": "2026-10-22",
+  "scope": "Selected official source files, downloaded and read but never executed; not full-repository reproduction",
+  "local_cache_outside_public_repo": "outputs/related_impl_20261022",
+  "repositories": [
+    {
+      "repository": "https://github.com/SYSUSELab/KTester",
+      "commit": "fce83f1a4b9aa3f1d54598b62027bc17bb585383",
+      "default_branch_at_lookup": "main",
+      "recursive_tree_truncated": false,
+      "files": [
+        {"path": "code/procedure/generate_prompt.py", "sha256": "d83eb6edabbaae82fb02cd0f924a35d203f7e754b8b26d5340b05e1b5af6e1a9"},
+        {"path": "code/procedure/generate_code.py", "sha256": "956e3e7dd9a5b874981d839807d7d5e77bf73cf239853c4c78bc5edcfc2f742c"},
+        {"path": "code/tools/code_search.py", "sha256": "df0594c5f8536d899a7855f51686aafc8790864ac473f8352ec67b5496fb915e"},
+        {"path": "code/Java/project-index-builder/src/CodeSearcher.java", "sha256": "5260393b05351b854fb26f2f29c3e081cbae550ebfad28ed76a621919ef78e3a"},
+        {"path": "code/Java/project-index-builder/src/IndexBuilder.java", "sha256": "fa62ae1d1f1a1c570d3a8779cdc60edbae148e83af358265e6ce167252585897"}
+      ]
+    },
+    {
+      "repository": "https://github.com/chenyangyc/TELPA",
+      "commit": "b93c4ff610fd3506d760d50767954af7b6713c92",
+      "default_branch_at_lookup": "main",
+      "recursive_tree_truncated": false,
+      "files": [
+        {"path": "telpa_java/README.md", "sha256": "9c428b5a8efb2d5f00874cba33cedfe9523fc51af8687f7b9c06d03829e83c35"},
+        {"path": "telpa_java/core/base_method.py", "sha256": "99dd5b5117e2a431a807398dfa9182cb0a3ca6ae86afaa205fe027427d2df570"},
+        {"path": "telpa_java/utils/llm_util_java.py", "sha256": "3c6e13daffdc822fcd03e8429fe03766726466f9579915c7f262d402c4337654"},
+        {"path": "telpa_java/utils/_static_analysis_call_chaining.py", "sha256": "6018fd64a5c98e376ae1ee9c4854fa2b164b019144e7858a51bb547595fa76d2"}
+      ]
+    }
+  ]
+}

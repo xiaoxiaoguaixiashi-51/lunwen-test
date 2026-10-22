@@ -1,0 +1,506 @@
+{
+  "kind": "offline_saved_retrieval_replay_not_causal_or_effectiveness_experiment",
+  "archive_sha256": "2037346c9541cdcc764662509473bc86b8a7bb0d2fa2b53fa3a1e78daa159156",
+  "knowledge_sha256": "38b5eedac111e59b4d38fcdb2c6e23578b4a3584810a468d94a9db2bc5abace5",
+  "records_total": 12,
+  "failed_seed_cases_total": 4,
+  "api_calls": 0,
+  "cases": [
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "original_status": "test_failed",
+      "repair_status": "test_failed",
+      "replay_exact_match": true,
+      "saved_top3": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 17
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 16
+        },
+        {
+          "id": "commons-lang-dateutils-is-same-local-time",
+          "score": 15
+        }
+      ],
+      "component_only_top3": {
+        "target": [
+          {
+            "id": "commons-lang-arrayutils-hash-code",
+            "score": 3
+          },
+          {
+            "id": "commons-lang-arrayutils-is-equals",
+            "score": 3
+          },
+          {
+            "id": "commons-lang-arrayutils-to-map",
+            "score": 3
+          }
+        ],
+        "phase": [],
+        "failure": [
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 9
+          },
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 9
+          },
+          {
+            "id": "commons-lang-dateutils-is-same-local-time",
+            "score": 8
+          }
+        ],
+        "test": [
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 16
+          },
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 15
+          },
+          {
+            "id": "commons-lang-numberutils-create-big-integer",
+            "score": 14
+          }
+        ]
+      },
+      "component_token_counts": {
+        "target": 6,
+        "phase": 1,
+        "failure": 24,
+        "test": 121
+      },
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selected_record_token_overlap": {
+        "commons-lang-classutils-get-public-method": [
+          "and",
+          "apache",
+          "assert",
+          "assertequals",
+          "can",
+          "class",
+          "commons",
+          "exception",
+          "expected",
+          "fail",
+          "int",
+          "lang",
+          "new",
+          "org",
+          "public",
+          "string",
+          "tests"
+        ],
+        "commons-lang-numberutils-create-number": [
+          "and",
+          "apache",
+          "assert",
+          "assertequals",
+          "class",
+          "commons",
+          "exception",
+          "expected",
+          "for",
+          "java",
+          "junit",
+          "lang",
+          "org",
+          "static",
+          "string",
+          "that"
+        ],
+        "commons-lang-dateutils-is-same-local-time": [
+          "and",
+          "apache",
+          "assert",
+          "class",
+          "commons",
+          "expected",
+          "for",
+          "instances",
+          "junit",
+          "lang",
+          "new",
+          "null",
+          "org",
+          "time",
+          "while"
+        ]
+      }
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "original_status": "test_failed",
+      "repair_status": "test_failed",
+      "replay_exact_match": true,
+      "saved_top3": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 11
+        }
+      ],
+      "component_only_top3": {
+        "target": [
+          {
+            "id": "commons-lang-arrayutils-hash-code",
+            "score": 3
+          },
+          {
+            "id": "commons-lang-arrayutils-is-equals",
+            "score": 3
+          },
+          {
+            "id": "commons-lang-arrayutils-to-map",
+            "score": 3
+          }
+        ],
+        "phase": [],
+        "failure": [
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 8
+          },
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 7
+          },
+          {
+            "id": "commons-lang-dateutils-is-same-local-time",
+            "score": 7
+          }
+        ],
+        "test": [
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 10
+          },
+          {
+            "id": "commons-lang-stringutils-substrings-between",
+            "score": 10
+          },
+          {
+            "id": "commons-lang-numberutils-create-big-integer",
+            "score": 9
+          }
+        ]
+      },
+      "component_token_counts": {
+        "target": 6,
+        "phase": 1,
+        "failure": 26,
+        "test": 66
+      },
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selected_record_token_overlap": {
+        "commons-lang-classutils-get-public-method": [
+          "apache",
+          "assert",
+          "assertequals",
+          "class",
+          "commons",
+          "expected",
+          "fail",
+          "new",
+          "org",
+          "public",
+          "string",
+          "tests"
+        ],
+        "commons-lang-numberutils-create-big-integer": [
+          "apache",
+          "assert",
+          "assertequals",
+          "class",
+          "commons",
+          "expected",
+          "java",
+          "new",
+          "org",
+          "static",
+          "string"
+        ],
+        "commons-lang-numberutils-create-number": [
+          "apache",
+          "assert",
+          "assertequals",
+          "class",
+          "commons",
+          "expected",
+          "java",
+          "junit",
+          "org",
+          "static",
+          "string"
+        ]
+      }
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "original_status": "test_failed",
+      "repair_status": "ok",
+      "replay_exact_match": true,
+      "saved_top3": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        }
+      ],
+      "component_only_top3": {
+        "target": [
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 2
+          },
+          {
+            "id": "commons-lang-arrayutils-hash-code",
+            "score": 1
+          },
+          {
+            "id": "commons-lang-arrayutils-is-equals",
+            "score": 1
+          }
+        ],
+        "phase": [],
+        "failure": [
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 6
+          },
+          {
+            "id": "commons-lang-arrayutils-to-map",
+            "score": 5
+          },
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 5
+          }
+        ],
+        "test": [
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 12
+          },
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 11
+          },
+          {
+            "id": "commons-lang-numberutils-create-big-integer",
+            "score": 11
+          }
+        ]
+      },
+      "component_token_counts": {
+        "target": 5,
+        "phase": 1,
+        "failure": 32,
+        "test": 83
+      },
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selected_record_token_overlap": {
+        "commons-lang-classutils-get-public-method": [
+          "assert",
+          "assertequals",
+          "class",
+          "expected",
+          "fail",
+          "lang",
+          "new",
+          "nosuchmethodexception",
+          "org",
+          "public",
+          "string",
+          "tests"
+        ],
+        "commons-lang-numberutils-create-number": [
+          "assert",
+          "assertequals",
+          "class",
+          "construct",
+          "expected",
+          "integer",
+          "java",
+          "junit",
+          "lang",
+          "org",
+          "static",
+          "string"
+        ],
+        "commons-lang-numberutils-create-big-integer": [
+          "assert",
+          "assertequals",
+          "class",
+          "expected",
+          "integer",
+          "java",
+          "lang",
+          "new",
+          "org",
+          "static",
+          "string"
+        ]
+      }
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "original_status": "compile_failed",
+      "repair_status": "compile_failed",
+      "replay_exact_match": true,
+      "saved_top3": [
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": 17
+        }
+      ],
+      "component_only_top3": {
+        "target": [
+          {
+            "id": "commons-lang-arrayutils-hash-code",
+            "score": 1
+          },
+          {
+            "id": "commons-lang-arrayutils-is-equals",
+            "score": 1
+          },
+          {
+            "id": "commons-lang-arrayutils-to-map",
+            "score": 1
+          }
+        ],
+        "phase": [],
+        "failure": [
+          {
+            "id": "commons-lang-numberutils-create-big-integer",
+            "score": 8
+          },
+          {
+            "id": "commons-lang-numberutils-create-number",
+            "score": 8
+          },
+          {
+            "id": "commons-lang-arrayutils-is-equals",
+            "score": 7
+          }
+        ],
+        "test": [
+          {
+            "id": "commons-lang-arrayutils-to-map",
+            "score": 18
+          },
+          {
+            "id": "commons-lang-classutils-get-public-method",
+            "score": 17
+          },
+          {
+            "id": "commons-lang-numberutils-create-big-integer",
+            "score": 16
+          }
+        ]
+      },
+      "component_token_counts": {
+        "target": 6,
+        "phase": 1,
+        "failure": 53,
+        "test": 145
+      },
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selected_record_token_overlap": {
+        "commons-lang-arrayutils-to-map": [
+          "and",
+          "arrays",
+          "assert",
+          "assertequals",
+          "class",
+          "exception",
+          "for",
+          "get",
+          "java",
+          "lang",
+          "malformed",
+          "map",
+          "method",
+          "new",
+          "null",
+          "object",
+          "org",
+          "path",
+          "size"
+        ],
+        "commons-lang-classutils-get-public-method": [
+          "and",
+          "assert",
+          "assertequals",
+          "class",
+          "coverage",
+          "exception",
+          "expected",
+          "fail",
+          "get",
+          "lang",
+          "method",
+          "missing",
+          "name",
+          "new",
+          "org",
+          "path",
+          "public",
+          "string",
+          "tests"
+        ],
+        "commons-lang-extended-message-format": [
+          "and",
+          "assert",
+          "assertequals",
+          "class",
+          "empty",
+          "exception",
+          "for",
+          "java",
+          "lang",
+          "method",
+          "new",
+          "object",
+          "org",
+          "path",
+          "registry",
+          "text",
+          "types"
+        ]
+      }
+    }
+  ]
+}
