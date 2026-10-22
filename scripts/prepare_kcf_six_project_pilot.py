@@ -30,8 +30,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--method-list", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--start-index", type=int, default=0, help="Separately freeze remaining targets after an interrupted pilot")
     args = parser.parse_args()
     selected = select_targets(json.loads(args.method_list.read_text(encoding="utf-8")))
+    if not 0 <= args.start_index < len(selected):
+        raise ValueError("Invalid start index")
+    selected = selected[args.start_index:]
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x", encoding="utf-8") as handle:
         handle.write(json.dumps(selected, indent=2, ensure_ascii=False) + "\n")

@@ -19,9 +19,23 @@ def summarize_calls(events):
                       "unknown_call_count": sum(value is None for value in reported)}
     return {"logical_calls": len(events),
             "successful_calls": sum(event.get("status") == "ok" for event in events),
+            "calls_without_final_status": sum(event.get("status") not in {"ok", "error"} for event in events),
             "returned_models": sorted({event["response_model"] for event in events if event.get("response_model")}),
             "api_elapsed_seconds_sum": round(sum(event.get("elapsed_seconds", 0) for event in events), 6),
             "usage": usage}
+
+
+def initial_summary(root, methods, events):
+    path = root / "initial/summary.json"
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    called = {event.get("target_id") for event in events}
+    items = []
+    for method in methods:
+        status = root / "initial" / method["id"] / "status.json"
+        items.append(json.loads(status.read_text(encoding="utf-8")) if status.exists() else {
+            "id": method["id"], "status": "incomplete" if method["id"] in called else "not_attempted"})
+    return {"reconstructed_after_interruption": True, "total": len(items), "items": items}
 
 
 def main():
@@ -48,7 +62,7 @@ def main():
     method_count = len(json.loads(args.method_list.read_text(encoding="utf-8")))
     record = {"kind": "single_method_api_smoke_not_formal_rq1" if method_count == 1 else "multi_project_initial_pilot_not_formal_rq1",
               "requested_model": config["llm"]["model"],
-              "initial_generation": json.loads((root / "initial/summary.json").read_text(encoding="utf-8")),
+              "initial_generation": initial_summary(root, json.loads(args.method_list.read_text(encoding="utf-8")), events),
               "cost_observations": summarize_calls(events), "coverage_execution": coverage,
               "focal_coverage": json.loads((root / "evaluation/focal_method_coverage_summary.json").read_text(encoding="utf-8")),
               "money_cost": None, "money_cost_note": "No billing estimate without verified provider pricing and usage semantics"}

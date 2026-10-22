@@ -1,9 +1,23 @@
 import unittest
+import json
+import tempfile
+from pathlib import Path
 
-from scripts.summarize_kcf_api_smoke import summarize_calls
+from scripts.summarize_kcf_api_smoke import summarize_calls, initial_summary
 
 
 class SmokeSummaryTest(unittest.TestCase):
+    def test_interrupted_batch_retains_unattempted_targets_and_unknown_call_cost(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            folder = root / "initial/done"
+            folder.mkdir(parents=True)
+            (folder / "status.json").write_text(json.dumps({"id": "done", "status": "completed"}), encoding="utf-8")
+            events = [{"target_id": "interrupted", "usage": {"total_tokens": None}}]
+            result = initial_summary(root, [{"id": name} for name in ("done", "interrupted", "unattempted")], events)
+            self.assertEqual(["completed", "incomplete", "not_attempted"], [row["status"] for row in result["items"]])
+            self.assertEqual(1, summarize_calls(events)["calls_without_final_status"])
+
     def test_unknown_usage_is_not_assumed_zero(self):
         result = summarize_calls([
             {"status": "ok", "response_model": "resolved", "elapsed_seconds": 2,

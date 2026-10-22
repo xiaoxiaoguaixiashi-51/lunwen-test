@@ -157,16 +157,26 @@ class JavaCompiler:
     def _classpath_for_source_file(self, source_file: str) -> list[str]:
         """Build a useful compile classpath for a Java source file."""
         source_path = Path(source_file).resolve()
+        # Match the independent coverage harness, which supplies JUnit 4 for
+        # every arm. Some pinned projects themselves depend only on Jupiter.
+        repository = Path.home() / ".m2/repository"
+        harness_jars = [repository / name for name in (
+            "junit/junit/4.13.2/junit-4.13.2.jar",
+            "org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar",
+        )]
+        shared = [str(jar) for jar in harness_jars if jar.is_file()]
         project_root = self._find_maven_project_root(source_path)
         if not project_root:
             for candidate in source_path.parents:
                 if (candidate / "build.xml").is_file() and (candidate / "build/core").is_dir():
-                    return [str(candidate / "build/core"),
+                    return [*shared, str(candidate / "build/core"),
                             str(candidate / "core/src/java"),
                             *[str(jar) for jar in sorted((candidate / "lib").glob("*.jar"))]]
-            return [str(source_path.parent)]
+            return [*shared, str(source_path.parent)]
 
         cp_parts = [
+            *shared,
             str(project_root / "src" / "main" / "java"),
             str(project_root / "target" / "classes"),
         ]

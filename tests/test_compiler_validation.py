@@ -25,8 +25,23 @@ class CompilerValidationTest(unittest.TestCase):
             compiler = JavaCompiler(static_guard_enabled=False)
             with patch.object(compiler, "_maven_test_classpath", side_effect=AssertionError("Not Maven")):
                 parts = compiler._classpath_for_source_file(str(source))
-            self.assertEqual(str(root / "build/core"), parts[0])
+            self.assertIn(str(root / "build/core"), parts)
             self.assertIn(str(jar), parts)
+
+    def test_shared_harness_junit_is_available_even_if_project_uses_jupiter(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            jar = root / ".m2/repository/junit/junit/4.13.2/junit-4.13.2.jar"
+            jar.parent.mkdir(parents=True)
+            jar.touch()
+            for enabled in (True, False):
+                compiler = JavaCompiler(static_guard_enabled=enabled)
+                with patch("src.utils.compiler.Path.home", return_value=root), patch.object(
+                    compiler, "_maven_test_classpath", return_value="/project/jupiter.jar"
+                ):
+                    parts = compiler._classpath_for_source_file(str(TARGET))
+                self.assertIn(str(jar), parts)
+                self.assertIn("/project/jupiter.jar", parts)
 
     def test_empty_test_code_fails(self):
         result = JavaCompiler().compile_test("")
