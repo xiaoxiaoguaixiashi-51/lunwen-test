@@ -41,3 +41,7 @@ A1/A2/A3 的既有定义未替换：本入口的 A1 关闭失败检索，A2 此�
 ## 备份
 
 `seed_failure_repair_20261022.tgz` 包含四次调用、原件/修复、上下文、检索、完整独立执行资料、待复核/采纳 XML、复核记录和固定分母汇总。导出前逐文件扫描已配置完整 API key，私有配置未入包。SHA-256：`2037346c9541cdcc764662509473bc86b8a7bb0d2fa2b53fa3a1e78daa159156`。
+
+补充验证：云端同步至 `f1ca480` 后完整离线回归 143 项通过（3.315 秒），本地同样 143 项通过。`cloud_tests_seed_bridge_20261022.log` 保存云端原始日志。随后 `--passing-only --max-rounds 0` 确认复核后的三个套件能接入 KCF 反馈入口，仍为 39/136 行、14/90 分支；没有生成增量测试，不能称为覆盖反馈效果验证。
+
+零轮接入包 `feedback_bridge_zero_round_20261022.tgz` SHA-256：`91391b334a7f9df231f1855908f530053811db0c7c1868ab32f895e96ad9ad84`；无模型 dry-run 包 `seed_failure_repair_dry_20261022.tgz` SHA-256：`b12acbb3d47ec3a6b8e0943a4632d671b24d9c52bff64852055f3dd250c706aa`。两次验证均为 0 次模型请求，已扫描密钥再导出。
