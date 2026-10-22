@@ -96,6 +96,8 @@ class LLMClient:
             choice = response.choices[0]
             content = choice.message.content or ""
             event.update(status="ok", response_model=getattr(response, "model", None),
+                         response_id=getattr(response, "id", None),
+                         system_fingerprint=getattr(response, "system_fingerprint", None),
                          response_text=content, finish_reason=getattr(choice, "finish_reason", None))
             if content.strip():
                 return content
