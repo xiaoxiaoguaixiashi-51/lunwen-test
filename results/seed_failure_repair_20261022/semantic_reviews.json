@@ -1,0 +1,17 @@
+[
+  {
+    "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+    "decision": "approve",
+    "reviewer": "Codex source-and-diff audit; not an independent human oracle validation",
+    "repaired_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+    "reason": "The full diff changes only the interface-instantiation test: getConstructor() runs before newInstance(); an interface has no public no-argument constructor, so NoSuchMethodException is caught and wrapped in IllegalArgumentException. The existing fail() and cause assertion remain, the expected types are corrected, and a message assertion is added. All 13 test methods remain; the independent JUnit run reports 13 tests and zero failures. This is source-grounded exception-oracle correction, not deletion of a failing check or a blind copy of runtime output.",
+    "source_evidence": [
+      {
+        "source": "/root/maco-aligned-projects/jdom2/core/src/java/org/jdom2/internal/ReflectionConstructor.java",
+        "sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43",
+        "line_start": 78,
+        "line_end": 96
+      }
+    ]
+  }
+]

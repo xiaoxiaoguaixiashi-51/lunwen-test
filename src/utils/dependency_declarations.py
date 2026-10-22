@@ -53,3 +53,16 @@ def declaration_context(target, source_roots, max_chars=12000):
         records.append(record)
         used += len(text)
     return records
+
+
+def grounded_context(method, projects_root, include_declarations):
+    source = Path(method["target"]).read_text(encoding="utf-8")
+    roots = [method["source_root"], Path(projects_root) / method["project_id"] / "src/main/java",
+             Path(projects_root) / method["project_id"] / "core/src/java"]
+    declarations = declaration_context(method["target"], roots) if include_declarations else []
+    context = "Focal source (bounded):\n```java\n" + source[:30000] + "\n```"
+    if declarations:
+        import json
+        context += "\nActual dependency declarations:\n" + json.dumps(declarations, ensure_ascii=False)
+    return {"target_sha256": hashlib.sha256(Path(method["target"]).read_bytes()).hexdigest(),
+            "source_truncated": len(source) > 30000, "declarations": declarations, "context": context}

@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 from src.utils.repair_integrity import check_repair_integrity
-from src.utils.dependency_declarations import declaration_context
+from src.utils.dependency_declarations import declaration_context, grounded_context
 
 
 class RepairIntegrityTest(unittest.TestCase):
@@ -38,3 +38,8 @@ class RepairIntegrityTest(unittest.TestCase):
             self.assertIn("public class Dep", records[0]["declarations"])
             self.assertIn("public Dep(int n)", records[0]["declarations"])
             self.assertEqual(64, len(records[0]["sha256"]))
+            method = {"target": str(target), "source_root": str(root), "project_id": "p"}
+            unguarded = grounded_context(method, root, False)
+            self.assertEqual([], unguarded["declarations"])
+            self.assertNotIn("Actual dependency declarations", unguarded["context"])
+            self.assertIn("import p.Dep", unguarded["context"])

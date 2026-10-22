@@ -1,0 +1,30 @@
+[
+  {
+    "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+    "status": "unchanged_initial_passing_suite"
+  },
+  {
+    "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+    "status": "test_failed",
+    "semantic_review_required": true
+  },
+  {
+    "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+    "status": "test_failed",
+    "semantic_review_required": true
+  },
+  {
+    "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+    "status": "unchanged_initial_passing_suite"
+  },
+  {
+    "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+    "status": "ok",
+    "semantic_review_required": true
+  },
+  {
+    "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+    "status": "compile_failed",
+    "semantic_review_required": true
+  }
+]

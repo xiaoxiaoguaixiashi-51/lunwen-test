@@ -15,7 +15,7 @@ from scripts.summarize_kcf_pilot import select_status_rows
 from src.core.batch_runner import load_method_list
 from src.core.llm_client import LLMClient, load_config, trace_target
 from src.retrieval.dependency_knowledge import DEFAULT_KNOWLEDGE_PATH, load_knowledge_records
-from src.utils.dependency_declarations import declaration_context
+from src.utils.dependency_declarations import grounded_context
 from src.utils.experiment_metadata import sha256_file, write_run_metadata
 from src.utils.repair_integrity import check_repair_integrity
 
@@ -65,6 +65,7 @@ def main():
     parser.add_argument("--jacoco-agent", default="/root/tools/jacocoagent.jar")
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
     args = parser.parse_args()
+    args.isolate_execution = True
     if args.output_dir.exists():
         raise FileExistsError("Use a fresh output directory; original failed suites remain unchanged")
     methods = load_method_list(args.method_list)
@@ -110,18 +111,9 @@ def main():
             continue
         failure = Path(seed["failure_log"]).read_text(encoding="utf-8", errors="replace")
         (item / "original_failure.log").write_text(failure, encoding="utf-8")
-        source = Path(method["target"]).read_text(encoding="utf-8")
-        declarations = []
-        if not args.disable_static_guard:
-            declarations = declaration_context(method["target"], [
-                method["source_root"], args.projects_root / method["project_id"] / "src/main/java",
-                args.projects_root / method["project_id"] / "core/src/java"])
-        context = "Focal source (bounded):\n```java\n" + source[:30000] + "\n```"
-        if declarations:
-            context += "\nActual dependency declarations:\n" + json.dumps(declarations, ensure_ascii=False)
-        feedback.write_json(item / "source_context.json", {"target_sha256": sha256_file(method["target"]),
-                                                           "source_truncated": len(source) > 30000,
-                                                           "declarations": declarations, "context": context})
+        source_info = grounded_context(method, args.projects_root, not args.disable_static_guard)
+        context = source_info["context"]
+        feedback.write_json(item / "source_context.json", source_info)
         if args.dry_run:
             statuses.append({"id": method["id"], "status": "planned_failure_repair", "original_status": seed["status"]})
             continue

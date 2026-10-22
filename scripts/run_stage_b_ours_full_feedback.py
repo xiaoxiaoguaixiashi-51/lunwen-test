@@ -26,6 +26,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from scripts.maco_stage_b import discover_classpath_entries, safe_name, write_table
 from src.core.llm_client import LLMClient, load_config, trace_target
+from src.core.batch_runner import load_method_list
 from src.retrieval.dependency_knowledge import (
     DEFAULT_KNOWLEDGE_PATH,
     compact_record,
@@ -36,6 +37,7 @@ from src.retrieval.dependency_knowledge import (
 from src.utils.experiment_metadata import write_run_metadata, sha256_file
 from src.utils.llm_output import extract_fenced_block
 from src.utils.repair_integrity import check_repair_integrity
+from src.utils.dependency_declarations import grounded_context
 
 
 SYSTEM_PROMPT = """You are the coverage-feedback generation stage of Ours Full.
@@ -340,6 +342,7 @@ def generate_incremental_test(
     round_index: int,
     records: list[dict],
     args,
+    source_context: str = "",
 ) -> tuple[str, list[dict]]:
     target = Path(method["target"])
     package_name = package_from_item(method)
@@ -364,6 +367,8 @@ def generate_incremental_test(
         retrieved_knowledge=json.dumps(retrieved, indent=2, ensure_ascii=False),
         test_class_name=test_class,
     )
+    if source_context:
+        user_prompt += "\n\n## Verified source context (partial; omissions are unknown, not absence)\n" + source_context
     response = llm.generate(system_prompt, user_prompt, max_tokens=args.max_tokens)
     return format_generated_code(safe_text(extract_fenced_block(response, "java")), package_name, args), retrieved
 
@@ -447,7 +452,8 @@ def run_generated_test(method: dict, test_file: Path, test_class: str, round_dir
     run_cp = os.pathsep.join([str(classes_dir), classpath])
     test_cmd = [
         "java",
-        f"-javaagent:{args.jacoco_agent}=destfile={exec_file}",
+        f"-javaagent:{args.jacoco_agent}=destfile={exec_file}" + (
+            ",append=false" if getattr(args, "passing_only", False) or getattr(args, "isolate_execution", False) else ""),
         "-cp",
         run_cp,
         "org.junit.runner.JUnitCore",
@@ -488,6 +494,11 @@ def copy_raw_xmls(raw_xml_root: Path, combined_root: Path):
 def include_incremental_xml(result: dict, passing_only: bool) -> bool:
     return bool(result.get("xml_file")) and (not passing_only or (
         result.get("status") == "ok" and not result.get("semantic_review_required")))
+
+
+def execution_dir_for(output_root, round_index, attempt, isolated):
+    base = Path(output_root) / "incremental_jacoco" / f"round{round_index}"
+    return base / f"attempt{attempt}" if isolated else base
 
 
 def validate_passing_seed_index(raw_root: Path, allowed_ids=None):
@@ -595,6 +606,7 @@ def main():
     if any(item.get("method_owner") for item in methods.values()) and not args.reference_xml_root:
         raise ValueError("Owner/signature targets require --reference-xml-root before any model call")
     if args.passing_only:
+        load_method_list(args.method_list)  # Verify source hashes before model requests.
         validate_passing_seed_index(Path(args.raw_xml_root), methods.keys())
         if Path(args.output_dir).exists():
             raise FileExistsError("Passing-only runs require a fresh output directory; do not reuse legacy XML caches")
@@ -626,6 +638,7 @@ def main():
             "max_tokens": args.max_tokens,
             "repair_iterations": args.repair_iterations,
             "passing_only": args.passing_only,
+            "dependency_declaration_context_enabled": args.passing_only and not args.disable_static_guard,
         },
         inputs={
             "reference_xml_root": args.reference_xml_root,
@@ -664,18 +677,26 @@ def main():
                 continue
 
             try:
+                context = ""
+                if args.passing_only:
+                    source_info = grounded_context(method, args.projects_root, not args.disable_static_guard)
+                    write_json(gen_dir / "source_context.json", source_info)
+                    context = source_info["context"]
                 with trace_target(method["id"]):
-                    test_code, coverage_kg = generate_incremental_test(llm, method, row, round_index, records, args)
+                    test_code, coverage_kg = generate_incremental_test(llm, method, row, round_index, records, args,
+                                                                     source_context=context)
                 test_file = write_test_file(test_code, gen_dir, test_class)
                 retrieval_log = {"coverage-gap": coverage_kg, "failure-repair": []}
-                result = run_generated_test(method, test_file, test_class, output_root / "incremental_jacoco" / f"round{round_index}", args, cp_cache)
+                result = run_generated_test(method, test_file, test_class,
+                                            execution_dir_for(output_root, round_index, 0, args.passing_only), args, cp_cache)
                 (gen_dir / "attempt_0.java.txt").write_text(test_code, encoding="utf-8")
                 write_json(gen_dir / "attempt_0.json", {"result": result, "retrieved_knowledge": coverage_kg})
                 for repair_index in range(1, args.repair_iterations + 1):
                     if result["status"] == "ok":
                         break
                     with trace_target(method["id"]):
-                        repaired, repair_kg = repair_test(llm, test_code, method, result.get("output", ""), result["status"], records, args)
+                        repaired, repair_kg = repair_test(llm, test_code, method, result.get("output", ""), result["status"], records, args,
+                                                         source_context=context)
                     retrieval_log["failure-repair"].append({"iteration": repair_index, "records": repair_kg})
                     if args.passing_only:
                         integrity = check_repair_integrity(test_code, repaired)
@@ -686,7 +707,8 @@ def main():
                             break
                     test_code = repaired
                     test_file = write_test_file(test_code, gen_dir, test_class)
-                    result = run_generated_test(method, test_file, test_class, output_root / "incremental_jacoco" / f"round{round_index}", args, cp_cache)
+                    result = run_generated_test(method, test_file, test_class,
+                                                execution_dir_for(output_root, round_index, repair_index, args.passing_only), args, cp_cache)
                     if args.passing_only:
                         result["semantic_review_required"] = True
                     (gen_dir / f"attempt_{repair_index}.java.txt").write_text(test_code, encoding="utf-8")

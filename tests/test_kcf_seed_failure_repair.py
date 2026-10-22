@@ -8,10 +8,16 @@ from pathlib import Path
 from unittest.mock import patch
 
 from scripts.run_kcf_seed_failure_repair import prepare_seeds, main
-from scripts.run_stage_b_ours_full_feedback import include_incremental_xml, validate_passing_seed_index
+from scripts.run_stage_b_ours_full_feedback import include_incremental_xml, validate_passing_seed_index, execution_dir_for
 
 
 class SeedFailureRepairTest(unittest.TestCase):
+    def test_new_mode_isolates_attempt_classes_logs_and_exec_files(self):
+        first = execution_dir_for(Path("run"), 1, 0, True)
+        repaired = execution_dir_for(Path("run"), 1, 1, True)
+        self.assertNotEqual(first, repaired)
+        self.assertEqual(execution_dir_for(Path("run"), 1, 0, False), execution_dir_for(Path("run"), 1, 1, False))
+
     def test_failed_or_unreviewed_xml_is_not_accepted_in_new_mode(self):
         failed = {"status": "test_failed", "xml_file": "diagnostic.xml"}
         self.assertFalse(include_incremental_xml(failed, True))
