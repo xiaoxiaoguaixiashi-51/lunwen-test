@@ -1,0 +1,72 @@
+{
+  "kind": "single_method_api_smoke_not_formal_rq1",
+  "requested_model": "deepseek-flash",
+  "initial_generation": {
+    "total": 1,
+    "completed": 0,
+    "skipped": 0,
+    "failed": 1,
+    "items": [
+      {
+        "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+        "target": "/root/maco-aligned-projects/commons-cli/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "method": "toString",
+        "status": "error",
+        "error": "LLM returned empty message content; inspect finish_reason and token budget"
+      }
+    ]
+  },
+  "cost_observations": {
+    "logical_calls": 3,
+    "successful_calls": 2,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "api_elapsed_seconds_sum": 54.666979,
+    "usage": {
+      "prompt_tokens": {
+        "known_sum": 14253,
+        "unknown_call_count": 0
+      },
+      "completion_tokens": {
+        "known_sum": 14392,
+        "unknown_call_count": 0
+      },
+      "total_tokens": {
+        "known_sum": 28645,
+        "unknown_call_count": 0
+      }
+    }
+  },
+  "coverage_execution": [
+    {
+      "fqcn": "org.apache.commons.cli.OptionGroup",
+      "generation_status": "error",
+      "generation_success": "",
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "method": "toString",
+      "output_dir": "/root/autodl-tmp/lunwen-test/experiments/runs/llm_smoke_20261022/coverage/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring-org.apache.commons.cli.OptionGroup",
+      "project_id": "commons-cli",
+      "source_dir": "/root/autodl-tmp/lunwen-test/experiments/runs/llm_smoke_20261022/initial/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "status": "missing_generated_tests",
+      "test_class": "",
+      "xml_file": ""
+    }
+  ],
+  "focal_coverage": [
+    {
+      "approach": "KCF_API_smoke_failed",
+      "methods_total": 1,
+      "methods_with_coverage_data": 0,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 18,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 8,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    }
+  ],
+  "money_cost": null,
+  "money_cost_note": "No billing estimate without verified provider pricing and usage semantics"
+}

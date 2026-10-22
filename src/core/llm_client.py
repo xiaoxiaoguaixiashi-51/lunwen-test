@@ -69,6 +69,9 @@ class LLMClient:
         self.model = llm_config["model"]
         self.temperature = llm_config.get("temperature", 0.2)
         self.max_tokens = llm_config.get("max_tokens", 4096)
+        self.thinking = llm_config.get("thinking")
+        if self.thinking is not None and self.thinking not in {"enabled", "disabled"}:
+            raise ValueError("llm.thinking must be enabled or disabled")
         self._trace_secret = llm_config["api_key"]
         self.trace_path = os.environ.get("KCF_LLM_TRACE_PATH")
         if self.trace_path:
@@ -80,6 +83,8 @@ class LLMClient:
         request = {"model": self.model, "messages": messages,
                    "temperature": self.temperature if temperature is None else temperature,
                    "max_tokens": self.max_tokens if max_tokens is None else max_tokens}
+        if self.thinking is not None:
+            request["extra_body"] = {"thinking": {"type": self.thinking}}
         event = {"call_id": uuid.uuid4().hex, "started_at": datetime.now(timezone.utc).isoformat(),
                  "target_id": TRACE_TARGET.get(),
                  "stage": os.environ.get("KCF_EXPERIMENT_STAGE"), "request": request,

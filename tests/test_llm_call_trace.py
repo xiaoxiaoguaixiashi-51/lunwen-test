@@ -53,6 +53,20 @@ class LlmTraceTest(unittest.TestCase):
             self.assertEqual("error", event["status"])
             self.assertIsNone(event["usage"]["total_tokens"])
 
+    def test_thinking_is_explicit_only_when_configured(self):
+        seen = []
+        def create(**kwargs):
+            seen.append(kwargs)
+            return SimpleNamespace(model="m", usage=None, choices=[
+                SimpleNamespace(message=SimpleNamespace(content="ok"), finish_reason="stop")])
+        fake = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+        with patch.dict("sys.modules", {"openai": SimpleNamespace(OpenAI=lambda **kwargs: fake)}):
+            base = {"base_url": "https://example.invalid/v1", "api_key": "test", "model": "m"}
+            LLMClient({"llm": base}).chat([])
+            LLMClient({"llm": {**base, "thinking": "disabled"}}).chat([])
+        self.assertNotIn("extra_body", seen[0])
+        self.assertEqual({"thinking": {"type": "disabled"}}, seen[1]["extra_body"])
+
 
 if __name__ == "__main__":
     unittest.main()

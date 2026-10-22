@@ -1,0 +1,11 @@
+SHA-256 of src/core/llm_client.py at each API smoke:
+First attempt (8338a39 committed file):
+479d01fbe5ee99f9abef19a3ee12b38ccc1922532c041627eefdee6d7a4c14b2
+Retry (deployed file equals local pre-commit file):
+47e15df3947754ad7c76f058338205c68085ab5048f0ca02ef5e671d3dca53bb
+
+All other generation/evaluation files came from cloud base 8338a39.
+check_kcf_api_models.py and summarize_kcf_api_smoke.py were uploaded helpers,
+not extra generation mechanisms. They do not generate model responses.
+JUnit retry: 12 tests, 0 failures; raw junit.log is included in the archive.
+Local complete offline regression after mode support: 129 tests passed.

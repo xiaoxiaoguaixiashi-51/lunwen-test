@@ -1,0 +1,76 @@
+{
+  "kind": "single_method_api_smoke_not_formal_rq1",
+  "requested_model": "deepseek-flash",
+  "initial_generation": {
+    "total": 1,
+    "completed": 1,
+    "skipped": 0,
+    "failed": 0,
+    "items": [
+      {
+        "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+        "target": "/root/maco-aligned-projects/commons-cli/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "method": "toString",
+        "status": "completed",
+        "success": true,
+        "iterations": 1
+      }
+    ]
+  },
+  "cost_observations": {
+    "logical_calls": 3,
+    "successful_calls": 3,
+    "returned_models": [
+      "deepseek-flash"
+    ],
+    "api_elapsed_seconds_sum": 15.329924,
+    "usage": {
+      "prompt_tokens": {
+        "known_sum": 12864,
+        "unknown_call_count": 0
+      },
+      "completion_tokens": {
+        "known_sum": 3975,
+        "unknown_call_count": 0
+      },
+      "total_tokens": {
+        "known_sum": 16839,
+        "unknown_call_count": 0
+      }
+    }
+  },
+  "coverage_execution": [
+    {
+      "compile_code": "0",
+      "fqcn": "org.apache.commons.cli.OptionGroup",
+      "generation_status": "completed",
+      "generation_success": "True",
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "method": "toString",
+      "output_dir": "/root/autodl-tmp/lunwen-test/experiments/runs/llm_smoke_nonthinking_20261022/coverage/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring-org.apache.commons.cli.OptionGroup",
+      "project_id": "commons-cli",
+      "source_dir": "/root/autodl-tmp/lunwen-test/experiments/runs/llm_smoke_nonthinking_20261022/initial/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "status": "ok",
+      "test_class": "org.apache.commons.cli.OptionGroupToStringTest",
+      "test_code": "0",
+      "xml_code": "0",
+      "xml_file": "/root/autodl-tmp/lunwen-test/experiments/runs/llm_smoke_nonthinking_20261022/coverage/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring-org.apache.commons.cli.OptionGroup/xml/jacoco.xml"
+    }
+  ],
+  "focal_coverage": [
+    {
+      "approach": "KCF_API_smoke",
+      "methods_total": 1,
+      "methods_with_coverage_data": 1,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 18,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "100.0%",
+      "focal_branches_total": 8,
+      "focal_branches_covered": 8,
+      "focal_branch_rate": "100.0%"
+    }
+  ],
+  "money_cost": null,
+  "money_cost_note": "No billing estimate without verified provider pricing and usage semantics"
+}
