@@ -1,0 +1,11 @@
+{
+  "change": "User-authorized model ID correction in cloud private configs",
+  "previous_model": "DeepSeek-V4.1-Flash-1017",
+  "new_model": "deepseek-flash",
+  "variants": ["full", "a1", "a3"],
+  "configured_model_listed": true,
+  "available_models": ["deepseek-flash", "deepseek-v4-pro"],
+  "generation_requests_sent": 0,
+  "private_config_mode": "0600",
+  "private_configs_git_ignored": true
+}
