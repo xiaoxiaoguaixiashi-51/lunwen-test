@@ -1,0 +1,755 @@
+{
+  "kind": "all_saved_failure_logs_not_causal_attribution",
+  "api_calls": 0,
+  "archive_sha256": {
+    "generation": "3691060a645f9b317c691fb95ae687e0f3b22af06a137b6b8b3b5a0e069a7fb4",
+    "evaluation": "6359602dd99e6674bfcfea5c867c8f7065388211fdf87699c3ba63a52943c10a"
+  },
+  "cases": {
+    "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic": {
+      "units": 12,
+      "status_counts": {
+        "test_failed": 12
+      },
+      "failing_tests_occurrences": {
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)": 12,
+        "test_c_at_onset_before_other_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)": 1,
+        "test_c_at_onset_before_ahkloqrux_codes_4(org.apache.commons.codec.language.ColognePhoneticTest)": 5
+      },
+      "compiler_error_occurrences": {}
+    },
+    "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment": {
+      "units": 12,
+      "status_counts": {
+        "test_failed": 12
+      },
+      "failing_tests_occurrences": {
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)": 12
+      },
+      "compiler_error_occurrences": {}
+    },
+    "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct": {
+      "units": 12,
+      "status_counts": {
+        "ok": 12
+      },
+      "failing_tests_occurrences": {},
+      "compiler_error_occurrences": {}
+    },
+    "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html": {
+      "units": 12,
+      "status_counts": {
+        "compile_failed": 12
+      },
+      "failing_tests_occurrences": {},
+      "compiler_error_occurrences": {
+        "method does not override or implement a method from a supertype": 30,
+        "WindwardRequest() has private access in WindwardRequest": 12,
+        "WindwardResponse() has private access in WindwardResponse": 12,
+        "resolveView(String,Map<String,Object>) in FakeViewPlugin cannot override resolveView(String,Map<String,Object>) in AbstractViewPlugin": 4
+      }
+    }
+  },
+  "rows": [
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "N",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__N/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "F",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__F/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_c_at_onset_before_other_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "test_c_at_onset_before_ahkloqrux_codes_4(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 3
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "T",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__T/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_c_at_onset_before_ahkloqrux_codes_4(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 2
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "L",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__L/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "F",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__F/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "L",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__L/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "T",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__T/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "N",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__N/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_c_at_onset_before_ahkloqrux_codes_4(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 2
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "N",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__N/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_c_at_onset_before_ahkloqrux_codes_4(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 2
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "F",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__F/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "T",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__T/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_c_at_onset_before_ahkloqrux_codes_4(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 2
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "L",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__L/execution/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_x_after_ckq_codes_8(org.apache.commons.codec.language.ColognePhoneticTest)"
+      ],
+      "tests_run": 31,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "T",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__T/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "F",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__F/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "N",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__N/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "L",
+      "repeat": 1,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__L/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "F",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__F/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "L",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__L/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "T",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__T/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "N",
+      "repeat": 2,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__N/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "F",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__F/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "L",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__L/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "T",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__T/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "N",
+      "repeat": 3,
+      "status": "test_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__N/execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [
+        "test_printComment_singleLine_newRecordTrue_writesMarkerSpaceAndRecordSeparator(org.apache.commons.csv.CSVPrinterPrintCommentTest)"
+      ],
+      "tests_run": 16,
+      "junit_failures": 1
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "N",
+      "repeat": 1,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__N/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "F",
+      "repeat": 1,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__F/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "L",
+      "repeat": 1,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__L/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "T",
+      "repeat": 1,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__T/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "L",
+      "repeat": 2,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__L/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "F",
+      "repeat": 2,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__F/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "N",
+      "repeat": 2,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__N/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "T",
+      "repeat": 2,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__T/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "N",
+      "repeat": 3,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__N/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "T",
+      "repeat": 3,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__T/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "F",
+      "repeat": 3,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__F/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "L",
+      "repeat": 3,
+      "status": "ok",
+      "log_member": "knowledge_diagnostic_reeval_20261030/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__L/execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "compiler_errors": [],
+      "failing_test_names": [],
+      "tests_run": 13,
+      "junit_failures": 0
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "F",
+      "repeat": 1,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__F/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "method does not override or implement a method from a supertype"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "L",
+      "repeat": 1,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__L/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "method does not override or implement a method from a supertype"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "T",
+      "repeat": 1,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__T/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "resolveView(String,Map<String,Object>) in FakeViewPlugin cannot override resolveView(String,Map<String,Object>) in AbstractViewPlugin"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "N",
+      "repeat": 1,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__N/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "resolveView(String,Map<String,Object>) in FakeViewPlugin cannot override resolveView(String,Map<String,Object>) in AbstractViewPlugin"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "F",
+      "repeat": 2,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__F/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "resolveView(String,Map<String,Object>) in FakeViewPlugin cannot override resolveView(String,Map<String,Object>) in AbstractViewPlugin"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "N",
+      "repeat": 2,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__N/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "resolveView(String,Map<String,Object>) in FakeViewPlugin cannot override resolveView(String,Map<String,Object>) in AbstractViewPlugin"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "L",
+      "repeat": 2,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__L/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "method does not override or implement a method from a supertype"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "T",
+      "repeat": 2,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__T/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "L",
+      "repeat": 3,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__L/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "method does not override or implement a method from a supertype"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "F",
+      "repeat": 3,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__F/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "N",
+      "repeat": 3,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__N/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "method does not override or implement a method from a supertype"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "T",
+      "repeat": 3,
+      "status": "compile_failed",
+      "log_member": "knowledge_diagnostic_reeval_20261030/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__T/execution/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/compile.log",
+      "compiler_errors": [
+        "method does not override or implement a method from a supertype",
+        "method does not override or implement a method from a supertype",
+        "WindwardRequest() has private access in WindwardRequest",
+        "WindwardResponse() has private access in WindwardResponse",
+        "method does not override or implement a method from a supertype"
+      ],
+      "failing_test_names": [],
+      "tests_run": null,
+      "junit_failures": null
+    }
+  ]
+}
