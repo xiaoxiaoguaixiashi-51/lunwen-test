@@ -1,0 +1,1301 @@
+{
+  "kind": "offline_preview_not_experiment_results",
+  "api_calls": 0,
+  "executable": false,
+  "blockers": [
+    "live_source_tree_and_tools_not_reverified",
+    "verified_tokenizer_and_budget_gate_missing",
+    "effective_model_configuration_not_verified",
+    "online_runner_not_implemented"
+  ],
+  "archive_sha256": "2037346c9541cdcc764662509473bc86b8a7bb0d2fa2b53fa3a1e78daa159156",
+  "knowledge_sha256": "38b5eedac111e59b4d38fcdb2c6e23578b4a3584810a468d94a9db2bc5abace5",
+  "template_file_sha256": "bedbba50e1ff9e0a43822a353c13af6b8f2c4c28677b8fa10e935deac729cc68",
+  "source_context_origin": "saved_archive_not_live_verification",
+  "units": [
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 1,
+      "arm": "N",
+      "position_in_block": 1,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [],
+      "prompt_sha256": "f56c13cfec2943802f2d182bc3904a92309d207d7a9bbb4f21972ddbca85fce3",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 26270,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 1,
+      "arm": "F",
+      "position_in_block": 2,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "0def4cb153f4392eff951ba63eed28397d4e8fe95d13c3a77705c9cab4d4c6e5",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 29010,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 1,
+      "arm": "T",
+      "position_in_block": 3,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2334303499030708
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.16699547298533854
+        },
+        {
+          "id": "commons-lang-stringutils-substrings-between",
+          "score": 0.15809106528214506
+        }
+      ],
+      "prompt_sha256": "dcf0bcdc090da94e856bedd6e3d9c24e19762153baab22918216827ece97f0c2",
+      "knowledge_utf8_bytes": 2546,
+      "prompt_utf8_bytes": 29038,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 1,
+      "arm": "L",
+      "position_in_block": 4,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 11
+        }
+      ],
+      "prompt_sha256": "585f20b2db74fe85b24856088153a9f0c9ecbbb11df45ad49ae4c4161f1e5939",
+      "knowledge_utf8_bytes": 2634,
+      "prompt_utf8_bytes": 29121,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 2,
+      "arm": "F",
+      "position_in_block": 1,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "0def4cb153f4392eff951ba63eed28397d4e8fe95d13c3a77705c9cab4d4c6e5",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 29010,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 2,
+      "arm": "L",
+      "position_in_block": 2,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 11
+        }
+      ],
+      "prompt_sha256": "585f20b2db74fe85b24856088153a9f0c9ecbbb11df45ad49ae4c4161f1e5939",
+      "knowledge_utf8_bytes": 2634,
+      "prompt_utf8_bytes": 29121,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 2,
+      "arm": "T",
+      "position_in_block": 3,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2334303499030708
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.16699547298533854
+        },
+        {
+          "id": "commons-lang-stringutils-substrings-between",
+          "score": 0.15809106528214506
+        }
+      ],
+      "prompt_sha256": "dcf0bcdc090da94e856bedd6e3d9c24e19762153baab22918216827ece97f0c2",
+      "knowledge_utf8_bytes": 2546,
+      "prompt_utf8_bytes": 29038,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 2,
+      "arm": "N",
+      "position_in_block": 4,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [],
+      "prompt_sha256": "f56c13cfec2943802f2d182bc3904a92309d207d7a9bbb4f21972ddbca85fce3",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 26270,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 3,
+      "arm": "N",
+      "position_in_block": 1,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [],
+      "prompt_sha256": "f56c13cfec2943802f2d182bc3904a92309d207d7a9bbb4f21972ddbca85fce3",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 26270,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 3,
+      "arm": "F",
+      "position_in_block": 2,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "0def4cb153f4392eff951ba63eed28397d4e8fe95d13c3a77705c9cab4d4c6e5",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 29010,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 3,
+      "arm": "T",
+      "position_in_block": 3,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2334303499030708
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.16699547298533854
+        },
+        {
+          "id": "commons-lang-stringutils-substrings-between",
+          "score": 0.15809106528214506
+        }
+      ],
+      "prompt_sha256": "dcf0bcdc090da94e856bedd6e3d9c24e19762153baab22918216827ece97f0c2",
+      "knowledge_utf8_bytes": 2546,
+      "prompt_utf8_bytes": 29038,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "repeat": 3,
+      "arm": "L",
+      "position_in_block": 4,
+      "original_sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829",
+      "failure_sha256": "8fe560516c193d8ec2f6292d486cf05bd41505aee180912e62f86f50637c8a16",
+      "saved_context_sha256": "db91fc4dfeeeaa9de04e3d7304355102f06e5beda79a74ca6df8fb8bd2c1620a",
+      "query_sha256": "864e12f4ec1c014383e2b99662f450122485d2a6587871cadc5b0a103c59425e",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 11
+        }
+      ],
+      "prompt_sha256": "585f20b2db74fe85b24856088153a9f0c9ecbbb11df45ad49ae4c4161f1e5939",
+      "knowledge_utf8_bytes": 2634,
+      "prompt_utf8_bytes": 29121,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 1,
+      "arm": "T",
+      "position_in_block": 1,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.24752215787744794
+        },
+        {
+          "id": "commons-lang-stringutils-overlay",
+          "score": 0.20816209922761408
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.2028250279313273
+        }
+      ],
+      "prompt_sha256": "e3b1339752ffbd0b14286c01f9e2c7523cb6a94199d98de275571ecd9e9e1708",
+      "knowledge_utf8_bytes": 2398,
+      "prompt_utf8_bytes": 36608,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 1,
+      "arm": "F",
+      "position_in_block": 2,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "b52565fce4b9c1223a982115d9ae3a64b57c131357170b33c63c6ab2a9f28024",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 36739,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 1,
+      "arm": "N",
+      "position_in_block": 3,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [],
+      "prompt_sha256": "559516ae33106c3a073ade9f4d158e406a0e5361d8198a054cdab19d2f43b9aa",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 33999,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 1,
+      "arm": "L",
+      "position_in_block": 4,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 17
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 16
+        },
+        {
+          "id": "commons-lang-dateutils-is-same-local-time",
+          "score": 15
+        }
+      ],
+      "prompt_sha256": "1dfa502a36f913f090249892369a6488820a55f6577a1c38b28a8b2684c24b75",
+      "knowledge_utf8_bytes": 2663,
+      "prompt_utf8_bytes": 36871,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 2,
+      "arm": "F",
+      "position_in_block": 1,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "b52565fce4b9c1223a982115d9ae3a64b57c131357170b33c63c6ab2a9f28024",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 36739,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 2,
+      "arm": "L",
+      "position_in_block": 2,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 17
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 16
+        },
+        {
+          "id": "commons-lang-dateutils-is-same-local-time",
+          "score": 15
+        }
+      ],
+      "prompt_sha256": "1dfa502a36f913f090249892369a6488820a55f6577a1c38b28a8b2684c24b75",
+      "knowledge_utf8_bytes": 2663,
+      "prompt_utf8_bytes": 36871,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 2,
+      "arm": "T",
+      "position_in_block": 3,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.24752215787744794
+        },
+        {
+          "id": "commons-lang-stringutils-overlay",
+          "score": 0.20816209922761408
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.2028250279313273
+        }
+      ],
+      "prompt_sha256": "e3b1339752ffbd0b14286c01f9e2c7523cb6a94199d98de275571ecd9e9e1708",
+      "knowledge_utf8_bytes": 2398,
+      "prompt_utf8_bytes": 36608,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 2,
+      "arm": "N",
+      "position_in_block": 4,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [],
+      "prompt_sha256": "559516ae33106c3a073ade9f4d158e406a0e5361d8198a054cdab19d2f43b9aa",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 33999,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 3,
+      "arm": "F",
+      "position_in_block": 1,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "b52565fce4b9c1223a982115d9ae3a64b57c131357170b33c63c6ab2a9f28024",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 36739,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 3,
+      "arm": "L",
+      "position_in_block": 2,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 17
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 16
+        },
+        {
+          "id": "commons-lang-dateutils-is-same-local-time",
+          "score": 15
+        }
+      ],
+      "prompt_sha256": "1dfa502a36f913f090249892369a6488820a55f6577a1c38b28a8b2684c24b75",
+      "knowledge_utf8_bytes": 2663,
+      "prompt_utf8_bytes": 36871,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 3,
+      "arm": "T",
+      "position_in_block": 3,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.24752215787744794
+        },
+        {
+          "id": "commons-lang-stringutils-overlay",
+          "score": 0.20816209922761408
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.2028250279313273
+        }
+      ],
+      "prompt_sha256": "e3b1339752ffbd0b14286c01f9e2c7523cb6a94199d98de275571ecd9e9e1708",
+      "knowledge_utf8_bytes": 2398,
+      "prompt_utf8_bytes": 36608,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "repeat": 3,
+      "arm": "N",
+      "position_in_block": 4,
+      "original_sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675",
+      "failure_sha256": "83b009629860e2491d2041605ace8d6662cdc16342ffaa2fa69d5d48750bc33c",
+      "saved_context_sha256": "c5f0239bf7822352c8434dd9e9ee4066524027790f869975f9ba1cc1d34b11a4",
+      "query_sha256": "4885748633eea9c2b3d25505bd38f978ad9246807633a7abf4b015426cd96568",
+      "selection": [],
+      "prompt_sha256": "559516ae33106c3a073ade9f4d158e406a0e5361d8198a054cdab19d2f43b9aa",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 33999,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 1,
+      "arm": "N",
+      "position_in_block": 1,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [],
+      "prompt_sha256": "f2f4c94f1caf55182e929b4160a739ead394a3ffb08b106fd3be17cf57b302f6",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 14561,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 1,
+      "arm": "F",
+      "position_in_block": 2,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "d6001e2c1b786ade1d0fcb2bd3574d0578baf32f3ca0aabdcf25b2637b72d567",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 17301,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 1,
+      "arm": "L",
+      "position_in_block": 3,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        }
+      ],
+      "prompt_sha256": "92a664ff020b0979a6758dae8ec5f3372918965b6e82ac9dada98e590b5cb0d5",
+      "knowledge_utf8_bytes": 2634,
+      "prompt_utf8_bytes": 17412,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 1,
+      "arm": "T",
+      "position_in_block": 4,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2653802949351579
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 0.2118229029556005
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.17874046198800028
+        }
+      ],
+      "prompt_sha256": "21e11eb04872c866ee7d8aa091e433b1c21ae36839afe1b37fef413d20fcc96e",
+      "knowledge_utf8_bytes": 2571,
+      "prompt_utf8_bytes": 17341,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 2,
+      "arm": "L",
+      "position_in_block": 1,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        }
+      ],
+      "prompt_sha256": "92a664ff020b0979a6758dae8ec5f3372918965b6e82ac9dada98e590b5cb0d5",
+      "knowledge_utf8_bytes": 2634,
+      "prompt_utf8_bytes": 17412,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 2,
+      "arm": "F",
+      "position_in_block": 2,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "d6001e2c1b786ade1d0fcb2bd3574d0578baf32f3ca0aabdcf25b2637b72d567",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 17301,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 2,
+      "arm": "N",
+      "position_in_block": 3,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [],
+      "prompt_sha256": "f2f4c94f1caf55182e929b4160a739ead394a3ffb08b106fd3be17cf57b302f6",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 14561,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 2,
+      "arm": "T",
+      "position_in_block": 4,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2653802949351579
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 0.2118229029556005
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.17874046198800028
+        }
+      ],
+      "prompt_sha256": "21e11eb04872c866ee7d8aa091e433b1c21ae36839afe1b37fef413d20fcc96e",
+      "knowledge_utf8_bytes": 2571,
+      "prompt_utf8_bytes": 17341,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 3,
+      "arm": "N",
+      "position_in_block": 1,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [],
+      "prompt_sha256": "f2f4c94f1caf55182e929b4160a739ead394a3ffb08b106fd3be17cf57b302f6",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 14561,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 3,
+      "arm": "T",
+      "position_in_block": 2,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2653802949351579
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 0.2118229029556005
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.17874046198800028
+        }
+      ],
+      "prompt_sha256": "21e11eb04872c866ee7d8aa091e433b1c21ae36839afe1b37fef413d20fcc96e",
+      "knowledge_utf8_bytes": 2571,
+      "prompt_utf8_bytes": 17341,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 3,
+      "arm": "F",
+      "position_in_block": 3,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "d6001e2c1b786ade1d0fcb2bd3574d0578baf32f3ca0aabdcf25b2637b72d567",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 17301,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "repeat": 3,
+      "arm": "L",
+      "position_in_block": 4,
+      "original_sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738",
+      "failure_sha256": "562fad43604e8371d972c670ab364822d9dbfb244bdc7bd1011e96c82f44f0e8",
+      "saved_context_sha256": "2ca6082fabb23f78af3b16ff1d44ce7c4fed98b3ccdb16a85296a6deab3c9ceb",
+      "query_sha256": "e5c5ab10f186030cbdcc60c7bb3942e2fa4efc876a867b8cacae0f1b505b9bd4",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-number",
+          "score": 12
+        },
+        {
+          "id": "commons-lang-numberutils-create-big-integer",
+          "score": 11
+        }
+      ],
+      "prompt_sha256": "92a664ff020b0979a6758dae8ec5f3372918965b6e82ac9dada98e590b5cb0d5",
+      "knowledge_utf8_bytes": 2634,
+      "prompt_utf8_bytes": 17412,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 1,
+      "arm": "F",
+      "position_in_block": 1,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "28a9b8936c77d80beb82148048af61ba144734bb890152c97bc563781d8927eb",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 42913,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 1,
+      "arm": "L",
+      "position_in_block": 2,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": 17
+        }
+      ],
+      "prompt_sha256": "58eef78b8280a822622c4f2e4a56a92d94f302dce17ff4707ab662d2995bc983",
+      "knowledge_utf8_bytes": 2596,
+      "prompt_utf8_bytes": 42999,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 1,
+      "arm": "T",
+      "position_in_block": 3,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2972274874801279
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 0.25110635667526093
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.2201515971963649
+        }
+      ],
+      "prompt_sha256": "b2019e144451ff63719793cbadfc0bb68b00475238b68f38261c4a2bfa7c0814",
+      "knowledge_utf8_bytes": 2494,
+      "prompt_utf8_bytes": 42885,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 1,
+      "arm": "N",
+      "position_in_block": 4,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [],
+      "prompt_sha256": "932b6cbe4a9adfadea6f6c3b27c01beaa807600371b9e583b6aa5e9c4d1aade0",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 40173,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 2,
+      "arm": "F",
+      "position_in_block": 1,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "28a9b8936c77d80beb82148048af61ba144734bb890152c97bc563781d8927eb",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 42913,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 2,
+      "arm": "N",
+      "position_in_block": 2,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [],
+      "prompt_sha256": "932b6cbe4a9adfadea6f6c3b27c01beaa807600371b9e583b6aa5e9c4d1aade0",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 40173,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 2,
+      "arm": "L",
+      "position_in_block": 3,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": 17
+        }
+      ],
+      "prompt_sha256": "58eef78b8280a822622c4f2e4a56a92d94f302dce17ff4707ab662d2995bc983",
+      "knowledge_utf8_bytes": 2596,
+      "prompt_utf8_bytes": 42999,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 2,
+      "arm": "T",
+      "position_in_block": 4,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2972274874801279
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 0.25110635667526093
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.2201515971963649
+        }
+      ],
+      "prompt_sha256": "b2019e144451ff63719793cbadfc0bb68b00475238b68f38261c4a2bfa7c0814",
+      "knowledge_utf8_bytes": 2494,
+      "prompt_utf8_bytes": 42885,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 3,
+      "arm": "L",
+      "position_in_block": 1,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 19
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": 17
+        }
+      ],
+      "prompt_sha256": "58eef78b8280a822622c4f2e4a56a92d94f302dce17ff4707ab662d2995bc983",
+      "knowledge_utf8_bytes": 2596,
+      "prompt_utf8_bytes": 42999,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 3,
+      "arm": "F",
+      "position_in_block": 2,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-stringutils-levenshtein",
+          "score": null
+        },
+        {
+          "id": "commons-lang-extended-message-format",
+          "score": null
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": null
+        }
+      ],
+      "prompt_sha256": "28a9b8936c77d80beb82148048af61ba144734bb890152c97bc563781d8927eb",
+      "knowledge_utf8_bytes": 2513,
+      "prompt_utf8_bytes": 42913,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 3,
+      "arm": "N",
+      "position_in_block": 3,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [],
+      "prompt_sha256": "932b6cbe4a9adfadea6f6c3b27c01beaa807600371b9e583b6aa5e9c4d1aade0",
+      "knowledge_utf8_bytes": 2,
+      "prompt_utf8_bytes": 40173,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "repeat": 3,
+      "arm": "T",
+      "position_in_block": 4,
+      "original_sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca",
+      "failure_sha256": "d73da00e31b3056a3f323bcacf40105dd7e6c5979d06b727494f5efff3df1771",
+      "saved_context_sha256": "de91c89146bac2db6b274c4d30d12f2bb113aad56edc95206a4060e97543ccbb",
+      "query_sha256": "52ff6a417dcb47037cc3bab24be560e9743bd5c3362c7a94d0bfeb30a6d3893d",
+      "selection": [
+        {
+          "id": "commons-lang-classutils-get-public-method",
+          "score": 0.2972274874801279
+        },
+        {
+          "id": "commons-lang-arrayutils-to-map",
+          "score": 0.25110635667526093
+        },
+        {
+          "id": "commons-lang-arrayutils-is-equals",
+          "score": 0.2201515971963649
+        }
+      ],
+      "prompt_sha256": "b2019e144451ff63719793cbadfc0bb68b00475238b68f38261c4a2bfa7c0814",
+      "knowledge_utf8_bytes": 2494,
+      "prompt_utf8_bytes": 42885,
+      "budget_status": "unmeasured_no_verified_tokenizer",
+      "executable": false
+    }
+  ]
+}
