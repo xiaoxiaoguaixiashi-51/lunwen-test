@@ -49,6 +49,7 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
+    args.output_dir = args.output_dir.resolve()
     manifest, previews = prepare(args.archive, args.knowledge, Path(__file__).with_name("run_stage_b_ours_full_feedback.py"))
     preflight = json.loads(args.preflight.read_text(encoding="utf-8"))
     validate_plan(manifest, preflight)
