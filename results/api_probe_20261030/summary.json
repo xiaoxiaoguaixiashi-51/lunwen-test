@@ -1,0 +1,28 @@
+{
+  "kind": "api_connectivity_probe_not_experiment",
+  "settings": {
+    "endpoint_host": "api.deepseek.com",
+    "model": "deepseek-flash",
+    "thinking": "disabled",
+    "temperature": 0.2,
+    "key_present": true,
+    "probe_max_tokens": 16,
+    "probe_timeout_seconds": 30,
+    "probe_max_retries": 0
+  },
+  "requests_planned": 1,
+  "status": "ok",
+  "cost_amount": null,
+  "cost_note": "usage recorded; monetary charge not independently verified",
+  "reply_matches_ok": true,
+  "recorded_calls": 1,
+  "usage": {
+    "prompt_tokens": 13,
+    "completion_tokens": 1,
+    "total_tokens": 14,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 13
+  },
+  "elapsed_seconds": 0.873606,
+  "response_model": "deepseek-flash"
+}
