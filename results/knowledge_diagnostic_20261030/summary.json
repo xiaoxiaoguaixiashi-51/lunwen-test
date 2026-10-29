@@ -1,0 +1,565 @@
+{
+  "kind": "development_diagnostic_not_formal_rq1_rq2",
+  "archive_sha256": {
+    "generation": "3691060a645f9b317c691fb95ae687e0f3b22af06a137b6b8b3b5a0e069a7fb4",
+    "evaluation": "6359602dd99e6674bfcfea5c867c8f7065388211fdf87699c3ba63a52943c10a"
+  },
+  "cases": 4,
+  "arms": 4,
+  "repeats": 3,
+  "recorded_api_calls": 48,
+  "api_status_counts": {
+    "ok": 48
+  },
+  "usage": {
+    "prompt_tokens": 346581,
+    "completion_tokens": 123445,
+    "total_tokens": 470026,
+    "prompt_cache_hit_tokens": 267258,
+    "prompt_cache_miss_tokens": 79323
+  },
+  "finish_reason_counts": {
+    "stop": 48
+  },
+  "summed_api_seconds": 372.226132,
+  "max_actual_input_tokens": 10135,
+  "requests_over_input_limit": 0,
+  "monetary_cost": null,
+  "cost_note": "Actual monetary charge not independently verified",
+  "evaluation_status_counts": {
+    "test_failed": 24,
+    "ok": 12,
+    "compile_failed": 12
+  },
+  "by_arm": {
+    "N": {
+      "test_failed": 6,
+      "ok": 3,
+      "compile_failed": 3
+    },
+    "F": {
+      "test_failed": 6,
+      "ok": 3,
+      "compile_failed": 3
+    },
+    "L": {
+      "test_failed": 6,
+      "ok": 3,
+      "compile_failed": 3
+    },
+    "T": {
+      "test_failed": 6,
+      "ok": 3,
+      "compile_failed": 3
+    }
+  },
+  "by_case": {
+    "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic": {
+      "status_counts": {
+        "test_failed": 12
+      },
+      "unique_generated_sources": 3
+    },
+    "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment": {
+      "status_counts": {
+        "test_failed": 12
+      },
+      "unique_generated_sources": 1
+    },
+    "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct": {
+      "status_counts": {
+        "ok": 12
+      },
+      "unique_generated_sources": 1
+    },
+    "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html": {
+      "status_counts": {
+        "compile_failed": 12
+      },
+      "unique_generated_sources": 9
+    }
+  },
+  "passing_suites_pending_semantic_review": 12,
+  "rows": [
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "N",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "F",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "a04b9f06fcb18d34f0003cf6dc97ca09f5a5f030cd6b110b5e660af329d5cffc",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "T",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "9037a19d81ce3d888fc3431a28234fa8d0c07849fd1a94ee594ec59c689f8183",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "L",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "F",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "L",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "T",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "N",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "9037a19d81ce3d888fc3431a28234fa8d0c07849fd1a94ee594ec59c689f8183",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__N",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "N",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "9037a19d81ce3d888fc3431a28234fa8d0c07849fd1a94ee594ec59c689f8183",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__F",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "F",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__T",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "T",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "9037a19d81ce3d888fc3431a28234fa8d0c07849fd1a94ee594ec59c689f8183",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__L",
+      "case_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "arm": "L",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "ab6a15b047704f133647dbda8571d6128820e3f432c427eef0b29a536ddb8ec2",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "T",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "F",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "N",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "L",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "F",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "L",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "T",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "N",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__F",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "F",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__L",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "L",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__T",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "T",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__N",
+      "case_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "arm": "N",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "f0cde25271eda833a5bdba6801ce49c20788b4958c70d4a3da4899ac639419b7",
+      "status": "test_failed"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "N",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "F",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "L",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "T",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "L",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "F",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "N",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "T",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__N",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "N",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__T",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "T",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__F",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "F",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__L",
+      "case_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "arm": "L",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b281386de7612eae47cd72be8f3a47658e263843ce1789d99603c79ee62fdb7f",
+      "status": "ok"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "F",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "27b55bbfb2f789c64b07bb6864aac217dcde32d964770e3c7717cd58e3862a34",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "L",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "35b3644f7d8ff0f8aef54896a4a6fdc855d342c4f80f86543cf65010b40ae5db",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "T",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "92438c70e6d6cd249be11fcef21ffc882fcbee775b6b772f340c9c7395343708",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "N",
+      "repeat": 1,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "7e8228fdbdb7dc0e5930963da118067ce0c12b5ccbf96fcf5e6c7d2fd0bd9f50",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "F",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "e17a27f1b6c764a1eb5e7ace2b402add0743fa3c0818e66c180f60d9717b5131",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "N",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "7e8228fdbdb7dc0e5930963da118067ce0c12b5ccbf96fcf5e6c7d2fd0bd9f50",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "L",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "4ee0f803fa5647813a65fd5befa72b8464cb1c71ede21f70774644cdfd3081d8",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "T",
+      "repeat": 2,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "b9eea21ada28b73bc1a2c6dc06539011cf96e4700f1f5aa57401af589dd204d9",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__L",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "L",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "35b3644f7d8ff0f8aef54896a4a6fdc855d342c4f80f86543cf65010b40ae5db",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__F",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "F",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "6e4ef0391902478f5e21b45e5b3a67374f2bce1e71dddc657a8d60ae919214ec",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__N",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "N",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "27b55bbfb2f789c64b07bb6864aac217dcde32d964770e3c7717cd58e3862a34",
+      "status": "compile_failed"
+    },
+    {
+      "unit_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__T",
+      "case_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "arm": "T",
+      "repeat": 3,
+      "original_status": "compile_failed",
+      "semantic_review_required": true,
+      "generated_source_sha256": "c638c4ff68b13f5dfbb93dd282bd61940410c116f52b4815964a67e55a88bbcf",
+      "status": "compile_failed"
+    }
+  ]
+}
