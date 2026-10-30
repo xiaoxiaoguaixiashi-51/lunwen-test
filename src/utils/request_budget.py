@@ -72,6 +72,9 @@ class RequestBudget:
     def settle(self, call_id, usage):
         incoming, outgoing = usage.get("prompt_tokens"), usage.get("completion_tokens")
         valid = all(isinstance(n, int) and not isinstance(n, bool) and n >= 0 for n in (incoming, outgoing))
+        reported_total = usage.get("total_tokens")
+        if valid and reported_total is not None and reported_total != incoming + outgoing:
+            valid = False
         with self.connect() as db:
             db.execute("BEGIN IMMEDIATE")
             row = db.execute("SELECT reserved,status FROM calls WHERE call_id=?", (call_id,)).fetchone()
@@ -108,7 +111,8 @@ def load_budget(config, model):
     tokenizer = Tokenizer.from_str(content.decode("utf-8"))
     policy = {key: raw[key] for key in ("max_calls_per_target", "max_total_tokens_per_target",
                                       "max_input_tokens_per_call", "max_output_tokens_per_call")}
-    policy.update(model=model, tokenizer_sha256=actual, framing_reserve=reserve, version=1)
+    policy.update(model=model, thinking=config["llm"].get("thinking"),
+                  tokenizer_sha256=actual, framing_reserve=reserve, version=1)
     budget = RequestBudget(raw["ledger_path"], policy)
 
     def count(messages):

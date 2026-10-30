@@ -39,6 +39,8 @@ def aggregate(events):
         usage = event.get("usage") or {}
         valid = all(isinstance(usage.get(k), int) and not isinstance(usage[k], bool) and usage[k] >= 0
                     for k in ("prompt_tokens", "completion_tokens", "total_tokens"))
+        if valid and usage["total_tokens"] != usage["prompt_tokens"] + usage["completion_tokens"]:
+            valid = False
         if not valid:
             group["unknown_usage_attempts"] += 1
         for name, number in usage.items():

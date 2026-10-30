@@ -64,3 +64,11 @@ class RequestBudgetTest(unittest.TestCase):
                 return False
         with ThreadPoolExecutor(max_workers=2) as pool:
             self.assertEqual(1, sum(pool.map(attempt, ["one", "two"])))
+
+    def test_inconsistent_usage_does_not_release_reserved_cost(self):
+        self.budget.reserve("a", "t", "initial", 10, 30)
+        result = self.budget.settle("a", {"prompt_tokens": 10, "completion_tokens": 1, "total_tokens": 99})
+        self.assertEqual("unknown", result["status"])
+        self.assertEqual(40, result["charged_tokens"])
+        with self.assertRaises(BudgetExceeded):
+            self.budget.reserve("b", "t", "feedback", 10, 30)
