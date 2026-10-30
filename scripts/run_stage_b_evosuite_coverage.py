@@ -78,7 +78,7 @@ def copy_and_patch_sources(source_dir: Path, work_src: Path):
         java_file.write_text(text, encoding="utf-8")
 
 
-def find_generated_test(work_src: Path) -> tuple[str, list[Path]]:
+def find_generated_test(work_src: Path, robust_package: bool = False) -> tuple[str, list[Path]]:
     java_files = sorted(work_src.rglob("*.java"))
     test_files = [path for path in java_files if path.name.endswith("_ESTest.java")]
     if not test_files:
@@ -91,6 +91,8 @@ def find_generated_test(work_src: Path) -> tuple[str, list[Path]]:
             package = stripped[len("package ") : -1].strip()
             break
     class_name = test_file.stem
+    if robust_package:
+        package = strict.java_package(test_file.read_text(encoding="utf-8"))
     return (f"{package}.{class_name}" if package else class_name), java_files
 
 
@@ -130,7 +132,7 @@ def run_one(row: dict, args, cp_cache: dict[str, str]) -> dict:
         strict.copy_java_sources(source_dir, work_src, patch_evosuite=True)
     else:
         copy_and_patch_sources(source_dir, work_src)
-    test_class, java_files = find_generated_test(work_src)
+    test_class, java_files = find_generated_test(work_src, robust_package=strict.enabled(args))
     source_list = out_dir / "sources.txt"
     source_list.write_text("\n".join(str(path) for path in java_files) + "\n", encoding="utf-8")
 

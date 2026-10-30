@@ -71,7 +71,7 @@ def copy_sources(source_dir: Path, work_src: Path):
     shutil.copytree(source_dir, work_src)
 
 
-def find_generated_test(work_src: Path) -> tuple[str, list[Path]]:
+def find_generated_test(work_src: Path, robust_package: bool = False) -> tuple[str, list[Path]]:
     java_files = sorted(work_src.rglob("*.java"))
     if not java_files:
         raise ValueError(f"No generated Java test under {work_src}")
@@ -83,6 +83,8 @@ def find_generated_test(work_src: Path) -> tuple[str, list[Path]]:
             package = stripped[len("package ") : -1].strip()
             break
     class_name = test_file.stem
+    if robust_package:
+        package = strict.java_package(test_file.read_text(encoding="utf-8"))
     return (f"{package}.{class_name}" if package else class_name), java_files
 
 
@@ -130,7 +132,7 @@ def run_one(method: dict, args, cp_cache: dict[str, str]) -> dict:
     else:
         copy_sources(source_dir, work_src)
     try:
-        test_class, java_files = find_generated_test(work_src)
+        test_class, java_files = find_generated_test(work_src, robust_package=strict.enabled(args))
     except ValueError as exc:
         (out_dir / "discover.log").write_text(str(exc), encoding="utf-8")
         return {**base, "status": "missing_generated_tests", "test_class": "", "xml_file": ""}

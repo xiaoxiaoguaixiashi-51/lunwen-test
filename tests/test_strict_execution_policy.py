@@ -58,7 +58,8 @@ class StrictExecutionPolicyTest(unittest.TestCase):
                     result = module.run_generated_test(method, test, name, Path(args.output_dir), args, {})
                 else:
                     result = module.run_one({**method, "status": "ok"}, args, {})
-                self.assertEqual("ok", result["status"])
+                log = Path(result["xml_file"]).parent.parent / "junit.log"
+                self.assertEqual("ok", result["status"], module.__name__ + ": " + log.read_text())
                 tree = ET.parse(result["xml_file"])
                 self.assertEqual({"p/T"}, {c.get("name") for c in tree.findall(".//class")})
                 branch = tree.find(".//class/counter[@type='BRANCH']")
@@ -108,6 +109,10 @@ class StrictExecutionPolicyTest(unittest.TestCase):
             loader.assert_called_once()
             rows = [json.loads(line) for line in (Path(tmp) / "execution_timings.jsonl").read_text().splitlines()]
             self.assertEqual([False, True], [r["cache_hit"] for r in rows])
+
+    def test_single_line_package_and_comments(self):
+        self.assertEqual("p.q", policy.java_package("/* package fake; */ package p.q; public class T {}"))
+        self.assertEqual("", policy.java_package("// package fake;\npublic class T {}"))
 
     def test_source_copy_and_evosuite_patch_never_change_original(self):
         with tempfile.TemporaryDirectory() as tmp:

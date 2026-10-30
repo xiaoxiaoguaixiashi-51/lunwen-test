@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import shutil
 import time
+import javalang
 
 from scripts.build_kcf_coverage_reference import digest
 from scripts.merge_kcf_execution_coverage import class_tree_hash
@@ -69,6 +70,20 @@ def junit_status(status, text):
     if not isinstance(counts["tests_run"], int) or counts["tests_run"] <= 0:
         return "zero_or_unverified_tests"
     return "ok" if counts["failures"] == 0 else "test_failed"
+
+
+def java_package(text):
+    """Read the package token sequence, including legal single-line Java files."""
+    tokens = iter(javalang.tokenizer.tokenize(text))
+    for token in tokens:
+        if token.value == "package":
+            parts = []
+            for part in tokens:
+                if part.value == ";":
+                    return "".join(parts)
+                parts.append(part.value)
+            raise ValueError("Unterminated package declaration")
+    return ""
 
 
 def copy_java_sources(source, destination, patch_evosuite=False):
