@@ -21,3 +21,5 @@ python scripts/preflight_kcf_run_plan.py --plan plan.json --output preflight.jso
 结果仅保存配置文件SHA和模型/账本身份摘要，不输出供应商地址、API key或配置正文。原始计划中的配置路径仍是用户选择的实际路径，不能将私有配置本身提交GitHub。
 
 configuration_checks_passed只说明所声明的计划在静态检查中一致。尚须核对真正启动命令及有效元数据、所有源文件/工具/参考类树、EvoSuite类级预算和映射、正式预算与停止规则、重复次数和研究证据。formal_run_ready始终为false，不用一份静态计划替代实际运行证据。
+
+现场验证：云端207项回归全部通过、无跳过。将现有Full/A1/A3私有配置映射到13个拟议阶段后，只读检查发现全部缺少request_budget；这些配置仍是此前开发/诊断配置，未自动变为正式配置，也未被写回。配置缺少该节时，本工具跳过后续预算相关检查，不能把其余条件当作已通过。证据见results/run_plan_preflight_20261030。

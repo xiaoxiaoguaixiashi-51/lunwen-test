@@ -1,0 +1,110 @@
+{
+  "kind": "draft_cross_stage_plan_not_execution",
+  "repetition_id": "draft_slot_1",
+  "budget_values_frozen": false,
+  "repetitions_frozen": false,
+  "jobs": [
+    {
+      "arm": "Full",
+      "stage": "initial",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/Full/initial",
+      "ablation_flags": []
+    },
+    {
+      "arm": "Full",
+      "stage": "seed_repair",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/Full/seed_repair",
+      "ablation_flags": []
+    },
+    {
+      "arm": "Full",
+      "stage": "feedback",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/Full/feedback",
+      "ablation_flags": []
+    },
+    {
+      "arm": "A1",
+      "stage": "initial",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_a1.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A1/initial",
+      "ablation_flags": []
+    },
+    {
+      "arm": "A1",
+      "stage": "seed_repair",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_a1.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A1/seed_repair",
+      "ablation_flags": [
+        "--disable-failure-repair-retrieval"
+      ]
+    },
+    {
+      "arm": "A1",
+      "stage": "feedback",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_a1.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A1/feedback",
+      "ablation_flags": [
+        "--disable-failure-repair-retrieval",
+        "--disable-coverage-gap-retrieval"
+      ]
+    },
+    {
+      "arm": "A2",
+      "stage": "initial",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A2/initial",
+      "ablation_flags": []
+    },
+    {
+      "arm": "A2",
+      "stage": "seed_repair",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A2/seed_repair",
+      "ablation_flags": []
+    },
+    {
+      "arm": "A2",
+      "stage": "feedback",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A2/feedback",
+      "ablation_flags": [
+        "--disable-coverage-gap-retrieval"
+      ]
+    },
+    {
+      "arm": "A3",
+      "stage": "initial",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_a3.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A3/initial",
+      "ablation_flags": []
+    },
+    {
+      "arm": "A3",
+      "stage": "seed_repair",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_a3.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A3/seed_repair",
+      "ablation_flags": [
+        "--disable-static-guard"
+      ]
+    },
+    {
+      "arm": "A3",
+      "stage": "feedback",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_a3.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/A3/feedback",
+      "ablation_flags": [
+        "--disable-static-guard"
+      ]
+    },
+    {
+      "arm": "RAG",
+      "stage": "initial",
+      "config": "/root/autodl-tmp/lunwen-test/config/private/kcf_full.yaml",
+      "output_dir": "/root/autodl-tmp/formal-draft-slot-20261030/RAG/initial",
+      "ablation_flags": []
+    }
+  ]
+}

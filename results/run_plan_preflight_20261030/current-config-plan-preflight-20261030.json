@@ -1,0 +1,30 @@
+{
+  "kind": "static_plan_preflight_not_run_evidence",
+  "api_calls": 0,
+  "configuration_checks_passed": false,
+  "formal_run_ready": false,
+  "issues": [
+    "A1:feedback:request_budget_missing",
+    "A1:initial:request_budget_missing",
+    "A1:seed_repair:request_budget_missing",
+    "A2:feedback:request_budget_missing",
+    "A2:initial:request_budget_missing",
+    "A2:seed_repair:request_budget_missing",
+    "A3:feedback:request_budget_missing",
+    "A3:initial:request_budget_missing",
+    "A3:seed_repair:request_budget_missing",
+    "Full:feedback:request_budget_missing",
+    "Full:initial:request_budget_missing",
+    "Full:seed_repair:request_budget_missing",
+    "RAG:initial:request_budget_missing"
+  ],
+  "checked_stages": [],
+  "remaining_checks": [
+    "actual_runner_arguments_and_effective_metadata",
+    "sources_classes_tools_and_reference_hashes",
+    "formal_budget_stop_rules_and_repetitions_freeze",
+    "evosuite_budget_and_class_mapping",
+    "sample_use_boundaries_and_methodological_contribution"
+  ],
+  "existing_private_configs_unchanged": true
+}
