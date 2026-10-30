@@ -663,7 +663,7 @@ def main():
             "projects_root": str(Path(args.projects_root).resolve()),
         },
     )
-    llm = LLMClient(config)
+    llm = None  # Round-zero exact scoring must not initialize a model client.
     cp_cache: dict[str, str] = {}
     all_round_rows: list[dict] = []
 
@@ -684,6 +684,8 @@ def main():
             gaps = gaps[: args.max_methods]
         if not gaps:
             break
+        if llm is None:
+            llm = LLMClient(config)
 
         round_rows = []
         for row in gaps:

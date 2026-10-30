@@ -5,11 +5,13 @@ import subprocess
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 from scripts import probe_union_feedback as probe
 from scripts.build_kcf_coverage_reference import digest
 from scripts.merge_kcf_execution_coverage import class_tree_hash, resolve_executions
 from scripts.run_stage_b_ours_full_feedback import read_detail
+from scripts import run_stage_b_ours_full_feedback as runner
 
 
 class ProbeRoundTest(unittest.TestCase):
@@ -102,6 +104,18 @@ class ProbeRoundTest(unittest.TestCase):
                                    reference_xml_root=str(ref / "xml"), seed_execution_roots=[str(seeds)],
                                    projects_root=str(projects), jacoco_cli=str(cli), approach_name="KCF_UTG")
             probe.validate_exact_mode(args)
+            actual_output = root / "actual-driver"
+            argv = ["feedback", "--method-list", str(methods), "--raw-xml-root", str(original),
+                    "--projects-root", str(projects), "--output-dir", str(actual_output),
+                    "--reference-xml-root", str(ref / "xml"), "--exact-reference-root", str(ref),
+                    "--seed-execution-roots", str(seeds), "--passing-only", "--exact-exec-union",
+                    "--max-rounds", "0", "--approach-name", "KCF_UTG", "--jacoco-cli", str(cli)]
+            with patch("sys.argv", argv), patch.object(runner, "load_config", return_value={}), patch.object(
+                    runner, "LLMClient", side_effect=AssertionError("No client in offline round zero")):
+                runner.main()
+            actual = runner.summary_from_output(actual_output / "coverage_round0")
+            self.assertEqual(1, actual["focal_branches_covered"])
+            self.assertFalse((actual_output / "llm_calls.jsonl").exists())
             probe.prepare_seed_index(original, output / "probe_accepted_xml", {"t": method}, [seeds])
             first = probe.evaluate_round(args, output, methods, 0)[0]
             self.assertEqual(1, first["focal_branches_covered"])

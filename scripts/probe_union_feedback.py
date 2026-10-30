@@ -58,7 +58,8 @@ def accept_incremental(accepted, result, identity, round_index):
     entries = json.loads((accepted / "accepted_xml_index.json").read_text(encoding="utf-8"))
     fields = execution_fields(xml)
     entry = {"id": identity, "status": "ok", "xml_name": name, "xml_sha256": digest(xml),
-             "semantic_review_required": False, "origin": "passing_initial_incremental_suite", **fields}
+             "semantic_review_required": False,
+             "origin": result.get("acceptance_origin", "passing_initial_incremental_suite"), **fields}
     shutil.copy2(xml, accepted / name)
     entries.append(entry)
     write_index(accepted, entries)
