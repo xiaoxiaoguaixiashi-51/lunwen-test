@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import Mock
 from pathlib import Path
 
 from src.core.pipeline import Pipeline
@@ -71,6 +72,30 @@ class FakeCompiler:
 
 
 class PipelineOfflineTest(unittest.TestCase):
+    def test_exhausted_compile_budget_does_not_generate_untested_repair(self):
+        pipeline = Pipeline(config={"pipeline": {"max_fix_iterations": 3}},
+                            llm_client=FakeLLMClient(), compiler=FakeCompiler())
+        pipeline.compiler.compile_test = Mock(return_value=CompileResult(False, "", "bad", 1))
+        pipeline.generation_agent.fix_compilation_error = Mock(side_effect=["repair1", "repair2", "untested"])
+        code, success, attempts, results = pipeline._compile_feedback_loop("original", "source")
+        self.assertFalse(success)
+        self.assertEqual(3, attempts)
+        self.assertEqual(3, len(results))
+        self.assertEqual("repair2", code)
+        self.assertEqual(2, pipeline.generation_agent.fix_compilation_error.call_count)
+        self.assertEqual(["original", "repair1", "repair2"],
+                         [call.args[0] for call in pipeline.compiler.compile_test.call_args_list])
+
+    def test_single_compile_attempt_makes_no_repair_call(self):
+        pipeline = Pipeline(config={"pipeline": {"max_fix_iterations": 1}},
+                            llm_client=FakeLLMClient(), compiler=FakeCompiler())
+        pipeline.generation_agent.fix_compilation_error = Mock(return_value="untested")
+        code, success, attempts, _ = pipeline._compile_feedback_loop("original", "source")
+        self.assertEqual("original", code)
+        self.assertFalse(success)
+        self.assertEqual(1, attempts)
+        pipeline.generation_agent.fix_compilation_error.assert_not_called()
+
     def test_pipeline_runs_without_real_llm_or_java(self):
         llm = FakeLLMClient()
         compiler = FakeCompiler()

@@ -172,6 +172,11 @@ class Pipeline:
 
             print(f"      第 {i} 轮编译失败: {compile_result.errors[:100]}...")
 
+            # Keep the compile-attempt budget unchanged. A repair after the last
+            # attempt would consume a model call and return unvalidated code.
+            if i == self.max_fix_iterations:
+                break
+
             # 让 GenerationAgent 修复
             current_code = self.generation_agent.fix_compilation_error(
                 current_code,
