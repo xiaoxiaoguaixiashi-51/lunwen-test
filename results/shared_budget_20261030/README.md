@@ -11,3 +11,9 @@
 随后增加供应商total_tokens不等于prompt+completion时不释放预留的保护，以及策略中的thinking标识；本地最终回归185项，184通过、1项本地工具环境跳过。最终云端验证和v2 smoke证据在执行后追加，旧smoke文件保留为对应f3af58f的历史验证。
 
 部署时已将云端五个之前手工上传的脚本保存到可恢复stash（budget-sync-preserve-uploaded-tools-20261030），再通过SHA核验的增量Git bundle快进升级。原实验、运行目录、参考目录、已取消的定时器和config/private均未删除或改写。第一批增量包SHA为ae0219f201bcc3475354aaa87c25d80ef2b06a808fde525234be763ac75aeb96。未来运行配置没有自动启用预算，不会因升级触发API。
+
+## 结项验证
+
+最终云端运行代码为b168516，完整186项测试全部通过，真实Java/JaCoCo测试也通过，无跳过。新增预算/客户端/成本索引测试共16项；总数增加包含供应商usage不一致时从“已知总量”排除的测试。v2 smoke仍为真实API调用0、假SDK调用1，跨阶段第二次请求被阻断、实际有效输出上限16；budget_smoke_v2_summary.json与budget_smoke_v2_trace.jsonl均已下载并逐哈希匹配。
+
+预算与API成本记录这个实现子阶段已完成：代码、默认不启用的配置样例、已知限制说明、云端部署和可复算证据齐全。下一项是覆盖反馈每轮精确exec合并及全流程非API成本记录。正式实验预算/重复协议尚未冻结，正式新颖性问题尚未解决，formal_run_ready仍为false；不追加任何付费请求，也不改动当前RQ定义。
