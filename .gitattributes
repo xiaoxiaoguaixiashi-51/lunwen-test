@@ -3,3 +3,7 @@
 # Exact executed input bytes are evidence, not platform-converted text.
 /results/six_project_pilot_20261022/executed_pilot_methods.json -text
 /results/six_project_pilot_20261022/executed_remaining4_methods.json -text
+# Preserve audited archive/installed-skill byte comparisons on every platform.
+/results/minimal_source_context_20261030/summary.json -text
+/skills/skilldui/SKILL.md -text
+/skills/skilldui/references/research-improvement.md -text
