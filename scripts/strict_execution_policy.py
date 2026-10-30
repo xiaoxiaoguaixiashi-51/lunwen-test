@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import shutil
 import time
+import os
 import javalang
 
 from scripts.build_kcf_coverage_reference import digest
@@ -55,12 +56,54 @@ def dependencies(cache, project, loader, output):
 def execute(run, command, cwd, timeout, output, stage):
     started = time.monotonic()
     try:
-        result = run(command, cwd, timeout)
+        result = junit_execute(run, command, cwd, timeout, output) if stage == "junit" else run(command, cwd, timeout)
         timing(output, stage, started, status=result[0], return_code=result[1])
         return result
     except Exception:
         timing(output, stage, started, status="exception")
         raise
+
+
+def junit_execute(run, command, cwd, timeout, output):
+    """Save raw process output separately; derive canonical counts from JUnit Result."""
+    marker = command.index("org.junit.runner.JUnitCore")
+    cp_index = command.index("-cp") + 1
+    classpath = command[cp_index]
+    harness = output / "harness"
+    harness.mkdir(exist_ok=False)
+    source = Path(__file__).resolve().parent / "java/KcfJUnitEvidenceRunner.java"
+    copied = harness / source.name
+    shutil.copy2(source, copied)
+    compile_result = run(["javac", "-source", "1.8", "-target", "1.8", "-cp", classpath,
+                          "-d", str(harness), str(copied)], cwd, timeout)
+    (output / "harness.compile.log").write_text(compile_result[2], encoding="utf-8")
+    if compile_result[0] != "ok":
+        return "harness_compile_failed", compile_result[1], "Independent JUnit harness compilation failed"
+    evidence = output / "junit_result.json"
+    invocation = list(command[:marker]) + ["KcfJUnitEvidenceRunner", str(evidence), *command[marker + 1:]]
+    invocation[cp_index] = str(harness) + os.pathsep + classpath
+    result = run(invocation, cwd, timeout)
+    (output / "junit.process.log").write_text(result[2], encoding="utf-8")
+    (output / "junit_harness_policy.json").write_text(json.dumps({"source_sha256": digest(source),
+        "class_sha256": digest(harness / "KcfJUnitEvidenceRunner.class") if (harness / "KcfJUnitEvidenceRunner.class").is_file() else None,
+        "process_status": result[0], "process_return_code": result[1]}) + "\n", encoding="utf-8")
+    try:
+        record = json.loads(evidence.read_text(encoding="utf-8"))
+        if record.get("schema") != 1 or any(type(record[key]) is not int or record[key] < 0
+                for key in ("tests_run", "failures", "ignored", "assumption_failures")):
+            raise ValueError("Invalid JUnit evidence")
+        count, failures = record["tests_run"], record["failures"]
+        if count <= record["assumption_failures"]:
+            return result[0], result[1], "No verified non-assumption tests\n"
+        # The original console log is preserved. This summary comes from the
+        # independent Result file, not a guessed count or a rewritten test.
+        text = "KCF independent JUnit Result evidence: " + digest(evidence) + "\n"
+        text += f"OK ({count} tests)\n" if failures == 0 else f"Tests run: {count}, Failures: {failures}\n"
+        failure_log = Path(str(evidence) + ".failures.log")
+        text += (failure_log.read_text(encoding="utf-8") if failure_log.is_file() else "") + result[2]
+        return result[0], result[1], text
+    except (OSError, ValueError, TypeError, KeyError):
+        return result[0], result[1], "No verified independent JUnit Result file\n"
 
 
 def junit_status(status, text):

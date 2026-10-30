@@ -51,7 +51,7 @@ class StrictExecutionPolicyTest(unittest.TestCase):
                 name = "T_ESTest" if module is evo else "TTest"
                 test = folder / (name + ".java")
                 test.write_text("package p; import org.junit.Test; import static org.junit.Assert.*; public class " + name
-                                + " { @Test public void branch() { assertEquals(1, T.work(true)); } }")
+                                + " { @Test public void branch() { System.out.close(); assertEquals(1, T.work(true)); } }")
                 (folder / "status.json").write_text(json.dumps({"status": "completed", "success": True}))
                 method = {"id": "t", "project_id": "p", "fqcn": "p.T", "method": "work", "package": "p"}
                 args = SimpleNamespace(projects_root=str(root / "projects"), output_dir=str(root / module.__name__ / "output"),
@@ -70,6 +70,7 @@ class StrictExecutionPolicyTest(unittest.TestCase):
                 branch = tree.find(".//class/counter[@type='BRANCH']")
                 counts.append((int(branch.get("covered")), int(branch.get("missed"))))
                 execution = Path(result["xml_file"]).parent.parent
+                self.assertEqual(1, json.loads((execution / "junit_result.json").read_text())["tests_run"])
                 evidence.append({"runner": module.__name__, "status": result["status"],
                                  "covered_branches": counts[-1][0], "missed_branches": counts[-1][1],
                                  "reported_classes": [c.get("name") for c in tree.findall(".//class")],
@@ -79,6 +80,10 @@ class StrictExecutionPolicyTest(unittest.TestCase):
             if keep:
                 (root / "summary.json").write_text(json.dumps({"kind": "handwritten_evaluator_fixture_not_baseline_quality",
                     "api_calls": 0, "main_class_tree_sha256": class_tree_hash(classes), "evaluators": evidence}, indent=2) + "\n")
+
+    def test_independent_failure_header_cannot_be_overridden_by_raw_stdout(self):
+        text = "KCF independent JUnit Result evidence: fixture\nTests run: 2, Failures: 1\nOK (99 tests)\n"
+        self.assertEqual("test_failed", policy.junit_status("ok", text))
 
     def test_only_frozen_main_classes_and_ant_libraries(self):
         with tempfile.TemporaryDirectory() as tmp:

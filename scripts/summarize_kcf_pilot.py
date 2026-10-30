@@ -27,6 +27,9 @@ def select_status_rows(groups):
 
 
 def junit_counts(text):
+    if text.startswith("KCF independent JUnit Result evidence: "):
+        lines = text.splitlines()
+        text = lines[1] if len(lines) > 1 else ""
     ok = re.search(r"OK \((\d+) tests?\)", text)
     failed = re.search(r"Tests run:\s*(\d+),\s*Failures:\s*(\d+)", text)
     if ok:
