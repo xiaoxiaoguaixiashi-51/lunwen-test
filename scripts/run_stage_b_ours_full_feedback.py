@@ -627,6 +627,7 @@ def main():
     parser.add_argument("--jacoco-agent", default="/root/tools/jacocoagent.jar")
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
     parser.add_argument("--timeout", type=int, default=240)
+    parser.add_argument("--stop-on-provider-error", action="store_true")
     args = parser.parse_args()
     args.strict_evaluation = args.exact_exec_union
     args.evaluation_reference_root = args.exact_reference_root
@@ -781,6 +782,9 @@ def main():
                     },
                 }
             except Exception as exc:
+                if args.stop_on_provider_error:
+                    write_json(status_file, {"id": method["id"], "status": "error", "error_type": type(exc).__name__})
+                    raise
                 status = {
                     "round": round_index,
                     "id": method["id"],

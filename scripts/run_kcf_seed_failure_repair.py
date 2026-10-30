@@ -64,8 +64,11 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Validate and record planned cases with no model requests")
     parser.add_argument("--jacoco-agent", default="/root/tools/jacocoagent.jar")
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
+    parser.add_argument("--evaluation-reference-root", help="Enable shared strict main-class evaluation for new runs")
+    parser.add_argument("--stop-on-provider-error", action="store_true", help="Stop a bounded feasibility run instead of moving to another target after an exception")
     args = parser.parse_args()
     args.isolate_execution = True
+    args.strict_evaluation = bool(args.evaluation_reference_root)
     if args.output_dir.exists():
         raise FileExistsError("Use a fresh output directory; original failed suites remain unchanged")
     methods = load_method_list(args.method_list)
@@ -143,6 +146,9 @@ def main():
         except Exception as exc:
             # Trace stores safe request metadata; avoid provider error bodies here.
             status = {"id": method["id"], "status": "error", "error_type": type(exc).__name__}
+            if args.stop_on_provider_error:
+                feedback.write_json(item / "status.json", status)
+                raise
         statuses.append(status)
         feedback.write_json(item / "status.json", status)
         print(method["project_id"], status["status"], flush=True)

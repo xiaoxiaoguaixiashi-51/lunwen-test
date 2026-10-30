@@ -198,8 +198,6 @@ class Pipeline:
 
         # Save using the generated class name so javac accepts public test classes.
         class_name = self._extract_class_name(result.final_test) or f"{result.method_name}Test"
-        if not class_name.endswith("Test"):
-            class_name = f"{class_name}Test"
         test_file = out_path / f"{class_name}.java"
         test_file.write_text(result.final_test, encoding="utf-8")
 
