@@ -30,4 +30,4 @@ exact-reference-root须包含reference_manifest.json与xml/；reference-xml-root
 
 ## 剩余工作
 
-基线执行目录隔离、append=false、共同main classes报告及通过性统计仍需对齐；非API总成本、正式预算/重复协议和样本使用边界仍未闭合。计分基础设施完成不等于实质贡献已成立，也不自动恢复任何已取消的研究路线。
+基线执行目录隔离、append=false、共同main classes报告及正数测试通过性检查现已实现并完成真实工具链夹具验证，见STRICT_EXECUTION_POLICY.md。非API总成本、正式运行配置/预算/重复协议和样本使用边界仍未闭合。计分基础设施完成不等于实质贡献已成立，也不自动恢复任何已取消的研究路线。

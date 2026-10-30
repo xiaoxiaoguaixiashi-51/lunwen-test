@@ -1,0 +1,137 @@
+{
+  "kind": "handwritten_evaluator_fixture_not_baseline_quality",
+  "api_calls": 0,
+  "main_class_tree_sha256": "c1b88f83257f177ebe69ffe043c4061b5e3757b2d9aef01cf61c859e538ed348",
+  "evaluators": [
+    {
+      "runner": "scripts.run_stage_b_rag_llm_coverage",
+      "status": "ok",
+      "covered_branches": 1,
+      "missed_branches": 1,
+      "reported_classes": [
+        "p/T"
+      ],
+      "xml_sha256": "df29343170921c00aeb35467e9eec8bbf7fdd2b97981f42133930a8d4922b94c",
+      "exec_sha256": "aaa56dc6d4cd5fefa239714db3d7698f3c3c1ac548f30f5080b969eb4dccd2a7",
+      "timings": [
+        {
+          "stage": "source_copy",
+          "elapsed_seconds": 0.0005216598510742188,
+          "evosuite_classloader_patch": false
+        },
+        {
+          "stage": "policy_validation",
+          "elapsed_seconds": 0.0013387948274612427
+        },
+        {
+          "stage": "dependency_resolution",
+          "elapsed_seconds": 2.0451843738555908e-05,
+          "cache_hit": false
+        },
+        {
+          "stage": "compile",
+          "elapsed_seconds": 0.2178950384259224,
+          "status": "ok",
+          "return_code": 0
+        },
+        {
+          "stage": "junit",
+          "elapsed_seconds": 0.19703999906778336,
+          "status": "ok",
+          "return_code": 0
+        },
+        {
+          "stage": "jacoco_report",
+          "elapsed_seconds": 0.0970832034945488,
+          "status": "ok",
+          "return_code": 0
+        }
+      ]
+    },
+    {
+      "runner": "scripts.run_stage_b_evosuite_coverage",
+      "status": "ok",
+      "covered_branches": 1,
+      "missed_branches": 1,
+      "reported_classes": [
+        "p/T"
+      ],
+      "xml_sha256": "27caba644924c5f8ca1e04c24c0eace5d9fd5a8c9967fd3b19fac105224d7bae",
+      "exec_sha256": "28fa85d2b65867fc500ac440a5d2b7fdddd8d08e75ee407a2e0ac4fd415b2716",
+      "timings": [
+        {
+          "stage": "source_copy",
+          "elapsed_seconds": 0.0002648383378982544,
+          "evosuite_classloader_patch": true
+        },
+        {
+          "stage": "policy_validation",
+          "elapsed_seconds": 0.0013572946190834045
+        },
+        {
+          "stage": "dependency_resolution",
+          "elapsed_seconds": 1.4267861843109131e-05,
+          "cache_hit": false
+        },
+        {
+          "stage": "compile",
+          "elapsed_seconds": 0.29880204051733017,
+          "status": "ok",
+          "return_code": 0
+        },
+        {
+          "stage": "junit",
+          "elapsed_seconds": 0.19054311513900757,
+          "status": "ok",
+          "return_code": 0
+        },
+        {
+          "stage": "jacoco_report",
+          "elapsed_seconds": 0.09658324718475342,
+          "status": "ok",
+          "return_code": 0
+        }
+      ]
+    },
+    {
+      "runner": "scripts.run_stage_b_ours_full_feedback",
+      "status": "ok",
+      "covered_branches": 1,
+      "missed_branches": 1,
+      "reported_classes": [
+        "p/T"
+      ],
+      "xml_sha256": "991e3bfeefc5f607de32f25d023470b424685473e131505696a95dd377bb3233",
+      "exec_sha256": "6ab2688c58d9cdd5cf3409f6ddb30e30a249c5311ba3469129fbfe29cbeaefb8",
+      "timings": [
+        {
+          "stage": "policy_validation",
+          "elapsed_seconds": 0.0009385943412780762
+        },
+        {
+          "stage": "dependency_resolution",
+          "elapsed_seconds": 1.1377036571502686e-05,
+          "cache_hit": false
+        },
+        {
+          "stage": "compile",
+          "elapsed_seconds": 0.1984918862581253,
+          "status": "ok",
+          "return_code": 0
+        },
+        {
+          "stage": "junit",
+          "elapsed_seconds": 0.19475974887609482,
+          "status": "ok",
+          "return_code": 0
+        },
+        {
+          "stage": "jacoco_report",
+          "elapsed_seconds": 0.10124853253364563,
+          "status": "ok",
+          "return_code": 0
+        }
+      ]
+    }
+  ]
+}
