@@ -1,0 +1,18 @@
+{
+  "kind": "handwritten_library_fixture_probe_not_llm_generation_or_novelty_validation",
+  "api_calls": 0,
+  "project_id": "jdom2",
+  "project_revision": null,
+  "git_metadata_available": false,
+  "main_class_tree_sha256": "f19a02b94c47c95de10a677de96305e38eacbe8ae3a882b8f472d792d5f6f512",
+  "frozen_class_tree_matched": true,
+  "probe_source_sha256": "229f1f68728585737e2cf0dbc8bae7594c1b4079882cf112435bc1242e71aece",
+  "observations": {
+    "same_element_same_prefix_different_uri": "IllegalAddException",
+    "same_element_distinct_prefix_accepted": true,
+    "parent_child_same_prefix_accepted": true,
+    "child_own_namespace_visible": true,
+    "parent_shadowed_namespace_visible": false
+  },
+  "scope": "Current pinned library behavior; historical A3 source/log remains a separate generation instance"
+}

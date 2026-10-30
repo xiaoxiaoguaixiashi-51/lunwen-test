@@ -1,0 +1,1 @@
+{"same_element_same_prefix_different_uri":"IllegalAddException","same_element_distinct_prefix_accepted":true,"parent_child_same_prefix_accepted":true,"child_own_namespace_visible":true,"parent_shadowed_namespace_visible":false}

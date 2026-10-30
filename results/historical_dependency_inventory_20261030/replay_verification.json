@@ -1,0 +1,11 @@
+{
+  "kind": "selected_inputs_replay_not_new_experiment",
+  "api_calls": 0,
+  "case_records_identical": true,
+  "targets": 41,
+  "source_files": 39,
+  "selected_files": 79,
+  "archive_sha256": "a68349f91c1963ff2a8680bdc6b6003b14b24114aa05dc2995ca14954b1f5e6f",
+  "archive_bytes": 58404,
+  "credential_pattern_scan_passed": true
+}

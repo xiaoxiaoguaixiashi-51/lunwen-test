@@ -1,0 +1,1078 @@
+{
+  "kind": "historical_a3_evidence_inventory_not_new_effectiveness_results",
+  "archive_filename": "a3_wo_staticguard_evidence_20260705.tgz",
+  "archive_sha256": "a2b4f9a5c4d65143361c3ee7fe289bdf294b93a8e9d0c5eef02c99ec36513064",
+  "summary_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/ours_jacoco_summary.json",
+  "api_calls": 0,
+  "unique_target_methods": 41,
+  "project_count": 6,
+  "category_counts": {
+    "runtime_failure_for_manual_review": 5,
+    "historical_reported_pass_not_revalidated": 5,
+    "junit_no_runnable_methods": 23,
+    "missing_generated_tests": 2,
+    "compile_failure": 5,
+    "junit_invalid_test_class": 1
+  },
+  "targets_with_saved_source": 39,
+  "cases": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Parser",
+      "method": "processArgs",
+      "historical_status": "test_failed",
+      "evidence_category": "runtime_failure_for_manual_review",
+      "signals_not_causal_labels": [
+        "unsupported_operation",
+        "assertion_or_comparison_failure"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs-org.apache.commons.cli.Parser/src/ParserProcessArgsTest.java",
+          "sha256": "9113caba935afc5b88e532f04cd953e8a2e7dc09659f64df969c04ff2c86bc26",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs-org.apache.commons.cli.Parser/junit.log",
+      "log_sha256": "0c15369aa4474536204b53deb83498ecd9afb334c071ce7d684b144ad4339b46",
+      "selected_log_lines": [
+        "1) testIteratorAlreadyHasValuesAndOptional(org.apache.commons.cli.ParserProcessArgsTest)",
+        "java.lang.UnsupportedOperationException: The addValue method is not intended for client use. Subclasses should use the addValueForProcessing method instead.",
+        "2) testMultipleValuesUntilUnrecognizedOptionToken(org.apache.commons.cli.ParserProcessArgsTest)",
+        "java.lang.AssertionError: expected:<3> but was:<1>"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.OptionGroup",
+      "method": "toString",
+      "historical_status": "ok",
+      "evidence_category": "historical_reported_pass_not_revalidated",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring-org.apache.commons.cli.OptionGroup/src/OptionGroupToStringTest.java",
+          "sha256": "29d5b6c77b065811bc8ce36082ecced945f9f0f186a81256d01b6e6faa68f890",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring-org.apache.commons.cli.OptionGroup/junit.log",
+      "log_sha256": "ad830b2492121d1f42e563f118651b918a95ca35cc8481b7dd5d5257db76c396",
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-option-tostring",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Option",
+      "method": "toString",
+      "historical_status": "ok",
+      "evidence_category": "historical_reported_pass_not_revalidated",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-option-tostring-org.apache.commons.cli.Option/src/OptionTest.java",
+          "sha256": "bcda129dc119a1894bf95791d3160a452c51f32962de561b7a9621367b469201",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-option-tostring-org.apache.commons.cli.Option/junit.log",
+      "log_sha256": "539e321d40d6004ff02caca09f3c602ca82d931edd97ba1fee4e722ce552a540",
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.TypeHandler",
+      "method": "createObject",
+      "historical_status": "ok",
+      "evidence_category": "historical_reported_pass_not_revalidated",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject-org.apache.commons.cli.TypeHandler/src/TypeHandlerTest.java",
+          "sha256": "b31878177953d0ca4eb05b5b73b4217ae249674eef550a258c12169acd81f9b2",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject-org.apache.commons.cli.TypeHandler/junit.log",
+      "log_sha256": "13336123ad408527e3756fc92e5fa00dc56c12b3d128c4ed120432cc8cd803d4",
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.PatternOptionBuilder",
+      "method": "parsePattern",
+      "historical_status": "test_failed",
+      "evidence_category": "runtime_failure_for_manual_review",
+      "signals_not_causal_labels": [
+        "assertion_or_comparison_failure"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern-org.apache.commons.cli.PatternOptionBuilder/src/PatternOptionBuilderTest.java",
+          "sha256": "c9fd727f32d0c8f71d7b800d9d4a94821d46307db71e0bc418691449276494a9",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern-org.apache.commons.cli.PatternOptionBuilder/junit.log",
+      "log_sha256": "41259f36820945fb23ec9fa8a70f12b45bb68746422bf8a474070a9249df757c",
+      "selected_log_lines": [
+        "1) testParsePattern_MultipleOptionsCombination(org.apache.commons.cli.PatternOptionBuilderTest)",
+        "java.lang.AssertionError",
+        "2) testParsePattern_SpaceInPattern(org.apache.commons.cli.PatternOptionBuilderTest)",
+        "java.lang.AssertionError"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.TypeHandler",
+      "method": "createNumber",
+      "historical_status": "ok",
+      "evidence_category": "historical_reported_pass_not_revalidated",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber-org.apache.commons.cli.TypeHandler/src/TypeHandlerTest.java",
+          "sha256": "474db873b88e10a57f81dab6314939ea185534c9caf3f8b54ef610fd238ee05f",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber-org.apache.commons.cli.TypeHandler/junit.log",
+      "log_sha256": "c40ab250fae132d48981e9160a77c5e9e6b27557fd9c59c5cc3f6e2ac464c920",
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "method": "toString",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring-org.apache.commons.csv.CSVFormat/src/CSVFormatToStringTest.java",
+          "sha256": "4a23ffbb645bbc850da1573d612c8b7b8b943e6ffe1b7b463f9fe9a5fe28a160",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring-org.apache.commons.csv.CSVFormat/junit.log",
+      "log_sha256": "6a90f8b2f94e122578ae8512b0ecede1cb4f5b79bce71d55728cca03611c3517",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.csv.CSVFormatToStringTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "method": "equals",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals-org.apache.commons.csv.CSVFormat/src/CSVFormatEqualsTest.java",
+          "sha256": "6bc6eb5c6c4cc25e4cd1bb7352c65cbf2705823142c0a35d92ba1872373a59c5",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals-org.apache.commons.csv.CSVFormat/junit.log",
+      "log_sha256": "ff5f516b1e5632059df8189a5979f241ffce57aab0a37f25d448b4ba804d4eb1",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.csv.CSVFormatEqualsTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVPrinter",
+      "method": "printComment",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/src/CSVPrinterPrintCommentTest.java",
+          "sha256": "2fd2c81bb0dbdf01b131ae18dcb20e6a36a61f02ef1641bce3376ab0699c3b1b",
+          "junit_jupiter_import": true,
+          "mockito_import": true
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/junit.log",
+      "log_sha256": "1af6a82a9f955f6303d1d189d2b0ef2ea7e5bf04f3fb36d9702553e5eb835c7f",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.csv.CSVPrinterPrintCommentTest)",
+        "1. The class org.apache.commons.csv.CSVPrinterPrintCommentTest is not public.",
+        "3. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "method": "format",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvformat-format-org.apache.commons.csv.CSVFormat/src/CSVFormatTest.java",
+          "sha256": "0a22e4efff4adb827e8c8134089d5b78d5a1eca9eaa51c08dc4ad2646cbc2df3",
+          "junit_jupiter_import": true,
+          "mockito_import": true
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvformat-format-org.apache.commons.csv.CSVFormat/junit.log",
+      "log_sha256": "9bb0cbf96e995d3e19873093c2e3a08f57fecdfb2d4f333b00b3ac1bc8333556",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.csv.CSVFormatTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.ExtendedBufferedReader",
+      "method": "readLine",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline-org.apache.commons.csv.ExtendedBufferedReader/src/ExtendedBufferedReaderTest.java",
+          "sha256": "aaac3a1aa0c05cd9ce98da5e34b9fd6e5667f7c68702bd8762ec61567d8a65be",
+          "junit_jupiter_import": true,
+          "mockito_import": true
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline-org.apache.commons.csv.ExtendedBufferedReader/junit.log",
+      "log_sha256": "fa0adad1b0a2b0367b461ef68d8754666a70fc485a6b32b5e4c425b89a6a005b",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.csv.ExtendedBufferedReaderTest)",
+        "1. The class org.apache.commons.csv.ExtendedBufferedReaderTest is not public.",
+        "3. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.bm.Lang",
+      "method": "loadFromResource",
+      "historical_status": "missing_generated_tests",
+      "evidence_category": "missing_generated_tests",
+      "signals_not_causal_labels": [],
+      "source_files": [],
+      "log_member": null,
+      "log_sha256": null,
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.ColognePhonetic",
+      "method": "colognePhonetic",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/src/ColognePhoneticTest.java",
+          "sha256": "22e6b324fbcda1e929c2dd1bb1abf526d5902f62d85797bbe68e099fb26a3f09",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/junit.log",
+      "log_sha256": "bb85839b01183c3a548c8d69116d2b4fb26cf7784069b921b10ddc6fdd0dd553",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.codec.language.ColognePhoneticTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.Metaphone",
+      "method": "metaphone",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone-org.apache.commons.codec.language.Metaphone/src/MetaphoneTest.java",
+          "sha256": "be63f30b4d77c3e8940969a6b6a418d0abf22fcbf7d594869a195ef6e22110e2",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone-org.apache.commons.codec.language.Metaphone/junit.log",
+      "log_sha256": "ffa82cc951fd212e0012b7898b31b32b8bf21631a4acafbaaeeac34c92efc00b",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.codec.language.MetaphoneTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.Nysiis",
+      "method": "nysiis",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis-org.apache.commons.codec.language.Nysiis/src/NysiisTest.java",
+          "sha256": "0f00590479c710428034d73cedf8c86fb69a2de95ed0e0cc6ae460eb46fdffd0",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis-org.apache.commons.codec.language.Nysiis/junit.log",
+      "log_sha256": "351b31dcb0acbd1d7b458ae6a767de0dd515555c60e6c096f49c973a9298d3a6",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.codec.language.NysiisTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.MatchRatingApproachEncoder",
+      "method": "isEncodeEquals",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals-org.apache.commons.codec.language.MatchRatingApproachEncoder/src/MatchRatingApproachEncoderIsEncodeEqualsTest.java",
+          "sha256": "6396910494e881eaf06d634fde59ffc61c71ad295d360a366fe189e60983d996",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals-org.apache.commons.codec.language.MatchRatingApproachEncoder/junit.log",
+      "log_sha256": "c9ebd253d02c54aa82c008698dfda94e6f22bb84542608e06c58bf045d3d2e8b",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.codec.language.MatchRatingApproachEncoderIsEncodeEqualsTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.MapUtils",
+      "method": "putAll",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall-org.apache.commons.collections4.MapUtils/src/MapUtilsPutAllTest.java",
+          "sha256": "504f6e00948b72f77aaf1e188e3ab7a3c17fa7498df811b1335f6718dccc93bf",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall-org.apache.commons.collections4.MapUtils/junit.log",
+      "log_sha256": "416369100205228291010862a5ac998d6c5eac75fea2f3b28d17909fad813ba9",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.MapUtilsPutAllTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InvokerTransformer",
+      "method": "transform",
+      "historical_status": "test_failed",
+      "evidence_category": "runtime_failure_for_manual_review",
+      "signals_not_causal_labels": [
+        "assertion_or_comparison_failure"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform-org.apache.commons.collections4.functors.InvokerTransformer/src/InvokerTransformerTest.java",
+          "sha256": "dc7d3fb1757af8619f0b90d3395f4544eaeca6f357e978df4a1f5f82590399eb",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform-org.apache.commons.collections4.functors.InvokerTransformer/junit.log",
+      "log_sha256": "229aa5f9b7f864cdb785e9352f776d4d9c08390e90dcb369d8de91609c07f8d3",
+      "selected_log_lines": [
+        "1) test_transform_invocation_target_exception(org.apache.commons.collections4.functors.InvokerTransformerTest)",
+        "java.lang.AssertionError: Cause should be RuntimeException"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.list.TreeList",
+      "method": "addAll",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall-org.apache.commons.collections4.list.TreeList/src/TreeListTest.java",
+          "sha256": "7de9e7b9fe1e016633c4993885984bb33e64a79b79c451fc93259113d5779b57",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall-org.apache.commons.collections4.list.TreeList/junit.log",
+      "log_sha256": "2e017dcd1f7ea96b22b1eab1288da8ba775d2d098d365d62f64e6fe679240bcc",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.list.TreeListTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher",
+      "method": "indices",
+      "historical_status": "compile_failed",
+      "evidence_category": "compile_failure",
+      "signals_not_causal_labels": [
+        "missing_symbol"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices-org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher/src/EnhancedDoubleHasherTest.java",
+          "sha256": "9d1415aa9abc4f073bc2d520fb765774c86f9576ae3a3964f6f691a4e5619934",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices-org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher/compile.log",
+      "log_sha256": "660ff2209045c6b9c83031d596ce56a31f2f69a7d144e20efc869a51eb733b9e",
+      "selected_log_lines": [
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices-org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher/src/EnhancedDoubleHasherTest.java:43: error: cannot find symbol"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "method": "size",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size-org.apache.commons.collections4.CollectionUtils/src/CollectionUtilsSizeTest.java",
+          "sha256": "56f9cbf899789436e13255d20878a2f40bc593eb6b3b2b789252dca06b486393",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size-org.apache.commons.collections4.CollectionUtils/junit.log",
+      "log_sha256": "0539cfe73352d9e05c5d9d34ebae7b60713abebb91eb329012c5607f5febc2fe",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.CollectionUtilsSizeTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InstantiateTransformer",
+      "method": "transform",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform-org.apache.commons.collections4.functors.InstantiateTransformer/src/InstantiateTransformerTest.java",
+          "sha256": "7f6ec85842dd26dc087fdbebf9bf5062d54105f83862342396bc0aaff6eac569",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform-org.apache.commons.collections4.functors.InstantiateTransformer/junit.log",
+      "log_sha256": "53b6a2cf4ac170a6ad84e961b74d8b13c6ddbaaa72e99996bee8b17985856ae7",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.functors.InstantiateTransformerTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.IteratorUtils",
+      "method": "getIterator",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator-org.apache.commons.collections4.IteratorUtils/src/IteratorUtilsTest.java",
+          "sha256": "d5a6e869066508aee3432829e561072ddd8fdf263d7d0b847bb3cd0bb206b7aa",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator-org.apache.commons.collections4.IteratorUtils/junit.log",
+      "log_sha256": "fcddb5658d7055eb0fa54f33ff1885f8983701a5647fe99c1f8960e751e75259",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.IteratorUtilsTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer",
+      "method": "bitIndex",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex-org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer/src/StringKeyAnalyzerTest.java",
+          "sha256": "fe6792bb12c08496ad4bd5a8a78ef11a5f347a6fa57ba446c903a68a023f3cbc",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex-org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer/junit.log",
+      "log_sha256": "7a2421adf85d64b26062810b79304e07ee144e24498ac502ed1cc7a55a898d92",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzerTest)",
+        "1. The class org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzerTest is not public.",
+        "3. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.PrototypeFactory",
+      "method": "prototypeFactory",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory-org.apache.commons.collections4.functors.PrototypeFactory/src/PrototypeFactoryTest.java",
+          "sha256": "4657ddc2f0ed89cd3eb100bc0d75da13cd132a62ebf3ff4f2d8651e40ab84e0d",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory-org.apache.commons.collections4.functors.PrototypeFactory/junit.log",
+      "log_sha256": "b82185d2ea903e9d5ddc1ebe7cdeec7c6f4bda1beb826ff78e68786db8fa1a21",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.functors.PrototypeFactoryTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.bag.AbstractMapBag",
+      "method": "toString",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring-org.apache.commons.collections4.bag.AbstractMapBag/src/AbstractMapBagToStringTest.java",
+          "sha256": "c275eceb19442dd5a689a9d6f68f2c8a1a5416b479c0a0dd797bed6ec1a032d1",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring-org.apache.commons.collections4.bag.AbstractMapBag/junit.log",
+      "log_sha256": "ee499f84ef5e37acf096b3cbaa81100d052bfe0d15d2bc0262139b3c86a1ac82",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.bag.AbstractMapBagToStringTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.iterators.CartesianProductIterator",
+      "method": "next",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next-org.apache.commons.collections4.iterators.CartesianProductIterator/src/CartesianProductIteratorTest.java",
+          "sha256": "af94b846b0833186951f2026d8d4d53a00a306735aea201e2a3c9adda2612882",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next-org.apache.commons.collections4.iterators.CartesianProductIterator/junit.log",
+      "log_sha256": "a5473d2b2542bfd681850090d9ed92e18a35234789ff177fd875c7816b446878",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.iterators.CartesianProductIteratorTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.properties.OrderedProperties",
+      "method": "toString",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring-org.apache.commons.collections4.properties.OrderedProperties/src/OrderedPropertiesToStringTest.java",
+          "sha256": "92f04bef48dbb086019f41745442074e402966417ecf0a4efd4887e324cff025",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring-org.apache.commons.collections4.properties.OrderedProperties/junit.log",
+      "log_sha256": "efec923b9b025f7b88e75f7d312f27523975e7ce99d6758f6a8034c52c79b28f",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.properties.OrderedPropertiesToStringTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "method": "removeCount",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount-org.apache.commons.collections4.CollectionUtils/src/CollectionUtilsRemoveCountTest.java",
+          "sha256": "f3c25cfe61699019b15f7f1baeec2d85ecfa44c1518676a04ce3f190a96b427b",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount-org.apache.commons.collections4.CollectionUtils/junit.log",
+      "log_sha256": "97584c19ffaa6e2bb74b27fb5fa746c329de95b951a98ef7ed5006f9e278b58c",
+      "selected_log_lines": [
+        "1) initializationError(CollectionUtilsRemoveCountTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.trie.TrieEntry",
+      "method": "toString",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring-org.apache.commons.collections4.trie.TrieEntry/src/TrieEntryToStringTest.java",
+          "sha256": "bd6834a3062cff0b5a80246a144db30fd7fe5a7ac76fc57a6cfd06d7d389af34",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring-org.apache.commons.collections4.trie.TrieEntry/junit.log",
+      "log_sha256": "9c345fe58130da71c5befa064d97f0da5eac6e17e3792e0fd4d9335a933244a4",
+      "selected_log_lines": [
+        "1) initializationError(org.apache.commons.collections4.trie.TrieEntryToStringTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.internal.ReflectionConstructor",
+      "method": "construct",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/src/ReflectionConstructorTest.java",
+          "sha256": "fb5a88a649f8ac082fd164c89fd9e9c6710f336e14e95f7e05dda81befc1ffb0",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/junit.log",
+      "log_sha256": "a5803afebe452dc4d665a2111a484ca124e86e79bf0223089d447c84c65ea9f9",
+      "selected_log_lines": [
+        "1) initializationError(org.jdom2.internal.ReflectionConstructorTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.xpath.XPath",
+      "method": "newInstance",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_no_runnable_methods",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-xpath-xpath-newinstance-org.jdom2.xpath.XPath/src/XPathNewInstanceTest.java",
+          "sha256": "68731cc3d03955e4fc5d4090b34dd339ae947a823d0961fd65d9679bb5df7cca",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-xpath-xpath-newinstance-org.jdom2.xpath.XPath/junit.log",
+      "log_sha256": "5daf22f030fca061074528e8c642b807ac7f4fcebe998169becf02dac915a2bc",
+      "selected_log_lines": [
+        "1) initializationError(org.jdom2.xpath.XPathNewInstanceTest)",
+        "1. No runnable methods"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.input.sax.SAXHandler",
+      "method": "startElement",
+      "historical_status": "compile_failed",
+      "evidence_category": "compile_failure",
+      "signals_not_causal_labels": [
+        "missing_mockito",
+        "missing_symbol"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java",
+          "sha256": "6539f129015c01bc038c69a5eabf34bfb2840e23ee1ccbc293dfa484fd5129e0",
+          "junit_jupiter_import": false,
+          "mockito_import": true
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/compile.log",
+      "log_sha256": "b8d49c7c6847235d0a5710bf29e8a328d4077cf1083d323e7f7d45481df1f018",
+      "selected_log_lines": [
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:4: error: package org.mockito does not exist",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:32: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:34: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:35: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:37: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:38: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:62: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:68: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:70: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:71: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:71: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement-org.jdom2.input.sax.SAXHandler/src/SAXHandlerTest.java:75: error: cannot find symbol"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.xpath.XPath",
+      "method": "setXPathClass",
+      "historical_status": "compile_failed",
+      "evidence_category": "compile_failure",
+      "signals_not_causal_labels": [
+        "type_mismatch"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass-org.jdom2.xpath.XPath/src/XPathSetXPathClassTest.java",
+          "sha256": "2d1397929c5c67f5ddb756942f1fd5cbdc8de10b26d3b8cac1f00da7075f734a",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass-org.jdom2.xpath.XPath/compile.log",
+      "log_sha256": "93e0c2df9c3ba7d19ee0d1838cd6b0df178d92dec2618449532f4d1921e87ac7",
+      "selected_log_lines": [
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass-org.jdom2.xpath.XPath/src/XPathSetXPathClassTest.java:112: error: incompatible types: Class<Object> cannot be converted to Class<? extends XPath>"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-document-cancontaincontent",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Document",
+      "method": "canContainContent",
+      "historical_status": "compile_failed",
+      "evidence_category": "compile_failure",
+      "signals_not_causal_labels": [
+        "missing_junit_jupiter",
+        "missing_symbol"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java",
+          "sha256": "82c2e514f65c85e5a3c0c93b5e3e494e9ac0917010705724f7062a497a4649c6",
+          "junit_jupiter_import": true,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/compile.log",
+      "log_sha256": "0ff9ffee1647840431a0071eba2497029c0f974f1c3e4034b67ee7f48e6484dc",
+      "selected_log_lines": [
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:3: error: package org.junit.jupiter.api does not exist",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:8: error: package org.junit.jupiter.api does not exist",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:9: error: package org.junit.jupiter.api does not exist",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:35: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:70: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:76: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:86: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:94: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:104: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:112: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:126: error: cannot find symbol",
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-document-cancontaincontent-org.jdom2.Document/src/DocumentCanContainContentTest.java:132: error: cannot find symbol"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapetext",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.output.Format",
+      "method": "escapeText",
+      "historical_status": "ok",
+      "evidence_category": "historical_reported_pass_not_revalidated",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-output-format-escapetext-org.jdom2.output.Format/src/FormatEscapeTextTest.java",
+          "sha256": "b65d6c5a65622b17f31de23b331787d2a1a60c9479f11988e394c4dfdbfa981f",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-output-format-escapetext-org.jdom2.output.Format/junit.log",
+      "log_sha256": "eec2566713155867373b262472310d1db1902e8d8c694fee4c12adee2ea891b5",
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.output.Format",
+      "method": "escapeAttribute",
+      "historical_status": "test_failed",
+      "evidence_category": "runtime_failure_for_manual_review",
+      "signals_not_causal_labels": [
+        "assertion_or_comparison_failure"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-output-format-escapeattribute-org.jdom2.output.Format/src/FormatEscapeAttributeTest.java",
+          "sha256": "bfd4033d35bf71e9d44f322831cb7f70a77fcf5181e415fd0477923ef4ed6402",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-output-format-escapeattribute-org.jdom2.output.Format/junit.log",
+      "log_sha256": "c03a90293d65f7fc5519fabd8419293da926be327856b1ca6542c3dc7362e093",
+      "selected_log_lines": [
+        "1) testValidSurrogatePairEscaping(org.jdom2.output.FormatEscapeAttributeTest)",
+        "org.junit.ComparisonFailure: expected:<[&#x1F600;]> but was:<[\ud83d\ude00]>",
+        "2) testHighSurrogateFollowedByNonLowSurrogateThrowsException(org.jdom2.output.FormatEscapeAttributeTest)",
+        "java.lang.AssertionError: Expected IllegalDataException to be thrown",
+        "3) testTruncatedHighSurrogateThrowsException(org.jdom2.output.FormatEscapeAttributeTest)",
+        "java.lang.AssertionError: Expected IllegalDataException to be thrown",
+        "4) testLoneLowSurrogateTreatedAsNormalChar(org.jdom2.output.FormatEscapeAttributeTest)",
+        "org.junit.ComparisonFailure: expected:<[?]> but was:<[?]>"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Verifier",
+      "method": "checkCharacterData",
+      "historical_status": "missing_generated_tests",
+      "evidence_category": "missing_generated_tests",
+      "signals_not_causal_labels": [],
+      "source_files": [],
+      "log_member": null,
+      "log_sha256": null,
+      "selected_log_lines": [],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Element",
+      "method": "getNamespacesInScope",
+      "historical_status": "test_failed",
+      "evidence_category": "runtime_failure_for_manual_review",
+      "signals_not_causal_labels": [
+        "namespace_collision",
+        "assertion_or_comparison_failure"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/src/ElementTest.java",
+          "sha256": "5c9edb51fba5e200399c50e2238a53425935a822588b4ad0859f93e52526f831",
+          "junit_jupiter_import": false,
+          "mockito_import": false
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/junit.log",
+      "log_sha256": "b107837cb5fceef2b4eaecfec7c88c8eec0bf78800e19e798104b4b2a2788e26",
+      "selected_log_lines": [
+        "1) testGetNamespacesInScope_ChildInheritsFromParent(org.jdom2.ElementTest)",
+        "java.lang.AssertionError: list size should be 6 expected:<6> but was:<7>",
+        "2) testGetNamespacesInScope_AdditionalNamespacesOrder(org.jdom2.ElementTest)",
+        "java.lang.AssertionError: second is prefix 'a' expected same:<[Namespace: prefix \"a\" is mapped to URI \"http://a.example.com\"]> was not:<[Namespace: prefix \"\" is mapped to URI \"\"]>",
+        "3) testGetNamespacesInScope_RootElementWithOwnNamespace(org.jdom2.ElementTest)",
+        "java.lang.AssertionError: second element is XML namespace expected same:<[Namespace: prefix \"xml\" is mapped to URI \"http://www.w3.org/XML/1998/namespace\"]> was not:<[Namespace: prefix \"\" is mapped to URI \"\"]>",
+        "4) testGetNamespacesInScope_DuplicatePrefixes(org.jdom2.ElementTest)",
+        "org.jdom2.IllegalAddException: The namespace xmlns:dup=\"http://other.example.com\" could not be added as a namespace to \"dup:root\": The namespace prefix \"dup\" collides with the element namespace prefix",
+        "5) testGetNamespacesInScope_WithAttributeNamespaces(org.jdom2.ElementTest)",
+        "java.lang.AssertionError: second is attr namespace expected same:<[Namespace: prefix \"attr\" is mapped to URI \"http://attr.example.com\"]> was not:<[Namespace: prefix \"\" is mapped to URI \"\"]>"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.context.AbstractHttpWindwardContext",
+      "method": "html",
+      "historical_status": "test_failed",
+      "evidence_category": "junit_invalid_test_class",
+      "signals_not_causal_labels": [],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/src/AbstractHttpWindwardContextHtmlTest.java",
+          "sha256": "218dbae07861399f8dafe7787c612975c69510914409e036656c082e0d3f5d49",
+          "junit_jupiter_import": false,
+          "mockito_import": true
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/junit.log",
+      "log_sha256": "5f9b8f10e04d5bc82909629b0155944bc4b62eb48dc11f65bfc50be76c40935a",
+      "selected_log_lines": [
+        "1) initializationError(org.flmelody.core.context.AbstractHttpWindwardContextHtmlTest)",
+        "1. The class org.flmelody.core.context.AbstractHttpWindwardContextHtmlTest is not public."
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-netty-nettyhttpserver-run",
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.netty.NettyHttpServer",
+      "method": "run",
+      "historical_status": "compile_failed",
+      "evidence_category": "compile_failure",
+      "signals_not_causal_labels": [
+        "type_mismatch"
+      ],
+      "source_files": [
+        {
+          "member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/windward/windward-windward-org-flmelody-core-netty-nettyhttpserver-run-org.flmelody.core.netty.NettyHttpServer/src/NettyHttpServerTest.java",
+          "sha256": "1468050de279353c1d2765c2278f79e1720146b318caa6ef96efa4ac29261add",
+          "junit_jupiter_import": false,
+          "mockito_import": true
+        }
+      ],
+      "log_member": "ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/windward/windward-windward-org-flmelody-core-netty-nettyhttpserver-run-org.flmelody.core.netty.NettyHttpServer/compile.log",
+      "log_sha256": "f50ee29e7469f71a34d99aba40f41483d5a7dc120e14aac510069b65eb6ec1af",
+      "selected_log_lines": [
+        "/root/lunwen-test/experiments/runs/stage_b_maco_aligned_41/ablation_a3_wo_staticguard_raw_jacoco_v1_20260705/windward/windward-windward-org-flmelody-core-netty-nettyhttpserver-run-org.flmelody.core.netty.NettyHttpServer/src/NettyHttpServerTest.java:213: error: incompatible types: SocketChannel cannot be converted to ChannelHandlerContext"
+      ],
+      "retrieval_attribution": "unavailable_in_this_run",
+      "current_full_reproduction_established": false
+    }
+  ],
+  "limits": [
+    "A3 disables project constraints; not representative of current Full error frequency",
+    "Historical statuses and source identities are preserved, not re-labelled as new KCF results",
+    "Suite coverage cannot establish whether a particular failing test reached the focal method",
+    "Log signals are evidence locations, not automatic oracle or dependency-cause adjudication"
+  ]
+}
