@@ -16,6 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.maco_stage_b import discover_classpath_entries, safe_name, write_table
+from scripts import strict_execution_policy as strict
 
 
 def run(command: list[str], cwd: Path, timeout: int) -> tuple[str, int, str]:
@@ -103,7 +104,7 @@ def run_one(method: dict, args, cp_cache: dict[str, str]) -> dict:
     work_src = out_dir / "src"
     classes_dir = out_dir / "classes"
     xml_dir = out_dir / "xml"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=not strict.enabled(args))
     classes_dir.mkdir(parents=True, exist_ok=True)
     xml_dir.mkdir(parents=True, exist_ok=True)
 
@@ -124,7 +125,10 @@ def run_one(method: dict, args, cp_cache: dict[str, str]) -> dict:
     if not source_dir.exists():
         return {**base, "status": "missing_generated_tests", "test_class": "", "xml_file": ""}
 
-    copy_sources(source_dir, work_src)
+    if strict.enabled(args):
+        strict.copy_java_sources(source_dir, work_src)
+    else:
+        copy_sources(source_dir, work_src)
     try:
         test_class, java_files = find_generated_test(work_src)
     except ValueError as exc:
@@ -135,8 +139,15 @@ def run_one(method: dict, args, cp_cache: dict[str, str]) -> dict:
     source_list.write_text("\n".join(str(path) for path in java_files) + "\n", encoding="utf-8")
 
     discovered_cp = [str(path) for path in discover_classpath_entries(project_root)]
-    dep_cp = cp_cache.setdefault(project_id, dependency_classpath(project_root, out_dir, args.timeout))
+    report_cp = discovered_cp
+    if strict.enabled(args):
+        discovered_cp, report_cp = strict.classpaths(args, project_id, project_root, out_dir)
+        dep_cp = strict.dependencies(cp_cache, project_id, lambda: dependency_classpath(project_root, out_dir, args.timeout), out_dir)
+    else:
+        dep_cp = cp_cache.setdefault(project_id, dependency_classpath(project_root, out_dir, args.timeout))
     cp_parts = discovered_cp + ([dep_cp] if dep_cp else []) + junit_classpath()
+    if strict.enabled(args):
+        cp_parts = junit_classpath() + discovered_cp + ([dep_cp] if dep_cp else [])
     classpath = os.pathsep.join(part for part in cp_parts if part)
 
     compile_cmd = [
@@ -151,7 +162,8 @@ def run_one(method: dict, args, cp_cache: dict[str, str]) -> dict:
         str(classes_dir),
         "@" + str(source_list),
     ]
-    compile_status, compile_code, compile_output = run(compile_cmd, project_root, args.timeout)
+    invoke = (lambda command, stage: strict.execute(run, command, project_root, args.timeout, out_dir, stage)) if strict.enabled(args) else (lambda command, stage: run(command, project_root, args.timeout))
+    compile_status, compile_code, compile_output = invoke(compile_cmd, "compile")
     (out_dir / "compile.log").write_text(compile_output, encoding="utf-8")
     if compile_status != "ok":
         return {
@@ -168,30 +180,34 @@ def run_one(method: dict, args, cp_cache: dict[str, str]) -> dict:
     run_cp = os.pathsep.join([str(classes_dir), classpath])
     test_cmd = [
         "java",
-        f"-javaagent:{args.jacoco_agent}=destfile={exec_file}",
+        f"-javaagent:{args.jacoco_agent}=destfile={exec_file}" + (",append=false" if strict.enabled(args) else ""),
         "-cp",
         run_cp,
         "org.junit.runner.JUnitCore",
         test_class,
     ]
-    test_status, test_code, test_output = run(test_cmd, project_root, args.timeout)
+    test_status, test_code, test_output = invoke(test_cmd, "junit")
     (out_dir / "junit.log").write_text(test_output, encoding="utf-8")
 
     xml_file = xml_dir / "jacoco.xml"
     report_cmd = ["java", "-jar", args.jacoco_cli, "report", str(exec_file)]
-    for class_dir in discovered_cp:
+    for class_dir in report_cp:
         report_cmd.extend(["--classfiles", class_dir])
     for source_root in ["src/main/java", "core/src/java", "src/java"]:
         candidate = project_root / source_root
         if candidate.exists():
             report_cmd.extend(["--sourcefiles", str(candidate)])
     report_cmd.extend(["--xml", str(xml_file)])
-    xml_status, xml_code, xml_output = run(report_cmd, project_root, args.timeout)
+    xml_status, xml_code, xml_output = invoke(report_cmd, "jacoco_report")
     (out_dir / "jacoco_report.log").write_text(xml_output, encoding="utf-8")
 
     status_name = "ok" if test_status == "ok" and xml_status == "ok" and report_xml_has_lines(xml_file) else "test_" + test_status
     if xml_status != "ok" or not report_xml_has_lines(xml_file):
         status_name = "coverage_" + xml_status
+    if strict.enabled(args):
+        status_name = strict.junit_status(test_status, test_output)
+        if xml_status != "ok" or not report_xml_has_lines(xml_file):
+            status_name = "coverage_invalid"
     return {
         **base,
         "status": status_name,
@@ -212,13 +228,22 @@ def main():
     parser.add_argument("--jacoco-agent", default="/root/tools/jacocoagent.jar")
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
     parser.add_argument("--timeout", type=int, default=180)
+    parser.add_argument("--strict-evaluation", action="store_true")
+    parser.add_argument("--evaluation-reference-root")
     args = parser.parse_args()
+    if args.strict_evaluation:
+        if not args.evaluation_reference_root:
+            parser.error("Strict evaluation requires --evaluation-reference-root")
+        Path(args.output_dir).resolve().mkdir(parents=True, exist_ok=False)
 
     rows = []
     cp_cache: dict[str, str] = {}
-    for method in read_methods(Path(args.method_list)):
+    methods = strict.frozen_methods(args.method_list) if args.strict_evaluation else read_methods(Path(args.method_list))
+    for method in methods:
         rows.append(run_one(method, args, cp_cache))
     write_table(rows, Path(args.output_dir), "rag_llm_jacoco_summary")
+    if args.strict_evaluation:
+        strict.publish_accepted(rows, methods, Path(args.output_dir), "rag_llm")
     ok = sum(1 for row in rows if row["status"] == "ok")
     print(f"RAG+LLM JaCoCo run status: {ok}/{len(rows)}")
 

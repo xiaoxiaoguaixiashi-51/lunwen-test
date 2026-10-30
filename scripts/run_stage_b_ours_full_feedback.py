@@ -39,6 +39,7 @@ from src.utils.llm_output import extract_fenced_block
 from src.utils.repair_integrity import check_repair_integrity
 from src.utils.dependency_declarations import grounded_context
 from scripts import probe_union_feedback
+from scripts import strict_execution_policy as strict
 
 
 SYSTEM_PROMPT = """You are the coverage-feedback generation stage of Ours Full.
@@ -421,13 +422,20 @@ def run_generated_test(method: dict, test_file: Path, test_class: str, round_dir
     out_dir = round_dir / method["project_id"] / safe_name(f"{method['id']}-{method['fqcn']}")
     classes_dir = out_dir / "classes"
     xml_dir = out_dir / "xml"
-    out_dir.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=not strict.enabled(args))
     classes_dir.mkdir(parents=True, exist_ok=True)
     xml_dir.mkdir(parents=True, exist_ok=True)
 
     discovered_cp = [str(path) for path in discover_classpath_entries(project_root)]
-    dep_cp = cp_cache.setdefault(method["project_id"], dependency_classpath(project_root, out_dir, args.timeout))
+    report_cp = discovered_cp
+    if strict.enabled(args):
+        discovered_cp, report_cp = strict.classpaths(args, method["project_id"], project_root, out_dir)
+        dep_cp = strict.dependencies(cp_cache, method["project_id"], lambda: dependency_classpath(project_root, out_dir, args.timeout), out_dir)
+    else:
+        dep_cp = cp_cache.setdefault(method["project_id"], dependency_classpath(project_root, out_dir, args.timeout))
     cp_parts = discovered_cp + ([dep_cp] if dep_cp else []) + junit_classpath()
+    if strict.enabled(args):
+        cp_parts = junit_classpath() + discovered_cp + ([dep_cp] if dep_cp else [])
     classpath = os.pathsep.join(part for part in cp_parts if part)
 
     compile_cmd = [
@@ -442,7 +450,8 @@ def run_generated_test(method: dict, test_file: Path, test_class: str, round_dir
         str(classes_dir),
         str(test_file),
     ]
-    compile_status, compile_code, compile_output = run(compile_cmd, project_root, args.timeout)
+    invoke = (lambda command, stage: strict.execute(run, command, project_root, args.timeout, out_dir, stage)) if strict.enabled(args) else (lambda command, stage: run(command, project_root, args.timeout))
+    compile_status, compile_code, compile_output = invoke(compile_cmd, "compile")
     (out_dir / "compile.log").write_text(compile_output, encoding="utf-8")
     if compile_status != "ok":
         return {"status": "compile_" + compile_status, "output": compile_output, "test_class": test_class, "xml_file": ""}
@@ -460,25 +469,28 @@ def run_generated_test(method: dict, test_file: Path, test_class: str, round_dir
         "org.junit.runner.JUnitCore",
         fq_test_class,
     ]
-    test_status, test_code, test_output = run(test_cmd, project_root, args.timeout)
+    test_status, test_code, test_output = invoke(test_cmd, "junit")
     (out_dir / "junit.log").write_text(test_output, encoding="utf-8")
 
     xml_file = xml_dir / "jacoco.xml"
     report_cmd = ["java", "-jar", args.jacoco_cli, "report", str(exec_file)]
-    for class_dir in discovered_cp:
+    for class_dir in report_cp:
         report_cmd.extend(["--classfiles", class_dir])
     for source_root in ["src/main/java", "core/src/java", "src/java"]:
         candidate = project_root / source_root
         if candidate.exists():
             report_cmd.extend(["--sourcefiles", str(candidate)])
     report_cmd.extend(["--xml", str(xml_file)])
-    xml_status, _xml_code, xml_output = run(report_cmd, project_root, args.timeout)
+    xml_status, _xml_code, xml_output = invoke(report_cmd, "jacoco_report")
     (out_dir / "jacoco_report.log").write_text(xml_output, encoding="utf-8")
 
     if xml_status != "ok" or not report_xml_has_lines(xml_file):
         return {"status": "coverage_" + xml_status, "output": xml_output, "test_class": fq_test_class, "xml_file": ""}
     if test_status != "ok":
         return {"status": "test_" + test_status, "output": test_output, "test_class": fq_test_class, "xml_file": str(xml_file)}
+    if strict.enabled(args) and strict.junit_status(test_status, test_output) != "ok":
+        return {"status": strict.junit_status(test_status, test_output), "output": test_output,
+                "test_class": fq_test_class, "xml_file": str(xml_file)}
     return {"status": "ok", "output": test_output, "test_class": fq_test_class, "xml_file": str(xml_file)}
 
 
@@ -612,6 +624,8 @@ def main():
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
     parser.add_argument("--timeout", type=int, default=240)
     args = parser.parse_args()
+    args.strict_evaluation = args.exact_exec_union
+    args.evaluation_reference_root = args.exact_reference_root
     probe_union_feedback.validate_exact_mode(args)
     os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output_dir).resolve() / "llm_calls.jsonl"))
     os.environ.setdefault("KCF_EXPERIMENT_STAGE", "coverage_feedback")
