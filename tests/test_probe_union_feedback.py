@@ -128,3 +128,5 @@ class ProbeRoundTest(unittest.TestCase):
             self.assertEqual(first["focal_lines_total"], second["focal_lines_total"])
             self.assertEqual([], read_detail(output / "coverage_round1/focal_method_coverage_detail.csv", "KCF_UTG"))
             self.assertEqual(2, len(json.loads((output / "probe_union_round1/execution_union_manifest.json").read_text())["executions"]))
+            self.assertEqual(1, len(json.loads((output / "probe_union_round0/accepted_xml_index_snapshot.json").read_text())))
+            self.assertEqual(2, len(json.loads((output / "probe_union_round1/accepted_xml_index_snapshot.json").read_text())))

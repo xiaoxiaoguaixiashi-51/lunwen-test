@@ -116,6 +116,7 @@ def merge_accepted_coverage(args):
     """Shared implementation for offline recomputation and feedback round scoring."""
     if args.output_dir.exists():
         raise FileExistsError("Preserve previous results: use a new output directory")
+    acceptance_snapshot = (args.accepted_xml_root / "accepted_xml_index.json").read_bytes()
     items = json.loads(args.method_list.read_text(encoding="utf-8"))
     methods = {item["id"]: item for item in items}
     if len(methods) != len(items):
@@ -136,6 +137,7 @@ def merge_accepted_coverage(args):
         if digest(args.reference_root / "xml" / project / "jacoco.xml") != project_refs[project]["xml_sha256"]:
             raise ValueError("Frozen reference XML changed")
     args.output_dir.mkdir(parents=True)
+    (args.output_dir / "accepted_xml_index_snapshot.json").write_bytes(acceptance_snapshot)
     prefix = [args.java, "-jar", str(args.jacoco_cli)]
     for project in sorted({item["project_id"] for item in items}):
         folder = args.output_dir / "xml" / project
@@ -149,6 +151,12 @@ def merge_accepted_coverage(args):
         command(prefix + ["report"] + ([str(merged)] if files else [])
                 + ["--classfiles", str(classes), "--xml", str(folder / "jacoco.xml")], folder / "report.log")
     focal = load_focal_methods(args.method_list, None, [])
+    if (args.accepted_xml_root / "accepted_xml_index.json").read_bytes() != acceptance_snapshot:
+        raise ValueError("Acceptance index changed during round scoring")
+    for record in records:
+        for field, hash_field in (("exec_file", "exec_sha256"), ("xml_file", "xml_sha256"), ("junit_log", "junit_log_sha256")):
+            if digest(Path(record[field])) != record[hash_field]:
+                raise ValueError("Execution evidence changed during round scoring")
     baseline = load_coverage_xmls(args.reference_root / "xml")
     evaluation_dir = getattr(args, "evaluation_dir", None) or args.output_dir / "evaluation"
     approach_name = getattr(args, "approach_name", "Exact_exec_union")
@@ -156,7 +164,8 @@ def merge_accepted_coverage(args):
                   evaluation_dir, reference=baseline)
     manifest = {"kind": "offline_accepted_suite_probe_union_not_new_generation",
                 "method_list_sha256": digest(args.method_list), "jacoco_cli_sha256": digest(args.jacoco_cli),
-                "accepted_index_sha256": digest(args.accepted_xml_root / "accepted_xml_index.json"),
+                "accepted_index_sha256": hashlib.sha256(acceptance_snapshot).hexdigest(),
+                "accepted_index_snapshot": "accepted_xml_index_snapshot.json",
                 "executions": records, "project_reference": reference, "approach_name": approach_name}
     (args.output_dir / "execution_union_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return json.loads((evaluation_dir / "focal_method_coverage_summary.json").read_text(encoding="utf-8"))
