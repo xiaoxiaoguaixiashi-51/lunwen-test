@@ -1,0 +1,994 @@
+{
+  "kind": "api_cost_index_not_full_compute_budget",
+  "totals": {
+    "trace_events": 48,
+    "provider_attempts": 48,
+    "budget_blocked": 0,
+    "unknown_usage_attempts": 0,
+    "recorded_sdk_retries_not_zero": 0
+  },
+  "known_usage_totals": {
+    "prompt_tokens": 346581,
+    "completion_tokens": 123445,
+    "total_tokens": 470026,
+    "prompt_cache_hit_tokens": 267258,
+    "prompt_cache_miss_tokens": 79323
+  },
+  "legacy_events_with_inferred_attempt_flag": 48,
+  "monetary_cost": null,
+  "non_api_costs_measured": false,
+  "full_usage_known": true,
+  "notes": [
+    "Unknown usage is not zero cost",
+    "SDK retries must be zero for strict attempt accounting",
+    "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+  ],
+  "by_target_stage": [
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7484,
+        "completion_tokens": 1999,
+        "total_tokens": 9483,
+        "prompt_cache_hit_tokens": 2688,
+        "prompt_cache_miss_tokens": 4796
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.055606
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7507,
+        "completion_tokens": 1999,
+        "total_tokens": 9506,
+        "prompt_cache_hit_tokens": 2816,
+        "prompt_cache_miss_tokens": 4691
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.435655
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 6871,
+        "completion_tokens": 1999,
+        "total_tokens": 8870,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 6871
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.39712
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r1__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7497,
+        "completion_tokens": 1999,
+        "total_tokens": 9496,
+        "prompt_cache_hit_tokens": 2688,
+        "prompt_cache_miss_tokens": 4809
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.24497
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7484,
+        "completion_tokens": 1999,
+        "total_tokens": 9483,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 188
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.170404
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7507,
+        "completion_tokens": 1999,
+        "total_tokens": 9506,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 211
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.142857
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 6871,
+        "completion_tokens": 1999,
+        "total_tokens": 8870,
+        "prompt_cache_hit_tokens": 6656,
+        "prompt_cache_miss_tokens": 215
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.214698
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r2__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7497,
+        "completion_tokens": 1999,
+        "total_tokens": 9496,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 201
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 5.919306
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7484,
+        "completion_tokens": 1999,
+        "total_tokens": 9483,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 188
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.118837
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7507,
+        "completion_tokens": 1999,
+        "total_tokens": 9506,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 211
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.177362
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 6871,
+        "completion_tokens": 1999,
+        "total_tokens": 8870,
+        "prompt_cache_hit_tokens": 6656,
+        "prompt_cache_miss_tokens": 215
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.068168
+    },
+    {
+      "target_id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic__r3__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7497,
+        "completion_tokens": 1999,
+        "total_tokens": 9496,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 201
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 6.269428
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8162,
+        "completion_tokens": 3084,
+        "total_tokens": 11246,
+        "prompt_cache_hit_tokens": 3328,
+        "prompt_cache_miss_tokens": 4834
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.311554
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8192,
+        "completion_tokens": 3084,
+        "total_tokens": 11276,
+        "prompt_cache_hit_tokens": 3456,
+        "prompt_cache_miss_tokens": 4736
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.134312
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7549,
+        "completion_tokens": 3084,
+        "total_tokens": 10633,
+        "prompt_cache_hit_tokens": 3328,
+        "prompt_cache_miss_tokens": 4221
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.299391
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r1__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8143,
+        "completion_tokens": 3084,
+        "total_tokens": 11227,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 8143
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.74095
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8162,
+        "completion_tokens": 3084,
+        "total_tokens": 11246,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 226
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 8.969439
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8192,
+        "completion_tokens": 3084,
+        "total_tokens": 11276,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 256
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.013203
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7549,
+        "completion_tokens": 3084,
+        "total_tokens": 10633,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 253
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 8.912516
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r2__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8143,
+        "completion_tokens": 3084,
+        "total_tokens": 11227,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 207
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.069829
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8162,
+        "completion_tokens": 3084,
+        "total_tokens": 11246,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 226
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.347837
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8192,
+        "completion_tokens": 3084,
+        "total_tokens": 11276,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 256
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.016653
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 7549,
+        "completion_tokens": 3084,
+        "total_tokens": 10633,
+        "prompt_cache_hit_tokens": 7296,
+        "prompt_cache_miss_tokens": 253
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.276524
+    },
+    {
+      "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment__r3__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 8143,
+        "completion_tokens": 3084,
+        "total_tokens": 11227,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 207
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 9.063635
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3703,
+        "completion_tokens": 1432,
+        "total_tokens": 5135,
+        "prompt_cache_hit_tokens": 1664,
+        "prompt_cache_miss_tokens": 2039
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.606117
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3726,
+        "completion_tokens": 1432,
+        "total_tokens": 5158,
+        "prompt_cache_hit_tokens": 1664,
+        "prompt_cache_miss_tokens": 2062
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.617279
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3090,
+        "completion_tokens": 1432,
+        "total_tokens": 4522,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 3090
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.410856
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r1__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3715,
+        "completion_tokens": 1432,
+        "total_tokens": 5147,
+        "prompt_cache_hit_tokens": 2176,
+        "prompt_cache_miss_tokens": 1539
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.782815
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3703,
+        "completion_tokens": 1432,
+        "total_tokens": 5135,
+        "prompt_cache_hit_tokens": 3456,
+        "prompt_cache_miss_tokens": 247
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.70934
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3726,
+        "completion_tokens": 1432,
+        "total_tokens": 5158,
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 142
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.567321
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3090,
+        "completion_tokens": 1432,
+        "total_tokens": 4522,
+        "prompt_cache_hit_tokens": 2944,
+        "prompt_cache_miss_tokens": 146
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.452381
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r2__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3715,
+        "completion_tokens": 1432,
+        "total_tokens": 5147,
+        "prompt_cache_hit_tokens": 3581,
+        "prompt_cache_miss_tokens": 134
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.291342
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3703,
+        "completion_tokens": 1432,
+        "total_tokens": 5135,
+        "prompt_cache_hit_tokens": 3456,
+        "prompt_cache_miss_tokens": 247
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.679257
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3726,
+        "completion_tokens": 1432,
+        "total_tokens": 5158,
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 142
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.671174
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3090,
+        "completion_tokens": 1432,
+        "total_tokens": 4522,
+        "prompt_cache_hit_tokens": 2944,
+        "prompt_cache_miss_tokens": 146
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.571908
+    },
+    {
+      "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct__r3__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 3715,
+        "completion_tokens": 1432,
+        "total_tokens": 5147,
+        "prompt_cache_hit_tokens": 3581,
+        "prompt_cache_miss_tokens": 134
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 4.511871
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10120,
+        "completion_tokens": 3781,
+        "total_tokens": 13901,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 10120
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.062586
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10135,
+        "completion_tokens": 3781,
+        "total_tokens": 13916,
+        "prompt_cache_hit_tokens": 6144,
+        "prompt_cache_miss_tokens": 3991
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.073709
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 9507,
+        "completion_tokens": 3785,
+        "total_tokens": 13292,
+        "prompt_cache_hit_tokens": 6144,
+        "prompt_cache_miss_tokens": 3363
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.160452
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r1__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10126,
+        "completion_tokens": 3785,
+        "total_tokens": 13911,
+        "prompt_cache_hit_tokens": 6144,
+        "prompt_cache_miss_tokens": 3982
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 10.990639
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10120,
+        "completion_tokens": 3794,
+        "total_tokens": 13914,
+        "prompt_cache_hit_tokens": 9984,
+        "prompt_cache_miss_tokens": 136
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 10.87927
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10135,
+        "completion_tokens": 3775,
+        "total_tokens": 13910,
+        "prompt_cache_hit_tokens": 9984,
+        "prompt_cache_miss_tokens": 151
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.027947
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 9507,
+        "completion_tokens": 3785,
+        "total_tokens": 13292,
+        "prompt_cache_hit_tokens": 9344,
+        "prompt_cache_miss_tokens": 163
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.072612
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r2__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10126,
+        "completion_tokens": 3721,
+        "total_tokens": 13847,
+        "prompt_cache_hit_tokens": 9984,
+        "prompt_cache_miss_tokens": 142
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 10.96701
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__F",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10120,
+        "completion_tokens": 3721,
+        "total_tokens": 13841,
+        "prompt_cache_hit_tokens": 9984,
+        "prompt_cache_miss_tokens": 136
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 10.647881
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__L",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10135,
+        "completion_tokens": 3781,
+        "total_tokens": 13916,
+        "prompt_cache_hit_tokens": 9984,
+        "prompt_cache_miss_tokens": 151
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.54347
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__N",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 9507,
+        "completion_tokens": 3781,
+        "total_tokens": 13288,
+        "prompt_cache_hit_tokens": 9344,
+        "prompt_cache_miss_tokens": 163
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.367817
+    },
+    {
+      "target_id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html__r3__T",
+      "stage": "knowledge_selection_development_diagnostic",
+      "trace_events": 1,
+      "provider_attempts": 1,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0,
+      "usage": {
+        "prompt_tokens": 10126,
+        "completion_tokens": 3775,
+        "total_tokens": 13901,
+        "prompt_cache_hit_tokens": 9984,
+        "prompt_cache_miss_tokens": 142
+      },
+      "status_counts": {
+        "ok": 1
+      },
+      "provider_elapsed_seconds": 11.190824
+    }
+  ],
+  "trace_input_sha256": {
+    "results\\knowledge_diagnostic_20261030\\knowledge_diagnostic_generation_20261030.tgz::knowledge_diagnostic_20261030/llm_calls.jsonl": {
+      "archive_sha256": "3691060a645f9b317c691fb95ae687e0f3b22af06a137b6b8b3b5a0e069a7fb4",
+      "trace_sha256": "f6281f52392cbe1ab3162afecb197b478a6f272b557efcfd280358b6a61734d7"
+    }
+  }
+}

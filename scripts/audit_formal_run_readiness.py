@@ -73,7 +73,7 @@ def audit(root):
                              for p in (manifest_path, pilot_path, historical_path)},
             "variants": matrix, "sample_use_ledger": ledger,
             "blocking_gaps": ["formal_compute_budget_and_stop_rules_not_frozen",
-                              "hard_cross_stage_budget_enforcement_not_implemented",
+                              "shared_budget_guard_exists_but_formal_limits_not_frozen_or_enabled",
                               "per_round_exact_exec_union_not_integrated",
                               "remaining_35_methods_not_verified_unseen",
                               "new_methodological_contribution_not_established",

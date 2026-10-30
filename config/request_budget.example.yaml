@@ -1,0 +1,12 @@
+# Merge this section into a NEW private experiment config only after protocol freeze.
+# These are illustrative ceilings, not approved formal experiment budgets.
+# One absolute ledger path per variant/repetition; identical path in every stage.
+request_budget:
+  ledger_path: /root/autodl-tmp/example-budget-run/budget.sqlite
+  tokenizer_json: /root/autodl-tmp/example-budget-run/tokenizer.json
+  tokenizer_sha256: 89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614
+  framing_reserve: 256
+  max_calls_per_target: 12
+  max_total_tokens_per_target: 240000
+  max_input_tokens_per_call: 12000
+  max_output_tokens_per_call: 8192

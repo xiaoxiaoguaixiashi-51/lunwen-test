@@ -9,6 +9,7 @@ import time
 import uuid
 from contextlib import contextmanager
 from contextvars import ContextVar
+from src.utils.request_budget import load_budget, BudgetExceeded
 
 TRACE_LOCK = threading.Lock()
 TRACE_TARGET = ContextVar("kcf_trace_target", default=None)
@@ -77,21 +78,33 @@ class LLMClient:
         if self.trace_path:
             Path(self.trace_path).parent.mkdir(parents=True, exist_ok=True)
         self.max_retries = llm_config.get("max_retries", "sdk_default")
+        self.budget, self.count_budget_input = load_budget(config, self.model)
+        if self.budget is not None and (self.max_retries != 0 or not self.trace_path):
+            raise ValueError("Budgeted runs require max_retries=0 and KCF_LLM_TRACE_PATH")
 
     def chat(self, messages: list[dict], temperature: float = None, max_tokens: int = None) -> str:
         """发送聊天请求，返回助手回复文本。"""
         request = {"model": self.model, "messages": messages,
                    "temperature": self.temperature if temperature is None else temperature,
                    "max_tokens": self.max_tokens if max_tokens is None else max_tokens}
+        requested_max_tokens = request["max_tokens"]
+        if self.budget is not None:
+            request["max_tokens"] = min(request["max_tokens"], self.budget.policy["max_output_tokens_per_call"])
         if self.thinking is not None:
             request["extra_body"] = {"thinking": {"type": self.thinking}}
         event = {"call_id": uuid.uuid4().hex, "started_at": datetime.now(timezone.utc).isoformat(),
                  "target_id": TRACE_TARGET.get(),
                  "stage": os.environ.get("KCF_EXPERIMENT_STAGE"), "request": request,
-                 "sdk_max_retries": self.max_retries}
+                 "sdk_max_retries": self.max_retries, "provider_call_attempted": False}
         started = time.monotonic()
         response = None
+        reservation = None
         try:
+            if self.budget is not None:
+                reservation = self.budget.reserve(event["call_id"], event["target_id"], event["stage"],
+                                                  self.count_budget_input(messages), request["max_tokens"])
+                event["budget"] = {**reservation, "requested_max_output": requested_max_tokens}
+            event["provider_call_attempted"] = True
             response = self.client.chat.completions.create(**request)
             choice = response.choices[0]
             content = choice.message.content or ""
@@ -103,7 +116,7 @@ class LLMClient:
                 return content
             raise RuntimeError("LLM returned empty message content; inspect finish_reason and token budget")
         except Exception as exc:
-            event.update(status="error", error_type=type(exc).__name__,
+            event.update(status="budget_blocked" if isinstance(exc, BudgetExceeded) else "error", error_type=type(exc).__name__,
                          status_code=getattr(exc, "status_code", None))
             raise
         finally:
@@ -112,6 +125,8 @@ class LLMClient:
             event["usage"] = {key: getattr(usage, key, None) for key in (
                 "prompt_tokens", "completion_tokens", "total_tokens",
                 "prompt_cache_hit_tokens", "prompt_cache_miss_tokens")}
+            if reservation is not None:
+                event["budget_settlement"] = self.budget.settle(event["call_id"], event["usage"])
             if self.trace_path:
                 line = json.dumps(event, ensure_ascii=False)
                 if self._trace_secret:
