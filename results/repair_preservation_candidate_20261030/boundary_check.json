@@ -1,0 +1,33 @@
+{
+  "kind": "candidate_problem_boundary_check_not_mechanism_validation",
+  "api_calls": 0,
+  "synthetic_ast_only_not_compiled_or_runtime_verified": {
+    "before": "import org.junit.Test; import static org.junit.Assert.*;\npublic class DemoTest {\n @Test public void checks() {\n  Receipt r = service.submit(order);\n  assertEquals(\"SENT\", r.status());\n  assertEquals(3, r.count());\n }\n}",
+    "after": "import org.junit.Test; import static org.junit.Assert.*;\npublic class DemoTest {\n @Test public void checks() {\n  Receipt r = service.submit(order);\n  assertNotNull(r.status());\n  assertEquals(2, r.count());\n }\n}",
+    "structural_result": {
+      "ok": true,
+      "errors": [],
+      "test_count_before": 1,
+      "test_count_after": 1,
+      "semantic_review_required": true
+    }
+  },
+  "real_saved_pair": {
+    "archive_sha256": "70e005b10d50466618f20ad1b56fba25de90a02a04aeb2091564d5ca2142c8d2",
+    "member_original": "kcf-development-pilot-v1-20261030/Full/seed_repair/cases/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/original.java.txt",
+    "original_sha256": "24ae7ed43828c56780734c7d47301c3dfdfbba74d173c971f896ccd9de5852b5",
+    "repair_sha256": "a80e590eca7f1504e1ccb0f6f304b6c74c36dfbd2db2805beb12451d6655a3b8",
+    "structural_result": {
+      "ok": false,
+      "errors": [
+        "Reduced assertions/expected-exception checks: (('CSVPrinterPrintCommentTest',), 'test_printComment_commentMarkerSetButEmpty_throwsNoSuchElementException')"
+      ],
+      "test_count_before": 14,
+      "test_count_after": 14,
+      "semantic_review_required": true
+    },
+    "semantic_correctness_not_yet_established": true
+  },
+  "production_mechanism_implemented": false,
+  "novelty_established": false
+}
