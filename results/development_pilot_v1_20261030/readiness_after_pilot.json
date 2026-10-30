@@ -1,0 +1,742 @@
+{
+  "kind": "formal_run_preparation_not_execution",
+  "api_calls": 0,
+  "formal_run_ready": false,
+  "method_count": 41,
+  "known_development_methods": 6,
+  "remaining_unseen_status_unresolved": 35,
+  "verified_independent_holdout_methods": 0,
+  "evosuite_generation_class_count": 35,
+  "evosuite_class_groups": [
+    {
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Option",
+      "focal_method_ids": [
+        "commons-cli-commons-cli-org-apache-commons-cli-option-tostring"
+      ]
+    },
+    {
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.OptionGroup",
+      "focal_method_ids": [
+        "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring"
+      ]
+    },
+    {
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Parser",
+      "focal_method_ids": [
+        "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs"
+      ]
+    },
+    {
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.PatternOptionBuilder",
+      "focal_method_ids": [
+        "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern"
+      ]
+    },
+    {
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.TypeHandler",
+      "focal_method_ids": [
+        "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+        "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject"
+      ]
+    },
+    {
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.ColognePhonetic",
+      "focal_method_ids": [
+        "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic"
+      ]
+    },
+    {
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.MatchRatingApproachEncoder",
+      "focal_method_ids": [
+        "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals"
+      ]
+    },
+    {
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.Metaphone",
+      "focal_method_ids": [
+        "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone"
+      ]
+    },
+    {
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.Nysiis",
+      "focal_method_ids": [
+        "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis"
+      ]
+    },
+    {
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.bm.Lang",
+      "focal_method_ids": [
+        "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.IteratorUtils",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.MapUtils",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.bag.AbstractMapBag",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InstantiateTransformer",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InvokerTransformer",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.PrototypeFactory",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.iterators.CartesianProductIterator",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.list.TreeList",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.properties.OrderedProperties",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.trie.AbstractPatriciaTrie$TrieEntry",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring"
+      ]
+    },
+    {
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer",
+      "focal_method_ids": [
+        "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex"
+      ]
+    },
+    {
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "focal_method_ids": [
+        "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+        "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+        "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring"
+      ]
+    },
+    {
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVPrinter",
+      "focal_method_ids": [
+        "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment"
+      ]
+    },
+    {
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.ExtendedBufferedReader",
+      "focal_method_ids": [
+        "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Document",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-document-cancontaincontent"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Element",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-element-getnamespacesinscope"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Verifier",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.input.sax.SAXHandler",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.internal.ReflectionConstructor",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.output.Format",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+        "jdom2-jdom2-org-jdom2-output-format-escapetext"
+      ]
+    },
+    {
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.xpath.XPath",
+      "focal_method_ids": [
+        "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+        "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass"
+      ]
+    },
+    {
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.context.AbstractHttpWindwardContext",
+      "focal_method_ids": [
+        "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html"
+      ]
+    },
+    {
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.netty.NettyHttpServer",
+      "focal_method_ids": [
+        "windward-windward-org-flmelody-core-netty-nettyhttpserver-run"
+      ]
+    }
+  ],
+  "input_sha256": {
+    "experiments/method_lists/kcf_utg_rq1_methods_v2.json": "0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c",
+    "experiments/method_lists/kcf_six_project_pilot_20261022.json": "94c2ba0a393c5bf7dccfbfc57fcabfab51b0a06d5f1006d7c1138a28c14b1db2",
+    "experiments/method_lists/kcf_utg_rq1_methods_v1.json": "9f61b481f0821177a132aa7704927c3245ddf30ee2b2fdd9b79fdebd3c9ab578"
+  },
+  "variants": [
+    {
+      "variant": "Full",
+      "initial_retrieval": true,
+      "initial_static_guard": true,
+      "seed_repair_flags_required": [],
+      "coverage_feedback_flags_required": [],
+      "feedback_rounds_enabled": true,
+      "is_effective_run_evidence": false
+    },
+    {
+      "variant": "A1",
+      "initial_retrieval": false,
+      "initial_static_guard": true,
+      "seed_repair_flags_required": [
+        "--disable-failure-repair-retrieval"
+      ],
+      "coverage_feedback_flags_required": [
+        "--disable-coverage-gap-retrieval",
+        "--disable-failure-repair-retrieval"
+      ],
+      "feedback_rounds_enabled": true,
+      "is_effective_run_evidence": false
+    },
+    {
+      "variant": "A2",
+      "initial_retrieval": true,
+      "initial_static_guard": true,
+      "seed_repair_flags_required": [],
+      "coverage_feedback_flags_required": [
+        "--disable-coverage-gap-retrieval"
+      ],
+      "feedback_rounds_enabled": true,
+      "is_effective_run_evidence": false
+    },
+    {
+      "variant": "A3",
+      "initial_retrieval": true,
+      "initial_static_guard": false,
+      "seed_repair_flags_required": [
+        "--disable-static-guard"
+      ],
+      "coverage_feedback_flags_required": [
+        "--disable-static-guard"
+      ],
+      "feedback_rounds_enabled": true,
+      "is_effective_run_evidence": false
+    }
+  ],
+  "sample_use_ledger": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-option-tostring",
+      "project_id": "commons-cli",
+      "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "project_id": "commons-cli",
+      "source_sha256": "49c76c02df88195d02a2ab986f9552e3a023e35ba0623106b4a8fc76d299cb47",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "project_id": "commons-cli",
+      "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": true,
+      "remaining_usage_status": "known_development",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "experiments/method_lists/kcf_six_project_pilot_20261022.json"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern",
+      "project_id": "commons-cli",
+      "source_sha256": "18e868e6eafe771342912ff88b95d1ff6a86f8a9124d14d56d1eb1cfd7d661be",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+      "project_id": "commons-cli",
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject",
+      "project_id": "commons-cli",
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource",
+      "project_id": "commons-codec",
+      "source_sha256": "d9bd107f5dd72ede692349877d48d44c90322254eecf607f2376c5434dbf1f5c",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "source_sha256": "09c82bd7bbf95609f7688b90c851cad361dc2603353374f27bee089ff69ccc2a",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": true,
+      "remaining_usage_status": "known_development",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "experiments/method_lists/kcf_six_project_pilot_20261022.json"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals",
+      "project_id": "commons-codec",
+      "source_sha256": "2b5582efb959f8d6f325bc6c17430a9a5922a84b60fb0f22ca194d7882673214",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone",
+      "project_id": "commons-codec",
+      "source_sha256": "b1339dc3015430f5999d60c1990a2b172fd66dbb9afc50c7dbe2778dd0a3217d",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis",
+      "project_id": "commons-codec",
+      "source_sha256": "51f351390fb30e717239235c994980083fdffba901be68f8857a193ba1d972a0",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring",
+      "project_id": "commons-collections4",
+      "source_sha256": "068ba88bebfdbb0566acbd567cd9b89551c8a4817ca3a8172cbda68d794cb561",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices",
+      "project_id": "commons-collections4",
+      "source_sha256": "284162ae08323a5b8bff13ad4f0375ef07b26ef1fa6776da04a62b1c6a5edd11",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+      "project_id": "commons-collections4",
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size",
+      "project_id": "commons-collections4",
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform",
+      "project_id": "commons-collections4",
+      "source_sha256": "f2b48e80cbad116a4482377c65fe352bcab62ff47815a93787bb96416e0a8483",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "source_sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": true,
+      "remaining_usage_status": "known_development",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "experiments/method_lists/kcf_six_project_pilot_20261022.json"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory",
+      "project_id": "commons-collections4",
+      "source_sha256": "e31e2bbb8ab6426f8613d95a116b162c16275ad5ae9f2c0f477aefafb9c93a95",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next",
+      "project_id": "commons-collections4",
+      "source_sha256": "b592df44dc74bbb0fdcf3ba2602c94f1011fe96b6e72112fca3c316893cec8f7",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator",
+      "project_id": "commons-collections4",
+      "source_sha256": "9207abddf8b91d5100ea9da6aa82a74f737fc6a78ed56fe13f6c331e371e9afc",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall",
+      "project_id": "commons-collections4",
+      "source_sha256": "92093e699520ba2bdf38ef491b8019354b1a9f5069c1943079218feefdec38fb",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall",
+      "project_id": "commons-collections4",
+      "source_sha256": "9a7481df6283a1e6aa412bab37da3f65643c46bfc1c831c803f043f1a3305df6",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring",
+      "project_id": "commons-collections4",
+      "source_sha256": "33150f093cd26a0006e26d618a56afd318b82926e1068638e31181a58adc487a",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring",
+      "project_id": "commons-collections4",
+      "source_sha256": "e4cea76991201e8998893fc411b5efab43976ad7f5b03f101d6c8b661b8251ed",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex",
+      "project_id": "commons-collections4",
+      "source_sha256": "13080fb348e25efa874390e88ffd93e738b7be0ba8424addbba64b750f4c085b",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+      "project_id": "commons-csv",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+      "project_id": "commons-csv",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring",
+      "project_id": "commons-csv",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "source_sha256": "3d25f081a271d783a5cc48bb172a72687494e36d2e7e6d272319e6060f783e9f",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": true,
+      "remaining_usage_status": "known_development",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "experiments/method_lists/kcf_six_project_pilot_20261022.json"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline",
+      "project_id": "commons-csv",
+      "source_sha256": "117dc55b49c9aab03f636811b20d0fc67044a993519fc2e13bdcb3ebae697237",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-document-cancontaincontent",
+      "project_id": "jdom2",
+      "source_sha256": "606c68f2a68000cb343f1854e4a898ceee862e17913cb9d519828b1e77cc1908",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "project_id": "jdom2",
+      "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement",
+      "project_id": "jdom2",
+      "source_sha256": "a921a97f49eb12e924f2990e9fa50cdfbec927537004ad5ce396daedf34efb5f",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "source_sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": true,
+      "remaining_usage_status": "known_development",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "experiments/method_lists/kcf_six_project_pilot_20261022.json"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+      "project_id": "jdom2",
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapetext",
+      "project_id": "jdom2",
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata",
+      "project_id": "jdom2",
+      "source_sha256": "ea3c86b9ec67eaf7ea591fa85ecc454524baae768343d72cae5711fa6f2db400",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+      "project_id": "jdom2",
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass",
+      "project_id": "jdom2",
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "source_sha256": "1dcefd92f83629bcec565ec55c567094522226c3676d76ed919123acb903d144",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": true,
+      "remaining_usage_status": "known_development",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "experiments/method_lists/kcf_six_project_pilot_20261022.json"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-netty-nettyhttpserver-run",
+      "project_id": "windward",
+      "source_sha256": "c60d3629f5342b36544a1f035e8f462ab0cc1aef7f0f86e423bdb8355040ebb1",
+      "historical_manifest_member": true,
+      "known_rebuild_development_target": false,
+      "remaining_usage_status": "not_established_as_unseen",
+      "independent_holdout_claim_allowed": false,
+      "evidence": "v1/v2 membership only; no proof of absence of tuning/exposure"
+    }
+  ],
+  "execution_protocol_id": "kcf_rerun_v1_20261030",
+  "execution_protocol_sha256": "4aad7212d22cf5fc9ec2aba3514b2ded782b3ae25649cf687155304878d86a82",
+  "predeclared_formal_repetitions": 5,
+  "blocking_gaps": [
+    "formal_full_dataset_configs_and_dispatch_not_materialized",
+    "shared_budget_enabled_in_development_pilot_not_formal_full_dataset_runs",
+    "strict_execution_policy_implemented_but_formal_run_configuration_not_frozen",
+    "whole_flow_generation_retrieval_and_non_api_cost_accounting_incomplete",
+    "remaining_35_methods_not_verified_unseen",
+    "new_methodological_contribution_not_established",
+    "cross_tool_equal_realized_compute_not_established",
+    "formal_full_dataset_paid_scope_not_started"
+  ]
+}

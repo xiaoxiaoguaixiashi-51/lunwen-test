@@ -1,0 +1,269 @@
+{
+  "kind": "authorized_development_end_to_end_feasibility_not_formal_effectiveness",
+  "results": {
+    "RAG": {
+      "approach": "RAG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "50.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 14,
+      "focal_branch_rate": "82.4%"
+    },
+    "Full": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 32,
+      "focal_line_rate": "88.9%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 17,
+      "focal_branch_rate": "100.0%"
+    },
+    "A1": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 31,
+      "focal_line_rate": "86.1%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 16,
+      "focal_branch_rate": "94.1%"
+    },
+    "A2": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "50.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 15,
+      "focal_branch_rate": "88.2%"
+    },
+    "A3": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "EvoSuite": {
+      "approach": "EvoSuite",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 10,
+      "focal_line_rate": "27.8%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 2,
+      "focal_branch_rate": "11.8%"
+    }
+  },
+  "api_costs": {
+    "kind": "api_cost_index_not_full_compute_budget",
+    "totals": {
+      "trace_events": 41,
+      "provider_attempts": 40,
+      "budget_blocked": 1,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0
+    },
+    "known_usage_totals": {
+      "prompt_tokens": 210548,
+      "completion_tokens": 62467,
+      "total_tokens": 273015,
+      "prompt_cache_hit_tokens": 24704,
+      "prompt_cache_miss_tokens": 185844
+    },
+    "legacy_events_with_inferred_attempt_flag": 0,
+    "monetary_cost": null,
+    "non_api_costs_measured": false,
+    "full_usage_known": true,
+    "notes": [
+      "Unknown usage is not zero cost",
+      "SDK retries must be zero for strict attempt accounting",
+      "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+    ],
+    "by_target_stage": [
+      {
+        "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "stage": "coverage_feedback",
+        "trace_events": 4,
+        "provider_attempts": 4,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 21455,
+          "completion_tokens": 5372,
+          "total_tokens": 26827,
+          "prompt_cache_hit_tokens": 512,
+          "prompt_cache_miss_tokens": 20943
+        },
+        "status_counts": {
+          "ok": 4
+        },
+        "provider_elapsed_seconds": 19.939151
+      },
+      {
+        "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "stage": "initial_failure_repair",
+        "trace_events": 2,
+        "provider_attempts": 2,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 14270,
+          "completion_tokens": 3907,
+          "total_tokens": 18177,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 14270
+        },
+        "status_counts": {
+          "ok": 2
+        },
+        "provider_elapsed_seconds": 13.996825
+      },
+      {
+        "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "stage": "initial_generation",
+        "trace_events": 12,
+        "provider_attempts": 11,
+        "budget_blocked": 1,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 85882,
+          "completion_tokens": 22757,
+          "total_tokens": 108639,
+          "prompt_cache_hit_tokens": 17408,
+          "prompt_cache_miss_tokens": 68474
+        },
+        "status_counts": {
+          "ok": 11,
+          "budget_blocked": 1
+        },
+        "provider_elapsed_seconds": 101.381595
+      },
+      {
+        "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "stage": "rag_llm_generation",
+        "trace_events": 1,
+        "provider_attempts": 1,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 6103,
+          "completion_tokens": 1462,
+          "total_tokens": 7565,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 6103
+        },
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds": 5.715498
+      },
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "stage": "coverage_feedback",
+        "trace_events": 6,
+        "provider_attempts": 6,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 15069,
+          "completion_tokens": 5345,
+          "total_tokens": 20414,
+          "prompt_cache_hit_tokens": 512,
+          "prompt_cache_miss_tokens": 14557
+        },
+        "status_counts": {
+          "ok": 6
+        },
+        "provider_elapsed_seconds": 21.627106
+      },
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "stage": "initial_failure_repair",
+        "trace_events": 2,
+        "provider_attempts": 2,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 7027,
+          "completion_tokens": 2475,
+          "total_tokens": 9502,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 7027
+        },
+        "status_counts": {
+          "ok": 2
+        },
+        "provider_elapsed_seconds": 8.6309
+      },
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "stage": "initial_generation",
+        "trace_events": 13,
+        "provider_attempts": 13,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 57110,
+          "completion_tokens": 20016,
+          "total_tokens": 77126,
+          "prompt_cache_hit_tokens": 6272,
+          "prompt_cache_miss_tokens": 50838
+        },
+        "status_counts": {
+          "ok": 13
+        },
+        "provider_elapsed_seconds": 86.274784
+      },
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "stage": "rag_llm_generation",
+        "trace_events": 1,
+        "provider_attempts": 1,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 3632,
+          "completion_tokens": 1133,
+          "total_tokens": 4765,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 3632
+        },
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds": 4.56322
+      }
+    ]
+  },
+  "private_original_unchanged": true,
+  "formal_run_ready": false,
+  "semantic_review_pending_not_auto_approved": true
+}

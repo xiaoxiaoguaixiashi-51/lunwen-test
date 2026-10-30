@@ -28,3 +28,9 @@ RAG+LLM执行入口scripts/run_stage_b_rag_llm_coverage.py，以及EvoSuite执�
 核验中修复两类执行产物问题：合法单行Java源码的package解析；RAG保存文件时擅自给FooSpec/FooTests追加Test后缀，导致文件名与public类名不一致。现在保留实际public类名，包含final等修饰符的声明。没有修改生成测试逻辑，也未覆写历史文件；历史结果受到这些问题影响的范围尚未量化。
 
 execution_timings.jsonl覆盖复制、策略校验、依赖解析、编译、JUnit及报告阶段。它不包括完整生成、检索、人工复核或API费用；因此尚不能宣称全部计算预算公平。正式预算、重复次数、严格执行配置、样本使用边界及实质方法贡献仍待闭合，正式运行准备状态仍为false。
+
+## 真实试跑后的JUnit结果修正
+
+EvoSuite真实CSV套件在进程退出0时没有控制台最终计数，不能据此猜测通过。三种strict执行器现统一编译固定KcfJUnitEvidenceRunner，从JUnitCore返回的Result写junit_result.json；正数且至少有非assumption测试、零失败并正常退出才可采纳。测试关闭System.out也能留下独立结果；提前System.exit或缺失/非法Result不当作成功。原输出保存在junit.process.log，失败栈单独写入并保留给反馈修复；junit.log是带独立结果SHA的规范摘要加诊断文本。规范头优先，原输出里的OK字符串不能覆盖失败计数。
+
+手写关闭System.out的Java夹具已通过三个真实执行器，云端完整212项回归全部通过。保存的六组pilot源码统一零API重评后，真实EvoSuite CSV的37测试、JDom的6测试均通过；修复先前控制台证据缺失导致的低估，主表更新为12/36行、5/17分支。原表和原日志保留。见results/development_pilot_v1_20261030；仍不构成正式效果比较。

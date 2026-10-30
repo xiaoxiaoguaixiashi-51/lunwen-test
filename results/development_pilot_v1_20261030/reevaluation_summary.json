@@ -1,0 +1,304 @@
+{
+  "kind": "saved_pilot_sources_uniform_independent_junit_result_zero_api",
+  "new_api_calls": 0,
+  "results": {
+    "RAG": {
+      "approach": "RAG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "50.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 14,
+      "focal_branch_rate": "82.4%"
+    },
+    "EvoSuite": {
+      "approach": "EvoSuite",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 12,
+      "focal_line_rate": "33.3%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 5,
+      "focal_branch_rate": "29.4%"
+    },
+    "Full": {
+      "approach": "Full",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 32,
+      "focal_line_rate": "88.9%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 17,
+      "focal_branch_rate": "100.0%"
+    },
+    "A1": {
+      "approach": "A1",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 31,
+      "focal_line_rate": "86.1%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 16,
+      "focal_branch_rate": "94.1%"
+    },
+    "A2": {
+      "approach": "A2",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "50.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 15,
+      "focal_branch_rate": "88.2%"
+    },
+    "A3": {
+      "approach": "A3",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    }
+  },
+  "source_hashes": [
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/RAG/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "sha256": "0f4cc0f6df98c084fbe4a7fce0a468de33a9d2a1a1ea768d5d841a7e7db1e5ce",
+      "arm": "RAG"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/RAG/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "sha256": "a98189c6e59664b72c2dc255108d5b1a52e6a928315544c93fcb102c9f938d4c",
+      "arm": "RAG"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/EvoSuite/generated/commons-csv/org.apache.commons.csv.CSVPrinter/org/apache/commons/csv/CSVPrinter_ESTest.java",
+      "sha256": "2e8a51640b44ecef9f6fae89e6092ec81b68b4e1531bdd04c5d626b1570f8190",
+      "arm": "EvoSuite"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/EvoSuite/generated/commons-csv/org.apache.commons.csv.CSVPrinter/org/apache/commons/csv/CSVPrinter_ESTest_scaffolding.java",
+      "sha256": "15ba350c5cd5e2dcee603f5ca956ca05a4046a8f3cdc2ddb833949501e62963d",
+      "arm": "EvoSuite"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/EvoSuite/generated/jdom2/org.jdom2.internal.ReflectionConstructor/org/jdom2/internal/ReflectionConstructor_ESTest.java",
+      "sha256": "e74ed3063970914b9b7f981b3a0510d72b28d48c2cd4c1f3588e51080b33d92a",
+      "arm": "EvoSuite"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/EvoSuite/generated/jdom2/org.jdom2.internal.ReflectionConstructor/org/jdom2/internal/ReflectionConstructor_ESTest_scaffolding.java",
+      "sha256": "a025fffb7f79d066de55702c2601088164ce788ed951d37008aa279852393542",
+      "arm": "EvoSuite"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/source_copies/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "sha256": "24ae7ed43828c56780734c7d47301c3dfdfbba74d173c971f896ccd9de5852b5",
+      "arm": "Full"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/feedback/generated_tests/round1/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/source_copies/incremental/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinter_printComment_CoverageRound1Test.java",
+      "sha256": "339c3ff9dce9f10a96f645c9312ac6506982c6d61eb411ee68c6aeb3e9db59ca",
+      "arm": "Full"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/source_copies/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "sha256": "ec019457036c895dac9754ed87e5808cf662e4103f8d5ed897d7280d4ffef089",
+      "arm": "Full"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/feedback/generated_tests/round1/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/source_copies/incremental/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructor_construct_CoverageRound1Test.java",
+      "sha256": "ef8a53b633811404694c66eaf5c9a38df7128d5b2070eeb357384f2ac747076d",
+      "arm": "Full"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/feedback/generated_tests/round1/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A1/source_copies/incremental/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinter_printComment_CoverageRound1Test.java",
+      "sha256": "396aacc130ac43f30597e3f87452157454b02e69a26dc2078979a89e3dc1f68a",
+      "arm": "A1"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A1/source_copies/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "sha256": "99455ad45980a2cbb61304714184a4e303def6a6f414e76f8cf94f4592b17bf4",
+      "arm": "A1"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/feedback/generated_tests/round1/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A1/source_copies/incremental/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructor_construct_CoverageRound1Test.java",
+      "sha256": "8455371b9b56903018d72d207dc4cc4349f4eb6f044a85aab00963cc9fabafc3",
+      "arm": "A1"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A2/source_copies/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "sha256": "fe6c834d04b2dc5a7ae45441247022eb163e132bd6c5b0b0f032690a96c1239f",
+      "arm": "A2"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A2/source_copies/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "sha256": "dbf466854c0c4fe3295e03153d6605f4c39db3dc4dec6fd05c09503886cc686e",
+      "arm": "A2"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/feedback/generated_tests/round1/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A2/source_copies/incremental/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructor_construct_CoverageRound1Test.java",
+      "sha256": "be68cef220d1d8c9e981b1a9ddec1b7e412e7430113ef5c24bd1a891906b75a1",
+      "arm": "A2"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A3/source_copies/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinterPrintCommentTest.java",
+      "sha256": "f587d50f6683b275b80342dfff304f745f9083016d6e0909ce1895641684ffa5",
+      "arm": "A3"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/feedback/generated_tests/round1/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A3/source_copies/incremental/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment/CSVPrinter_printComment_CoverageRound1Test.java",
+      "sha256": "7a7c7e527911f91bb38641dd33007b4744851bd6240a0e36a63f1af9d3e26681",
+      "arm": "A3"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A3/source_copies/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructorTest.java",
+      "sha256": "e7a254fe479f7ecf0360e9a8f60eaaee6ff0f1d5cbc26cfdb1654f88318dbb17",
+      "arm": "A3"
+    },
+    {
+      "source": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/feedback/generated_tests/round1/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/attempt_0.java.txt",
+      "copy": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A3/source_copies/incremental/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct/ReflectionConstructor_construct_CoverageRound1Test.java",
+      "sha256": "eed8ffcd6939d88ec3523d760a4c9b4fa75d4810105ac3567b474250ea16696b",
+      "arm": "A3"
+    }
+  ],
+  "execution_statuses": {
+    "Full": [
+      {
+        "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "phase": "initial",
+        "status": "test_failed",
+        "test_class": "org.apache.commons.csv.CSVPrinterPrintCommentTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/execution/initial/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml"
+      },
+      {
+        "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "phase": "incremental",
+        "status": "ok",
+        "test_class": "org.apache.commons.csv.CSVPrinter_printComment_CoverageRound1Test",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/execution/incremental/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "initial",
+        "status": "ok",
+        "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/execution/initial/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "incremental",
+        "status": "ok",
+        "test_class": "org.jdom2.internal.ReflectionConstructor_construct_CoverageRound1Test",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/Full/execution/incremental/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      }
+    ],
+    "A1": [
+      {
+        "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "phase": "incremental",
+        "status": "ok",
+        "test_class": "org.apache.commons.csv.CSVPrinter_printComment_CoverageRound1Test",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A1/execution/incremental/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "initial",
+        "status": "ok",
+        "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A1/execution/initial/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "incremental",
+        "status": "ok",
+        "test_class": "org.jdom2.internal.ReflectionConstructor_construct_CoverageRound1Test",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A1/execution/incremental/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      }
+    ],
+    "A2": [
+      {
+        "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "phase": "initial",
+        "status": "ok",
+        "test_class": "org.apache.commons.csv.CSVPrinterPrintCommentTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A2/execution/initial/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "initial",
+        "status": "test_failed",
+        "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A2/execution/initial/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "incremental",
+        "status": "test_failed",
+        "test_class": "org.jdom2.internal.ReflectionConstructor_construct_CoverageRound1Test",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A2/execution/incremental/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      }
+    ],
+    "A3": [
+      {
+        "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "phase": "initial",
+        "status": "test_failed",
+        "test_class": "org.apache.commons.csv.CSVPrinterPrintCommentTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A3/execution/initial/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml"
+      },
+      {
+        "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+        "phase": "incremental",
+        "status": "compile_failed",
+        "test_class": "CSVPrinter_printComment_CoverageRound1Test",
+        "xml_file": ""
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "initial",
+        "status": "test_failed",
+        "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+        "xml_file": "/root/autodl-tmp/kcf-development-pilot-uniform-junit-v2-20261030/A3/execution/initial/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml"
+      },
+      {
+        "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+        "phase": "incremental",
+        "status": "compile_failed",
+        "test_class": "ReflectionConstructor_construct_CoverageRound1Test",
+        "xml_file": ""
+      }
+    ]
+  },
+  "repair_candidates_still_pending_excluded": true,
+  "formal_run_ready": false
+}

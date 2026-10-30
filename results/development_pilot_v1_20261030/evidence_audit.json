@@ -1,0 +1,2485 @@
+{
+  "kind": "two_development_targets_live_feasibility_audit_not_formal_results",
+  "results": {
+    "RAG": {
+      "approach": "RAG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "50.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 14,
+      "focal_branch_rate": "82.4%"
+    },
+    "Full": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 32,
+      "focal_line_rate": "88.9%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 17,
+      "focal_branch_rate": "100.0%"
+    },
+    "A1": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 31,
+      "focal_line_rate": "86.1%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 16,
+      "focal_branch_rate": "94.1%"
+    },
+    "A2": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 18,
+      "focal_line_rate": "50.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 15,
+      "focal_branch_rate": "88.2%"
+    },
+    "A3": {
+      "approach": "KCF_UTG",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "EvoSuite": {
+      "approach": "EvoSuite",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 36,
+      "focal_lines_covered": 10,
+      "focal_line_rate": "27.8%",
+      "focal_branches_total": 17,
+      "focal_branches_covered": 2,
+      "focal_branch_rate": "11.8%"
+    }
+  },
+  "api_costs_by_arm": {
+    "Full": {
+      "kind": "api_cost_index_not_full_compute_budget",
+      "totals": {
+        "trace_events": 9,
+        "provider_attempts": 9,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0
+      },
+      "known_usage_totals": {
+        "prompt_tokens": 51894,
+        "completion_tokens": 15196,
+        "total_tokens": 67090,
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 51766
+      },
+      "legacy_events_with_inferred_attempt_flag": 0,
+      "monetary_cost": null,
+      "non_api_costs_measured": false,
+      "full_usage_known": true,
+      "notes": [
+        "Unknown usage is not zero cost",
+        "SDK retries must be zero for strict attempt accounting",
+        "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+      ],
+      "by_target_stage": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 5389,
+            "completion_tokens": 1529,
+            "total_tokens": 6918,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 5389
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 5.908959
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_failure_repair",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 7159,
+            "completion_tokens": 2064,
+            "total_tokens": 9223,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 7159
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 7.08313
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 3,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 23726,
+            "completion_tokens": 5918,
+            "total_tokens": 29644,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 23726
+          },
+          "status_counts": {
+            "ok": 3
+          },
+          "provider_elapsed_seconds": 25.925445
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 2606,
+            "completion_tokens": 884,
+            "total_tokens": 3490,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 2606
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 3.738623
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 3,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 13014,
+            "completion_tokens": 4801,
+            "total_tokens": 17815,
+            "prompt_cache_hit_tokens": 128,
+            "prompt_cache_miss_tokens": 12886
+          },
+          "status_counts": {
+            "ok": 3
+          },
+          "provider_elapsed_seconds": 20.758781
+        }
+      ]
+    },
+    "A1": {
+      "kind": "api_cost_index_not_full_compute_budget",
+      "totals": {
+        "trace_events": 8,
+        "provider_attempts": 7,
+        "budget_blocked": 1,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0
+      },
+      "known_usage_totals": {
+        "prompt_tokens": 32645,
+        "completion_tokens": 12476,
+        "total_tokens": 45121,
+        "prompt_cache_hit_tokens": 8832,
+        "prompt_cache_miss_tokens": 23813
+      },
+      "legacy_events_with_inferred_attempt_flag": 0,
+      "monetary_cost": null,
+      "non_api_costs_measured": false,
+      "full_usage_known": true,
+      "notes": [
+        "Unknown usage is not zero cost",
+        "SDK retries must be zero for strict attempt accounting",
+        "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+      ],
+      "by_target_stage": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 4742,
+            "completion_tokens": 1392,
+            "total_tokens": 6134,
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 4230
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 5.147982
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 2,
+          "budget_blocked": 1,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 12827,
+            "completion_tokens": 5031,
+            "total_tokens": 17858,
+            "prompt_cache_hit_tokens": 5760,
+            "prompt_cache_miss_tokens": 7067
+          },
+          "status_counts": {
+            "ok": 2,
+            "budget_blocked": 1
+          },
+          "provider_elapsed_seconds": 22.801579
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 1951,
+            "completion_tokens": 983,
+            "total_tokens": 2934,
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 1439
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 4.029406
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 3,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 13125,
+            "completion_tokens": 5070,
+            "total_tokens": 18195,
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 11077
+          },
+          "status_counts": {
+            "ok": 3
+          },
+          "provider_elapsed_seconds": 22.397353
+        }
+      ]
+    },
+    "A2": {
+      "kind": "api_cost_index_not_full_compute_budget",
+      "totals": {
+        "trace_events": 9,
+        "provider_attempts": 9,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0
+      },
+      "known_usage_totals": {
+        "prompt_tokens": 46963,
+        "completion_tokens": 13709,
+        "total_tokens": 60672,
+        "prompt_cache_hit_tokens": 7936,
+        "prompt_cache_miss_tokens": 39027
+      },
+      "legacy_events_with_inferred_attempt_flag": 0,
+      "monetary_cost": null,
+      "non_api_costs_measured": false,
+      "full_usage_known": true,
+      "notes": [
+        "Unknown usage is not zero cost",
+        "SDK retries must be zero for strict attempt accounting",
+        "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+      ],
+      "by_target_stage": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 3,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 24701,
+            "completion_tokens": 5755,
+            "total_tokens": 30456,
+            "prompt_cache_hit_tokens": 5888,
+            "prompt_cache_miss_tokens": 18813
+          },
+          "status_counts": {
+            "ok": 3
+          },
+          "provider_elapsed_seconds": 26.401631000000002
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "trace_events": 2,
+          "provider_attempts": 2,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 5244,
+            "completion_tokens": 1864,
+            "total_tokens": 7108,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 5244
+          },
+          "status_counts": {
+            "ok": 2
+          },
+          "provider_elapsed_seconds": 7.034852000000001
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_failure_repair",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 3606,
+            "completion_tokens": 1343,
+            "total_tokens": 4949,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 3606
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 4.701691
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 3,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 13412,
+            "completion_tokens": 4747,
+            "total_tokens": 18159,
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 11364
+          },
+          "status_counts": {
+            "ok": 3
+          },
+          "provider_elapsed_seconds": 20.25701
+        }
+      ]
+    },
+    "A3": {
+      "kind": "api_cost_index_not_full_compute_budget",
+      "totals": {
+        "trace_events": 13,
+        "provider_attempts": 13,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0
+      },
+      "known_usage_totals": {
+        "prompt_tokens": 69311,
+        "completion_tokens": 18491,
+        "total_tokens": 87802,
+        "prompt_cache_hit_tokens": 7808,
+        "prompt_cache_miss_tokens": 61503
+      },
+      "legacy_events_with_inferred_attempt_flag": 0,
+      "monetary_cost": null,
+      "non_api_costs_measured": false,
+      "full_usage_known": true,
+      "notes": [
+        "Unknown usage is not zero cost",
+        "SDK retries must be zero for strict attempt accounting",
+        "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+      ],
+      "by_target_stage": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "trace_events": 2,
+          "provider_attempts": 2,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 11324,
+            "completion_tokens": 2451,
+            "total_tokens": 13775,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 11324
+          },
+          "status_counts": {
+            "ok": 2
+          },
+          "provider_elapsed_seconds": 8.88221
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_failure_repair",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 7111,
+            "completion_tokens": 1843,
+            "total_tokens": 8954,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 7111
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 6.913695
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "trace_events": 3,
+          "provider_attempts": 3,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 24628,
+            "completion_tokens": 6053,
+            "total_tokens": 30681,
+            "prompt_cache_hit_tokens": 5760,
+            "prompt_cache_miss_tokens": 18868
+          },
+          "status_counts": {
+            "ok": 3
+          },
+          "provider_elapsed_seconds": 26.252940000000002
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "trace_events": 2,
+          "provider_attempts": 2,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 5268,
+            "completion_tokens": 1614,
+            "total_tokens": 6882,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 5268
+          },
+          "status_counts": {
+            "ok": 2
+          },
+          "provider_elapsed_seconds": 6.824225
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_failure_repair",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 3421,
+            "completion_tokens": 1132,
+            "total_tokens": 4553,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 3421
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 3.929209
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "trace_events": 4,
+          "provider_attempts": 4,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 17559,
+            "completion_tokens": 5398,
+            "total_tokens": 22957,
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 15511
+          },
+          "status_counts": {
+            "ok": 4
+          },
+          "provider_elapsed_seconds": 22.861639999999998
+        }
+      ]
+    },
+    "RAG": {
+      "kind": "api_cost_index_not_full_compute_budget",
+      "totals": {
+        "trace_events": 2,
+        "provider_attempts": 2,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0
+      },
+      "known_usage_totals": {
+        "prompt_tokens": 9735,
+        "completion_tokens": 2595,
+        "total_tokens": 12330,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 9735
+      },
+      "legacy_events_with_inferred_attempt_flag": 0,
+      "monetary_cost": null,
+      "non_api_costs_measured": false,
+      "full_usage_known": true,
+      "notes": [
+        "Unknown usage is not zero cost",
+        "SDK retries must be zero for strict attempt accounting",
+        "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+      ],
+      "by_target_stage": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "rag_llm_generation",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 6103,
+            "completion_tokens": 1462,
+            "total_tokens": 7565,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 6103
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 5.715498
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "rag_llm_generation",
+          "trace_events": 1,
+          "provider_attempts": 1,
+          "budget_blocked": 0,
+          "unknown_usage_attempts": 0,
+          "recorded_sdk_retries_not_zero": 0,
+          "usage": {
+            "prompt_tokens": 3632,
+            "completion_tokens": 1133,
+            "total_tokens": 4765,
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 3632
+          },
+          "status_counts": {
+            "ok": 1
+          },
+          "provider_elapsed_seconds": 4.56322
+        }
+      ]
+    }
+  },
+  "provider_attempts": 40,
+  "checks_by_arm": {
+    "Full": {
+      "provider_attempts_match_ledger": true,
+      "usage_matches_charged_tokens": true,
+      "ledger_states": {
+        "settled": 9
+      },
+      "effective_switches": {
+        "initial_retrieval": true,
+        "initial_guard": true,
+        "seed_retrieval": true,
+        "seed_guard": true,
+        "feedback_failure_retrieval": true,
+        "feedback_gap_retrieval": true,
+        "feedback_guard": true
+      },
+      "same_config_and_ledger_all_stages": true
+    },
+    "A1": {
+      "provider_attempts_match_ledger": true,
+      "usage_matches_charged_tokens": true,
+      "ledger_states": {
+        "settled": 7
+      },
+      "effective_switches": {
+        "initial_retrieval": false,
+        "initial_guard": true,
+        "seed_retrieval": false,
+        "seed_guard": true,
+        "feedback_failure_retrieval": false,
+        "feedback_gap_retrieval": false,
+        "feedback_guard": true
+      },
+      "same_config_and_ledger_all_stages": true
+    },
+    "A2": {
+      "provider_attempts_match_ledger": true,
+      "usage_matches_charged_tokens": true,
+      "ledger_states": {
+        "settled": 9
+      },
+      "effective_switches": {
+        "initial_retrieval": true,
+        "initial_guard": true,
+        "seed_retrieval": true,
+        "seed_guard": true,
+        "feedback_failure_retrieval": true,
+        "feedback_gap_retrieval": false,
+        "feedback_guard": true
+      },
+      "same_config_and_ledger_all_stages": true
+    },
+    "A3": {
+      "provider_attempts_match_ledger": true,
+      "usage_matches_charged_tokens": true,
+      "ledger_states": {
+        "settled": 13
+      },
+      "effective_switches": {
+        "initial_retrieval": true,
+        "initial_guard": false,
+        "seed_retrieval": true,
+        "seed_guard": false,
+        "feedback_failure_retrieval": true,
+        "feedback_gap_retrieval": true,
+        "feedback_guard": false
+      },
+      "same_config_and_ledger_all_stages": true
+    },
+    "RAG": {
+      "provider_attempts_match_ledger": true,
+      "usage_matches_charged_tokens": true,
+      "ledger_states": {
+        "settled": 2
+      }
+    }
+  },
+  "phase_timings_by_arm": {
+    "Full": {
+      "kind": "phase_wall_time_index_not_full_compute_budget",
+      "full_compute_cost_known": false,
+      "incomplete_spans": 0,
+      "sum_completed_root_seconds": 67.77698746323586,
+      "by_target_stage_phase": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 5.91140840947628,
+          "root_seconds": 5.91140840947628
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.00040411949157714844,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.000496402382850647,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 7.364188201725483,
+          "root_seconds": 7.364188201725483
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 7.718084417283535,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.815779522061348,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.8152047768235207,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0022635236382484436,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 27.766102641820908,
+          "root_seconds": 27.766102641820908
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.950757846236229,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 11.27597825974226,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 3.7433876395225525,
+          "root_seconds": 3.7433876395225525
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0005947798490524292,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 5.60047885030508,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.32919277250766754,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.3286352902650833,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0011833906173706055,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 21.124548114836216,
+          "root_seconds": 21.124548114836216
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.949064150452614,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 8.243074536323547,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": null,
+          "stage": "coverage_feedback",
+          "phase": "round_probe_union_scoring",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.867352455854416,
+          "root_seconds": 1.867352455854416
+        }
+      ],
+      "notes": [
+        "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+        "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+        "returned means Python returned, not compile/test success",
+        "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+      ]
+    },
+    "A1": {
+      "kind": "phase_wall_time_index_not_full_compute_budget",
+      "full_compute_cost_known": false,
+      "incomplete_spans": 0,
+      "sum_completed_root_seconds": 56.71904657781124,
+      "by_target_stage_phase": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 5.151632770895958,
+          "root_seconds": 5.151632770895958
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 1,
+          "inclusive_seconds": 0.027908936142921448,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 1,
+          "inclusive_seconds": 22.850979782640934,
+          "root_seconds": 22.850979782640934
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 7.809008382260799,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 15.013305887579918,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.032702222466469,
+          "root_seconds": 4.032702222466469
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 5.317437395453453,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.3093341961503029,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.30853790044784546,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 22.811306446790695,
+          "root_seconds": 22.811306446790695
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.98483169823885,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 10.196435995399952,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": null,
+          "stage": "coverage_feedback",
+          "phase": "round_probe_union_scoring",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.8724253550171852,
+          "root_seconds": 1.8724253550171852
+        }
+      ],
+      "notes": [
+        "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+        "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+        "returned means Python returned, not compile/test success",
+        "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+      ]
+    },
+    "A2": {
+      "kind": "phase_wall_time_index_not_full_compute_budget",
+      "full_compute_cost_known": false,
+      "incomplete_spans": 0,
+      "sum_completed_root_seconds": 62.58887979388237,
+      "by_target_stage_phase": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 7.325697273015976,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.7762437537312508,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.7745450213551521,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.001031823456287384,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 28.19969606399536,
+          "root_seconds": 28.19969606399536
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 8.339783288538456,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 10.755038142204285,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 3.9868151620030403,
+          "root_seconds": 3.9868151620030403
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0005233213305473328,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 3.3616259321570396,
+          "root_seconds": 3.3616259321570396
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.00047650933265686035,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.705508016049862,
+          "root_seconds": 4.705508016049862
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.564822070300579,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.295157827436924,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.2946619391441345,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.00198914110660553,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 20.569927908480167,
+          "root_seconds": 20.569927908480167
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.329369783401489,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 9.376104854047298,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": null,
+          "stage": "coverage_feedback",
+          "phase": "round_probe_union_scoring",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.7653067111968994,
+          "root_seconds": 1.7653067111968994
+        }
+      ],
+      "notes": [
+        "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+        "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+        "returned means Python returned, not compile/test success",
+        "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+      ]
+    },
+    "A3": {
+      "kind": "phase_wall_time_index_not_full_compute_budget",
+      "full_compute_cost_known": false,
+      "incomplete_spans": 0,
+      "sum_completed_root_seconds": 79.80385659635067,
+      "by_target_stage_phase": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.709230236709118,
+          "root_seconds": 4.709230236709118
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0016156062483787537,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "coverage_feedback",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.1970324739813805,
+          "root_seconds": 4.1970324739813805
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0006394907832145691,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.917939394712448,
+          "root_seconds": 6.917939394712448
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.453843079507351,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.553143598139286,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.551791526377201,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "initial_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.002135723829269409,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 27.827878162264824,
+          "root_seconds": 27.827878162264824
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 8.620008006691933,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 11.19676472991705,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_generate",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 3.685815118253231,
+          "root_seconds": 3.685815118253231
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0016745030879974365,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "coverage_feedback",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 3.290220223367214,
+          "root_seconds": 3.290220223367214
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0006686300039291382,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_failure_repair",
+          "phase": "feedback_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 3.9865887463092804,
+          "root_seconds": 3.9865887463092804
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_code_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.723714262247086,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_code_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.04579520970583,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_and_repair",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.676961846649647,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_compile_validation",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.6301850378513336,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "initial_knowledge_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0007452815771102905,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "kcf_initial_pipeline",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 23.805275484919548,
+          "root_seconds": 23.805275484919548
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "task_analysis",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 6.123512752354145,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "initial_generation",
+          "phase": "test_planning",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 8.278224647045135,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": null,
+          "stage": "coverage_feedback",
+          "phase": "round_probe_union_scoring",
+          "started": 2,
+          "completed": 2,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 1.3838767558336258,
+          "root_seconds": 1.3838767558336258
+        }
+      ],
+      "notes": [
+        "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+        "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+        "returned means Python returned, not compile/test success",
+        "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+      ]
+    },
+    "RAG": {
+      "kind": "phase_wall_time_index_not_full_compute_budget",
+      "full_compute_cost_known": false,
+      "incomplete_spans": 0,
+      "sum_completed_root_seconds": 10.46324785798788,
+      "by_target_stage_phase": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "rag_llm_generation",
+          "phase": "rag_initial_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 5.766916178166866,
+          "root_seconds": 5.766916178166866
+        },
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "rag_llm_generation",
+          "phase": "rag_source_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.010298267006874084,
+          "root_seconds": 0.0
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "rag_llm_generation",
+          "phase": "rag_initial_generation",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 4.696331679821014,
+          "root_seconds": 4.696331679821014
+        },
+        {
+          "target_id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "stage": "rag_llm_generation",
+          "phase": "rag_source_retrieval",
+          "started": 1,
+          "completed": 1,
+          "incomplete": 0,
+          "exceptions": 0,
+          "inclusive_seconds": 0.0009204968810081482,
+          "root_seconds": 0.0
+        }
+      ],
+      "notes": [
+        "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+        "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+        "returned means Python returned, not compile/test success",
+        "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+      ]
+    }
+  },
+  "status_evidence": {
+    "Full": {
+      "local_budget_rejections": [],
+      "initial": [
+        {
+          "status": "test_failed",
+          "output": "JUnit version 4.13.2\n.........E.....\nTime: 0.012\nThere was 1 failure:\n1) test_printComment_commentMarkerSetButEmpty_throwsNoSuchElementException(org.apache.commons.csv.CSVPrinterPrintCommentTest)\njava.lang.AssertionError: Expected NoSuchElementException\n\tat org.junit.Assert.fail(Assert.java:89)\n\tat org.apache.commons.csv.CSVPrinterPrintCommentTest.test_printComment_commentMarkerSetButEmpty_throwsNoSuchElementException(CSVPrinterPrintCommentTest.java:158)\n\nFAILURES!!!\nTests run: 14,  Failures: 1\n\n",
+          "test_class": "org.apache.commons.csv.CSVPrinterPrintCommentTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial_execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml",
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial_execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter"
+        },
+        {
+          "status": "ok",
+          "output": "JUnit version 4.13.2\n............\nTime: 0.009\n\nOK (12 tests)\n\n",
+          "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor"
+        }
+      ],
+      "seed_repair": [
+        {
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "status": "integrity_rejected",
+          "semantic_review_required": true
+        },
+        {
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "status": "unchanged_initial_passing_suite"
+        }
+      ],
+      "feedback": [
+        {
+          "round": 1,
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "method": "printComment",
+          "status": "ok",
+          "test_class": "org.apache.commons.csv.CSVPrinter_printComment_CoverageRound1Test",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/feedback/incremental_jacoco/round1/attempt0/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml",
+          "semantic_review_required": false,
+          "retrieval_sources": {
+            "coverage-gap": [
+              {
+                "id": "commons-lang-classutils-get-public-method",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ClassUtils",
+                "method": "getPublicMethod",
+                "dependency_types": [
+                  "reflection",
+                  "exception path",
+                  "visibility"
+                ],
+                "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                "pitfalls": [
+                  "SecurityManager tests can fail under coverage harness",
+                  "Keep helper classes public when needed"
+                ],
+                "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                "retrieval_score": 12
+              },
+              {
+                "id": "commons-lang-arrayutils-is-equals",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ArrayUtils",
+                "method": "isEquals",
+                "dependency_types": [
+                  "array equality",
+                  "primitive arrays",
+                  "nested arrays"
+                ],
+                "problem": "Compare nulls, primitive arrays, object arrays, nested arrays, and mismatched values.",
+                "test_strategy": "Use small arrays and direct boolean assertions.",
+                "assertion_strategy": "Assert true for structurally equal arrays and false for mismatches.",
+                "pitfalls": [
+                  "Use primitive arrays to cover ArrayUtils behavior",
+                  "Do not use assertArrayEquals for the method under test"
+                ],
+                "example": "assertTrue(ArrayUtils.isEquals(new int[]{1,2}, new int[]{1,2}));",
+                "retrieval_score": 10
+              },
+              {
+                "id": "commons-lang-extended-message-format",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.text.ExtendedMessageFormat",
+                "method": "applyPattern",
+                "dependency_types": [
+                  "format registry",
+                  "locale",
+                  "exception path"
+                ],
+                "problem": "Exercise plain MessageFormat patterns, custom registry formats, quoted braces, and invalid patterns.",
+                "test_strategy": "Use empty registry for baseline behavior and small custom FormatFactory maps when needed.",
+                "assertion_strategy": "Assert formatted output or IllegalArgumentException for invalid patterns.",
+                "pitfalls": [
+                  "Avoid Java 7 diamond syntax",
+                  "Keep registry generic types explicit"
+                ],
+                "example": "ExtendedMessageFormat emf = new ExtendedMessageFormat(\"{0}\", Locale.US); assertEquals(\"x\", emf.format(new Object[]{\"x\"}));",
+                "retrieval_score": 10
+              }
+            ],
+            "failure-repair": []
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": true,
+            "failure_repair_retrieval_enabled": true,
+            "static_guard_enabled": true
+          }
+        },
+        {
+          "round": 1,
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "method": "construct",
+          "status": "ok",
+          "test_class": "org.jdom2.internal.ReflectionConstructor_construct_CoverageRound1Test",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/Full/feedback/incremental_jacoco/round1/attempt0/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "semantic_review_required": false,
+          "retrieval_sources": {
+            "coverage-gap": [
+              {
+                "id": "commons-lang-classutils-get-public-method",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ClassUtils",
+                "method": "getPublicMethod",
+                "dependency_types": [
+                  "reflection",
+                  "exception path",
+                  "visibility"
+                ],
+                "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                "pitfalls": [
+                  "SecurityManager tests can fail under coverage harness",
+                  "Keep helper classes public when needed"
+                ],
+                "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                "retrieval_score": 14
+              },
+              {
+                "id": "commons-lang-numberutils-create-number",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.math.NumberUtils",
+                "method": "createNumber",
+                "dependency_types": [
+                  "static factory",
+                  "numeric parsing",
+                  "exception path"
+                ],
+                "problem": "Construct strings that exercise decimal, hex, exponent, suffix, blank, and invalid number paths.",
+                "test_strategy": "Use explicit string inputs for decimal, hexadecimal, exponent, Long/Float/Double suffixes, blank strings, and invalid values.",
+                "assertion_strategy": "Assert concrete Number subtype/value or expected NumberFormatException.",
+                "pitfalls": [
+                  "Use JUnit 4",
+                  "Avoid Java 7 diamond syntax for Lang-1b",
+                  "Do not assert overly broad Number equality when subtype matters"
+                ],
+                "example": "assertEquals(Integer.valueOf(10), NumberUtils.createNumber(\"10\"));",
+                "retrieval_score": 11
+              },
+              {
+                "id": "commons-lang-arrayutils-is-equals",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ArrayUtils",
+                "method": "isEquals",
+                "dependency_types": [
+                  "array equality",
+                  "primitive arrays",
+                  "nested arrays"
+                ],
+                "problem": "Compare nulls, primitive arrays, object arrays, nested arrays, and mismatched values.",
+                "test_strategy": "Use small arrays and direct boolean assertions.",
+                "assertion_strategy": "Assert true for structurally equal arrays and false for mismatches.",
+                "pitfalls": [
+                  "Use primitive arrays to cover ArrayUtils behavior",
+                  "Do not use assertArrayEquals for the method under test"
+                ],
+                "example": "assertTrue(ArrayUtils.isEquals(new int[]{1,2}, new int[]{1,2}));",
+                "retrieval_score": 8
+              }
+            ],
+            "failure-repair": []
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": true,
+            "failure_repair_retrieval_enabled": true,
+            "static_guard_enabled": true
+          }
+        }
+      ]
+    },
+    "A1": {
+      "local_budget_rejections": [
+        {
+          "target_id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "stage": "initial_generation",
+          "provider_call_attempted": false
+        }
+      ],
+      "initial": [
+        {
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "status": "generation_budget_blocked",
+          "xml_file": ""
+        },
+        {
+          "status": "ok",
+          "output": "JUnit version 4.13.2\n.............\nTime: 0.008\n\nOK (13 tests)\n\n",
+          "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor"
+        }
+      ],
+      "seed_repair": [
+        {
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "status": "unchanged_initial_passing_suite"
+        }
+      ],
+      "feedback": [
+        {
+          "round": 1,
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "method": "printComment",
+          "status": "ok",
+          "test_class": "org.apache.commons.csv.CSVPrinter_printComment_CoverageRound1Test",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/feedback/incremental_jacoco/round1/attempt0/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml",
+          "semantic_review_required": false,
+          "retrieval_sources": {
+            "coverage-gap": [],
+            "failure-repair": []
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": false,
+            "failure_repair_retrieval_enabled": false,
+            "static_guard_enabled": true
+          }
+        },
+        {
+          "round": 1,
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "method": "construct",
+          "status": "ok",
+          "test_class": "org.jdom2.internal.ReflectionConstructor_construct_CoverageRound1Test",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A1/feedback/incremental_jacoco/round1/attempt0/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "semantic_review_required": false,
+          "retrieval_sources": {
+            "coverage-gap": [],
+            "failure-repair": []
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": false,
+            "failure_repair_retrieval_enabled": false,
+            "static_guard_enabled": true
+          }
+        }
+      ]
+    },
+    "A2": {
+      "local_budget_rejections": [],
+      "initial": [
+        {
+          "status": "ok",
+          "output": "JUnit version 4.13.2\n.............\nTime: 0.017\n\nOK (13 tests)\n\n",
+          "test_class": "org.apache.commons.csv.CSVPrinterPrintCommentTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial_execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml",
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial_execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter"
+        },
+        {
+          "status": "test_failed",
+          "output": "JUnit version 4.13.2\n........E.....\nTime: 0.009\nThere was 1 failure:\n1) test_construct_interface(org.jdom2.internal.ReflectionConstructorTest)\njava.lang.IllegalArgumentException: Unable to locate class no-arg constructor 'java.lang.Runnable'.\n\tat org.jdom2.internal.ReflectionConstructor.construct(ReflectionConstructor.java:91)\n\tat org.jdom2.internal.ReflectionConstructorTest.test_construct_interface(ReflectionConstructorTest.java:156)\n\t... 32 trimmed\nCaused by: java.lang.NoSuchMethodException: java.lang.Runnable.<init>()\n\tat java.lang.Class.getConstructor0(Class.java:3082)\n\tat java.lang.Class.getConstructor(Class.java:1825)\n\tat org.jdom2.internal.ReflectionConstructor.construct(ReflectionConstructor.java:85)\n\t... 34 more\n\nFAILURES!!!\nTests run: 13,  Failures: 1\n\n",
+          "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor"
+        }
+      ],
+      "seed_repair": [
+        {
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "status": "unchanged_initial_passing_suite"
+        },
+        {
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "status": "ok",
+          "semantic_review_required": true
+        }
+      ],
+      "feedback": [
+        {
+          "round": 1,
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "method": "construct",
+          "status": "ok",
+          "test_class": "org.jdom2.internal.ReflectionConstructor_construct_CoverageRound1Test",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A2/feedback/incremental_jacoco/round1/attempt1/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "semantic_review_required": true,
+          "retrieval_sources": {
+            "coverage-gap": [],
+            "failure-repair": [
+              {
+                "iteration": 1,
+                "records": [
+                  {
+                    "id": "commons-lang-classutils-get-public-method",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.ClassUtils",
+                    "method": "getPublicMethod",
+                    "dependency_types": [
+                      "reflection",
+                      "exception path",
+                      "visibility"
+                    ],
+                    "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                    "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                    "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                    "pitfalls": [
+                      "SecurityManager tests can fail under coverage harness",
+                      "Keep helper classes public when needed"
+                    ],
+                    "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                    "retrieval_score": 13
+                  },
+                  {
+                    "id": "commons-lang-numberutils-create-number",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.math.NumberUtils",
+                    "method": "createNumber",
+                    "dependency_types": [
+                      "static factory",
+                      "numeric parsing",
+                      "exception path"
+                    ],
+                    "problem": "Construct strings that exercise decimal, hex, exponent, suffix, blank, and invalid number paths.",
+                    "test_strategy": "Use explicit string inputs for decimal, hexadecimal, exponent, Long/Float/Double suffixes, blank strings, and invalid values.",
+                    "assertion_strategy": "Assert concrete Number subtype/value or expected NumberFormatException.",
+                    "pitfalls": [
+                      "Use JUnit 4",
+                      "Avoid Java 7 diamond syntax for Lang-1b",
+                      "Do not assert overly broad Number equality when subtype matters"
+                    ],
+                    "example": "assertEquals(Integer.valueOf(10), NumberUtils.createNumber(\"10\"));",
+                    "retrieval_score": 11
+                  },
+                  {
+                    "id": "commons-lang-numberutils-create-big-integer",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.math.NumberUtils",
+                    "method": "createBigInteger",
+                    "dependency_types": [
+                      "static factory",
+                      "radix parsing",
+                      "exception path"
+                    ],
+                    "problem": "Exercise decimal, hexadecimal, octal, signed, zero, and invalid BigInteger parsing paths.",
+                    "test_strategy": "Use strings with 0x, #, leading zero, plus/minus signs, and malformed digits.",
+                    "assertion_strategy": "Assert exact BigInteger values and NumberFormatException for malformed inputs.",
+                    "pitfalls": [
+                      "Use new BigInteger(String) with explicit radix for expected values",
+                      "Avoid Java 7 syntax"
+                    ],
+                    "example": "assertEquals(new BigInteger(\"255\"), NumberUtils.createBigInteger(\"0xff\"));",
+                    "retrieval_score": 10
+                  }
+                ]
+              }
+            ]
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": false,
+            "failure_repair_retrieval_enabled": true,
+            "static_guard_enabled": true
+          }
+        }
+      ]
+    },
+    "A3": {
+      "local_budget_rejections": [],
+      "initial": [
+        {
+          "status": "test_failed",
+          "output": "JUnit version 4.13.2\n.E\nTime: 0.004\nThere was 1 failure:\n1) initializationError(org.apache.commons.csv.CSVPrinterPrintCommentTest)\norg.junit.runners.model.InvalidTestClassError: Invalid test class 'org.apache.commons.csv.CSVPrinterPrintCommentTest':\n  1. The class org.apache.commons.csv.CSVPrinterPrintCommentTest is not public.\n  2. Test class should have exactly one public constructor\n  3. No runnable methods\n\tat org.junit.runners.ParentRunner.validate(ParentRunner.java:525)\n\tat org.junit.runners.ParentRunner.<init>(ParentRunner.java:102)\n\tat org.junit.runners.BlockJUnit4ClassRunner.<init>(BlockJUnit4ClassRunner.java:84)\n\tat org.junit.runners.JUnit4.<init>(JUnit4.java:23)\n\tat org.junit.internal.builders.JUnit4Builder.runnerForClass(JUnit4Builder.java:10)\n\tat org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)\n\tat org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)\n\tat org.junit.runner.Computer.getRunner(Computer.java:50)\n\tat org.junit.runner.Computer$1.runnerForClass(Computer.java:31)\n\tat org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)\n\tat org.junit.runners.model.RunnerBuilder.runners(RunnerBuilder.java:125)\n\tat org.junit.runners.model.RunnerBuilder.runners(RunnerBuilder.java:111)\n\tat org.junit.runners.Suite.<init>(Suite.java:81)\n\tat org.junit.runner.Computer$2.<init>(Computer.java:33)\n\tat org.junit.runner.Computer.getSuite(Computer.java:28)\n\tat org.junit.runner.Request.classes(Request.java:77)\n\tat org.junit.runner.JUnitCommandLineParseResult.createRequest(JUnitCommandLineParseResult.java:116)\n\tat org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)\n\tat org.junit.runner.JUnitCore.main(JUnitCore.java:36)\n\nFAILURES!!!\nTests run: 1,  Failures: 1\n\n",
+          "test_class": "org.apache.commons.csv.CSVPrinterPrintCommentTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial_execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/xml/jacoco.xml",
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial_execution/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter"
+        },
+        {
+          "status": "test_failed",
+          "output": "JUnit version 4.13.2\n..........E.\nTime: 0.034\nThere was 1 failure:\n1) test_construct_private_constructor(org.jdom2.internal.ReflectionConstructorTest)\njava.lang.AssertionError: unexpected exception type thrown; expected:<java.lang.IllegalStateException> but was:<java.lang.IllegalArgumentException>\n\tat org.junit.Assert.assertThrows(Assert.java:1020)\n\tat org.junit.Assert.assertThrows(Assert.java:981)\n\tat org.jdom2.internal.ReflectionConstructorTest.test_construct_private_constructor(ReflectionConstructorTest.java:109)\n\t... 32 trimmed\nCaused by: java.lang.IllegalArgumentException: Unable to locate class no-arg constructor 'org.jdom2.internal.ReflectionConstructorTest$PrivateCtor'.\n\tat org.jdom2.internal.ReflectionConstructor.construct(ReflectionConstructor.java:91)\n\tat org.jdom2.internal.ReflectionConstructorTest.lambda$test_construct_private_constructor$5(ReflectionConstructorTest.java:110)\n\tat org.junit.Assert.assertThrows(Assert.java:1001)\n\t... 35 more\nCaused by: java.lang.NoSuchMethodException: org.jdom2.internal.ReflectionConstructorTest$PrivateCtor.<init>()\n\tat java.lang.Class.getConstructor0(Class.java:3082)\n\tat java.lang.Class.getConstructor(Class.java:1825)\n\tat org.jdom2.internal.ReflectionConstructor.construct(ReflectionConstructor.java:85)\n\t... 37 more\n\nFAILURES!!!\nTests run: 11,  Failures: 1\n\n",
+          "test_class": "org.jdom2.internal.ReflectionConstructorTest",
+          "xml_file": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/xml/jacoco.xml",
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "source_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "output_dir": "/root/autodl-tmp/kcf-development-pilot-v1-20261030/A3/initial_execution/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor"
+        }
+      ],
+      "seed_repair": [
+        {
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "status": "test_failed",
+          "semantic_review_required": true
+        },
+        {
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "status": "ok",
+          "semantic_review_required": true
+        }
+      ],
+      "feedback": [
+        {
+          "round": 1,
+          "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+          "project_id": "commons-csv",
+          "fqcn": "org.apache.commons.csv.CSVPrinter",
+          "method": "printComment",
+          "status": "integrity_rejected",
+          "test_class": "",
+          "xml_file": "",
+          "semantic_review_required": false,
+          "retrieval_sources": {
+            "coverage-gap": [
+              {
+                "id": "commons-lang-classutils-get-public-method",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ClassUtils",
+                "method": "getPublicMethod",
+                "dependency_types": [
+                  "reflection",
+                  "exception path",
+                  "visibility"
+                ],
+                "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                "pitfalls": [
+                  "SecurityManager tests can fail under coverage harness",
+                  "Keep helper classes public when needed"
+                ],
+                "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                "retrieval_score": 12
+              },
+              {
+                "id": "commons-lang-arrayutils-is-equals",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ArrayUtils",
+                "method": "isEquals",
+                "dependency_types": [
+                  "array equality",
+                  "primitive arrays",
+                  "nested arrays"
+                ],
+                "problem": "Compare nulls, primitive arrays, object arrays, nested arrays, and mismatched values.",
+                "test_strategy": "Use small arrays and direct boolean assertions.",
+                "assertion_strategy": "Assert true for structurally equal arrays and false for mismatches.",
+                "pitfalls": [
+                  "Use primitive arrays to cover ArrayUtils behavior",
+                  "Do not use assertArrayEquals for the method under test"
+                ],
+                "example": "assertTrue(ArrayUtils.isEquals(new int[]{1,2}, new int[]{1,2}));",
+                "retrieval_score": 10
+              },
+              {
+                "id": "commons-lang-extended-message-format",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.text.ExtendedMessageFormat",
+                "method": "applyPattern",
+                "dependency_types": [
+                  "format registry",
+                  "locale",
+                  "exception path"
+                ],
+                "problem": "Exercise plain MessageFormat patterns, custom registry formats, quoted braces, and invalid patterns.",
+                "test_strategy": "Use empty registry for baseline behavior and small custom FormatFactory maps when needed.",
+                "assertion_strategy": "Assert formatted output or IllegalArgumentException for invalid patterns.",
+                "pitfalls": [
+                  "Avoid Java 7 diamond syntax",
+                  "Keep registry generic types explicit"
+                ],
+                "example": "ExtendedMessageFormat emf = new ExtendedMessageFormat(\"{0}\", Locale.US); assertEquals(\"x\", emf.format(new Object[]{\"x\"}));",
+                "retrieval_score": 10
+              }
+            ],
+            "failure-repair": [
+              {
+                "iteration": 1,
+                "records": [
+                  {
+                    "id": "commons-lang-stringutils-substrings-between",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.StringUtils",
+                    "method": "substringsBetween",
+                    "dependency_types": [
+                      "string parsing",
+                      "null handling",
+                      "array result"
+                    ],
+                    "problem": "Exercise delimiter matching, no-match, adjacent delimiters, null input, and empty delimiter behavior.",
+                    "test_strategy": "Build simple source strings with repeated open/close tokens and edge cases.",
+                    "assertion_strategy": "Use assertArrayEquals for successful extraction and assertNull for no result when API specifies null.",
+                    "pitfalls": [
+                      "Distinguish empty array from null result",
+                      "Use org.junit.Assert.assertArrayEquals"
+                    ],
+                    "example": "assertArrayEquals(new String[]{\"a\",\"b\"}, StringUtils.substringsBetween(\"<a><b>\", \"<\", \">\"));",
+                    "retrieval_score": 10
+                  },
+                  {
+                    "id": "commons-lang-classutils-get-public-method",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.ClassUtils",
+                    "method": "getPublicMethod",
+                    "dependency_types": [
+                      "reflection",
+                      "exception path",
+                      "visibility"
+                    ],
+                    "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                    "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                    "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                    "pitfalls": [
+                      "SecurityManager tests can fail under coverage harness",
+                      "Keep helper classes public when needed"
+                    ],
+                    "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                    "retrieval_score": 9
+                  },
+                  {
+                    "id": "commons-lang-numberutils-create-big-integer",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.math.NumberUtils",
+                    "method": "createBigInteger",
+                    "dependency_types": [
+                      "static factory",
+                      "radix parsing",
+                      "exception path"
+                    ],
+                    "problem": "Exercise decimal, hexadecimal, octal, signed, zero, and invalid BigInteger parsing paths.",
+                    "test_strategy": "Use strings with 0x, #, leading zero, plus/minus signs, and malformed digits.",
+                    "assertion_strategy": "Assert exact BigInteger values and NumberFormatException for malformed inputs.",
+                    "pitfalls": [
+                      "Use new BigInteger(String) with explicit radix for expected values",
+                      "Avoid Java 7 syntax"
+                    ],
+                    "example": "assertEquals(new BigInteger(\"255\"), NumberUtils.createBigInteger(\"0xff\"));",
+                    "retrieval_score": 9
+                  }
+                ]
+              }
+            ]
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": true,
+            "failure_repair_retrieval_enabled": true,
+            "static_guard_enabled": false
+          }
+        },
+        {
+          "round": 1,
+          "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+          "project_id": "jdom2",
+          "fqcn": "org.jdom2.internal.ReflectionConstructor",
+          "method": "construct",
+          "status": "compile_failed",
+          "test_class": "ReflectionConstructor_construct_CoverageRound1Test",
+          "xml_file": "",
+          "semantic_review_required": true,
+          "retrieval_sources": {
+            "coverage-gap": [
+              {
+                "id": "commons-lang-classutils-get-public-method",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ClassUtils",
+                "method": "getPublicMethod",
+                "dependency_types": [
+                  "reflection",
+                  "exception path",
+                  "visibility"
+                ],
+                "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                "pitfalls": [
+                  "SecurityManager tests can fail under coverage harness",
+                  "Keep helper classes public when needed"
+                ],
+                "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                "retrieval_score": 14
+              },
+              {
+                "id": "commons-lang-numberutils-create-number",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.math.NumberUtils",
+                "method": "createNumber",
+                "dependency_types": [
+                  "static factory",
+                  "numeric parsing",
+                  "exception path"
+                ],
+                "problem": "Construct strings that exercise decimal, hex, exponent, suffix, blank, and invalid number paths.",
+                "test_strategy": "Use explicit string inputs for decimal, hexadecimal, exponent, Long/Float/Double suffixes, blank strings, and invalid values.",
+                "assertion_strategy": "Assert concrete Number subtype/value or expected NumberFormatException.",
+                "pitfalls": [
+                  "Use JUnit 4",
+                  "Avoid Java 7 diamond syntax for Lang-1b",
+                  "Do not assert overly broad Number equality when subtype matters"
+                ],
+                "example": "assertEquals(Integer.valueOf(10), NumberUtils.createNumber(\"10\"));",
+                "retrieval_score": 11
+              },
+              {
+                "id": "commons-lang-arrayutils-is-equals",
+                "project": "Defects4J Lang-1b",
+                "class": "org.apache.commons.lang3.ArrayUtils",
+                "method": "isEquals",
+                "dependency_types": [
+                  "array equality",
+                  "primitive arrays",
+                  "nested arrays"
+                ],
+                "problem": "Compare nulls, primitive arrays, object arrays, nested arrays, and mismatched values.",
+                "test_strategy": "Use small arrays and direct boolean assertions.",
+                "assertion_strategy": "Assert true for structurally equal arrays and false for mismatches.",
+                "pitfalls": [
+                  "Use primitive arrays to cover ArrayUtils behavior",
+                  "Do not use assertArrayEquals for the method under test"
+                ],
+                "example": "assertTrue(ArrayUtils.isEquals(new int[]{1,2}, new int[]{1,2}));",
+                "retrieval_score": 8
+              }
+            ],
+            "failure-repair": [
+              {
+                "iteration": 1,
+                "records": [
+                  {
+                    "id": "commons-lang-numberutils-create-number",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.math.NumberUtils",
+                    "method": "createNumber",
+                    "dependency_types": [
+                      "static factory",
+                      "numeric parsing",
+                      "exception path"
+                    ],
+                    "problem": "Construct strings that exercise decimal, hex, exponent, suffix, blank, and invalid number paths.",
+                    "test_strategy": "Use explicit string inputs for decimal, hexadecimal, exponent, Long/Float/Double suffixes, blank strings, and invalid values.",
+                    "assertion_strategy": "Assert concrete Number subtype/value or expected NumberFormatException.",
+                    "pitfalls": [
+                      "Use JUnit 4",
+                      "Avoid Java 7 diamond syntax for Lang-1b",
+                      "Do not assert overly broad Number equality when subtype matters"
+                    ],
+                    "example": "assertEquals(Integer.valueOf(10), NumberUtils.createNumber(\"10\"));",
+                    "retrieval_score": 11
+                  },
+                  {
+                    "id": "commons-lang-classutils-get-public-method",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.ClassUtils",
+                    "method": "getPublicMethod",
+                    "dependency_types": [
+                      "reflection",
+                      "exception path",
+                      "visibility"
+                    ],
+                    "problem": "Exercise public methods, inherited methods, non-public declaring classes, and missing methods.",
+                    "test_strategy": "Use JDK classes and small nested helper classes to control visibility.",
+                    "assertion_strategy": "Assert returned Method name/declaring class or expected NoSuchMethodException.",
+                    "pitfalls": [
+                      "SecurityManager tests can fail under coverage harness",
+                      "Keep helper classes public when needed"
+                    ],
+                    "example": "Method m = ClassUtils.getPublicMethod(String.class, \"substring\", new Class[]{int.class}); assertEquals(\"substring\", m.getName());",
+                    "retrieval_score": 10
+                  },
+                  {
+                    "id": "commons-lang-numberutils-create-big-integer",
+                    "project": "Defects4J Lang-1b",
+                    "class": "org.apache.commons.lang3.math.NumberUtils",
+                    "method": "createBigInteger",
+                    "dependency_types": [
+                      "static factory",
+                      "radix parsing",
+                      "exception path"
+                    ],
+                    "problem": "Exercise decimal, hexadecimal, octal, signed, zero, and invalid BigInteger parsing paths.",
+                    "test_strategy": "Use strings with 0x, #, leading zero, plus/minus signs, and malformed digits.",
+                    "assertion_strategy": "Assert exact BigInteger values and NumberFormatException for malformed inputs.",
+                    "pitfalls": [
+                      "Use new BigInteger(String) with explicit radix for expected values",
+                      "Avoid Java 7 syntax"
+                    ],
+                    "example": "assertEquals(new BigInteger(\"255\"), NumberUtils.createBigInteger(\"0xff\"));",
+                    "retrieval_score": 9
+                  }
+                ]
+              }
+            ]
+          },
+          "ablation_flags": {
+            "coverage_gap_retrieval_enabled": true,
+            "failure_repair_retrieval_enabled": true,
+            "static_guard_enabled": false
+          }
+        }
+      ]
+    },
+    "RAG": {
+      "local_budget_rejections": []
+    }
+  },
+  "trace_sha256": {
+    "Full/initial/llm_calls.jsonl": "1cddaa8361c55ebb28b689221d3a5fc646f8a3c95e26a02f39b573a529185095",
+    "Full/seed_repair/llm_calls.jsonl": "cb5dbf053720a1ba25045b29e34c86eac592152da6b1efd89a30e86ca51295ab",
+    "Full/feedback/llm_calls.jsonl": "f1f893f38f5b4ebc3d387a314116a9b2b841a1dc4f6f733c0ee2b0a64e5d5bd0",
+    "A1/initial/llm_calls.jsonl": "1bde50590bf46b9e600bf3d49e95820be092f95a4673affd08e2e412a67026a4",
+    "A1/feedback/llm_calls.jsonl": "57ce39861509e82bc942c5416b27982953e3680177cdcb1bea770e243e4ad5b2",
+    "A2/initial/llm_calls.jsonl": "042fd3977151aaa65e19d1ce3706b421d99b57eb007e91fe01cf38dc5eb1bc01",
+    "A2/seed_repair/llm_calls.jsonl": "b60213cd06bd71107f17e7e7aab44f7fc14ffd1577d969404d4eeff8c2569bb7",
+    "A2/feedback/llm_calls.jsonl": "28d28536286ef3d57d9f207f7ad1000f090004687ab221f19bdb29679d93010f",
+    "A3/initial/llm_calls.jsonl": "915983eab4a1339416f2e4684bb1688176efb763839c91f83328f3f59453fe9d",
+    "A3/seed_repair/llm_calls.jsonl": "f7708597b3fe0560a2c201be1dd6575aaa94c472ba0a66ffd5ae5d7885b87643",
+    "A3/feedback/llm_calls.jsonl": "a2af70e9d45df69bf544d26db7d15a9f823b6681963b8a2cd6a1ded792595cbd",
+    "RAG/initial/llm_calls.jsonl": "5b4b3ce4991fc246b5012d3a0ef3cee4fd44e0aa20264fa01b220829a20ef349"
+  },
+  "fixed_denominator_all_arms": true,
+  "formal_run_ready": false,
+  "private_original_unchanged": true,
+  "notes": [
+    "Development targets and single repeat do not establish effectiveness or novelty",
+    "Identical ceilings are not equal realized compute",
+    "Repaired suites pending semantic review remain excluded"
+  ]
+}
