@@ -74,7 +74,7 @@ def audit(root):
             "variants": matrix, "sample_use_ledger": ledger,
             "blocking_gaps": ["formal_compute_budget_and_stop_rules_not_frozen",
                               "shared_budget_guard_exists_but_formal_limits_not_frozen_or_enabled",
-                              "per_round_exact_exec_union_not_integrated",
+                              "baseline_execution_isolation_and_main_class_reporting_not_unified",
                               "remaining_35_methods_not_verified_unseen",
                               "new_methodological_contribution_not_established",
                               "formal_repetitions_and_new_paid_scope_not_authorized"]}
