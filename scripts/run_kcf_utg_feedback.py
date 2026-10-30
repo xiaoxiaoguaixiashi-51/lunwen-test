@@ -1,8 +1,8 @@
 """Route-aligned entry point for new KCF-UTG feedback runs.
 
 The historical runner remains available for reproducing old evidence. This
-adapter changes only the default label and configuration; callers can still
-override either explicitly.
+adapter sets the default label/configuration and requires exact per-round probe
+union for new runs. The historical script retains legacy XML aggregation.
 """
 
 from __future__ import annotations
@@ -28,6 +28,8 @@ def adapted_args(args: list[str]) -> list[str]:
         result.extend(["--config", DEFAULT_CONFIG])
     if "--approach-name" not in result:
         result.extend(["--approach-name", DEFAULT_APPROACH_NAME])
+    if "--exact-exec-union" not in result:
+        result.append("--exact-exec-union")
     return result
 
 

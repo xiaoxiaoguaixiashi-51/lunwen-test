@@ -47,6 +47,11 @@ def resolve_executions(accepted, methods, roots):
         if digest(accepted / name) != entry["xml_sha256"]:
             raise ValueError("Accepted XML hash mismatch")
         matches = candidates.get(entry["xml_sha256"], set())
+        if entry.get("execution_xml"):
+            explicit = Path(entry["execution_xml"]).resolve()
+            if not any(explicit.is_relative_to(Path(root).resolve()) for root in roots):
+                raise ValueError("Explicit execution XML outside allowed roots")
+            matches = matches & {explicit}
         if len(matches) != 1:
             raise ValueError(f"Require one original isolated execution for {name}; found {len(matches)}")
         xml = next(iter(matches))
@@ -58,6 +63,9 @@ def resolve_executions(accepted, methods, roots):
         data = execution / "jacoco.exec"
         if not data.stat().st_size:
             raise ValueError("Empty execution data")
+        for field, path in (("execution_exec_sha256", data), ("execution_junit_sha256", log)):
+            if field in entry and entry[field] != digest(path):
+                raise ValueError("Frozen execution evidence changed: " + field)
         records.append({"id": entry["id"], "project_id": methods[entry["id"]]["project_id"],
                         "accepted_xml_name": name, "xml_file": str(xml), "xml_sha256": digest(xml),
                         "exec_file": str(data), "exec_sha256": digest(data), "junit_log": str(log),
@@ -99,7 +107,13 @@ def main():
     parser.add_argument("--jacoco-cli", type=Path, required=True)
     parser.add_argument("--java", default="java")
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--approach-name", default="Exact_exec_union")
     args = parser.parse_args()
+    print(json.dumps(merge_accepted_coverage(args), indent=2))
+
+
+def merge_accepted_coverage(args):
+    """Shared implementation for offline recomputation and feedback round scoring."""
     if args.output_dir.exists():
         raise FileExistsError("Preserve previous results: use a new output directory")
     items = json.loads(args.method_list.read_text(encoding="utf-8"))
@@ -136,14 +150,16 @@ def main():
                 + ["--classfiles", str(classes), "--xml", str(folder / "jacoco.xml")], folder / "report.log")
     focal = load_focal_methods(args.method_list, None, [])
     baseline = load_coverage_xmls(args.reference_root / "xml")
-    write_outputs(focal, [("Exact_exec_union", load_coverage_xmls(args.output_dir / "xml"))],
-                  args.output_dir / "evaluation", reference=baseline)
+    evaluation_dir = getattr(args, "evaluation_dir", None) or args.output_dir / "evaluation"
+    approach_name = getattr(args, "approach_name", "Exact_exec_union")
+    write_outputs(focal, [(approach_name, load_coverage_xmls(args.output_dir / "xml"))],
+                  evaluation_dir, reference=baseline)
     manifest = {"kind": "offline_accepted_suite_probe_union_not_new_generation",
                 "method_list_sha256": digest(args.method_list), "jacoco_cli_sha256": digest(args.jacoco_cli),
                 "accepted_index_sha256": digest(args.accepted_xml_root / "accepted_xml_index.json"),
-                "executions": records, "project_reference": reference}
+                "executions": records, "project_reference": reference, "approach_name": approach_name}
     (args.output_dir / "execution_union_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print((args.output_dir / "evaluation/focal_method_coverage_summary.json").read_text(encoding="utf-8"))
+    return json.loads((evaluation_dir / "focal_method_coverage_summary.json").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

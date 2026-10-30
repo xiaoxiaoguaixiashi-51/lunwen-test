@@ -38,6 +38,7 @@ from src.utils.experiment_metadata import write_run_metadata, sha256_file
 from src.utils.llm_output import extract_fenced_block
 from src.utils.repair_integrity import check_repair_integrity
 from src.utils.dependency_declarations import grounded_context
+from scripts import probe_union_feedback
 
 
 SYSTEM_PROMPT = """You are the coverage-feedback generation stage of Ours Full.
@@ -589,6 +590,9 @@ def main():
     parser.add_argument("--max-tokens", type=int, default=8192)
     parser.add_argument("--repair-iterations", type=int, default=1)
     parser.add_argument("--passing-only", action="store_true", help="Require approved passing seed XML and exclude failing incremental suites")
+    parser.add_argument("--exact-exec-union", action="store_true", help="Use true exec probe union for every feedback round")
+    parser.add_argument("--exact-reference-root", help="Frozen reference root containing reference_manifest.json and xml/")
+    parser.add_argument("--seed-execution-roots", nargs="+", help="Original isolated execution roots for the approved seeds")
     parser.add_argument(
         "--disable-coverage-gap-retrieval",
         action="store_true",
@@ -608,6 +612,7 @@ def main():
     parser.add_argument("--jacoco-cli", default="/root/tools/jacococli.jar")
     parser.add_argument("--timeout", type=int, default=240)
     args = parser.parse_args()
+    probe_union_feedback.validate_exact_mode(args)
     os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output_dir).resolve() / "llm_calls.jsonl"))
     os.environ.setdefault("KCF_EXPERIMENT_STAGE", "coverage_feedback")
 
@@ -648,6 +653,7 @@ def main():
             "max_tokens": args.max_tokens,
             "repair_iterations": args.repair_iterations,
             "passing_only": args.passing_only,
+            "coverage_aggregation": "exact_exec_probe_union" if args.exact_exec_union else "legacy_xml_max",
             "dependency_declaration_context_enabled": args.passing_only and not args.disable_static_guard,
         },
         inputs={
@@ -661,9 +667,14 @@ def main():
     cp_cache: dict[str, str] = {}
     all_round_rows: list[dict] = []
 
-    copy_raw_xmls(Path(args.raw_xml_root), combined_xml)
-    evaluate(method_list, combined_xml, output_root / "coverage_round0", args.approach_name, args.timeout,
-             args.reference_xml_root)
+    if args.exact_exec_union:
+        probe_union_feedback.prepare_seed_index(Path(args.raw_xml_root), output_root / "probe_accepted_xml", methods,
+                                                [Path(root) for root in args.seed_execution_roots])
+        probe_union_feedback.evaluate_round(args, output_root, method_list, 0)
+    else:
+        copy_raw_xmls(Path(args.raw_xml_root), combined_xml)
+        evaluate(method_list, combined_xml, output_root / "coverage_round0", args.approach_name, args.timeout,
+                 args.reference_xml_root)
     previous_summary = summary_from_output(output_root / "coverage_round0")
 
     for round_index in range(1, args.max_rounds + 1):
@@ -725,9 +736,12 @@ def main():
                     write_json(gen_dir / f"attempt_{repair_index}.json", {"result": result, "retrieved_knowledge": repair_kg})
 
                 if include_incremental_xml(result, args.passing_only):
-                    dest_dir = combined_xml / f"round{round_index}" / method["id"]
-                    dest_dir.mkdir(parents=True, exist_ok=True)
-                    shutil.copy2(result["xml_file"], dest_dir / "jacoco.xml")
+                    if args.exact_exec_union:
+                        probe_union_feedback.accept_incremental(output_root / "probe_accepted_xml", result, method["id"], round_index)
+                    else:
+                        dest_dir = combined_xml / f"round{round_index}" / method["id"]
+                        dest_dir.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(result["xml_file"], dest_dir / "jacoco.xml")
                 status = {
                     "round": round_index,
                     "id": method["id"],
@@ -762,8 +776,11 @@ def main():
             all_round_rows.append(status)
 
         write_table(round_rows, output_root / f"round{round_index}_summary", "coverage_feedback_round")
-        evaluate(method_list, combined_xml, output_root / f"coverage_round{round_index}", args.approach_name, args.timeout,
-                 args.reference_xml_root)
+        if args.exact_exec_union:
+            probe_union_feedback.evaluate_round(args, output_root, method_list, round_index)
+        else:
+            evaluate(method_list, combined_xml, output_root / f"coverage_round{round_index}", args.approach_name, args.timeout,
+                     args.reference_xml_root)
         current_summary = summary_from_output(output_root / f"coverage_round{round_index}")
         previous_lines = int(previous_summary.get("focal_lines_covered", 0) or 0)
         current_lines = int(current_summary.get("focal_lines_covered", 0) or 0)
