@@ -1,0 +1,132 @@
+{
+  "kind": "existing_library_context_locations_not_retrieval_effectiveness_experiment",
+  "api_calls": 0,
+  "files": [
+    {
+      "relative_path": "core/src/java/org/jdom2/Element.java",
+      "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+      "selected_methods": [
+        {
+          "name": "addNamespaceDeclaration",
+          "start_line": 383,
+          "parameter_types": [
+            "Namespace"
+          ]
+        },
+        {
+          "name": "getNamespacesInScope",
+          "start_line": 1712,
+          "parameter_types": []
+        }
+      ]
+    },
+    {
+      "relative_path": "core/src/java/org/jdom2/Verifier.java",
+      "source_sha256": "ea3c86b9ec67eaf7ea591fa85ecc454524baae768343d72cae5711fa6f2db400",
+      "selected_methods": [
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 608,
+          "parameter_types": [
+            "Namespace",
+            "Namespace"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 632,
+          "parameter_types": [
+            "Attribute",
+            "Element"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 649,
+          "parameter_types": [
+            "Attribute",
+            "Element",
+            "int"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 669,
+          "parameter_types": [
+            "Namespace",
+            "Element"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 686,
+          "parameter_types": [
+            "Namespace",
+            "Element",
+            "int"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 721,
+          "parameter_types": [
+            "Namespace",
+            "Attribute"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 743,
+          "parameter_types": [
+            "Namespace",
+            "List"
+          ]
+        },
+        {
+          "name": "checkNamespaceCollision",
+          "start_line": 760,
+          "parameter_types": [
+            "Namespace",
+            "List",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "relative_path": "test/src/java/org/jdom2/test/cases/TestElement.java",
+      "source_sha256": "a1a10574cc8b4dde6a6c905c5db9ce6911f8f1508d40eab994f2a2e05515f8c4",
+      "selected_methods": [
+        {
+          "name": "testSetNamespaceAdditional",
+          "start_line": 2150,
+          "parameter_types": []
+        }
+      ]
+    },
+    {
+      "relative_path": "test/src/java/org/jdom2/test/cases/TestNamespaceAware.java",
+      "source_sha256": "9ca721c722812b5a0116da70d58676532cf80a7e9373957c1e1b1491a0945e1e",
+      "selected_methods": [
+        {
+          "name": "testNamespacesScopeSimpleAdded",
+          "start_line": 64,
+          "parameter_types": []
+        },
+        {
+          "name": "testNamespacesScopeSimpleElement",
+          "start_line": 75,
+          "parameter_types": []
+        },
+        {
+          "name": "testNamespacesScopeDeepElement",
+          "start_line": 89,
+          "parameter_types": []
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "No source excerpts or private configs exported; these locations are independently selectable by simple source/usage-context baselines."
+  ]
+}

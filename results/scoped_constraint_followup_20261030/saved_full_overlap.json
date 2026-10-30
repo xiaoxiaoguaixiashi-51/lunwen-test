@@ -1,0 +1,122 @@
+{
+  "kind": "saved_full_pilot_overlap_audit_not_new_generation",
+  "api_calls": 0,
+  "inputs": [
+    {
+      "archive": "results\\six_project_pilot_20261022\\six_project_pilot_interrupted_20261022.tgz",
+      "sha256": "9af76b9d8ebc886924ed284dcb93b81d4606a67b7f6e94d4592335f662496564",
+      "summary_member": "six_project_pilot_20261022/coverage/ours_jacoco_summary.json",
+      "metadata_member": "six_project_pilot_20261022/initial/run_metadata.json",
+      "effective_switches": {
+        "knowledge_retrieval_enabled": true,
+        "static_guard_enabled": true,
+        "feedback_enabled": true
+      }
+    },
+    {
+      "archive": "results\\six_project_pilot_20261022\\six_project_remaining4_20261022.tgz",
+      "sha256": "c2e90435f3e7d39e73ddce0d3029bf19ada4ca22c0483ce44b10b205aa19a3fd",
+      "summary_member": "six_project_remaining4_20261022/coverage/ours_jacoco_summary.json",
+      "metadata_member": "six_project_remaining4_20261022/initial/run_metadata.json",
+      "effective_switches": {
+        "knowledge_retrieval_enabled": true,
+        "static_guard_enabled": true,
+        "feedback_enabled": true
+      }
+    }
+  ],
+  "distinct_completed_targets": 6,
+  "targets": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "status": "ok",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Parser",
+      "method": "processArgs",
+      "archive": "results\\six_project_pilot_20261022\\six_project_pilot_interrupted_20261022.tgz",
+      "sources": [
+        {
+          "member": "six_project_pilot_20261022/coverage/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs-org.apache.commons.cli.Parser/src/ParserProcessArgsTest.java",
+          "sha256": "aa1cf1cd14a8308c37b7be22f4c1ad474f8e2aa7b6f683198a463122db98a3e2"
+        }
+      ]
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "status": "test_failed",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVPrinter",
+      "method": "printComment",
+      "archive": "results\\six_project_pilot_20261022\\six_project_pilot_interrupted_20261022.tgz",
+      "sources": [
+        {
+          "member": "six_project_pilot_20261022/coverage/commons-csv/commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment-org.apache.commons.csv.CSVPrinter/src/CSVPrinterPrintCommentTest.java",
+          "sha256": "a8af63374c8007eb466684a7063a28a61eb8b2248a5ede545a0c3a5236152675"
+        }
+      ]
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "status": "test_failed",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.ColognePhonetic",
+      "method": "colognePhonetic",
+      "archive": "results\\six_project_pilot_20261022\\six_project_remaining4_20261022.tgz",
+      "sources": [
+        {
+          "member": "six_project_remaining4_20261022/coverage/commons-codec/commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic-org.apache.commons.codec.language.ColognePhonetic/src/ColognePhoneticTest.java",
+          "sha256": "093f1bbe65cbd1857518aaa28dfff9908e73c272e4c7dda8d181b6c3a9b86829"
+        }
+      ]
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "status": "ok",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InvokerTransformer",
+      "method": "transform",
+      "archive": "results\\six_project_pilot_20261022\\six_project_remaining4_20261022.tgz",
+      "sources": [
+        {
+          "member": "six_project_remaining4_20261022/coverage/commons-collections4/commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform-org.apache.commons.collections4.functors.InvokerTransformer/src/InvokerTransformerTest.java",
+          "sha256": "1a8cbdc95436e1f9115c2542568f8a516288da039e272fdfa14d910a93768547"
+        }
+      ]
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "status": "test_failed",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.internal.ReflectionConstructor",
+      "method": "construct",
+      "archive": "results\\six_project_pilot_20261022\\six_project_remaining4_20261022.tgz",
+      "sources": [
+        {
+          "member": "six_project_remaining4_20261022/coverage/jdom2/jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct-org.jdom2.internal.ReflectionConstructor/src/ReflectionConstructorTest.java",
+          "sha256": "4374e3bd5a5003069a9785d16e3eac81ced550bd3d3e409baa13ab307cd90738"
+        }
+      ]
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "status": "compile_failed",
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.context.AbstractHttpWindwardContext",
+      "method": "html",
+      "archive": "results\\six_project_pilot_20261022\\six_project_remaining4_20261022.tgz",
+      "sources": [
+        {
+          "member": "six_project_remaining4_20261022/coverage/windward/windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html-org.flmelody.core.context.AbstractHttpWindwardContext/src/AbstractHttpWindwardContextHtmlTest.java",
+          "sha256": "29d66809902b5dc0153c976fca3dcdd878e30e0fd92f69a9c16a6a4fb72297ca"
+        }
+      ]
+    }
+  ],
+  "candidate_scope_method": "org.jdom2.Element.getNamespacesInScope",
+  "scope_method_present_in_saved_full_pilot": false,
+  "parser_processargs_status": "ok",
+  "limits": [
+    "Same method identity is not the same generated fixture or historical project binary.",
+    "No paid new Full reproduction; absence of an observed failure is not proof of absence."
+  ]
+}

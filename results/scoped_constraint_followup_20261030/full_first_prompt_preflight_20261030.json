@@ -1,0 +1,384 @@
+{
+  "kind": "offline_first_task_prompt_preflight_not_provider_usage_or_generation_results",
+  "api_calls": 0,
+  "protocol_id": "kcf_rerun_v1_20261030",
+  "input_ceiling": 12000,
+  "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614",
+  "rows": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Parser",
+      "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+      "estimated_input_with_reserve": 3726,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "ea21b477af17028208515aa69b432c9c072bdb80fe9b6d57cfa18cd0d9b7dbdc"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.OptionGroup",
+      "source_sha256": "49c76c02df88195d02a2ab986f9552e3a023e35ba0623106b4a8fc76d299cb47",
+      "estimated_input_with_reserve": 2193,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "a588777c11beadd72a920c154b064df26344a00aa724ddc0a4697b99b575e3e5"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-option-tostring",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.Option",
+      "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe",
+      "estimated_input_with_reserve": 7599,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "4f7d874dbe3e81e994c204b4d9dad6b59f168c13986ea7c35355045a477d7edc"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.TypeHandler",
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "estimated_input_with_reserve": 2482,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "d0e6d8798278a74518b7bb5af474cef6ccfa9be08856460165fc5de570f38169"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.PatternOptionBuilder",
+      "source_sha256": "18e868e6eafe771342912ff88b95d1ff6a86f8a9124d14d56d1eb1cfd7d661be",
+      "estimated_input_with_reserve": 2787,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "6b9e6668ceeedebb39dcad918af33a96602e3edfbe253237529b975d339e66c2"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+      "project_id": "commons-cli",
+      "fqcn": "org.apache.commons.cli.TypeHandler",
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "estimated_input_with_reserve": 2482,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "8a5292016a271f29fd69251ae15ce871f6bb70aabe9990c2df2068bcb6424cc7"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "estimated_input_with_reserve": 28055,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "32355b09a46f173d8303d2898af6bb07be2e29b679ad63d0732214a81b83c7c6"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "estimated_input_with_reserve": 27096,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "2809bd9f2d5dc5e5df216bb951cb46a65f769e89466558121e83a91f99c46db5"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVPrinter",
+      "source_sha256": "3d25f081a271d783a5cc48bb172a72687494e36d2e7e6d272319e6060f783e9f",
+      "estimated_input_with_reserve": 5268,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "87a1d8c5212f11908c1cd96b61d634798142ca03dbb989151041de10f108d9f3"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.CSVFormat",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "estimated_input_with_reserve": 26971,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "738ff7b8ebabd58a78459a38301913bb49e2fcb64be516ae3ff02b594e7446ab"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline",
+      "project_id": "commons-csv",
+      "fqcn": "org.apache.commons.csv.ExtendedBufferedReader",
+      "source_sha256": "117dc55b49c9aab03f636811b20d0fc67044a993519fc2e13bdcb3ebae697237",
+      "estimated_input_with_reserve": 2676,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "2cb546df42dc261a4fbbf57710c66f31e9d2741ad915b11a416d2bd57b96cbac"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.bm.Lang",
+      "source_sha256": "d9bd107f5dd72ede692349877d48d44c90322254eecf607f2376c5434dbf1f5c",
+      "estimated_input_with_reserve": 3265,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "b5a5d1c87ea1cbed758880fc361b4a1c2b4579bfc6229b64474f8db32ef45b30"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.ColognePhonetic",
+      "source_sha256": "09c82bd7bbf95609f7688b90c851cad361dc2603353374f27bee089ff69ccc2a",
+      "estimated_input_with_reserve": 5392,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "118fcb295a6d7000f3263f4c0e02f675c67e0e8861482da9792f445d2d501d09"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.Metaphone",
+      "source_sha256": "b1339dc3015430f5999d60c1990a2b172fd66dbb9afc50c7dbe2778dd0a3217d",
+      "estimated_input_with_reserve": 6795,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "582310d679c8e919f66f45c6e2523f1e86427091c30832cb1e59c8b718f03c87"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.Nysiis",
+      "source_sha256": "51f351390fb30e717239235c994980083fdffba901be68f8857a193ba1d972a0",
+      "estimated_input_with_reserve": 5369,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "058aba788d21eef661392f02fb19164169b4ff07a98ab4b1562b50a01fa6dfa3"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals",
+      "project_id": "commons-codec",
+      "fqcn": "org.apache.commons.codec.language.MatchRatingApproachEncoder",
+      "source_sha256": "2b5582efb959f8d6f325bc6c17430a9a5922a84b60fb0f22ca194d7882673214",
+      "estimated_input_with_reserve": 5284,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "5fd9be76c8e45432b3fc5af2566ca7dfedd52488da2e874c64af1aa96332dc9f"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.MapUtils",
+      "source_sha256": "9a7481df6283a1e6aa412bab37da3f65643c46bfc1c831c803f043f1a3305df6",
+      "estimated_input_with_reserve": 22856,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "bb99d9309e6294b5af8941dc36af4ecad5e9a588086f5a7397161263d11c7661"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InvokerTransformer",
+      "source_sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847",
+      "estimated_input_with_reserve": 2333,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "464bdbb0377da1e4c42216a83495c16c1457b53b1afcaa53a572d137a857dae9"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.list.TreeList",
+      "source_sha256": "92093e699520ba2bdf38ef491b8019354b1a9f5069c1943079218feefdec38fb",
+      "estimated_input_with_reserve": 9386,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "328b809ad13050fd0ccc8bf3ee6662759cd2326d92cba05231a34c48f31c339d"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.bloomfilter.EnhancedDoubleHasher",
+      "source_sha256": "284162ae08323a5b8bff13ad4f0375ef07b26ef1fa6776da04a62b1c6a5edd11",
+      "estimated_input_with_reserve": 3122,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "378e3a9bfc971b624592fd1cee1cdbb644923a53a1294583eb2a221c92fae9f7"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "estimated_input_with_reserve": 22646,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "ca656cd4ac1442e3ae855cc5d59a51fd9250ec5d98314ef8a7e7f35086a23997"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.InstantiateTransformer",
+      "source_sha256": "f2b48e80cbad116a4482377c65fe352bcab62ff47815a93787bb96416e0a8483",
+      "estimated_input_with_reserve": 1991,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "42b8549c3a81056a2c617ed588fa36603d9337f961da5465bc6956cfa5bd5633"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.IteratorUtils",
+      "source_sha256": "9207abddf8b91d5100ea9da6aa82a74f737fc6a78ed56fe13f6c331e371e9afc",
+      "estimated_input_with_reserve": 16620,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "79db12dbff390c553b8f98fe7491cfb26de6dd2a2a60f512bf1fcc775d0df841"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer",
+      "source_sha256": "13080fb348e25efa874390e88ffd93e738b7be0ba8424addbba64b750f4c085b",
+      "estimated_input_with_reserve": 2120,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "1fc6c06699ea82e7fb75977a57040186f09b7e130a1d631e859d1a4409f26433"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.functors.PrototypeFactory",
+      "source_sha256": "e31e2bbb8ab6426f8613d95a116b162c16275ad5ae9f2c0f477aefafb9c93a95",
+      "estimated_input_with_reserve": 2465,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "e43a1bd72382eff5f8f08fc014de99419beadbd368595db551ad36f252b3777e"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.bag.AbstractMapBag",
+      "source_sha256": "068ba88bebfdbb0566acbd567cd9b89551c8a4817ca3a8172cbda68d794cb561",
+      "estimated_input_with_reserve": 5495,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "3568a451befda0f57192a9c111374fc8f77a7f4087e4faefd3789bcca6a5affe"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.iterators.CartesianProductIterator",
+      "source_sha256": "b592df44dc74bbb0fdcf3ba2602c94f1011fe96b6e72112fca3c316893cec8f7",
+      "estimated_input_with_reserve": 2328,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "52e01d2e07e1c4382a5673222d83f72c2dc3264b71ebc22339c625ee8c887989"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.properties.OrderedProperties",
+      "source_sha256": "33150f093cd26a0006e26d618a56afd318b82926e1068638e31181a58adc487a",
+      "estimated_input_with_reserve": 2428,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "4f7340cfc30bde57aeecce761799bde9dd23e007b709444c48cae60181c40be6"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.CollectionUtils",
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "estimated_input_with_reserve": 22689,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "225a9d9df2bcaaac8df52ba7bd09abf27bf424a04c05ed29ce38905887d553a8"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring",
+      "project_id": "commons-collections4",
+      "fqcn": "org.apache.commons.collections4.trie.AbstractPatriciaTrie$TrieEntry",
+      "source_sha256": "e4cea76991201e8998893fc411b5efab43976ad7f5b03f101d6c8b661b8251ed",
+      "estimated_input_with_reserve": 20164,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "a69044614be17308ff00a85e104f5cfc9066a31f83a759a8150045169784efab"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.internal.ReflectionConstructor",
+      "source_sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43",
+      "estimated_input_with_reserve": 1943,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "8485a86578fc80888d56fdb10f5e8b35057eccc1feaf9be1eeaf584052cdff84"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.xpath.XPath",
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "estimated_input_with_reserve": 5072,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "def8b6a8f0ad81397786d4239ad52478946521db6e44225d3663ff9c13c49637"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.input.sax.SAXHandler",
+      "source_sha256": "a921a97f49eb12e924f2990e9fa50cdfbec927537004ad5ce396daedf34efb5f",
+      "estimated_input_with_reserve": 12466,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "99800cee9bb75503cc8e948b376589ab2b29c9a48d6c962d082c93837ab0d814"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.xpath.XPath",
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "estimated_input_with_reserve": 4996,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "765682abb3151020e5aa99438c2a8578d914998a530549e78657dabda8937f89"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-document-cancontaincontent",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Document",
+      "source_sha256": "606c68f2a68000cb343f1854e4a898ceee862e17913cb9d519828b1e77cc1908",
+      "estimated_input_with_reserve": 8492,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "9888e534fb7fd276d2cb109a4316bed90c325ba7ced37e1e87e16994e9d75cd1"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapetext",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.output.Format",
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "estimated_input_with_reserve": 10168,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "ae8e4c374d92bf69cbdfaa7a67a772a0236ff689c62ee1e13f360c628f81ca87"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.output.Format",
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "estimated_input_with_reserve": 10275,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "fce2babb474fac866c9be61f6528d52bec42dc9a33c05de41ba06ccc76857851"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Verifier",
+      "source_sha256": "ea3c86b9ec67eaf7ea591fa85ecc454524baae768343d72cae5711fa6f2db400",
+      "estimated_input_with_reserve": 17660,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "f91c9fd92f39691bb6364c0f952e9c1a2c6530a2bc9f02e683aa97dfd77d030b"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "project_id": "jdom2",
+      "fqcn": "org.jdom2.Element",
+      "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+      "estimated_input_with_reserve": 19617,
+      "would_be_blocked_by_frozen_input_ceiling": true,
+      "prompt_sha256": "2f9a67fe1a07c2e9905330ff55c94af453a503399004c55cfccbd5eb0a84c92c"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.context.AbstractHttpWindwardContext",
+      "source_sha256": "1dcefd92f83629bcec565ec55c567094522226c3676d76ed919123acb903d144",
+      "estimated_input_with_reserve": 2204,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "8bd51ec6f304e1990642f62afcd9d31db6732e76843e57ba5f0c0a88e297db04"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-netty-nettyhttpserver-run",
+      "project_id": "windward",
+      "fqcn": "org.flmelody.core.netty.NettyHttpServer",
+      "source_sha256": "c60d3629f5342b36544a1f035e8f462ab0cc1aef7f0f86e423bdb8355040ebb1",
+      "estimated_input_with_reserve": 2467,
+      "would_be_blocked_by_frozen_input_ceiling": false,
+      "prompt_sha256": "fda3fcbf7e970189f808d3ef8261e3ed0ee3a2aa158d247462206f6b0a1d8420"
+    }
+  ],
+  "blocked_first_prompts": 11,
+  "static_analysis_errors": 0,
+  "notes": [
+    "Only the first TaskAgent prompt; passing it does not prove later prompts fit.",
+    "Dummy response is used only after capturing the actual first prompt. No LLMClient or provider SDK is constructed."
+  ]
+}

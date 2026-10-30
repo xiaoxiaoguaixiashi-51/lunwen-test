@@ -1,0 +1,15 @@
+{
+  "kind": "offline_prompt_and_context_audit_provenance",
+  "api_calls": 0,
+  "repository_revision": "79dcf82bee40cf0653a8c4ab30a13ffb30fea591",
+  "code_and_input_sha256": {
+    "src/agents/task_agent.py": "660a632e6a986569de7b4da3705efa02ffb5d5de8596baf85c8075b2923996ea",
+    "src/utils/java_parser.py": "ce7012dcb05ae1f2b342d5096a0dea7894a39517a4c28d11cc68bd5c6a2da98c",
+    "src/core/llm_client.py": "bf01b478015e466b26de24c8da5810d8a9409a62b77d7559eb4858027b6eb1b2",
+    "experiments/protocols/kcf_rerun_v1.json": "4aad7212d22cf5fc9ec2aba3514b2ded782b3ae25649cf687155304878d86a82",
+    "experiments/method_lists/kcf_utg_rq1_methods_v2.json": "0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c"
+  },
+  "javalang_version": "0.13.0",
+  "tokenizers_version": "0.22.1",
+  "raw_preflight_sha256": "e3b9d0b404af74f3eb84b0a8d2a0ba5f100d10630d727b3f92ed38d9b2be2c13"
+}
