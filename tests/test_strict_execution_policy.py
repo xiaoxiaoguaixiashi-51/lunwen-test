@@ -44,17 +44,19 @@ class StrictExecutionPolicyTest(unittest.TestCase):
                 {"project_id": "p", "class_tree_sha256": class_tree_hash(classes), "xml_sha256": digest(xml)}]}))
             counts = []
             evidence = []
-            for module in (rag, evo, kcf):
-                generated = root / module.__name__ / "generated"
+            for module, declared_package in ((rag, True), (evo, True), (kcf, True), (kcf, False)):
+                case = module.__name__ + ("_default_package" if not declared_package else "")
+                generated = root / case / "generated"
                 folder = generated / ("p/p.T" if module is evo else "t")
                 folder.mkdir(parents=True)
                 name = "T_ESTest" if module is evo else "TTest"
                 test = folder / (name + ".java")
-                test.write_text("package p; import org.junit.Test; import static org.junit.Assert.*; public class " + name
-                                + " { @Test public void branch() { System.out.close(); assertEquals(1, T.work(true)); } }")
+                test.write_text(("package p; " if declared_package else "")
+                                + "import org.junit.Test; import static org.junit.Assert.*; public class " + name
+                                + " { @Test public void branch() { System.out.close(); assertEquals(1, p.T.work(true)); } }")
                 (folder / "status.json").write_text(json.dumps({"status": "completed", "success": True}))
                 method = {"id": "t", "project_id": "p", "fqcn": "p.T", "method": "work", "package": "p"}
-                args = SimpleNamespace(projects_root=str(root / "projects"), output_dir=str(root / module.__name__ / "output"),
+                args = SimpleNamespace(projects_root=str(root / "projects"), output_dir=str(root / case / "output"),
                                        strict_evaluation=True, evaluation_reference_root=str(ref), timeout=30,
                                        jacoco_agent=str(tools / "jacocoagent.jar"), jacoco_cli=str(cli),
                                        evosuite_jar=str(tools / "evosuite.jar"), rag_dir=str(generated), evosuite_dir=str(generated),
@@ -76,7 +78,7 @@ class StrictExecutionPolicyTest(unittest.TestCase):
                                  "reported_classes": [c.get("name") for c in tree.findall(".//class")],
                                  "xml_sha256": digest(Path(result["xml_file"])), "exec_sha256": digest(execution / "jacoco.exec"),
                                  "timings": [json.loads(line) for line in (execution / "execution_timings.jsonl").read_text().splitlines()]})
-            self.assertEqual([(1, 1)] * 3, counts)
+            self.assertEqual([(1, 1)] * 4, counts)
             if keep:
                 (root / "summary.json").write_text(json.dumps({"kind": "handwritten_evaluator_fixture_not_baseline_quality",
                     "api_calls": 0, "main_class_tree_sha256": class_tree_hash(classes), "evaluators": evidence}, indent=2) + "\n")

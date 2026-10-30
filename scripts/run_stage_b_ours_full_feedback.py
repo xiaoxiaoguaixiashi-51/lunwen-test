@@ -350,7 +350,8 @@ def generate_incremental_test(
     source_context: str = "",
 ) -> tuple[str, list[dict]]:
     target = Path(method["target"])
-    package_name = package_from_item(method)
+    package_name = (strict.java_package(test_file.read_text(encoding="utf-8"))
+                    if strict.enabled(args) else package_from_item(method))
     test_class = class_name_for(method, round_index)
     snippet = source_snippet(target, row.get("line_ranges", ""))
     gap = coverage_gap_text(row, args.approach_name)
