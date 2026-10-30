@@ -1,0 +1,21 @@
+{
+  "archive_sha256": "0460bfb4f3b75aa195c2452c438bfd1c9e10518dc056f0a921b5c2f2d3204f6c",
+  "verified_manifest_files": 42,
+  "summary_matches_archive": true,
+  "focal_ast_verified": 41,
+  "first_prompt_token_estimates": {
+    "F0": {
+      "median": 5284,
+      "max": 28055
+    },
+    "F1": {
+      "median": 1853,
+      "max": 5376
+    },
+    "F2": {
+      "median": 1873,
+      "max": 5723
+    }
+  },
+  "api_calls": 0
+}

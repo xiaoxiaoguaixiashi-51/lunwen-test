@@ -1,0 +1,1236 @@
+{
+  "kind": "offline_source_context_baselines_not_generation_or_novelty_results",
+  "api_calls": 0,
+  "protocol_id": "kcf_rerun_v1_20261030",
+  "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614",
+  "input_ceiling": 12000,
+  "targets": 41,
+  "successful_context_extractions": 41,
+  "blocked_first_prompts": {
+    "F0": 11,
+    "F1": 0,
+    "F2": 0
+  },
+  "method_list_sha256": "0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c",
+  "rows": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "project_id": "commons-cli",
+      "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+      "estimated_first_input_with_reserve": {
+        "F0": 3726,
+        "F1": 1385,
+        "F2": 1410
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "424140989513a823dea3e09b9ce33d52f996b312326e7a02b90c99d189634a5c",
+      "included_local_helpers": [
+        {
+          "name": "getOptions",
+          "parameter_types": [],
+          "start_line": 66
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "ff7acb9215ab10c315f3c02d72c91291ff99f2d397b99516e95ce7d579b48704"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-optiongroup-tostring",
+      "project_id": "commons-cli",
+      "source_sha256": "49c76c02df88195d02a2ab986f9552e3a023e35ba0623106b4a8fc76d299cb47",
+      "estimated_first_input_with_reserve": {
+        "F0": 2193,
+        "F1": 1565,
+        "F2": 1605
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "d4d1dcf5f7dd9061189fbe28419ac0a834f224c89a469c8188fc31b926980f75",
+      "included_local_helpers": [
+        {
+          "name": "getOptions",
+          "parameter_types": [],
+          "start_line": 67
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "d10266abb260cdbf8cf42f5b1fbc77d8ed1550d1860770852a8177e0f93e2e3b"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-option-tostring",
+      "project_id": "commons-cli",
+      "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe",
+      "estimated_first_input_with_reserve": {
+        "F0": 7599,
+        "F1": 1933,
+        "F2": 2009
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "3e9e8cd4b716fb86ae70208fee409c1fcaf0a02afcff7ac8a60abda05f1b4cff",
+      "included_local_helpers": [
+        {
+          "name": "hasArg",
+          "parameter_types": [],
+          "start_line": 646
+        },
+        {
+          "name": "hasArgs",
+          "parameter_types": [],
+          "start_line": 664
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "36f0ac3511550548798854708eedd8050b9a69f51b8ff95beed9bb370660b68f"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createobject",
+      "project_id": "commons-cli",
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "estimated_first_input_with_reserve": {
+        "F0": 2482,
+        "F1": 1016,
+        "F2": 1016
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "fbc61fb5606215c756323fb8b4f1cc2e52b53840209dc3c5a345e85d577700fd",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "e32518bc90e7e88743d12a426799f08b34e4fc0b4204e8d80c9a5e70eed53a0b"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-patternoptionbuilder-parsepattern",
+      "project_id": "commons-cli",
+      "source_sha256": "18e868e6eafe771342912ff88b95d1ff6a86f8a9124d14d56d1eb1cfd7d661be",
+      "estimated_first_input_with_reserve": {
+        "F0": 2787,
+        "F1": 1853,
+        "F2": 2089
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "2a5d7e4366ab747ab0cb605aed4da0fe093d38f39c96021f905642b79bd5e02d",
+      "included_local_helpers": [
+        {
+          "name": "getValueClass",
+          "parameter_types": [
+            "char"
+          ],
+          "start_line": 112
+        },
+        {
+          "name": "isValueCode",
+          "parameter_types": [
+            "char"
+          ],
+          "start_line": 143
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "ea8e8f93aca29c36baac9b4ef34d48428abe1f9f48f23486bbc7ef8c422d43e1"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-typehandler-createnumber",
+      "project_id": "commons-cli",
+      "source_sha256": "f427b3eeff5583af9220dc99c786d4d4fc801770fa0f4846a0c9d23047c029c9",
+      "estimated_first_input_with_reserve": {
+        "F0": 2482,
+        "F1": 972,
+        "F2": 972
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "3e96968d73b64ce5e5aa54395cacda2073ca341d8b11b447ee39ce701460236f",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "0cf2b86f98b16ee5ae7f00bdf87484602aaf4c4c655e02093e62dab3fb0d5546"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-tostring",
+      "project_id": "commons-csv",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "estimated_first_input_with_reserve": {
+        "F0": 28055,
+        "F1": 4698,
+        "F2": 5095
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "724fa3a8a94e76fa7a4cdbb34293c20ce53279127b8b3cf5d438e785c67f8148",
+      "included_local_helpers": [
+        {
+          "name": "append",
+          "parameter_types": [
+            "char",
+            "Appendable"
+          ],
+          "start_line": 1422
+        },
+        {
+          "name": "append",
+          "parameter_types": [
+            "CharSequence",
+            "Appendable"
+          ],
+          "start_line": 1430
+        },
+        {
+          "name": "getIgnoreEmptyLines",
+          "parameter_types": [],
+          "start_line": 1597
+        },
+        {
+          "name": "getIgnoreHeaderCase",
+          "parameter_types": [],
+          "start_line": 1607
+        },
+        {
+          "name": "getIgnoreSurroundingSpaces",
+          "parameter_types": [],
+          "start_line": 1616
+        },
+        {
+          "name": "isCommentMarkerSet",
+          "parameter_types": [],
+          "start_line": 1707
+        },
+        {
+          "name": "isEscapeCharacterSet",
+          "parameter_types": [],
+          "start_line": 1747
+        },
+        {
+          "name": "isNullStringSet",
+          "parameter_types": [],
+          "start_line": 1756
+        },
+        {
+          "name": "isQuoteCharacterSet",
+          "parameter_types": [],
+          "start_line": 1765
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "767b50e97aa8e8e34aa830feddd0730a0774b4da0799247a5f643f48b78f6bac"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-equals",
+      "project_id": "commons-csv",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "estimated_first_input_with_reserve": {
+        "F0": 27096,
+        "F1": 3570,
+        "F2": 3570
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "27ea548d72ddc2ca19f01f96b33463a987bf6c275f347f8339db260ee4649f7b",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "e1357c955a5058f8a59dbac7d6dd6ece93c55e46d8bddade3765f1fd0fd76ef6"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvprinter-printcomment",
+      "project_id": "commons-csv",
+      "source_sha256": "3d25f081a271d783a5cc48bb172a72687494e36d2e7e6d272319e6060f783e9f",
+      "estimated_first_input_with_reserve": {
+        "F0": 5268,
+        "F1": 1796,
+        "F2": 1838
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "e3b395e677a70d9cb4bf4074e0116928b54b5734744f90ca5a9b0f3345ad794e",
+      "included_local_helpers": [
+        {
+          "name": "println",
+          "parameter_types": [],
+          "start_line": 242
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "e614576d090e7a8928c9644319d379539c15f8536e62a8c18bec9c5d7b612782"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-csvformat-format",
+      "project_id": "commons-csv",
+      "source_sha256": "7edafcae94c899f0c37247970d52aac9b436121aa6c97e36717163ded7fa38b9",
+      "estimated_first_input_with_reserve": {
+        "F0": 26971,
+        "F1": 3275,
+        "F2": 3275
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "8ed70c9f858fbd874a4505d8cfe8614ce8189757ecc2089ffcc75ae1f2842dfe",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "98b95d67b9525a85f6b96f2358e50d5d07d231289aa57a5b93ad39e751718b9e"
+    },
+    {
+      "id": "commons-csv-commons-csv-org-apache-commons-csv-extendedbufferedreader-readline",
+      "project_id": "commons-csv",
+      "source_sha256": "117dc55b49c9aab03f636811b20d0fc67044a993519fc2e13bdcb3ebae697237",
+      "estimated_first_input_with_reserve": {
+        "F0": 2676,
+        "F1": 1277,
+        "F2": 1721
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "86836e5faade8bed24b17c883e9ffc6a6c70f567d61e73f13a6917787a7a172b",
+      "included_local_helpers": [
+        {
+          "name": "lookAhead",
+          "parameter_types": [],
+          "start_line": 117
+        },
+        {
+          "name": "lookAhead",
+          "parameter_types": [
+            "char[]"
+          ],
+          "start_line": 135
+        },
+        {
+          "name": "lookAhead",
+          "parameter_types": [
+            "int"
+          ],
+          "start_line": 152
+        },
+        {
+          "name": "read",
+          "parameter_types": [],
+          "start_line": 158
+        },
+        {
+          "name": "read",
+          "parameter_types": [
+            "char[]",
+            "int",
+            "int"
+          ],
+          "start_line": 170
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "43bc063da8edead3cbdfa63c7828dbbc84da1ffcdcff66e00609ffc84c439d9b"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-bm-lang-loadfromresource",
+      "project_id": "commons-codec",
+      "source_sha256": "d9bd107f5dd72ede692349877d48d44c90322254eecf607f2376c5434dbf1f5c",
+      "estimated_first_input_with_reserve": {
+        "F0": 3265,
+        "F1": 1904,
+        "F2": 1904
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "5018e79920f4b854bbd32618a4d803db4fbfef6cef8c1117e11b3d81adf74d9d",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "fc6bb0ee8a2bafefe2225c0fc114ea090281529c287d4a9efc9b73d6335c6cf6"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-colognephonetic-colognephonetic",
+      "project_id": "commons-codec",
+      "source_sha256": "09c82bd7bbf95609f7688b90c851cad361dc2603353374f27bee089ff69ccc2a",
+      "estimated_first_input_with_reserve": {
+        "F0": 5392,
+        "F1": 2624,
+        "F2": 2684
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "2dc98d69f6606ceae5490fae1438de3fb87736d72cf394f01888f404b535075d",
+      "included_local_helpers": [
+        {
+          "name": "arrayContains",
+          "parameter_types": [
+            "char[]",
+            "char"
+          ],
+          "start_line": 297
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "bc65d5ef0ec2831c46cd711cf860c885b2af925c586ade49277a15c4f9a4715c"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-metaphone-metaphone",
+      "project_id": "commons-codec",
+      "source_sha256": "b1339dc3015430f5999d60c1990a2b172fd66dbb9afc50c7dbe2778dd0a3217d",
+      "estimated_first_input_with_reserve": {
+        "F0": 6795,
+        "F1": 5376,
+        "F2": 5723
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "d4540bc83556ce823f916fa509df0e38d43e9fb577dff35fc04f7375f5c70407",
+      "included_local_helpers": [
+        {
+          "name": "getMaxCodeLen",
+          "parameter_types": [],
+          "start_line": 112
+        },
+        {
+          "name": "isLastChar",
+          "parameter_types": [
+            "int",
+            "int"
+          ],
+          "start_line": 114
+        },
+        {
+          "name": "isNextChar",
+          "parameter_types": [
+            "StringBuilder",
+            "int",
+            "char"
+          ],
+          "start_line": 130
+        },
+        {
+          "name": "isPreviousChar",
+          "parameter_types": [
+            "StringBuilder",
+            "int",
+            "char"
+          ],
+          "start_line": 138
+        },
+        {
+          "name": "isVowel",
+          "parameter_types": [
+            "StringBuilder",
+            "int"
+          ],
+          "start_line": 146
+        },
+        {
+          "name": "regionMatch",
+          "parameter_types": [
+            "StringBuilder",
+            "int",
+            "String"
+          ],
+          "start_line": 382
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "e610e46d6bfd9b9c668a06859b1b7f1cc9aa4ca308cc42281de02904ae7820ab"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-nysiis-nysiis",
+      "project_id": "commons-codec",
+      "source_sha256": "51f351390fb30e717239235c994980083fdffba901be68f8857a193ba1d972a0",
+      "estimated_first_input_with_reserve": {
+        "F0": 5369,
+        "F1": 3352,
+        "F2": 3762
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "f9ce8416fc08d5f9d1b8bbb186ec562c1c33a7827be2ab929e73b0900e88f40a",
+      "included_local_helpers": [
+        {
+          "name": "transcodeRemaining",
+          "parameter_types": [
+            "char",
+            "char",
+            "char",
+            "char"
+          ],
+          "start_line": 120
+        },
+        {
+          "name": "isStrict",
+          "parameter_types": [],
+          "start_line": 239
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "47114466f879207290fd90d6e8d99c9ea970cc13f49e50132eb6d28fd814db0d"
+    },
+    {
+      "id": "commons-codec-commons-codec-org-apache-commons-codec-language-matchratingapproachencoder-isencodeequals",
+      "project_id": "commons-codec",
+      "source_sha256": "2b5582efb959f8d6f325bc6c17430a9a5922a84b60fb0f22ca194d7882673214",
+      "estimated_first_input_with_reserve": {
+        "F0": 5284,
+        "F1": 2119,
+        "F2": 3204
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "3c22cec3dbcf66aecc15a171913e03a1df061683566ea4e7aeeac81d0cbabde4",
+      "included_local_helpers": [
+        {
+          "name": "cleanName",
+          "parameter_types": [
+            "String"
+          ],
+          "start_line": 78
+        },
+        {
+          "name": "getFirst3Last3",
+          "parameter_types": [
+            "String"
+          ],
+          "start_line": 159
+        },
+        {
+          "name": "getMinRating",
+          "parameter_types": [
+            "int"
+          ],
+          "start_line": 183
+        },
+        {
+          "name": "leftToRightThenRightToLeftProcessing",
+          "parameter_types": [
+            "String",
+            "String"
+          ],
+          "start_line": 295
+        },
+        {
+          "name": "removeDoubleConsonants",
+          "parameter_types": [
+            "String"
+          ],
+          "start_line": 384
+        },
+        {
+          "name": "removeVowels",
+          "parameter_types": [
+            "String"
+          ],
+          "start_line": 407
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "a47283e13de997cf6f5e9a6fd39e70f889759f2e2c3312857e3b6cd1e4855a1e"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-maputils-putall",
+      "project_id": "commons-collections4",
+      "source_sha256": "9a7481df6283a1e6aa412bab37da3f65643c46bfc1c831c803f043f1a3305df6",
+      "estimated_first_input_with_reserve": {
+        "F0": 22856,
+        "F1": 2136,
+        "F2": 2136
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "4fee58dc37b9f8f15dad7ff7cda92633f171016fe9f5629c4d7f49db95d1a484",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "9daac36db2d21ba23a48f8d02141fd58dfcc8b5db6896c3ca2fb253c94c26c88"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-invokertransformer-transform",
+      "project_id": "commons-collections4",
+      "source_sha256": "d665c15c0108024fd703cd20724f4f31911e605cd109cc640d3100379ebeb847",
+      "estimated_first_input_with_reserve": {
+        "F0": 2333,
+        "F1": 1434,
+        "F2": 1434
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "fead70f3e6abd7ade54baaa4e3ecbf6e257cab60acc40a33641b516acba3002b",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "13ef43b005ccb5d80a5312944d3af121dcbc5ec55868c80e7744210f62c4948c"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-list-treelist-addall",
+      "project_id": "commons-collections4",
+      "source_sha256": "92093e699520ba2bdf38ef491b8019354b1a9f5069c1943079218feefdec38fb",
+      "estimated_first_input_with_reserve": {
+        "F0": 9386,
+        "F1": 1204,
+        "F2": 1204
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "f171c5e2ac8b23371370a8a1a9a780ad00b5177913cc46b2241e5f5aba7afbe8",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "0a9a0b934ce9d687a86b9df7c67a79c085c804f3feb1cba6459911bb923b68d1"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bloomfilter-enhanceddoublehasher-indices",
+      "project_id": "commons-collections4",
+      "source_sha256": "284162ae08323a5b8bff13ad4f0375ef07b26ef1fa6776da04a62b1c6a5edd11",
+      "estimated_first_input_with_reserve": {
+        "F0": 3122,
+        "F1": 1887,
+        "F2": 1887
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "b49913eafd6d0d5ab95bc62b7b3386f2e0f9b2358bce22ed14f7b590f867333a",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "9b59ea92e6516ab8b5d5c6a72948754baf1e46b10c26bfbb6e9985f4bd9ab108"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-size",
+      "project_id": "commons-collections4",
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "estimated_first_input_with_reserve": {
+        "F0": 22646,
+        "F1": 1844,
+        "F2": 1844
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "56e18e069c9f0d83531ddb804c57c4a76ee7c9d9484199bebafbc1fac968d092",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "874a93807a0d8b6be171de951c16ef193623c70420bbd0d3aaf397a417560f7b"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-instantiatetransformer-transform",
+      "project_id": "commons-collections4",
+      "source_sha256": "f2b48e80cbad116a4482377c65fe352bcab62ff47815a93787bb96416e0a8483",
+      "estimated_first_input_with_reserve": {
+        "F0": 1991,
+        "F1": 1261,
+        "F2": 1261
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "78a6217bd4bd1cd5ac4adcd949befdac6f00fd6de4375c6e892195238ca6e191",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "9c3b1a78fd1c32f8575f87af020425068d083a38a7c88c8cb696ffa64b5ad561"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iteratorutils-getiterator",
+      "project_id": "commons-collections4",
+      "source_sha256": "9207abddf8b91d5100ea9da6aa82a74f737fc6a78ed56fe13f6c331e371e9afc",
+      "estimated_first_input_with_reserve": {
+        "F0": 16620,
+        "F1": 2952,
+        "F2": 3036
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "14906bd4ee43b73255c4b2025d8861b6300500924213cd1b69b2121d84d2d93e",
+      "included_local_helpers": [
+        {
+          "name": "emptyIterator",
+          "parameter_types": [],
+          "start_line": 606
+        },
+        {
+          "name": "singletonIterator",
+          "parameter_types": [
+            "E"
+          ],
+          "start_line": 1188
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "f331d058c71a8bf0eead8629db20151abbaa2f8fec29fcd64dc471c6c21039cd"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-analyzer-stringkeyanalyzer-bitindex",
+      "project_id": "commons-collections4",
+      "source_sha256": "13080fb348e25efa874390e88ffd93e738b7be0ba8424addbba64b750f4c085b",
+      "estimated_first_input_with_reserve": {
+        "F0": 2120,
+        "F1": 1619,
+        "F2": 1619
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "e18c87abb5b3c98eed836e89f4601ae36cea5ac9a1ea2bcc3cdce51f931124f5",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "8f5e1c407d7bf204daea09c80a404df63e3a447aa6835cf7c82b6c79f2def1eb"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-functors-prototypefactory-prototypefactory",
+      "project_id": "commons-collections4",
+      "source_sha256": "e31e2bbb8ab6426f8613d95a116b162c16275ad5ae9f2c0f477aefafb9c93a95",
+      "estimated_first_input_with_reserve": {
+        "F0": 2465,
+        "F1": 1337,
+        "F2": 1337
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "e47c28496f32a335f592f572d6352b0776762732c0035a660ae8e5444a9740e4",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "2820a8cedf23ac626c8abcdd6ffe67a1f5c7ca254351131ea04bc2e7f5356af7"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-bag-abstractmapbag-tostring",
+      "project_id": "commons-collections4",
+      "source_sha256": "068ba88bebfdbb0566acbd567cd9b89551c8a4817ca3a8172cbda68d794cb561",
+      "estimated_first_input_with_reserve": {
+        "F0": 5495,
+        "F1": 1686,
+        "F2": 1866
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "6f52776b6e96abb534b967dfe1262c15603085238b6ab116956d66a1ea25b3cd",
+      "included_local_helpers": [
+        {
+          "name": "getCount",
+          "parameter_types": [
+            "Object"
+          ],
+          "start_line": 356
+        },
+        {
+          "name": "isEmpty",
+          "parameter_types": [],
+          "start_line": 400
+        },
+        {
+          "name": "iterator",
+          "parameter_types": [],
+          "start_line": 411
+        },
+        {
+          "name": "uniqueSet",
+          "parameter_types": [],
+          "start_line": 615
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "969bb841366cac345218c2a83fb7feb1dbdd44c4364665519ce817dcf5634d8f"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-iterators-cartesianproductiterator-next",
+      "project_id": "commons-collections4",
+      "source_sha256": "b592df44dc74bbb0fdcf3ba2602c94f1011fe96b6e72112fca3c316893cec8f7",
+      "estimated_first_input_with_reserve": {
+        "F0": 2328,
+        "F1": 1492,
+        "F2": 1531
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "12e6f7a3d02873555753405a73ec661213393a458f7098962de319b7866f9cc3",
+      "included_local_helpers": [
+        {
+          "name": "hasNext",
+          "parameter_types": [],
+          "start_line": 117
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "99108c94f6817b5f1505acd068c04f232f7d8702d4165d5d64333169d8ec56fb"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-properties-orderedproperties-tostring",
+      "project_id": "commons-collections4",
+      "source_sha256": "33150f093cd26a0006e26d618a56afd318b82926e1068638e31181a58adc487a",
+      "estimated_first_input_with_reserve": {
+        "F0": 2428,
+        "F1": 1560,
+        "F2": 1624
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "bb43119206ca219c8329a3a4e66cd885446b512bdba08655a3a659d16dc44cb8",
+      "included_local_helpers": [
+        {
+          "name": "entrySet",
+          "parameter_types": [],
+          "start_line": 83
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "eee60d3d616ef05635d4f7d2fb505a448ebecf1ecaecdb90b857ec289039254e"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-collectionutils-removecount",
+      "project_id": "commons-collections4",
+      "source_sha256": "589346e5d7b8f22da4c0fc8267a185db4c6085deedf0a94cd20eabf508738266",
+      "estimated_first_input_with_reserve": {
+        "F0": 22689,
+        "F1": 1873,
+        "F2": 1873
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "c64cecbbca6a80166d9fd9b98d8f7ebb9847aa938965769666f0b1f1a00bcf07",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "65a72d5172455d6137932b2e971e7eb7ff8b26072cddb702abc8c560f416fab8"
+    },
+    {
+      "id": "commons-collections4-commons-collections4-org-apache-commons-collections4-trie-abstractpatriciatrie-tostring",
+      "project_id": "commons-collections4",
+      "source_sha256": "e4cea76991201e8998893fc411b5efab43976ad7f5b03f101d6c8b661b8251ed",
+      "estimated_first_input_with_reserve": {
+        "F0": 20164,
+        "F1": 3168,
+        "F2": 3168
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "c7ada0716ea5cb600693e7394501ce622858e3596a44cf0927f87def2a2c28da",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "451923146783cc472299573e59c28e9071a0d5093b38ed62e91bb2ce687f5900"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-internal-reflectionconstructor-construct",
+      "project_id": "jdom2",
+      "source_sha256": "9fa28e6f17bc9b97e17ea31078ce3fe83ca3ab63d869a435d65c98de38048a43",
+      "estimated_first_input_with_reserve": {
+        "F0": 1943,
+        "F1": 1257,
+        "F2": 1257
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "7f3e38aec3feca6815698fd1bbc95cb0238e5a0b2e180184980c6e088a4fb662",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "f181609ad9e89d1300831ea2f4c5808321874a0e48340d375672550e1d83dcbe"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-newinstance",
+      "project_id": "jdom2",
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "estimated_first_input_with_reserve": {
+        "F0": 5072,
+        "F1": 1553,
+        "F2": 1761
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "e2cf9acca576185d51b5e75f0e8095e83deb03a569c97d01e05d658ddce7e641",
+      "included_local_helpers": [
+        {
+          "name": "setXPathClass",
+          "parameter_types": [
+            "Class"
+          ],
+          "start_line": 175
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "f74534fac33ffdd3a1d43036e0b54b849d90c8c175c4a7bf6957fce2fba89a42"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-input-sax-saxhandler-startelement",
+      "project_id": "jdom2",
+      "source_sha256": "a921a97f49eb12e924f2990e9fa50cdfbec927537004ad5ce396daedf34efb5f",
+      "estimated_first_input_with_reserve": {
+        "F0": 12466,
+        "F1": 4857,
+        "F2": 5317
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "f2f1496b1abb1646c4316375dd62dece8f8b171ec6cb9ef4b42201006ca96066",
+      "included_local_helpers": [
+        {
+          "name": "transferNamespaces",
+          "parameter_types": [
+            "Element"
+          ],
+          "start_line": 733
+        },
+        {
+          "name": "flushCharacters",
+          "parameter_types": [],
+          "start_line": 800
+        },
+        {
+          "name": "flushCharacters",
+          "parameter_types": [
+            "String"
+          ],
+          "start_line": 821
+        },
+        {
+          "name": "getCurrentElement",
+          "parameter_types": [],
+          "start_line": 1132
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "8dd4e8d71aeda08e91803845b9c1686a073b9ada29c5ed05b1382d36e68e5113"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-xpath-xpath-setxpathclass",
+      "project_id": "jdom2",
+      "source_sha256": "3e78e12979a162b773c4846ba77bc673574d98ae25b5ec8181631aafcac230f4",
+      "estimated_first_input_with_reserve": {
+        "F0": 4996,
+        "F1": 1339,
+        "F2": 1339
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "2d6df70bc3a79ae81215a94059b56a851fbbc0526daeb8858e6a0217ad4f13c7",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "21fd10459872df5e0d57f4daa2b26c2984a147bff25b2603cd324b2905cf3aa9"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-document-cancontaincontent",
+      "project_id": "jdom2",
+      "source_sha256": "606c68f2a68000cb343f1854e4a898ceee862e17913cb9d519828b1e77cc1908",
+      "estimated_first_input_with_reserve": {
+        "F0": 8492,
+        "F1": 1645,
+        "F2": 1645
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "e446815d81617e958bf50c4ab9fae59f215019e6b6cb66e55808f876f6d41bf7",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "1edb46e1940c5578a69b497a13ab8077e74e835d2ba29f331adbfb7a5ab20eba"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapetext",
+      "project_id": "jdom2",
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "estimated_first_input_with_reserve": {
+        "F0": 10168,
+        "F1": 2747,
+        "F2": 2747
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "f103ca7043bf66626b25a139415e4e0facaab479f17da00d70d8f9a494465020",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "8efe317b66285efd4391d4a097d2b560a9ff050a2286ab8d8a3f9fb1ae32a0d9"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-output-format-escapeattribute",
+      "project_id": "jdom2",
+      "source_sha256": "99a7d4a1aba265fd1395d3ae237db31b26b124bd0112de718bd704a48545dd31",
+      "estimated_first_input_with_reserve": {
+        "F0": 10275,
+        "F1": 2870,
+        "F2": 2870
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "3bd3810eb62d2dde849fe5be37e99984ebbfe985833ada1db5cc95f18e5f40fb",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "ecc7743c7923cbd290a60fa14bdbec8b6b394d439feaadf3e3699d840636e2d6"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-verifier-checkcharacterdata",
+      "project_id": "jdom2",
+      "source_sha256": "ea3c86b9ec67eaf7ea591fa85ecc454524baae768343d72cae5711fa6f2db400",
+      "estimated_first_input_with_reserve": {
+        "F0": 17660,
+        "F1": 2459,
+        "F2": 2820
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "554ccc44d2990f1ce0dc639f7e5e439b56b825980cbbe835eaf7ff0523f0dc5f",
+      "included_local_helpers": [
+        {
+          "name": "decodeSurrogatePair",
+          "parameter_types": [
+            "char",
+            "char"
+          ],
+          "start_line": 881
+        },
+        {
+          "name": "isHighSurrogate",
+          "parameter_types": [
+            "char"
+          ],
+          "start_line": 1079
+        },
+        {
+          "name": "isLowSurrogate",
+          "parameter_types": [
+            "char"
+          ],
+          "start_line": 1097
+        },
+        {
+          "name": "isXMLCharacter",
+          "parameter_types": [
+            "int"
+          ],
+          "start_line": 1126
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "132b9a21ae9231e3b1a9737284aab89e332691b1844a558f5dba390cefcd99ad"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "project_id": "jdom2",
+      "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+      "estimated_first_input_with_reserve": {
+        "F0": 19617,
+        "F1": 2830,
+        "F2": 3286
+      },
+      "blocked": {
+        "F0": true,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "835ca5b380ecf331b4571c63ec75af90f977dba629a78e0cb9d5411892cb4e88",
+      "included_local_helpers": [
+        {
+          "name": "getNamespace",
+          "parameter_types": [],
+          "start_line": 238
+        },
+        {
+          "name": "getNamespacePrefix",
+          "parameter_types": [],
+          "start_line": 282
+        },
+        {
+          "name": "getNamespace",
+          "parameter_types": [
+            "String"
+          ],
+          "start_line": 308
+        },
+        {
+          "name": "getAdditionalNamespaces",
+          "parameter_types": [],
+          "start_line": 432
+        },
+        {
+          "name": "getAttributes",
+          "parameter_types": [],
+          "start_line": 1104
+        }
+      ],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "b0a45df8bc592d9d133879be868f92f9c3724b03d442e63e398eb9794b293ca2"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-context-abstracthttpwindwardcontext-html",
+      "project_id": "windward",
+      "source_sha256": "1dcefd92f83629bcec565ec55c567094522226c3676d76ed919123acb903d144",
+      "estimated_first_input_with_reserve": {
+        "F0": 2204,
+        "F1": 1774,
+        "F2": 1774
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "12b80c568d05cc735bc544fd485dabed576a10da62a3c4b6ee2ac448c32e69b5",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "2aaaeef97f410f6e561033a4551a870ade2896fc3e4b4258ec597c801f28dcfc"
+    },
+    {
+      "id": "windward-windward-org-flmelody-core-netty-nettyhttpserver-run",
+      "project_id": "windward",
+      "source_sha256": "c60d3629f5342b36544a1f035e8f462ab0cc1aef7f0f86e423bdb8355040ebb1",
+      "estimated_first_input_with_reserve": {
+        "F0": 2467,
+        "F1": 2374,
+        "F2": 2374
+      },
+      "blocked": {
+        "F0": false,
+        "F1": false,
+        "F2": false
+      },
+      "focal_ast_roundtrip_verified": true,
+      "focal_sha256": "e5f3d67ceffdeb8aafc632bb84776b5bb7ce6973c330a2e68ba6128d19d9d9c6",
+      "included_local_helpers": [],
+      "excluded_local_helpers": [],
+      "context_file_sha256": "ac22ca4d9564fb96ac41ae804e13647107a6d71f7776f955a09bfb19464ed3c0"
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/minimal_source_context.py": "e2b05389e9ccad468748e8d4344d3a67032c1546f04080b1f0c58feba8887130",
+    "scripts/audit_minimal_source_context.py": "8a1f4858f5dc453ff9aa473614852a97b6291879f8da543903946d880d281aa7",
+    "src/agents/task_agent.py": "660a632e6a986569de7b4da3705efa02ffb5d5de8596baf85c8075b2923996ea",
+    "src/utils/focal_target.py": "9078ac4f4bcc79f6a3b193962ddefd6d115fe9448ad0ea8dda74ae3fb6f23cb2"
+  },
+  "limits": [
+    "Only the first TaskAgent prompt is measured; later pipeline prompts not validated.",
+    "No claims that dependency information, behavior or compilation are preserved by context omission.",
+    "No pipeline integration, model requests, project tests, generated tests or evaluation answers used.",
+    "Simple source selection is a baseline, not a new contribution."
+  ]
+}

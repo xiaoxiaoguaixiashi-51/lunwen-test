@@ -1,0 +1,18 @@
+{
+  "kind": "authorized_skill_status_refresh_not_research_route_change",
+  "updated_files": [
+    {
+      "relative_path": "SKILL.md",
+      "sha256": "7a8d44fdaddd85ea2194d894704e21635f48078dfc82406455c965bfc1785913",
+      "installed_matches_repository_copy": true
+    },
+    {
+      "relative_path": "references/research-improvement.md",
+      "sha256": "21523e5dff25302f7dadb73d39c2b0e6cb1b7dacc36cd0f17ccea6626f227681",
+      "installed_matches_repository_copy": true
+    }
+  ],
+  "other_skill_files_untouched": true,
+  "new_innovation_claimed": false,
+  "rq_changed": false
+}
