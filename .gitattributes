@@ -7,3 +7,4 @@
 /results/minimal_source_context_20261030/summary.json -text
 /skills/skilldui/SKILL.md -text
 /skills/skilldui/references/research-improvement.md -text
+/results/source_context_diagnostic_20261030/*.json -text

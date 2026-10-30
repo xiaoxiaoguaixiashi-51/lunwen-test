@@ -1,0 +1,154 @@
+{
+  "kind": "single_development_context_comparison_not_formal",
+  "results": {
+    "F0": {
+      "approach": "F0",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "F1": {
+      "approach": "F1",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "F2": {
+      "approach": "F2",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    }
+  },
+  "execution_statuses": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F0",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F1",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F2",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F1",
+      "status": "test_failed",
+      "test_class": "org.jdom2.ElementGetNamespacesInScopeTest",
+      "xml_file": "/root/autodl-tmp/kcf-context-live-v2-20261030/F1/execution/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/xml/jacoco.xml"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F2",
+      "status": "compile_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": ""
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F0",
+      "status": "generation_budget_blocked",
+      "xml_file": ""
+    }
+  ],
+  "api_costs": {
+    "kind": "api_cost_index_not_full_compute_budget",
+    "totals": {
+      "trace_events": 16,
+      "provider_attempts": 15,
+      "budget_blocked": 1,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0
+    },
+    "known_usage_totals": {
+      "prompt_tokens": 83810,
+      "completion_tokens": 33227,
+      "total_tokens": 117037,
+      "prompt_cache_hit_tokens": 4480,
+      "prompt_cache_miss_tokens": 79330
+    },
+    "legacy_events_with_inferred_attempt_flag": 0,
+    "monetary_cost": null,
+    "non_api_costs_measured": false,
+    "full_usage_known": true,
+    "notes": [
+      "Unknown usage is not zero cost",
+      "SDK retries must be zero for strict attempt accounting",
+      "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+    ],
+    "by_target_stage": [
+      {
+        "target_id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+        "stage": "source_context_development",
+        "trace_events": 9,
+        "provider_attempts": 9,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 45574,
+          "completion_tokens": 18415,
+          "total_tokens": 63989,
+          "prompt_cache_hit_tokens": 1920,
+          "prompt_cache_miss_tokens": 43654
+        },
+        "status_counts": {
+          "ok": 9
+        },
+        "provider_elapsed_seconds": 74.890198
+      },
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+        "stage": "source_context_development",
+        "trace_events": 7,
+        "provider_attempts": 6,
+        "budget_blocked": 1,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 38236,
+          "completion_tokens": 14812,
+          "total_tokens": 53048,
+          "prompt_cache_hit_tokens": 2560,
+          "prompt_cache_miss_tokens": 35676
+        },
+        "status_counts": {
+          "budget_blocked": 1,
+          "ok": 6
+        },
+        "provider_elapsed_seconds": 57.087384
+      }
+    ]
+  },
+  "formal_run_ready": false
+}

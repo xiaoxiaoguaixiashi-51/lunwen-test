@@ -1,0 +1,19 @@
+{
+  "kind": "authorized_evidence_status_refresh_after_context_diagnostic",
+  "updated_files": [
+    {
+      "relative_path": "SKILL.md",
+      "sha256": "f313091d70c7b9f710aadf511e7c96a5b64090f2b894766e3f18a6df3bb09ea6",
+      "installed_matches_repository_copy": true
+    },
+    {
+      "relative_path": "references/research-improvement.md",
+      "sha256": "0b7ed09bc118bc574a2f39593610a2721517a5d7e71b128629b3e43a2d5166ea",
+      "installed_matches_repository_copy": true
+    }
+  ],
+  "other_skill_files_untouched": true,
+  "new_innovation_claimed": false,
+  "rq_changed": false,
+  "evidence": "results/source_context_diagnostic_20261030/README.md"
+}

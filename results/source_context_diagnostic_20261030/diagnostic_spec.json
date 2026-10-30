@@ -1,0 +1,134 @@
+{
+  "kind": "development_context_comparison_not_formal_full_or_ablation",
+  "code_revision": "236b44097d855074118793ff493f7f5c7a7508be",
+  "implementation_sha256": "f840112c1ad9030747723b90539dbc92f9468d72c36312430ee04f50e4a4e10b",
+  "frozen_protocol": {
+    "protocol_id": "kcf_rerun_v1_20261030",
+    "status": "frozen_execution_specification_not_scientific_readiness_or_full_run_authorization",
+    "research_questions": [
+      "RQ1",
+      "RQ2"
+    ],
+    "arms": [
+      "Full",
+      "A1",
+      "A2",
+      "A3",
+      "RAG",
+      "EvoSuite"
+    ],
+    "method_list": "experiments/method_lists/kcf_utg_rq1_methods_v2.json",
+    "method_list_sha256": "0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c",
+    "knowledge": "experiments/knowledge/dependency_construction_knowledge.jsonl",
+    "knowledge_sha256": "38b5eedac111e59b4d38fcdb2c6e23578b4a3584810a468d94a9db2bc5abace5",
+    "model": {
+      "model": "deepseek-flash",
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "thinking": "disabled",
+      "max_retries": 0,
+      "timeout": 120
+    },
+    "budget": {
+      "framing_reserve": 256,
+      "max_calls_per_target": 12,
+      "max_total_tokens_per_target": 240000,
+      "max_input_tokens_per_call": 12000,
+      "max_output_tokens_per_call": 8192
+    },
+    "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614",
+    "initial_compile_attempts": 3,
+    "seed_repair_requests_per_failed_target": 1,
+    "formal_feedback_rounds": 3,
+    "feedback_repair_requests_per_round": 1,
+    "evosuite": {
+      "search_budget_seconds_per_class": 120,
+      "timeout_seconds_per_class": 300,
+      "generation_unit": "project_and_fqcn"
+    },
+    "evaluation_timeout_seconds": 120,
+    "planned_formal_repetitions": 5,
+    "formal_repetition_ids": [
+      "r01",
+      "r02",
+      "r03",
+      "r04",
+      "r05"
+    ],
+    "formal_evosuite_seeds": [
+      31001,
+      31002,
+      31003,
+      31004,
+      31005
+    ],
+    "llm_seed_supported_and_fixed": false,
+    "formal_repetition_rationale": "Predeclared five paired runs to report variation and intervals, not a power or sufficiency guarantee. Any change requires a new protocol before formal runs.",
+    "primary_budget_claim": "identical_LLM_resource_ceiling_not_equal_realized_compute_or_equal_cross_tool_budget",
+    "rag_calls_per_target": 1,
+    "pilot": {
+      "kind": "authorized_development_end_to_end_feasibility_not_formal_effectiveness",
+      "target_pairs": [
+        [
+          "commons-csv",
+          "printComment"
+        ],
+        [
+          "jdom2",
+          "construct"
+        ]
+      ],
+      "repetitions": 1,
+      "feedback_rounds": 1,
+      "evosuite_search_budget_seconds_per_class": 30,
+      "evosuite_seed": 31000,
+      "max_provider_attempts_all_arms": 66,
+      "max_prompt_plus_completion_tokens_from_per_call_caps": 1332672,
+      "max_parallel_provider_requests": 1,
+      "stop_on_unknown_usage_or_infrastructure_error": true,
+      "old_outputs_reused_as_new_seeds": false
+    },
+    "statistics": {
+      "primary": "paired differences per repetition and project-stratified descriptive distributions",
+      "dependence": "shared focal classes and project clustering disclosed; no claim of 41 independent generation jobs",
+      "coverage": "all frozen targets retained; missing/failed contributes zero against fixed reference",
+      "inference_limits": "five repeats and six projects do not prove generalization or sufficient power"
+    },
+    "remaining_scientific_gaps": [
+      "methodological_contribution_not_established",
+      "no_verified_independent_holdout",
+      "strong_baseline_and_cross_tool_equal_compute_claim_not_established"
+    ],
+    "formal_run_ready": false
+  },
+  "arms": [
+    "F0",
+    "F1",
+    "F2"
+  ],
+  "target_pairs": [
+    [
+      "commons-cli",
+      "processArgs"
+    ],
+    [
+      "jdom2",
+      "getNamespacesInScope"
+    ]
+  ],
+  "max_provider_attempts": 18,
+  "max_calls_per_target_per_arm": 3,
+  "max_reserved_tokens_all_arms": 363456,
+  "replications": 1,
+  "repair_requests": 0,
+  "feedback_rounds": 0,
+  "static_guard_enabled": true,
+  "retrieval": "identical static-only full-source selection per target",
+  "source_context": "same selected context in Task, Plan and Generation; AST always from full source",
+  "limits": [
+    "Known development targets, not independent holdout or formal effectiveness.",
+    "F0 may block before generation; blocked targets retained with zero coverage.",
+    "Different context changes available information; no completeness or novelty claim."
+  ],
+  "execute": true
+}

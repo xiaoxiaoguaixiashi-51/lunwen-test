@@ -1,0 +1,126 @@
+{
+  "kind": "uniform_saved_source_context_reevaluation",
+  "api_calls": 0,
+  "generated_sources_changed": false,
+  "source_hashes": [
+    {
+      "arm": "F0",
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "original": "/root/autodl-tmp/kcf-context-live-v2-20261030/F0/sources/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs/ParserProcessArgsTest.java",
+      "copy": "/root/autodl-tmp/kcf-context-reevaluation-20261030/F0/source_copies/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs/ParserProcessArgsTest.java",
+      "sha256": "15daebfa751150e449b7c1f6a2e61d5890e0be815cb740a1c92259c008208cae"
+    },
+    {
+      "arm": "F1",
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "original": "/root/autodl-tmp/kcf-context-live-v2-20261030/F1/sources/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs/ParserProcessArgsTest.java",
+      "copy": "/root/autodl-tmp/kcf-context-reevaluation-20261030/F1/source_copies/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs/ParserProcessArgsTest.java",
+      "sha256": "4b201c4230bd663de3c247646ad26382727bc63fa16dbb6ff69369100c8acc87"
+    },
+    {
+      "arm": "F1",
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "original": "/root/autodl-tmp/kcf-context-live-v2-20261030/F1/sources/jdom2-jdom2-org-jdom2-element-getnamespacesinscope/ElementGetNamespacesInScopeTest.java",
+      "copy": "/root/autodl-tmp/kcf-context-reevaluation-20261030/F1/source_copies/jdom2-jdom2-org-jdom2-element-getnamespacesinscope/ElementGetNamespacesInScopeTest.java",
+      "sha256": "470a69dec6e3b8f1bb04b808a9900290943fcd4699e799598bfcdae27a021937"
+    },
+    {
+      "arm": "F2",
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "original": "/root/autodl-tmp/kcf-context-live-v2-20261030/F2/sources/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs/ParserProcessArgsTest.java",
+      "copy": "/root/autodl-tmp/kcf-context-reevaluation-20261030/F2/source_copies/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs/ParserProcessArgsTest.java",
+      "sha256": "81ea20f7b731ccd4f930fe0599f850046ebdaf6fcf0e626eded90c422ad1cb8e"
+    },
+    {
+      "arm": "F2",
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "original": "/root/autodl-tmp/kcf-context-live-v2-20261030/F2/sources/jdom2-jdom2-org-jdom2-element-getnamespacesinscope/ElementGetNamespacesInScopeTest.java",
+      "copy": "/root/autodl-tmp/kcf-context-reevaluation-20261030/F2/source_copies/jdom2-jdom2-org-jdom2-element-getnamespacesinscope/ElementGetNamespacesInScopeTest.java",
+      "sha256": "ff2520115decd196d465b19c21f19718bff1fad0f758cbd0177054cf7a1cc967"
+    }
+  ],
+  "execution_statuses": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F0",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F0",
+      "status": "generation_budget_blocked",
+      "xml_file": ""
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F1",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F1",
+      "status": "test_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": "/root/autodl-tmp/kcf-context-reevaluation-20261030/F1/execution/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/xml/jacoco.xml"
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F2",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F2",
+      "status": "compile_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": ""
+    }
+  ],
+  "results": {
+    "F0": {
+      "approach": "F0",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "F1": {
+      "approach": "F1",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "F2": {
+      "approach": "F2",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    }
+  },
+  "formal_run_ready": false,
+  "supersedes_evaluation_only": "/root/autodl-tmp/kcf-context-live-v2-20261030",
+  "code_revision": "c7c6f4809d4549ae001f2d0b97641f167d110be1"
+}
