@@ -92,6 +92,7 @@ def main():
                                  "semantic_review_gate": True, "max_tokens": args.max_tokens},
                        inputs={str(path): sha256_file(path) for path in args.coverage_summary})
     os.environ["KCF_LLM_TRACE_PATH"] = str(root / "llm_calls.jsonl")
+    os.environ["KCF_PHASE_TRACE_PATH"] = str(root / "phase_calls.jsonl")
     os.environ["KCF_EXPERIMENT_STAGE"] = "initial_failure_repair"
     llm = None if args.dry_run else LLMClient(config)
     statuses, index, review_index = [], [], []

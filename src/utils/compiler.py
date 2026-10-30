@@ -8,6 +8,7 @@ from pathlib import Path
 from dataclasses import dataclass
 
 from src.utils.java_compat import format_java6_compatibility_errors
+from src.utils.phase_trace import measured
 
 
 @dataclass
@@ -93,6 +94,7 @@ class JavaCompiler:
                 return_code=-1,
             )
 
+    @measured("initial_compile_validation")
     def compile_test(self, test_code: str, source_file: str = None, classpath: str = None) -> CompileResult:
         """编译测试代码字符串，返回编译结果。"""
         if not test_code or not test_code.strip():

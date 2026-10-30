@@ -13,6 +13,7 @@ import os
 import re
 from pathlib import Path
 from typing import Any
+from src.utils.phase_trace import measured
 
 
 TOKEN_PATTERN = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
@@ -42,6 +43,7 @@ def load_knowledge_records(path: str | Path = DEFAULT_KNOWLEDGE_PATH) -> list[di
     return records
 
 
+@measured("initial_knowledge_retrieval")
 def retrieve_dependency_knowledge(
     dependency_analysis: dict,
     source_code: str,

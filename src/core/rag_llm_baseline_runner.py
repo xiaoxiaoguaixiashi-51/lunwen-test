@@ -18,6 +18,7 @@ from pathlib import Path
 
 from src.core.llm_client import LLMClient, load_config, trace_target
 from src.utils.llm_output import extract_fenced_block
+from src.utils.phase_trace import measured
 from src.utils.experiment_metadata import sha256_file
 
 
@@ -113,6 +114,7 @@ def infer_source_root(target_file: Path) -> Path:
     return target_file.resolve().parent
 
 
+@measured("rag_source_retrieval")
 def retrieve_source_context(
     target_file: Path,
     method_name: str,
@@ -177,6 +179,7 @@ class RagLlmBaselineRunner:
         self.max_context_files = max_context_files
         self.max_context_chars = max_context_chars
 
+    @measured("rag_initial_generation")
     def run_one(self, target_file: str, method_name: str, output_dir: str, *,
                 method_owner: str = None, method_parameter_types: list[str] = None) -> BaselineResult:
         ensure_java6_guard_disabled()
@@ -336,6 +339,7 @@ def main():
     parser.add_argument("--max-context-chars", type=int, default=24000, help="Maximum retrieved context characters")
     args = parser.parse_args()
     os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output).resolve() / "llm_calls.jsonl"))
+    os.environ.setdefault("KCF_PHASE_TRACE_PATH", str(Path(args.output).resolve() / "phase_calls.jsonl"))
     os.environ.setdefault("KCF_EXPERIMENT_STAGE", "rag_llm_generation")
 
     ensure_java6_guard_disabled()

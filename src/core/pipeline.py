@@ -17,6 +17,7 @@ from src.retrieval.dependency_knowledge import (
     retrieve_dependency_knowledge,
 )
 from src.utils.compiler import JavaCompiler, CompileResult
+from src.utils.phase_trace import measured
 
 
 @dataclass
@@ -75,6 +76,7 @@ class Pipeline:
         self.knowledge_path = retrieval_config.get("knowledge_path", str(DEFAULT_KNOWLEDGE_PATH))
         self.max_knowledge_examples = retrieval_config.get("max_examples", 3)
 
+    @measured("kcf_initial_pipeline")
     def run(self, java_file_path: str, method_name: str = None, output_dir: str = None, *,
             method_owner: str = None, method_parameter_types: list[str] = None) -> PipelineResult:
         """执行完整 pipeline。"""
@@ -148,6 +150,7 @@ class Pipeline:
 
         return result
 
+    @measured("initial_compile_and_repair")
     def _compile_feedback_loop(
         self, test_code: str, source_code: str, source_file: str = None, trace_dir: Path = None
     ) -> tuple[str, bool, int, list]:

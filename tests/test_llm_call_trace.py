@@ -7,6 +7,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from src.core.llm_client import LLMClient, trace_target
+from src.utils.phase_trace import phase
 
 
 class LlmTraceTest(unittest.TestCase):
@@ -22,15 +23,18 @@ class LlmTraceTest(unittest.TestCase):
         fake_client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "calls.jsonl"
-            with patch.dict(os.environ, {"KCF_LLM_TRACE_PATH": str(path)}), patch.dict(
+            phase_path = Path(tmp) / "phases.jsonl"
+            with patch.dict(os.environ, {"KCF_LLM_TRACE_PATH": str(path), "KCF_PHASE_TRACE_PATH": str(phase_path)}), patch.dict(
                 "sys.modules", {"openai": SimpleNamespace(OpenAI=lambda **kwargs: fake_client)}
             ):
                 client = LLMClient({"llm": {"base_url": "https://example.invalid/v1", "api_key": secret,
                                             "model": "requested-model", "max_retries": 0}})
-                with trace_target("method-1"):
+                with trace_target("method-1"), phase("api_parent"):
                     client.chat([{"role": "user", "content": "test"}], temperature=0)
             event = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual("method-1", event["target_id"])
+            span = json.loads(phase_path.read_text().splitlines()[0])
+            self.assertEqual(span["span_id"], event["phase_span_id"])
             self.assertEqual(15, event["usage"]["total_tokens"])
             self.assertEqual("resolved-model", event["response_model"])
             self.assertEqual(0, seen["temperature"])

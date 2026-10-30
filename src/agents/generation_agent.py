@@ -3,6 +3,7 @@
 import os
 import json
 from src.core.llm_client import LLMClient
+from src.utils.phase_trace import measured
 from src.utils.llm_output import extract_fenced_block
 
 
@@ -120,6 +121,7 @@ class GenerationAgent:
         self.llm = llm_client or LLMClient()
         self.static_guard_enabled = static_guard_enabled
 
+    @measured("initial_code_generation")
     def generate(
         self,
         test_plan: dict,
@@ -146,6 +148,7 @@ class GenerationAgent:
         response = self.llm.generate(system_prompt, user_prompt, max_tokens=8192)
         return self._extract_code(response)
 
+    @measured("initial_code_repair")
     def fix_compilation_error(
         self,
         test_code: str,

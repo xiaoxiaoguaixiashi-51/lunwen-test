@@ -2,6 +2,7 @@
 
 import json
 from src.core.llm_client import LLMClient
+from src.utils.phase_trace import measured
 from src.utils.llm_output import extract_fenced_block
 
 
@@ -73,6 +74,7 @@ class PlanAgent:
     def __init__(self, llm_client: LLMClient = None):
         self.llm = llm_client or LLMClient()
 
+    @measured("test_planning")
     def generate_plan(
         self,
         dependency_analysis: dict,

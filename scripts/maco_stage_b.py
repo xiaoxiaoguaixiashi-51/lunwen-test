@@ -28,6 +28,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.collect_java_methods import collect_methods
+from src.utils.phase_trace import phase
 from scripts.run_defects4j_generated_tests import format_rate
 from scripts.analyze_focal_method_coverage import (
     find_method_ranges,
@@ -432,7 +433,8 @@ def run_evosuite_baseline(
             rows.append(evosuite_row(item, "planned", cmd, "", log_file))
             continue
         log_file.parent.mkdir(parents=True, exist_ok=True)
-        status, return_code, output = run_command(cmd, project_root, timeout)
+        with phase("evosuite_class_generation", target_id=f"{project}::{fqcn}"):
+            status, return_code, output = run_command(cmd, project_root, timeout)
         write_log(log_file, output)
         rows.append(evosuite_row(item, status, cmd, return_code, log_file))
     return rows
@@ -545,6 +547,8 @@ def command_collect(args):
 
 
 def command_evosuite(args):
+    os.environ.setdefault("KCF_PHASE_TRACE_PATH", str(Path(args.output_dir).resolve() / "phase_calls.jsonl"))
+    os.environ.setdefault("KCF_EXPERIMENT_STAGE", "evosuite_generation")
     methods = read_json_list(Path(args.method_list))
     rows = run_evosuite_baseline(
         methods,

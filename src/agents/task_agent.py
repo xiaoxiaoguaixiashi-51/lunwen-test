@@ -2,6 +2,7 @@
 
 import json
 from src.core.llm_client import LLMClient
+from src.utils.phase_trace import measured
 from src.utils.java_parser import extract_dependencies, DependencyInfo
 from src.utils.llm_output import extract_fenced_block
 from pathlib import Path
@@ -45,6 +46,7 @@ class TaskAgent:
     def __init__(self, llm_client: LLMClient = None):
         self.llm = llm_client or LLMClient()
 
+    @measured("task_analysis")
     def analyze(self, java_file_path: str, method_name: str = None, *,
                 method_owner: str = None, method_parameter_types: list[str] = None) -> dict:
         """分析目标方法，返回完整的依赖分析结果。"""

@@ -10,6 +10,7 @@ import uuid
 from contextlib import contextmanager
 from contextvars import ContextVar
 from src.utils.request_budget import load_budget, BudgetExceeded
+from src.utils.phase_trace import PARENT as PHASE_PARENT
 
 TRACE_LOCK = threading.Lock()
 TRACE_TARGET = ContextVar("kcf_trace_target", default=None)
@@ -94,6 +95,7 @@ class LLMClient:
             request["extra_body"] = {"thinking": {"type": self.thinking}}
         event = {"call_id": uuid.uuid4().hex, "started_at": datetime.now(timezone.utc).isoformat(),
                  "target_id": TRACE_TARGET.get(),
+                 "phase_span_id": PHASE_PARENT.get(),
                  "stage": os.environ.get("KCF_EXPERIMENT_STAGE"), "request": request,
                  "sdk_max_retries": self.max_retries, "provider_call_attempted": False}
         started = time.monotonic()

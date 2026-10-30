@@ -6,6 +6,7 @@ from types import SimpleNamespace
 
 from scripts.merge_kcf_execution_coverage import resolve_executions, merge_accepted_coverage
 from scripts.build_kcf_coverage_reference import digest
+from src.utils.phase_trace import measured
 
 
 def write_index(root, entries):
@@ -65,6 +66,7 @@ def accept_incremental(accepted, result, identity, round_index):
     write_index(accepted, entries)
 
 
+@measured("round_probe_union_scoring")
 def evaluate_round(args, output_root, method_list, round_index):
     merge_args = SimpleNamespace(
         method_list=Path(method_list).resolve(), accepted_xml_root=output_root / "probe_accepted_xml",

@@ -26,6 +26,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from scripts.maco_stage_b import discover_classpath_entries, safe_name, write_table
 from src.core.llm_client import LLMClient, load_config, trace_target
+from src.utils.phase_trace import measured
 from src.core.batch_runner import load_method_list
 from src.retrieval.dependency_knowledge import (
     DEFAULT_KNOWLEDGE_PATH,
@@ -278,6 +279,7 @@ def coverage_gap_text(row: dict, approach: str) -> str:
     )
 
 
+@measured("feedback_knowledge_retrieval")
 def retrieve_for_text(records: list[dict], query: str, max_examples: int) -> list[dict]:
     if not records or max_examples <= 0:
         return []
@@ -337,6 +339,7 @@ def format_generated_code(java_code: str, package_name: str, args) -> str:
     return ensure_package(java_code, package_name)
 
 
+@measured("feedback_generate")
 def generate_incremental_test(
     llm: LLMClient,
     method: dict,
@@ -375,6 +378,7 @@ def generate_incremental_test(
     return format_generated_code(safe_text(extract_fenced_block(response, "java")), package_name, args), retrieved
 
 
+@measured("feedback_repair")
 def repair_test(
     llm: LLMClient,
     test_code: str,
@@ -628,6 +632,7 @@ def main():
     args.evaluation_reference_root = args.exact_reference_root
     probe_union_feedback.validate_exact_mode(args)
     os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output_dir).resolve() / "llm_calls.jsonl"))
+    os.environ.setdefault("KCF_PHASE_TRACE_PATH", str(Path(args.output_dir).resolve() / "phase_calls.jsonl"))
     os.environ.setdefault("KCF_EXPERIMENT_STAGE", "coverage_feedback")
 
     method_list = Path(args.method_list)

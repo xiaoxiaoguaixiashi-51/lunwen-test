@@ -105,6 +105,7 @@ def main():
     parser.add_argument("--no-resume", action="store_true", help="Rerun completed items")
     args = parser.parse_args()
     os.environ.setdefault("KCF_LLM_TRACE_PATH", str(Path(args.output).resolve() / "llm_calls.jsonl"))
+    os.environ.setdefault("KCF_PHASE_TRACE_PATH", str(Path(args.output).resolve() / "phase_calls.jsonl"))
     os.environ.setdefault("KCF_EXPERIMENT_STAGE", "initial_generation")
 
     methods = load_method_list(args.methods)
