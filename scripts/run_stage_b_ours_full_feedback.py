@@ -350,8 +350,7 @@ def generate_incremental_test(
     source_context: str = "",
 ) -> tuple[str, list[dict]]:
     target = Path(method["target"])
-    package_name = (strict.java_package(test_file.read_text(encoding="utf-8"))
-                    if strict.enabled(args) else package_from_item(method))
+    package_name = package_from_item(method)
     test_class = class_name_for(method, round_index)
     snippet = source_snippet(target, row.get("line_ranges", ""))
     gap = coverage_gap_text(row, args.approach_name)
@@ -461,7 +460,8 @@ def run_generated_test(method: dict, test_file: Path, test_class: str, round_dir
     if compile_status != "ok":
         return {"status": "compile_" + compile_status, "output": compile_output, "test_class": test_class, "xml_file": ""}
 
-    package_name = package_from_item(method)
+    package_name = (strict.java_package(test_file.read_text(encoding="utf-8"))
+                    if strict.enabled(args) else package_from_item(method))
     fq_test_class = f"{package_name}.{test_class}" if package_name else test_class
     exec_file = out_dir / "jacoco.exec"
     run_cp = os.pathsep.join([str(classes_dir), classpath])
