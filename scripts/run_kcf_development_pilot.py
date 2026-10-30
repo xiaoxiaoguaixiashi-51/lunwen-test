@@ -61,6 +61,16 @@ def score(methods_file, accepted, roots, reference, projects, output, approach):
         java='java', output_dir=output, approach_name=approach, evaluation_dir=output / 'coverage'))[0]
 
 
+def budget_rejected_without_source(initial, method_id):
+    trace = initial / 'llm_calls.jsonl'
+    if not trace.is_file():
+        return False
+    events = [json.loads(line) for line in trace.read_text().splitlines() if line.strip()]
+    target_events = [event for event in events if event.get('target_id') == method_id]
+    return bool(target_events and target_events[-1].get('status') == 'budget_blocked'
+                and target_events[-1].get('provider_call_attempted') is False)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
@@ -68,14 +78,22 @@ def main():
     parser.add_argument("--tokenizer", type=Path, required=True)
     parser.add_argument("--projects-root", type=Path, required=True)
     parser.add_argument("--reference-root", type=Path, required=True)
+    parser.add_argument("--resume-after-initial", choices=['Full','A1','A2','A3'], help="Continue a stopped pilot using its saved initial artifacts and unchanged ledgers")
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
     protocol_file = repo / 'experiments/protocols/kcf_rerun_v1.json'
     protocol = json.loads(protocol_file.read_text())
     root = args.output_dir.resolve()
-    root.mkdir(parents=True, exist_ok=False)
+    if args.resume_after_initial:
+        if not (root/'pilot_stopped.json').is_file() or (root/'pilot_summary.json').exists():
+            raise ValueError('Only a stopped unfinished pilot can resume')
+        if json.loads((root/'frozen_protocol.json').read_text()) != protocol:
+            raise ValueError('Protocol changed; do not resume under a different budget')
+    else:
+        root.mkdir(parents=True, exist_ok=False)
     private = repo / 'config/private' / root.name
-    private.mkdir(parents=True, exist_ok=False)
+    if not args.resume_after_initial:
+        private.mkdir(parents=True, exist_ok=False)
     original = args.private_config.read_bytes()
     config = yaml.safe_load(original)
     if any(config['llm'].get(key) != value for key, value in protocol['model'].items()):
@@ -97,10 +115,15 @@ def main():
             raise ValueError('Pilot target ambiguous')
         methods.extend(matches)
     methods_file = root / 'methods.json'
-    write(methods_file, methods)
+    if args.resume_after_initial:
+        if json.loads(methods_file.read_text()) != methods:
+            raise ValueError('Pilot targets changed')
+    else:
+        write(methods_file, methods)
     strict.frozen_methods(methods_file)
     plan = template(root)
-    write(root / 'frozen_protocol.json', protocol)
+    if not args.resume_after_initial:
+        write(root / 'frozen_protocol.json', protocol)
     for arm in ('Full', 'A1', 'A2', 'A3', 'RAG'):
         cfg = json.loads(json.dumps(config))
         cfg['llm'].update(protocol['model'])
@@ -110,45 +133,62 @@ def main():
         cfg['request_budget'] = {**protocol['budget'], 'tokenizer_json': str(tokenizer),
             'tokenizer_sha256': protocol['tokenizer_sha256'], 'ledger_path': str(root / arm / 'budget.sqlite')}
         path = private / (arm + '.yaml')
-        path.write_text(yaml.safe_dump(cfg))
-        path.chmod(0o600)
+        if args.resume_after_initial:
+            if yaml.safe_load(path.read_text()) != cfg:
+                raise ValueError('Private stage config changed; preserve original ledger policy')
+        else:
+            path.write_text(yaml.safe_dump(cfg))
+            path.chmod(0o600)
         for job in plan['jobs']:
             if job['arm'] == arm:
                 job['config'] = str(path)
-    preflight = audit_plan(plan)
-    write(root / 'plan.json', plan)
-    write(root / 'preflight.json', preflight)
-    if not preflight['configuration_checks_passed']:
-        raise ValueError('Static preflight failed before any provider request')
-    results = {}
+    if args.resume_after_initial:
+        if not json.loads((root/'preflight.json').read_text())['configuration_checks_passed']:
+            raise ValueError('Original preflight did not pass')
+        check_costs(root, 66)
+        with (root/'resume_after_initial.json').open('x') as handle:
+            json.dump({'arm': args.resume_after_initial, 'new_initial_requests': 0,
+                       'reason': 'handle_local_budget_rejection_as_zero_generation_not_missing_infrastructure'}, handle)
+    else:
+        preflight = audit_plan(plan)
+        write(root / 'plan.json', plan)
+        write(root / 'preflight.json', preflight)
+        if not preflight['configuration_checks_passed']:
+            raise ValueError('Static preflight failed before any provider request')
+    results = json.loads((root/'partial_results.json').read_text()) if args.resume_after_initial else {}
     try:
         # Independent one-shot RAG first; it also checks the existing provider configuration.
         arm = root / 'RAG'
-        arm.mkdir()
-        command(['-m', 'src.core.rag_llm_baseline_runner', '--methods', methods_file, '--output', arm/'initial',
+        if not args.resume_after_initial:
+            arm.mkdir()
+            command(['-m', 'src.core.rag_llm_baseline_runner', '--methods', methods_file, '--output', arm/'initial',
                  '--config', private/'RAG.yaml', '--no-resume'], repo, arm/'generation.log')
-        check_costs(root, 66)
-        command(['scripts/run_stage_b_rag_llm_coverage.py', '--method-list', methods_file, '--rag-dir', arm/'initial',
+            check_costs(root, 66)
+            command(['scripts/run_stage_b_rag_llm_coverage.py', '--method-list', methods_file, '--rag-dir', arm/'initial',
                  '--projects-root', args.projects_root, '--output-dir', arm/'execution', '--strict-evaluation',
                  '--evaluation-reference-root', args.reference_root, '--timeout', '120'], repo, arm/'evaluation.log')
-        results['RAG'] = score(methods_file, arm/'execution/accepted_xml', [arm/'execution'], args.reference_root,
+            results['RAG'] = score(methods_file, arm/'execution/accepted_xml', [arm/'execution'], args.reference_root,
                                args.projects_root, arm/'score', 'RAG')
-        write(root/'partial_results.json', results)
-        for variant in ('Full', 'A1', 'A2', 'A3'):
+            write(root/'partial_results.json', results)
+        variants = ['Full', 'A1', 'A2', 'A3']
+        if args.resume_after_initial:
+            variants = variants[variants.index(args.resume_after_initial):]
+        for variant in variants:
             arm = root / variant
             cfg_path = private / (variant + '.yaml')
             cfg = yaml.safe_load(cfg_path.read_text())
             os.environ['KCF_LLM_TRACE_PATH'] = str(arm/'initial/llm_calls.jsonl')
             os.environ['KCF_PHASE_TRACE_PATH'] = str(arm/'initial/phase_calls.jsonl')
             os.environ['KCF_EXPERIMENT_STAGE'] = 'initial_generation'
-            write_run_metadata(arm/'initial', stage='initial_generation', method_list=methods_file,
-                config_path=cfg_path, config=cfg, knowledge_path=knowledge,
-                settings={'pilot': True, 'knowledge_retrieval_enabled': variant != 'A1', 'static_guard_enabled': variant != 'A3'})
-            initial_summaries = []
-            for method in methods:
-                initial_summaries.append(run_batch([method], str(arm/'initial'), cfg, resume=False))
-                check_costs(root, 66)
-            write(arm/'initial/pilot_batch_summaries.json', initial_summaries)
+            if variant != args.resume_after_initial:
+                write_run_metadata(arm/'initial', stage='initial_generation', method_list=methods_file,
+                    config_path=cfg_path, config=cfg, knowledge_path=knowledge,
+                    settings={'pilot': True, 'knowledge_retrieval_enabled': variant != 'A1', 'static_guard_enabled': variant != 'A3'})
+                initial_summaries = []
+                for method in methods:
+                    initial_summaries.append(run_batch([method], str(arm/'initial'), cfg, resume=False))
+                    check_costs(root, 66)
+                write(arm/'initial/pilot_batch_summaries.json', initial_summaries)
             rows = []
             execution = arm/'initial_execution'
             options = SimpleNamespace(projects_root=args.projects_root, timeout=120, jacoco_agent='/root/tools/jacocoagent.jar',
@@ -157,6 +197,10 @@ def main():
             for method in methods:
                 files = list((arm/'initial'/method['id']).glob('*.java'))
                 if len(files) != 1:
+                    if not files and budget_rejected_without_source(arm/'initial', method['id']):
+                        rows.append({'id': method['id'], 'project_id': method['project_id'], 'fqcn': method['fqcn'],
+                                     'status': 'generation_budget_blocked', 'xml_file': ''})
+                        continue
                     raise RuntimeError('Initial generation did not produce exactly one saved Java artifact')
                 name = Pipeline._extract_class_name(None, files[0].read_text())
                 with trace_target(method['id']):
@@ -165,13 +209,18 @@ def main():
                 rows.append({**row, 'id': method['id'], 'project_id': method['project_id'], 'fqcn': method['fqcn'],
                              'source_dir': str(files[0].parent), 'output_dir': str(output)})
             write_table(rows, execution, 'initial_execution')
-            if any(row['status'] not in {'ok', 'compile_failed', 'test_failed'} for row in rows):
+            if any(row['status'] not in {'ok', 'compile_failed', 'test_failed', 'generation_budget_blocked'} for row in rows):
                 raise RuntimeError('Non-test infrastructure status; stop before repair')
+            executable_ids = {row['id'] for row in rows if row['status'] != 'generation_budget_blocked'}
+            seed_methods = [method for method in methods if method['id'] in executable_ids]
+            seed_methods_file = arm/'seed_methods.json'
+            write(seed_methods_file, seed_methods)
+            write_table([row for row in rows if row['id'] in executable_ids], execution, 'repairable_execution')
             flags = ['--disable-static-guard'] if variant == 'A3' else []
             if variant == 'A1':
                 flags += ['--disable-failure-repair-retrieval']
-            command(['scripts/run_kcf_seed_failure_repair.py', '--method-list', methods_file,
-                '--coverage-summary', execution/'initial_execution.csv', '--output-dir', arm/'seed_repair',
+            command(['scripts/run_kcf_seed_failure_repair.py', '--method-list', seed_methods_file,
+                '--coverage-summary', execution/'repairable_execution.csv', '--output-dir', arm/'seed_repair',
                 '--projects-root', args.projects_root, '--config', cfg_path, '--knowledge-path', knowledge,
                 '--evaluation-reference-root', args.reference_root, '--stop-on-provider-error', '--timeout', '120', *flags], repo, arm/'seed_repair.log')
             check_costs(root, 66)

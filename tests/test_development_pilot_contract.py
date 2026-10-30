@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.run_kcf_development_pilot import check_costs
+from scripts.run_kcf_development_pilot import check_costs, budget_rejected_without_source
 from src.core.pipeline import Pipeline, PipelineResult
 
 
@@ -39,6 +39,17 @@ class DevelopmentPilotContractTest(unittest.TestCase):
             result = PipelineResult('Foo.java', 'work', final_test='public final class FooSpec {}')
             pipeline._save_results(result, str(root))
             self.assertEqual(['FooSpec.java'], [path.name for path in root.glob('*.java')])
+
+    def test_no_source_is_budget_failure_only_with_final_local_rejection_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root/'llm_calls.jsonl'
+            event = {'target_id': 'm', 'status': 'budget_blocked', 'provider_call_attempted': False}
+            path.write_text(json.dumps(event)+'\n')
+            self.assertTrue(budget_rejected_without_source(root, 'm'))
+            self.assertFalse(budget_rejected_without_source(root, 'another'))
+            path.write_text(json.dumps(event)+'\n'+json.dumps({**event, 'status': 'ok', 'provider_call_attempted': True})+'\n')
+            self.assertFalse(budget_rejected_without_source(root, 'm'))
 
 
 if __name__ == '__main__':
