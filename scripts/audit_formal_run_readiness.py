@@ -53,6 +53,8 @@ def audit(root):
                               ("A2", "config.kcf_utg.yaml"), ("A3", "config.kcf_utg_a3.yaml")):
         configs[variant] = yaml.safe_load((root / "config" / filename).read_text(encoding="utf-8"))
     matrix = variant_matrix(configs)
+    protocol_path = root / "experiments/protocols/kcf_rerun_v1.json"
+    protocol = json.loads(protocol_path.read_text(encoding="utf-8")) if protocol_path.is_file() else None
     class_groups = {}
     for method in methods:
         class_groups.setdefault((method["project_id"], method["fqcn"]), []).append(method["id"])
@@ -72,13 +74,17 @@ def audit(root):
             "input_sha256": {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
                              for p in (manifest_path, pilot_path, historical_path)},
             "variants": matrix, "sample_use_ledger": ledger,
-            "blocking_gaps": ["formal_compute_budget_and_stop_rules_not_frozen",
-                              "shared_budget_guard_exists_but_formal_limits_not_frozen_or_enabled",
+            "execution_protocol_id": protocol.get("protocol_id") if protocol else None,
+            "execution_protocol_sha256": hashlib.sha256(protocol_path.read_bytes()).hexdigest() if protocol else None,
+            "predeclared_formal_repetitions": protocol.get("planned_formal_repetitions") if protocol else None,
+            "blocking_gaps": ["formal_full_dataset_configs_and_dispatch_not_materialized" if protocol else "formal_compute_budget_and_stop_rules_not_frozen",
+                              "shared_budget_enabled_in_development_pilot_not_formal_full_dataset_runs" if protocol else "shared_budget_guard_exists_but_formal_limits_not_frozen_or_enabled",
                               "strict_execution_policy_implemented_but_formal_run_configuration_not_frozen",
                               "whole_flow_generation_retrieval_and_non_api_cost_accounting_incomplete",
                               "remaining_35_methods_not_verified_unseen",
                               "new_methodological_contribution_not_established",
-                              "formal_repetitions_and_new_paid_scope_not_authorized"]}
+                              "cross_tool_equal_realized_compute_not_established",
+                              "formal_full_dataset_paid_scope_not_started"]}
 
 
 def main():
