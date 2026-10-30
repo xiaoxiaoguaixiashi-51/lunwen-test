@@ -1,0 +1,116 @@
+{
+  "kind": "phase_wall_time_index_not_full_compute_budget",
+  "full_compute_cost_known": false,
+  "incomplete_spans": 0,
+  "sum_completed_root_seconds": 0.016522198915481567,
+  "by_target_stage_phase": [
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "initial_code_generation",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.00016503781080245972,
+      "root_seconds": 0.0
+    },
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "initial_code_repair",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 2.7991831302642822e-05,
+      "root_seconds": 0.0
+    },
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "initial_compile_and_repair",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 9.627640247344971e-05,
+      "root_seconds": 0.0
+    },
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "initial_knowledge_retrieval",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.0006640627980232239,
+      "root_seconds": 0.0
+    },
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "kcf_initial_pipeline",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.015079289674758911,
+      "root_seconds": 0.015079289674758911
+    },
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "task_analysis",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.012782655656337738,
+      "root_seconds": 0.0
+    },
+    {
+      "target_id": "kcf-method",
+      "stage": "offline",
+      "phase": "test_planning",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.0001930147409439087,
+      "root_seconds": 0.0
+    },
+    {
+      "target_id": "rag-method",
+      "stage": "offline",
+      "phase": "rag_initial_generation",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.0014429092407226562,
+      "root_seconds": 0.0014429092407226562
+    },
+    {
+      "target_id": "rag-method",
+      "stage": "offline",
+      "phase": "rag_source_retrieval",
+      "started": 1,
+      "completed": 1,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 0.0009912177920341492,
+      "root_seconds": 0.0
+    }
+  ],
+  "notes": [
+    "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+    "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+    "returned means Python returned, not compile/test success",
+    "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+  ],
+  "trace_input_sha256": {
+    "/root/autodl-tmp/phase-cost-smoke-20261030/phase.jsonl": "2ce1f1508ff8c3aeb0ea535b5c7820a17bc4f72bdaab2019764c0ed7d4e6e2e6"
+  }
+}

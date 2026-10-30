@@ -1,0 +1,28 @@
+{
+  "kind": "phase_wall_time_index_not_full_compute_budget",
+  "full_compute_cost_known": false,
+  "incomplete_spans": 0,
+  "sum_completed_root_seconds": 5.033748015761375,
+  "by_target_stage_phase": [
+    {
+      "target_id": null,
+      "stage": "saved_probe_replay",
+      "phase": "round_probe_union_scoring",
+      "started": 2,
+      "completed": 2,
+      "incomplete": 0,
+      "exceptions": 0,
+      "inclusive_seconds": 5.033748015761375,
+      "root_seconds": 5.033748015761375
+    }
+  ],
+  "notes": [
+    "Inclusive spans overlap: never sum all phases or add API/Java timers to parent spans",
+    "Root seconds are accumulated operation time, not concurrent makespan or CPU/GPU time",
+    "returned means Python returned, not compile/test success",
+    "Incomplete spans have unknown cost, not zero; uninstrumented work remains unknown"
+  ],
+  "trace_input_sha256": {
+    "/root/autodl-tmp/phase-cost-smoke-20261030/replay_phase.jsonl": "eddf621d146ce7372bd8ab3ef3b3b77118071c377571a1390be160ff5480dbff"
+  }
+}
