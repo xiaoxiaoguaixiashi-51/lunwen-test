@@ -1,0 +1,10 @@
+{
+  "kind": "offline_fake_sdk_real_tokenizer_smoke",
+  "real_api_calls": 0,
+  "fake_sdk_calls": 1,
+  "cross_stage_second_call_blocked": true,
+  "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614",
+  "effective_max_output": 16,
+  "estimated_input_with_reserve": 264,
+  "trace_sha256": "2dc9582396fd0e624e0ff1f796213cb6a3be712a96be1521604f435ada9a0523"
+}

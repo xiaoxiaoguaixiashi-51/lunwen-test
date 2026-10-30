@@ -43,6 +43,7 @@ def aggregate(events):
             valid = False
         if not valid:
             group["unknown_usage_attempts"] += 1
+            continue
         for name, number in usage.items():
             if isinstance(number, int) and not isinstance(number, bool) and number >= 0:
                 group["usage"][name] += number

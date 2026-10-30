@@ -28,3 +28,8 @@ class CostIndexTest(unittest.TestCase):
         result = aggregate([self.event("a"), self.event("b", stage="feedback")])
         self.assertEqual(2, len(result["by_target_stage"]))
         self.assertEqual(22, result["known_usage_totals"]["total_tokens"])
+
+    def test_inconsistent_usage_is_not_in_known_totals(self):
+        result = aggregate([self.event("bad", usage={"prompt_tokens": 10, "completion_tokens": 1, "total_tokens": 99})])
+        self.assertEqual(1, result["totals"]["unknown_usage_attempts"])
+        self.assertEqual({}, result["known_usage_totals"])
