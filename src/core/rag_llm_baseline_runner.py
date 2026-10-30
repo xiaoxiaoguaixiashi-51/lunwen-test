@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import re
+import javalang
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -219,8 +220,8 @@ class RagLlmBaselineRunner:
         out_path = Path(output_dir)
         out_path.mkdir(parents=True, exist_ok=True)
         class_name = extract_public_class_name(generated_test) or f"{extract_class_name(target_file) or method_name}Test"
-        if not class_name.endswith("Test"):
-            class_name = f"{class_name}Test"
+        # Java requires the filename to match the generated public class exactly;
+        # a valid JUnit class need not end in "Test" (e.g. FooTests or FooSpec).
         (out_path / f"{class_name}.java").write_text(generated_test, encoding="utf-8")
         report = {
             "baseline": "rag_llm",
@@ -236,6 +237,13 @@ class RagLlmBaselineRunner:
 
 
 def extract_public_class_name(java_code: str) -> str:
+    try:
+        tree = javalang.parse.parse(java_code)
+        for declaration in tree.types:
+            if isinstance(declaration, javalang.tree.ClassDeclaration) and "public" in declaration.modifiers:
+                return declaration.name
+    except (javalang.parser.JavaSyntaxError, javalang.tokenizer.LexerError, TypeError):
+        pass  # Invalid/unsupported code is still evaluated, not repaired here.
     match = PUBLIC_CLASS_PATTERN.search(java_code)
     return match.group(1) if match else ""
 

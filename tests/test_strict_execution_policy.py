@@ -6,6 +6,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from types import SimpleNamespace
 import unittest
+from contextlib import nullcontext
 from unittest.mock import Mock, patch
 
 from scripts import strict_execution_policy as policy
@@ -20,7 +21,10 @@ class StrictExecutionPolicyTest(unittest.TestCase):
     @unittest.skipUnless(os.environ.get("KCF_JACOCO_TOOLS"), "Real Java/JUnit/JaCoCo required")
     def test_three_actual_evaluators_same_main_only_junit_fixture(self):
         tools = Path(os.environ["KCF_JACOCO_TOOLS"])
-        with tempfile.TemporaryDirectory() as tmp:
+        keep = os.environ.get("KCF_STRICT_EVAL_SMOKE_DIR")
+        if keep:
+            Path(keep).mkdir(parents=True, exist_ok=False)
+        with (nullcontext(keep) if keep else tempfile.TemporaryDirectory()) as tmp:
             root = Path(tmp)
             project = root / "projects/p"
             classes = project / "target/classes"
@@ -39,6 +43,7 @@ class StrictExecutionPolicyTest(unittest.TestCase):
             (ref / "reference_manifest.json").write_text(json.dumps({"jacoco_cli_sha256": digest(cli), "projects": [
                 {"project_id": "p", "class_tree_sha256": class_tree_hash(classes), "xml_sha256": digest(xml)}]}))
             counts = []
+            evidence = []
             for module in (rag, evo, kcf):
                 generated = root / module.__name__ / "generated"
                 folder = generated / ("p/p.T" if module is evo else "t")
@@ -64,7 +69,16 @@ class StrictExecutionPolicyTest(unittest.TestCase):
                 self.assertEqual({"p/T"}, {c.get("name") for c in tree.findall(".//class")})
                 branch = tree.find(".//class/counter[@type='BRANCH']")
                 counts.append((int(branch.get("covered")), int(branch.get("missed"))))
+                execution = Path(result["xml_file"]).parent.parent
+                evidence.append({"runner": module.__name__, "status": result["status"],
+                                 "covered_branches": counts[-1][0], "missed_branches": counts[-1][1],
+                                 "reported_classes": [c.get("name") for c in tree.findall(".//class")],
+                                 "xml_sha256": digest(Path(result["xml_file"])), "exec_sha256": digest(execution / "jacoco.exec"),
+                                 "timings": [json.loads(line) for line in (execution / "execution_timings.jsonl").read_text().splitlines()]})
             self.assertEqual([(1, 1)] * 3, counts)
+            if keep:
+                (root / "summary.json").write_text(json.dumps({"kind": "handwritten_evaluator_fixture_not_baseline_quality",
+                    "api_calls": 0, "main_class_tree_sha256": class_tree_hash(classes), "evaluators": evidence}, indent=2) + "\n")
 
     def test_only_frozen_main_classes_and_ant_libraries(self):
         with tempfile.TemporaryDirectory() as tmp:
