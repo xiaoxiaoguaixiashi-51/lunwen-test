@@ -9,4 +9,4 @@
 /skills/skilldui/references/research-improvement.md -text
 /results/source_context_diagnostic_20261030/*.json -text
 /results/source_api_context_20261101/*.json -text
-/results/source_api_context_20261101/local_regression.raw.log -text
+/results/source_api_context_20261101/local_regression.raw.log -text -diff
