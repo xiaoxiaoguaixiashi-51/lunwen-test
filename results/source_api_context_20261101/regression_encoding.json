@@ -1,0 +1,7 @@
+{
+  "original_file": "local_regression.raw.log",
+  "original_sha256": "2d2744d64fe40d1b9bd06b1c908eb3f86cfd2cf26868e4e028c5147c6c702bab",
+  "display_file": "local_regression.log",
+  "display_encoding": "utf-8",
+  "operation": "UTF-8 display with invalid native Windows output bytes escaped; raw original preserved; test outcome ASCII unchanged"
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "authorized_offline_signature_baseline_status_refresh",
+  "updated_files": [
+    {
+      "relative_path": "SKILL.md",
+      "sha256": "a166d8c6788975ee670dc08109ca9cf78cc76def8297294ce2fea5f6d82911b0",
+      "installed_matches_repository_copy": true
+    },
+    {
+      "relative_path": "references/research-improvement.md",
+      "sha256": "4c63da71eb6052d49f481835db987f8ff92c32f3cb6a41ab6decbd977afea100",
+      "installed_matches_repository_copy": true
+    }
+  ],
+  "other_skill_files_untouched": true,
+  "new_innovation_claimed": false,
+  "rq_changed": false,
+  "live_generation_started": false,
+  "evidence": "results/source_api_context_20261101/README.md"
+}

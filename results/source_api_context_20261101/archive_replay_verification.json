@@ -1,0 +1,11 @@
+{
+  "archive_only_inputs_replay_passed": true,
+  "source_path_relocated": true,
+  "targets": 2,
+  "api_calls": 0,
+  "compared": [
+    "focal and context hashes",
+    "all prompt replay sizes",
+    "included/excluded stage-budgeted API types"
+  ]
+}

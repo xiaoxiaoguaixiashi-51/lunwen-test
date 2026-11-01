@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "e3a1f46afe7c1d0eab00bcf301ce927f8a7ee22fdf013d19a68ce3ffb4a82493",
+  "archive_bytes": 2188380,
+  "verified_files": 164,
+  "main_source_files": 156,
+  "api_calls": 0,
+  "credential_pattern_scan_passed": true,
+  "target_source_hashes_match_frozen_list": true,
+  "dependency_source_matches_cloud": "not_yet_verified",
+  "live_run_ready": false
+}

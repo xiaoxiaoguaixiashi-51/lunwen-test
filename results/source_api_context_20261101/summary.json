@@ -1,0 +1,482 @@
+{
+  "kind": "offline_signature_context_baseline_not_generation_or_novelty_results",
+  "api_calls": 0,
+  "method_list_sha256": "0db76977a9f86c2f7a8d68cfb3dff9511dd331ea42068abbc95df7e2d070359c",
+  "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614",
+  "call_input_ceiling_unchanged": 12000,
+  "first_task_preparation_ceiling": 8000,
+  "reserved_future_stage_headroom": 4000,
+  "source_inputs": [
+    {
+      "file": "commons-cli-1.5.0-sources.jar",
+      "url": "https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.5.0/commons-cli-1.5.0-sources.jar",
+      "sha256": "ab59e7a5afa247587c30459b5184cb0f664baeb1e317e165323995783044ac79"
+    },
+    {
+      "file": "deepseek_v4_tokenizer.zip",
+      "url": "https://cdn.deepseek.com/api-docs/deepseek_v4_tokenizer.zip",
+      "sha256": "e7310d1dafe0a86d8a5629fe78a7c763760f651db9b8682718a1781dcd6fe495"
+    }
+  ],
+  "rows": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "source_sha256_matches_frozen_target": true,
+      "source_index_files": 23,
+      "indexed_types": 26,
+      "mandatory_fits_preparation_ceiling": true,
+      "included_api_types": [
+        {
+          "type": "org.apache.commons.cli.Parser",
+          "relative_source": "org/apache/commons/cli/Parser.java",
+          "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+          "header_count": 13,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.apache.commons.cli.CommandLineParser",
+          "relative_source": "org/apache/commons/cli/CommandLineParser.java",
+          "source_sha256": "b6cf1ecb6ca1c671e54158f8d089b0797315fe9a484af0c49c06f487b798211c",
+          "header_count": 2,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.apache.commons.cli.CommandLine",
+          "relative_source": "org/apache/commons/cli/CommandLine.java",
+          "source_sha256": "6c3f541a8ccb96c2ae1e996fff3ed4dfd721d1b4b14836e33323a221e8803dd9",
+          "header_count": 26,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.MissingArgumentException",
+          "relative_source": "org/apache/commons/cli/MissingArgumentException.java",
+          "source_sha256": "c7a709249cb488fc419599e5192c64b3178dd1fde407d81ce5d9555d4aae031f",
+          "header_count": 3,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.Option",
+          "relative_source": "org/apache/commons/cli/Option.java",
+          "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe",
+          "header_count": 46,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.Options",
+          "relative_source": "org/apache/commons/cli/Options.java",
+          "source_sha256": "bdb1df815501fbc6ef86a3a4f389fbe3c96b810b85fdc44095bd316459f2aad8",
+          "header_count": 17,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.ParseException",
+          "relative_source": "org/apache/commons/cli/ParseException.java",
+          "source_sha256": "f221d8f3445e35c57a57826b9d89e2084cd4c2c9200b983fa2dd93fa413ffb85",
+          "header_count": 1,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.Util",
+          "relative_source": "org/apache/commons/cli/Util.java",
+          "source_sha256": "d8977ec9530bc23141fdf20b0c3c0be5a46395ff499d6820fa6f39b89e8bd293",
+          "header_count": 3,
+          "role": "direct_syntactic_dependency"
+        }
+      ],
+      "excluded_api_types": [],
+      "unresolved_type_candidates": [
+        {
+          "name": "List",
+          "origin": "org.apache.commons.cli.Parser",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "ListIterator",
+          "origin": "org.apache.commons.cli.Parser",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "String",
+          "origin": "org.apache.commons.cli.Parser",
+          "reason": "not_uniquely_in_main_source_index"
+        }
+      ],
+      "prompt_size_replay": {
+        "F1": {
+          "first_task": 1385,
+          "plan_with_saved_F1_dependency": 5341,
+          "generation_with_saved_F1_plan": 7906
+        },
+        "F2": {
+          "first_task": 1410,
+          "plan_with_saved_F1_dependency": 5366,
+          "generation_with_saved_F1_plan": 7931
+        },
+        "F3": {
+          "first_task": 3112,
+          "plan_with_saved_F1_dependency": 7068,
+          "generation_with_saved_F1_plan": 9633
+        }
+      },
+      "parsed_analysis_only_prompt_replay": {
+        "F1": {
+          "first_task": 1385,
+          "plan_with_saved_F1_dependency": 3672,
+          "generation_with_saved_F1_plan": 6237
+        },
+        "F2": {
+          "first_task": 1410,
+          "plan_with_saved_F1_dependency": 3697,
+          "generation_with_saved_F1_plan": 6262
+        },
+        "F3": {
+          "first_task": 3112,
+          "plan_with_saved_F1_dependency": 5399,
+          "generation_with_saved_F1_plan": 7964
+        }
+      },
+      "stage_budgeted_parsed_analysis_replay": {
+        "first_task": 3112,
+        "plan_with_saved_F1_dependency": 5399,
+        "generation_with_saved_F1_plan": 7964
+      },
+      "stage_budgeted_mandatory_fits": true,
+      "stage_budgeted_included_api_types": [
+        {
+          "type": "org.apache.commons.cli.Parser",
+          "relative_source": "org/apache/commons/cli/Parser.java",
+          "source_sha256": "cb9c1971d515c5f3245af49f75bf5dcd69ed609981302aa2950e0a31cac5d0da",
+          "header_count": 13,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.apache.commons.cli.CommandLineParser",
+          "relative_source": "org/apache/commons/cli/CommandLineParser.java",
+          "source_sha256": "b6cf1ecb6ca1c671e54158f8d089b0797315fe9a484af0c49c06f487b798211c",
+          "header_count": 2,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.apache.commons.cli.CommandLine",
+          "relative_source": "org/apache/commons/cli/CommandLine.java",
+          "source_sha256": "6c3f541a8ccb96c2ae1e996fff3ed4dfd721d1b4b14836e33323a221e8803dd9",
+          "header_count": 26,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.MissingArgumentException",
+          "relative_source": "org/apache/commons/cli/MissingArgumentException.java",
+          "source_sha256": "c7a709249cb488fc419599e5192c64b3178dd1fde407d81ce5d9555d4aae031f",
+          "header_count": 3,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.Option",
+          "relative_source": "org/apache/commons/cli/Option.java",
+          "source_sha256": "bef9de76d13c6ab934da238a02f62411662456a4a2f62b1dad90766daa834dfe",
+          "header_count": 46,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.Options",
+          "relative_source": "org/apache/commons/cli/Options.java",
+          "source_sha256": "bdb1df815501fbc6ef86a3a4f389fbe3c96b810b85fdc44095bd316459f2aad8",
+          "header_count": 17,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.ParseException",
+          "relative_source": "org/apache/commons/cli/ParseException.java",
+          "source_sha256": "f221d8f3445e35c57a57826b9d89e2084cd4c2c9200b983fa2dd93fa413ffb85",
+          "header_count": 1,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.apache.commons.cli.Util",
+          "relative_source": "org/apache/commons/cli/Util.java",
+          "source_sha256": "d8977ec9530bc23141fdf20b0c3c0be5a46395ff499d6820fa6f39b89e8bd293",
+          "header_count": 3,
+          "role": "direct_syntactic_dependency"
+        }
+      ],
+      "stage_budgeted_excluded_api_types": [],
+      "focal_sha256": "424140989513a823dea3e09b9ce33d52f996b312326e7a02b90c99d189634a5c",
+      "context_sha256": "94134fcf61f8d22a31e7a87549bf27ded4f731de1481d8bde48a6f93492b031b"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "source_sha256_matches_frozen_target": true,
+      "source_index_files": 133,
+      "indexed_types": 169,
+      "mandatory_fits_preparation_ceiling": true,
+      "included_api_types": [
+        {
+          "type": "org.jdom2.Element",
+          "relative_source": "org/jdom2/Element.java",
+          "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+          "header_count": 94,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.Content",
+          "relative_source": "org/jdom2/Content.java",
+          "source_sha256": "84c3d2375261519a0ae0331a578563e72fa92fcfeb4b345639885e61d0f8bc99",
+          "header_count": 16,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.Parent",
+          "relative_source": "org/jdom2/Parent.java",
+          "source_sha256": "2d9b792c9ecb36a022355656417aa2a01aedab52d7db3a3677016a611cd8ba81",
+          "header_count": 20,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.CloneBase",
+          "relative_source": "org/jdom2/CloneBase.java",
+          "source_sha256": "f60d1ed8acaa87047458fa6ffde1d20dee5c1fe163e5c01bb717de574176a0ca",
+          "header_count": 2,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.NamespaceAware",
+          "relative_source": "org/jdom2/NamespaceAware.java",
+          "source_sha256": "ba703473b8137e86a27b8e015cab4a844da156f9927456710dc840bd3b39de9d",
+          "header_count": 3,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.Attribute",
+          "relative_source": "org/jdom2/Attribute.java",
+          "source_sha256": "cf95f3ceb642b5317253057b59e744460f76a1014f8f2a5af0b8074829191bbc",
+          "header_count": 52,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.jdom2.AttributeList",
+          "relative_source": "org/jdom2/AttributeList.java",
+          "source_sha256": "aa8b262c2cf746df5c7be78862dd2be8d4d4986d1f6e4791fb74d4923b348bc3",
+          "header_count": 19,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.jdom2.ContentList",
+          "relative_source": "org/jdom2/ContentList.java",
+          "source_sha256": "fd3cd1b6b6b26d8488da695223c040d9de079426f364daecb17e9dc6b09b4392",
+          "header_count": 20,
+          "role": "direct_syntactic_dependency"
+        },
+        {
+          "type": "org.jdom2.Namespace",
+          "relative_source": "org/jdom2/Namespace.java",
+          "source_sha256": "75d95715eaf011753372272af9e560df5bca0a1ed8439907b4e186f13bf7e68c",
+          "header_count": 9,
+          "role": "direct_syntactic_dependency"
+        }
+      ],
+      "excluded_api_types": [],
+      "unresolved_type_candidates": [
+        {
+          "name": "Serializable",
+          "origin": "org.jdom2.Content",
+          "reason": "ancestor_not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "Cloneable",
+          "origin": "org.jdom2.Parent",
+          "reason": "ancestor_not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "Serializable",
+          "origin": "org.jdom2.Parent",
+          "reason": "ancestor_not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "Cloneable",
+          "origin": "org.jdom2.CloneBase",
+          "reason": "ancestor_not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "ArrayList",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "Collections",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "List",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "String",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "TreeMap",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "int",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        },
+        {
+          "name": "long",
+          "origin": "org.jdom2.Element",
+          "reason": "not_uniquely_in_main_source_index"
+        }
+      ],
+      "prompt_size_replay": {
+        "F1": {
+          "first_task": 2830,
+          "plan_with_saved_F1_dependency": 5938,
+          "generation_with_saved_F1_plan": 10566
+        },
+        "F2": {
+          "first_task": 3286,
+          "plan_with_saved_F1_dependency": 6394,
+          "generation_with_saved_F1_plan": 11022
+        },
+        "F3": {
+          "first_task": 6214,
+          "plan_with_saved_F1_dependency": 9322,
+          "generation_with_saved_F1_plan": 13950
+        }
+      },
+      "parsed_analysis_only_prompt_replay": {
+        "F1": {
+          "first_task": 2830,
+          "plan_with_saved_F1_dependency": 4709,
+          "generation_with_saved_F1_plan": 9337
+        },
+        "F2": {
+          "first_task": 3286,
+          "plan_with_saved_F1_dependency": 5165,
+          "generation_with_saved_F1_plan": 9793
+        },
+        "F3": {
+          "first_task": 6214,
+          "plan_with_saved_F1_dependency": 8093,
+          "generation_with_saved_F1_plan": 12721
+        }
+      },
+      "stage_budgeted_parsed_analysis_replay": {
+        "first_task": 4938,
+        "plan_with_saved_F1_dependency": 6817,
+        "generation_with_saved_F1_plan": 11445
+      },
+      "stage_budgeted_mandatory_fits": true,
+      "stage_budgeted_included_api_types": [
+        {
+          "type": "org.jdom2.Element",
+          "relative_source": "org/jdom2/Element.java",
+          "source_sha256": "4ab66bb4a9aa8743d56e56945c1736d4e63b32064af08c548d616f8a57a9ed8d",
+          "header_count": 94,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.Content",
+          "relative_source": "org/jdom2/Content.java",
+          "source_sha256": "84c3d2375261519a0ae0331a578563e72fa92fcfeb4b345639885e61d0f8bc99",
+          "header_count": 16,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.Parent",
+          "relative_source": "org/jdom2/Parent.java",
+          "source_sha256": "2d9b792c9ecb36a022355656417aa2a01aedab52d7db3a3677016a611cd8ba81",
+          "header_count": 20,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.CloneBase",
+          "relative_source": "org/jdom2/CloneBase.java",
+          "source_sha256": "f60d1ed8acaa87047458fa6ffde1d20dee5c1fe163e5c01bb717de574176a0ca",
+          "header_count": 2,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.NamespaceAware",
+          "relative_source": "org/jdom2/NamespaceAware.java",
+          "source_sha256": "ba703473b8137e86a27b8e015cab4a844da156f9927456710dc840bd3b39de9d",
+          "header_count": 3,
+          "role": "declaring_or_ancestor_type"
+        },
+        {
+          "type": "org.jdom2.Namespace",
+          "relative_source": "org/jdom2/Namespace.java",
+          "source_sha256": "75d95715eaf011753372272af9e560df5bca0a1ed8439907b4e186f13bf7e68c",
+          "header_count": 9,
+          "role": "direct_syntactic_dependency"
+        }
+      ],
+      "stage_budgeted_excluded_api_types": [
+        {
+          "type": "org.jdom2.Attribute",
+          "relative_source": "org/jdom2/Attribute.java",
+          "source_sha256": "cf95f3ceb642b5317253057b59e744460f76a1014f8f2a5af0b8074829191bbc",
+          "header_count": 52,
+          "reason": "context_budget"
+        },
+        {
+          "type": "org.jdom2.AttributeList",
+          "relative_source": "org/jdom2/AttributeList.java",
+          "source_sha256": "aa8b262c2cf746df5c7be78862dd2be8d4d4986d1f6e4791fb74d4923b348bc3",
+          "header_count": 19,
+          "reason": "context_budget"
+        },
+        {
+          "type": "org.jdom2.ContentList",
+          "relative_source": "org/jdom2/ContentList.java",
+          "source_sha256": "fd3cd1b6b6b26d8488da695223c040d9de079426f364daecb17e9dc6b09b4392",
+          "header_count": 20,
+          "reason": "context_budget"
+        }
+      ],
+      "focal_sha256": "835ca5b380ecf331b4571c63ec75af90f977dba629a78e0cb9d5411892cb4e88",
+      "context_sha256": "50e0f026470222767954dcabe2ca01393601ad848144e9f255c5db86785afe8e"
+    }
+  ],
+  "local_source_archives": [
+    {
+      "file": "kcf_jdom_source_20261022.tar.gz",
+      "sha256": "1f8dc9a73102b6a5b83c88776f375816785753cebe0b24ad64d80c8a0e90e2b4",
+      "source_tree_label": "jdom-2e946f814b5ea255c0a5f861a61f911b83bad28a",
+      "origin": "previously_saved_project_source_archive"
+    }
+  ],
+  "live_run_ready": false,
+  "remaining_execution_checks": [
+    "cloud source/class parity",
+    "fresh later-stage model outputs under the unchanged budget"
+  ],
+  "runtime": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "tokenizers": "0.22.2"
+  },
+  "additional_exploratory_engineering_check": {
+    "timing": "after_original_first_prompt_only_F3_audit_revealed_later_stage_overflow",
+    "prompt_view": "keep static_analysis and llm_analysis; omit raw_llm_response from downstream prompts only",
+    "same_parsed_view_measured_for_F1_F2_F3": true,
+    "stage_budgeted_context_selection": "whole optional dependency API blocks fit saved-output replay at input ceiling minus 512",
+    "raw_responses_retained_in_original_archive": true,
+    "semantic_equivalence_or_future_fit_claimed": false
+  },
+  "source_provenance": "frozen target file hashes match; direct dependency source hashes newly recorded; cloud class/source parity not yet checked",
+  "limits": [
+    "Two known development targets, no independent holdout.",
+    "Later-stage sizes replay saved F1 semantic analysis/plans, not new F3 outputs or guaranteed future fit.",
+    "Source headers omit behavioral preconditions; no factory correctness, full type resolution or novelty claim.",
+    "New contexts have not been integrated into production or sent to the provider."
+  ],
+  "implementation_sha256": {
+    "scripts/source_api_context.py": "259168dc0f6503280bf052f029ba21748d3e7470e6264a292dc81179902eefe7",
+    "scripts/audit_source_api_context.py": "4ddb2a642df3dac5ab853a2b72a048d19892733db1c28f8ca3fa6f640f913911"
+  }
+}

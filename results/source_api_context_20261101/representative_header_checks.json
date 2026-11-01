@@ -1,0 +1,37 @@
+[
+  {
+    "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+    "checked_headers": {
+      "flatten": [
+        "protected abstract String[] flatten(Options opts, String[] arguments, boolean stopAtNonOption) throws ParseException;"
+      ],
+      "Option_constructors": [
+        "public Option(final String option, final boolean hasArg, final String description) throws IllegalArgumentException;",
+        "public Option(final String option, final String description) throws IllegalArgumentException;",
+        "public Option(final String option, final String longOption, final boolean hasArg, final String description) throws IllegalArgumentException;"
+      ],
+      "addNamespaceDeclaration": [],
+      "addNamespace": [],
+      "setValues": [],
+      "Namespace_factory_overloads": []
+    },
+    "behavioral_preconditions_verified": false
+  },
+  {
+    "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+    "checked_headers": {
+      "flatten": [],
+      "Option_constructors": [],
+      "addNamespaceDeclaration": [
+        "public boolean addNamespaceDeclaration(final Namespace additionalNamespace);"
+      ],
+      "addNamespace": [],
+      "setValues": [],
+      "Namespace_factory_overloads": [
+        "public static Namespace getNamespace(final String prefix, final String uri);",
+        "public static Namespace getNamespace(final String uri);"
+      ]
+    },
+    "behavioral_preconditions_verified": false
+  }
+]
