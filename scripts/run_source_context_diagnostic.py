@@ -35,14 +35,15 @@ MAX_ATTEMPTS = len(TARGETS) * len(ARMS) * 3
 
 class CheckedClient:
     """Settle/check every individual request before allowing the next stage."""
-    def __init__(self, client, root):
+    def __init__(self, client, root, max_attempts=MAX_ATTEMPTS):
         self.client, self.root = client, root
+        self.max_attempts = max_attempts
 
     def generate(self, *args, **kwargs):
         try:
             return self.client.generate(*args, **kwargs)
         finally:
-            check_costs(self.root, MAX_ATTEMPTS)
+            check_costs(self.root, self.max_attempts)
 
 
 def static_analysis(method):
@@ -57,7 +58,7 @@ def task_messages(context, analysis):
                 source_code=context, ast_analysis=json.dumps(analysis, indent=2, ensure_ascii=False))}]
 
 
-def generate_stages(client, context, method, analysis, knowledge, destination):
+def generate_stages(client, context, method, analysis, knowledge, destination, *, parsed_only=False):
     """Same context in all stages; original path only selects project constraints."""
     messages = task_messages(context, analysis)
     raw = client.generate(messages[0]['content'], messages[1]['content'])
@@ -65,6 +66,8 @@ def generate_stages(client, context, method, analysis, knowledge, destination):
                   'llm_analysis': task_agent.TaskAgent._parse_llm_response(None, raw),
                   'raw_llm_response': raw}
     write(destination / 'dependency_analysis.json', dependency)
+    if parsed_only:
+        del dependency['raw_llm_response']
     plan = PlanAgent(client).generate_plan(dependency, context, retrieved_knowledge=knowledge)
     write(destination / 'test_plan.json', plan)
     return GenerationAgent(client, static_guard_enabled=True).generate(
@@ -113,9 +116,24 @@ def main():
     parser.add_argument('--projects-root', type=Path)
     parser.add_argument('--reference-root', type=Path)
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--signature-audit', type=Path, help='Use the frozen offline F3 contexts and compare against F1')
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
     protocol, prepared = prepare(repo, args.tokenizer.resolve())
+    arms = ('F1', 'F3') if args.signature_audit else ARMS
+    max_attempts = len(prepared) * len(arms) * 3
+    if args.signature_audit:
+        from scripts.source_api_context import SourceIndex
+        for target in prepared:
+            method = target['method']
+            evidence = json.loads((args.signature_audit / (method['id'] + '.json')).read_text(encoding='utf-8'))
+            context = evidence['F3_stage_budgeted_after_original_audit']
+            if evidence['method'] != method or not context['mandatory_fits'] or context['focal_sha256'] != target['contexts']['focal_sha256']:
+                raise ValueError('Signature audit differs from the frozen target')
+            SourceIndex(Path(method['target']).parents[len(Path(method['target_relative']).parts) - 1] / method['source_root_relative'],
+                        evidence['source_index_sha256'])
+            target['contexts']['F3'] = context['F3']
+            target['signature_audit_sha256'] = digest(args.signature_audit / (method['id'] + '.json'))
     root = args.output_dir.resolve()
     if args.execute and not all((args.private_config, args.projects_root, args.reference_root)):
         parser.error('Execution requires private config, projects and frozen reference')
@@ -127,9 +145,10 @@ def main():
         'kind': 'development_context_comparison_not_formal_full_or_ablation',
         'code_revision': __import__('subprocess').check_output(['git', 'rev-parse', 'HEAD'], cwd=repo, text=True).strip(),
         'implementation_sha256': digest(Path(__file__)),
-        'frozen_protocol': protocol, 'arms': ARMS, 'target_pairs': TARGETS,
-        'max_provider_attempts': MAX_ATTEMPTS, 'max_calls_per_target_per_arm': 3,
-        'max_reserved_tokens_all_arms': MAX_ATTEMPTS * (12000 + 8192),
+        'frozen_protocol': protocol, 'arms': arms, 'target_pairs': TARGETS,
+        'parsed_only_in_both_arms': bool(args.signature_audit),
+        'max_provider_attempts': max_attempts, 'max_calls_per_target_per_arm': 3,
+        'max_reserved_tokens_all_arms': max_attempts * (12000 + 8192),
         'replications': 1, 'repair_requests': 0, 'feedback_rounds': 0,
         'static_guard_enabled': True, 'retrieval': 'identical static-only full-source selection per target',
         'source_context': 'same selected context in Task, Plan and Generation; AST always from full source',
@@ -156,10 +175,10 @@ def main():
     results, statuses = {}, []
     try:
         # Rotate deterministic order by target to reduce a fixed arm/time ordering.
-        jobs = [(p, ARMS[i % 3:] + ARMS[:i % 3]) for i, p in enumerate(prepared)]
-        for prepared_target, arms in jobs:
+        jobs = [(p, arms[i % len(arms):] + arms[:i % len(arms)]) for i, p in enumerate(prepared)]
+        for prepared_target, job_arms in jobs:
             method = prepared_target['method']
-            for arm in arms:
+            for arm in job_arms:
                 directory = root / arm
                 target = directory / 'sources' / method['id']
                 target.mkdir(parents=True)
@@ -172,8 +191,8 @@ def main():
                 row = {'id': method['id'], 'arm': arm}
                 try:
                     with trace_target(method['id']):
-                        code = generate_stages(CheckedClient(LLMClient(cfg), root), prepared_target['contexts'][arm], method,
-                            prepared_target['analysis'], prepared_target['knowledge'], target)
+                        code = generate_stages(CheckedClient(LLMClient(cfg), root, max_attempts), prepared_target['contexts'][arm], method,
+                            prepared_target['analysis'], prepared_target['knowledge'], target, parsed_only=bool(args.signature_audit))
                     name = Pipeline._extract_class_name(None, code)
                     if not name:
                         (target / 'unparsed_response.java.txt').write_text(code, encoding='utf-8')
@@ -191,10 +210,10 @@ def main():
                 except BudgetExceeded:
                     row.update(status='generation_budget_blocked', xml_file='')
                 finally:
-                    check_costs(root, MAX_ATTEMPTS)
+                    check_costs(root, max_attempts)
                 statuses.append({k: v for k, v in row.items() if k != 'output'})
                 write(root / 'execution_statuses.json', statuses)
-        for arm in ARMS:
+        for arm in arms:
             directory = root / arm
             accepted = directory / 'accepted_xml'
             accepted.mkdir()
@@ -211,7 +230,7 @@ def main():
             results[arm] = score(methods_file, accepted, [directory / 'execution'], args.reference_root,
                                  args.projects_root, directory / 'score', arm)
         write(root / 'summary.json', {'kind': 'single_development_context_comparison_not_formal',
-            'results': results, 'execution_statuses': statuses, 'api_costs': check_costs(root, MAX_ATTEMPTS),
+            'results': results, 'execution_statuses': statuses, 'api_costs': check_costs(root, max_attempts),
             'formal_run_ready': False})
         print(json.dumps({'completed': True, 'jobs': len(statuses), 'results': results}))
     except Exception as error:
