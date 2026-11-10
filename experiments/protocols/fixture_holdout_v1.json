@@ -1,0 +1,15 @@
+{
+  "scope": "two held-out methods relative to the Element tuning series, both in JDom2",
+  "targets": {
+    "Document.canContainContent": "On a Document with one root element, directly ask whether a second distinct Element can be inserted with replace=false. Verify IllegalAddException from the focal call. Build the existing document and the unattached candidate separately during setup.",
+    "SAXHandler.startElement": "After initializing a handler and registering a prefix mapping, call startElement for the first prefixed root. Verify the document root local name and namespace URI. Use an empty AttributesImpl."
+  },
+  "model_protocol": "kcf_rerun_v1_20261030",
+  "max_provider_attempts": 6,
+  "generation": "one shared seed per target",
+  "repair": "one request per arm on failing seeds, no repair for passing seeds",
+  "arms": ["existing_repair", "setup_checked"],
+  "intervention": "execute only the marked setup before repair and supply its outcome; repeat setup check before interpreting the repaired suite",
+  "acceptance": "judge focal reach, intent and assertion separately; classify missing markers as unknown; report accepted focal coverage for passing whole suites only",
+  "limits": "single repeat, no repository-wide efficacy claim; CPU setup checks reported separately"
+}
