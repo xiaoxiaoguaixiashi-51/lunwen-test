@@ -117,11 +117,12 @@ def main():
     parser.add_argument('--reference-root', type=Path)
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--signature-audit', type=Path, help='Use the frozen offline F3 contexts and compare against F1')
+    parser.add_argument('--fixture-pilot', type=Path, help='Replay the saved Element F3 plan for a paired generation-only comparison')
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
     protocol, prepared = prepare(repo, args.tokenizer.resolve())
     arms = ('F1', 'F3') if args.signature_audit else ARMS
-    max_attempts = len(prepared) * len(arms) * 3
+    replay = None
     if args.signature_audit:
         from scripts.source_api_context import SourceIndex
         for target in prepared:
@@ -134,6 +135,36 @@ def main():
                         evidence['source_index_sha256'])
             target['contexts']['F3'] = context['F3']
             target['signature_audit_sha256'] = digest(args.signature_audit / (method['id'] + '.json'))
+    if args.fixture_pilot:
+        if not args.signature_audit:
+            parser.error('--fixture-pilot requires --signature-audit')
+        prepared = [target for target in prepared if target['method']['project_id'] == 'jdom2']
+        target, = prepared
+        dependency_file = args.fixture_pilot / 'dependency_analysis.json'
+        plan_file = args.fixture_pilot / 'test_plan.json'
+        if (digest(dependency_file), digest(plan_file)) != (
+            '183fe606226b28881ac14130ec3124d79eec599fe93aef7520956e542a29a835',
+            '0d11625f204dbd6e33a956e92b86b81a5b7ed736a2c1d01ad52e5fa7e282ef60',
+        ):
+            raise ValueError('Saved Element F3 analysis or plan changed')
+        dependency = json.loads(dependency_file.read_text())
+        del dependency['raw_llm_response']
+        replay = (json.loads(plan_file.read_text()), dependency)
+        java = Path(target['method']['target']).parent
+        excerpts = []
+        for name, ranges in [('Element', [(383, 401)]), ('Namespace', [(215, 225)]),
+                             ('Verifier', [(608, 620), (686, 706)])]:
+            lines = (java / (name + '.java')).read_text(encoding='utf-8').splitlines()
+            excerpts.extend(f'{name}.java:{start}-{end}\n' + '\n'.join(lines[start-1:end]) for start, end in ranges)
+        base = target['contexts']['F3'] + '\nUse the following information to check fixture setup in the saved plan before writing tests. Adapt invalid setup while preserving focal assertions where applicable.\n'
+        target['contexts']['source'] = base + '\n\n'.join(excerpts)
+        target['contexts']['rules'] = base + (
+            'Namespace.getNamespace reserves xml for http://www.w3.org/XML/1998/namespace. '
+            'Within one Element, a prefix cannot map to different URIs across its own namespace, additional declarations and attributes. '
+            'Use distinct prefixes or the same URI within that element. Apply the check per element, allowing descendant bindings to differ from ancestor bindings.')
+        arms = ('source', 'rules')
+    calls_per_job = 1 if replay else 3
+    max_attempts = len(prepared) * len(arms) * calls_per_job
     root = args.output_dir.resolve()
     if args.execute and not all((args.private_config, args.projects_root, args.reference_root)):
         parser.error('Execution requires private config, projects and frozen reference')
@@ -147,7 +178,8 @@ def main():
         'implementation_sha256': digest(Path(__file__)),
         'frozen_protocol': protocol, 'arms': arms, 'target_pairs': TARGETS,
         'parsed_only_in_both_arms': bool(args.signature_audit),
-        'max_provider_attempts': max_attempts, 'max_calls_per_target_per_arm': 3,
+        'max_provider_attempts': max_attempts, 'max_calls_per_target_per_arm': calls_per_job,
+        'replayed_generation_inputs': replay,
         'max_reserved_tokens_all_arms': max_attempts * (12000 + 8192),
         'replications': 1, 'repair_requests': 0, 'feedback_rounds': 0,
         'static_guard_enabled': True, 'retrieval': 'identical static-only full-source selection per target',
@@ -183,7 +215,7 @@ def main():
                 target = directory / 'sources' / method['id']
                 target.mkdir(parents=True)
                 cfg = json.loads(json.dumps(config))
-                cfg['request_budget'] = {**protocol['budget'], 'max_calls_per_target': 3,
+                cfg['request_budget'] = {**protocol['budget'], 'max_calls_per_target': calls_per_job,
                     'tokenizer_json': str(args.tokenizer.resolve()), 'tokenizer_sha256': protocol['tokenizer_sha256'],
                     'ledger_path': str(directory / 'budget.sqlite')}
                 os.environ['KCF_LLM_TRACE_PATH'] = str(directory / 'llm_calls.jsonl')
@@ -191,8 +223,14 @@ def main():
                 row = {'id': method['id'], 'arm': arm}
                 try:
                     with trace_target(method['id']):
-                        code = generate_stages(CheckedClient(LLMClient(cfg), root, max_attempts), prepared_target['contexts'][arm], method,
-                            prepared_target['analysis'], prepared_target['knowledge'], target, parsed_only=bool(args.signature_audit))
+                        client = CheckedClient(LLMClient(cfg), root, max_attempts)
+                        context = prepared_target['contexts'][arm]
+                        if replay:
+                            plan, dependency = replay
+                            code = GenerationAgent(client, static_guard_enabled=True).generate(plan, context, dependency, source_file=method['target'])
+                        else:
+                            code = generate_stages(client, context, method, prepared_target['analysis'],
+                                prepared_target['knowledge'], target, parsed_only=bool(args.signature_audit))
                     name = Pipeline._extract_class_name(None, code)
                     if not name:
                         (target / 'unparsed_response.java.txt').write_text(code, encoding='utf-8')
