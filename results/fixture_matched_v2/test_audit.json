@@ -1,0 +1,196 @@
+{
+  "archive_sha256": "a29d25dd08ef2778607169de4b3c9268b1e52b9a097ba05a5305b20f3c172013",
+  "verified_files": 49,
+  "estimated_prompt_tokens": {
+    "source": 11819,
+    "rules": 11326
+  },
+  "tests": {
+    "rules": [
+      {
+        "test": "test_rootElement_defaultNamespace_noAdditional_noAttributes",
+        "focal_call_lines_in_source": [
+          45
+        ],
+        "failure_type": "java.lang.AssertionError: expected:<3> but was:<2>",
+        "failure_line": 47,
+        "failing_statement": "assertEquals(3, result.size());",
+        "status": "assertion_failed"
+      },
+      {
+        "test": "test_rootElement_nonDefaultNamespace_noDefaultCompletion",
+        "focal_call_lines_in_source": [
+          59
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_rootElement_withDefaultNamespace_noDuplicateNoNamespace",
+        "focal_call_lines_in_source": [
+          72
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_currentNamespace_priority_over_additionalNamespaces",
+        "focal_call_lines_in_source": [
+          86
+        ],
+        "failure_type": "org.jdom2.IllegalAddException: The namespace xmlns:p=\"http://other\" could not be added as a namespace to \"p:e\": The namespace prefix \"p\" collides with the element namespace prefix",
+        "failure_line": 84,
+        "failing_statement": "element.addNamespaceDeclaration(Namespace.getNamespace(\"p\", \"http://other\"));",
+        "status": "fixture_exception"
+      },
+      {
+        "test": "test_additionalNamespaces_priority_over_attributes",
+        "focal_call_lines_in_source": [
+          101
+        ],
+        "failure_type": "org.jdom2.IllegalAddException: The attribute \"q:a\" could not be added to the element \"p:e\": The namespace prefix \"q\" collides with an additional namespace declared by the element",
+        "failure_line": 99,
+        "failing_statement": "element.setAttribute(new Attribute(\"a\", \"v\", Namespace.getNamespace(\"q\", \"http://q-att\")));",
+        "status": "fixture_exception"
+      },
+      {
+        "test": "test_attributes_namespace_added_when_not_conflicting",
+        "focal_call_lines_in_source": [
+          114
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_inheritParentNamespaces",
+        "focal_call_lines_in_source": [
+          127
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_childNamespace_priority_over_parentNamespace",
+        "focal_call_lines_in_source": [
+          141
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_nonRootElement_noDefaultNamespaceCompletion",
+        "focal_call_lines_in_source": [
+          155
+        ],
+        "failure_type": "java.lang.AssertionError",
+        "failure_line": 157,
+        "failing_statement": "assertFalse(result.contains(Namespace.NO_NAMESPACE));",
+        "status": "assertion_failed"
+      },
+      {
+        "test": "test_multiLevelInheritance",
+        "focal_call_lines_in_source": [
+          173
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_returnedList_isUnmodifiable",
+        "focal_call_lines_in_source": [
+          184
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_nullAdditionalNamespacesAndAttributes_noNPE",
+        "focal_call_lines_in_source": [
+          211
+        ],
+        "failure_type": "java.lang.AssertionError: expected:<3> but was:<2>",
+        "failure_line": 214,
+        "failing_statement": "assertEquals(3, result.size());",
+        "status": "assertion_failed"
+      },
+      {
+        "test": "test_emptyAdditionalNamespacesAndAttributes",
+        "focal_call_lines_in_source": [
+          226
+        ],
+        "failure_type": "java.lang.AssertionError: expected:<3> but was:<2>",
+        "failure_line": 228,
+        "failing_statement": "assertEquals(3, result.size());",
+        "status": "assertion_failed"
+      },
+      {
+        "test": "test_xmlNamespacePrefixConflict_selfWins",
+        "focal_call_lines_in_source": [
+          243
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_parentRecursion_viaRealParent",
+        "focal_call_lines_in_source": [
+          259
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_additionalNamespaces_viaRealElement",
+        "focal_call_lines_in_source": [
+          274
+        ],
+        "failure_type": "org.jdom2.IllegalAddException: The namespace xmlns:p=\"http://dup\" could not be added as a namespace to \"p:e\": The namespace prefix \"p\" collides with the element namespace prefix",
+        "failure_line": 271,
+        "failing_statement": "element.addNamespaceDeclaration(Namespace.getNamespace(\"p\", \"http://dup\"));",
+        "status": "fixture_exception"
+      },
+      {
+        "test": "test_attributes_viaRealElement",
+        "focal_call_lines_in_source": [
+          288
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "test_resultOrder_currentNamespaceFirst_thenTreeMapOrder",
+        "focal_call_lines_in_source": [
+          300
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      }
+    ]
+  },
+  "junit_unavailable": {
+    "source": "/root/autodl-tmp/fixture_matched_v2/source/sources/jdom2-jdom2-org-jdom2-element-getnamespacesinscope/ElementGetNamespacesInScopeTest.java:927: error: reached end of file while parsing\n        assertEquals(child.getNamespace(), result\n                                                 ^\n1 error\n"
+  },
+  "reach_evidence": "Call sites and failure stack ordering, not per-test instrumentation."
+}
