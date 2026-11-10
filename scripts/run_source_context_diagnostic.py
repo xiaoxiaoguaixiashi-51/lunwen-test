@@ -152,17 +152,41 @@ def main():
         replay = (json.loads(plan_file.read_text()), dependency)
         java = Path(target['method']['target']).parent
         excerpts = []
-        for name, ranges in [('Element', [(383, 401)]), ('Namespace', [(215, 225)]),
-                             ('Verifier', [(608, 620), (686, 706)])]:
+        for name, ranges in [('JDOMConstants', [(98, 98), (100, 100)]),
+                             ('Namespace', [(98, 99), (112, 115), (201, 205), (221, 226)]),
+                             ('Element', [(397, 400)]), ('AttributeList', [(195, 198)]),
+                             ('Verifier', [(610, 619), (651, 657), (688, 707)])]:
             lines = (java / (name + '.java')).read_text(encoding='utf-8').splitlines()
-            excerpts.extend(f'{name}.java:{start}-{end}\n' + '\n'.join(lines[start-1:end]) for start, end in ranges)
-        base = target['contexts']['F3'] + '\nUse the following information to check fixture setup in the saved plan before writing tests. Adapt invalid setup while preserving focal assertions where applicable.\n'
+            excerpts.extend(f'{name}.java:{start}-{end}\n' + '\n'.join(
+                line.strip() for line in lines[start-1:end] if line.strip() and not line.lstrip().startswith('//'))
+                for start, end in ranges)
+        base = target['contexts']['F3'] + (
+            '\nCheck fixture setup using the evidence below and the parent merge in the focal body above. '
+            'If a planned scenario is impossible through the public API, replace it with a legal scenario that exercises the focal method. '
+            'Derive expectations for the new scenario from the focal behavior. Preserve feasible original scenarios.\n')
         target['contexts']['source'] = base + '\n\n'.join(excerpts)
         target['contexts']['rules'] = base + (
-            'Namespace.getNamespace reserves xml for http://www.w3.org/XML/1998/namespace. '
-            'Within one Element, a prefix cannot map to different URIs across its own namespace, additional declarations and attributes. '
-            'Use distinct prefixes or the same URI within that element. Apply the check per element, allowing descendant bindings to differ from ancestor bindings.')
+            'The namespace factory reserves xml for http://www.w3.org/XML/1998/namespace and preloads that pair as Namespace.XML_NAMESPACE. '
+            'It rejects either side of the pair being rebound. On the same Element, adding a declaration or a prefixed attribute checks the element namespace, declarations and attributes. '
+            'An equal prefix with a different URI is a collision. An unprefixed attribute bypasses this namespace collision check. '
+            'Checks are local to the element. In the focal method, inherited namespaces fill only prefixes absent locally, so a descendant can shadow an ancestor.')
         arms = ('source', 'rules')
+        from tokenizers import Tokenizer
+        tokenizer = Tokenizer.from_file(str(args.tokenizer.resolve()))
+        class Capture:
+            def generate(self, system, user, **kwargs):
+                self.size = protocol['budget']['framing_reserve'] + sum(
+                    len(tokenizer.encode(message, add_special_tokens=False).ids) for message in (system, user))
+                return ''
+        estimates = {}
+        for arm in arms:
+            capture = Capture()
+            GenerationAgent(capture, static_guard_enabled=True).generate(
+                replay[0], target['contexts'][arm], replay[1], source_file=target['method']['target'])
+            estimates[arm] = capture.size
+        if max(estimates.values()) > protocol['budget']['max_input_tokens_per_call']:
+            raise ValueError(f'Paired generation prompts exceed the common input budget: {estimates}')
+        target['replayed_generation_estimates'] = estimates
     calls_per_job = 1 if replay else 3
     max_attempts = len(prepared) * len(arms) * calls_per_job
     root = args.output_dir.resolve()
@@ -176,7 +200,8 @@ def main():
         'kind': 'development_context_comparison_not_formal_full_or_ablation',
         'code_revision': __import__('subprocess').check_output(['git', 'rev-parse', 'HEAD'], cwd=repo, text=True).strip(),
         'implementation_sha256': digest(Path(__file__)),
-        'frozen_protocol': protocol, 'arms': arms, 'target_pairs': TARGETS,
+        'frozen_protocol': protocol, 'arms': arms,
+        'target_pairs': [(p['method']['project_id'], p['method']['method']) for p in prepared],
         'parsed_only_in_both_arms': bool(args.signature_audit),
         'max_provider_attempts': max_attempts, 'max_calls_per_target_per_arm': calls_per_job,
         'replayed_generation_inputs': replay,
