@@ -1,0 +1,9 @@
+case	status	focal_called
+same_element_prefix_collision	IllegalAddException	false
+declaration_attribute_collision	IllegalAddException	false
+reserved_xml_rebind	IllegalNameException	false
+declaration_coexistence	passed	true
+attribute_coexistence	passed	true
+child_shadows_parent	passed	true
+unqualified_root_old_size_oracle	assertion_failed	true
+unqualified_root_source_oracle	passed	true
