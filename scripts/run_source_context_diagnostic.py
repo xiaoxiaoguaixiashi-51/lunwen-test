@@ -118,7 +118,10 @@ def main():
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--signature-audit', type=Path, help='Use the frozen offline F3 contexts and compare against F1')
     parser.add_argument('--fixture-pilot', type=Path, help='Replay the saved Element F3 plan for a paired generation-only comparison')
+    parser.add_argument('--fixture-six-cases', action='store_true', help='Give both fixture arms the same six case objectives and compact output requirement')
     args = parser.parse_args()
+    if args.fixture_six_cases and not args.fixture_pilot:
+        parser.error('--fixture-six-cases requires --fixture-pilot')
     repo = Path(__file__).resolve().parents[1]
     protocol, prepared = prepare(repo, args.tokenizer.resolve())
     arms = ('F1', 'F3') if args.signature_audit else ARMS
@@ -164,6 +167,13 @@ def main():
             '\nCheck fixture setup using the evidence below and the parent merge in the focal body above. '
             'If a planned scenario is impossible through the public API, replace it with a legal scenario that exercises the focal method. '
             'Derive expectations for the new scenario from the focal behavior. Preserve feasible original scenarios.\n')
+        if args.fixture_six_cases:
+            base += ('Use exactly six short JUnit 4 tests named s1 through s6. This list replaces the saved plan case list: '
+                     's1 element versus added declaration, s2 added declaration versus attribute, s3 reserved XML namespace, '
+                     's4 child shadows parent, s5 parent namespace inheritance, s6 root default namespace. '
+                     'Each test must call getNamespacesInScope and assert the result. '
+                     'Use the fixture guidance above, at most two focused assertions per test, and no commentary or duplicate cases. '
+                     'Output one complete Java class of at most 150 lines.\n')
         target['contexts']['source'] = base + '\n\n'.join(excerpts)
         target['contexts']['rules'] = base + (
             'The namespace factory reserves xml for http://www.w3.org/XML/1998/namespace and preloads that pair as Namespace.XML_NAMESPACE. '
@@ -205,6 +215,7 @@ def main():
         'parsed_only_in_both_arms': bool(args.signature_audit),
         'max_provider_attempts': max_attempts, 'max_calls_per_target_per_arm': calls_per_job,
         'replayed_generation_inputs': replay,
+        'fixture_six_cases': args.fixture_six_cases,
         'max_reserved_tokens_all_arms': max_attempts * (12000 + 8192),
         'replications': 1, 'repair_requests': 0, 'feedback_rounds': 0,
         'static_guard_enabled': True, 'retrieval': 'identical static-only full-source selection per target',
