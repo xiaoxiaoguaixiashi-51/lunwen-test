@@ -1,0 +1,136 @@
+{
+  "archive_sha256": "525310017ebb55712b84f075b5059471198431dddb593a3f0cfe60f3b7c43e87",
+  "verified_files": 61,
+  "estimated_prompt_tokens": {
+    "source": 11929,
+    "rules": 11436
+  },
+  "tests": {
+    "source": [
+      {
+        "test": "s1_elementVersusAddedDeclaration",
+        "focal_call_lines_in_source": [
+          28
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s2_addedDeclarationVersusAttribute",
+        "focal_call_lines_in_source": [
+          38
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s3_reservedXmlNamespace",
+        "focal_call_lines_in_source": [
+          46
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s4_childShadowsParent",
+        "focal_call_lines_in_source": [
+          56
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s5_parentNamespaceInheritance",
+        "focal_call_lines_in_source": [
+          66
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s6_rootDefaultNamespace",
+        "focal_call_lines_in_source": [
+          74
+        ],
+        "failure_type": "java.lang.AssertionError: expected:<3> but was:<2>",
+        "failure_line": 75,
+        "failing_statement": "assertEquals(3, result.size());",
+        "status": "assertion_failed"
+      }
+    ],
+    "rules": [
+      {
+        "test": "s1_elementVersusAddedDeclaration",
+        "focal_call_lines_in_source": [
+          29
+        ],
+        "failure_type": "org.jdom2.IllegalAddException: The namespace xmlns:p=\"http://other\" could not be added as a namespace to \"p:e\": The namespace prefix \"p\" collides with the element namespace prefix",
+        "failure_line": 28,
+        "failing_statement": "element.addNamespaceDeclaration(Namespace.getNamespace(\"p\", \"http://other\"));",
+        "status": "fixture_exception"
+      },
+      {
+        "test": "s2_addedDeclarationVersusAttribute",
+        "focal_call_lines_in_source": [
+          41
+        ],
+        "failure_type": "org.jdom2.IllegalAddException: The attribute \"q:a\" could not be added to the element \"p:e\": The namespace prefix \"q\" collides with an additional namespace declared by the element",
+        "failure_line": 40,
+        "failing_statement": "element.setAttribute(new Attribute(\"a\", \"v\", Namespace.getNamespace(\"q\", \"http://q-att\")));",
+        "status": "fixture_exception"
+      },
+      {
+        "test": "s3_reservedXmlNamespace",
+        "focal_call_lines_in_source": [
+          51
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s4_childShadowsParent",
+        "focal_call_lines_in_source": [
+          63
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s5_parentNamespaceInheritance",
+        "focal_call_lines_in_source": [
+          75
+        ],
+        "failure_type": null,
+        "failure_line": null,
+        "failing_statement": null,
+        "status": "passed"
+      },
+      {
+        "test": "s6_rootDefaultNamespace",
+        "focal_call_lines_in_source": [
+          87
+        ],
+        "failure_type": "java.lang.AssertionError: expected:<3> but was:<2>",
+        "failure_line": 88,
+        "failing_statement": "assertEquals(3, result.size());",
+        "status": "assertion_failed"
+      }
+    ]
+  },
+  "junit_unavailable": {},
+  "reach_evidence": "Call sites and failure stack ordering, not per-test instrumentation."
+}

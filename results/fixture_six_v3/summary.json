@@ -1,0 +1,94 @@
+{
+  "kind": "single_development_context_comparison_not_formal",
+  "results": {
+    "source": {
+      "approach": "source",
+      "methods_total": 1,
+      "methods_with_coverage_data": 1,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 27,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 22,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "rules": {
+      "approach": "rules",
+      "methods_total": 1,
+      "methods_with_coverage_data": 1,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 27,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 22,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    }
+  },
+  "execution_statuses": [
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "source",
+      "status": "test_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": "/root/autodl-tmp/fixture_six_v3/source/execution/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/xml/jacoco.xml"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "rules",
+      "status": "test_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": "/root/autodl-tmp/fixture_six_v3/rules/execution/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/xml/jacoco.xml"
+    }
+  ],
+  "api_costs": {
+    "kind": "api_cost_index_not_full_compute_budget",
+    "totals": {
+      "trace_events": 2,
+      "provider_attempts": 2,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0
+    },
+    "known_usage_totals": {
+      "prompt_tokens": 22863,
+      "completion_tokens": 1554,
+      "total_tokens": 24417,
+      "prompt_cache_hit_tokens": 15488,
+      "prompt_cache_miss_tokens": 7375
+    },
+    "legacy_events_with_inferred_attempt_flag": 0,
+    "monetary_cost": null,
+    "non_api_costs_measured": false,
+    "full_usage_known": true,
+    "notes": [
+      "Unknown usage is not zero cost",
+      "SDK retries must be zero for strict attempt accounting",
+      "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+    ],
+    "by_target_stage": [
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+        "stage": "source_context_development",
+        "trace_events": 2,
+        "provider_attempts": 2,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 22863,
+          "completion_tokens": 1554,
+          "total_tokens": 24417,
+          "prompt_cache_hit_tokens": 15488,
+          "prompt_cache_miss_tokens": 7375
+        },
+        "status_counts": {
+          "ok": 2
+        },
+        "provider_elapsed_seconds": 7.105974
+      }
+    ]
+  },
+  "formal_run_ready": false
+}
