@@ -1,0 +1,128 @@
+{
+  "kind": "single_development_context_comparison_not_formal",
+  "results": {
+    "F1": {
+      "approach": "F1",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    },
+    "F3": {
+      "approach": "F3",
+      "methods_total": 2,
+      "methods_with_coverage_data": 2,
+      "ambiguous_methods": 0,
+      "focal_lines_total": 41,
+      "focal_lines_covered": 0,
+      "focal_line_rate": "0.0%",
+      "focal_branches_total": 32,
+      "focal_branches_covered": 0,
+      "focal_branch_rate": "0.0%"
+    }
+  },
+  "execution_statuses": [
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F1",
+      "status": "compile_failed",
+      "test_class": "ParserProcessArgsTest",
+      "xml_file": ""
+    },
+    {
+      "id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+      "arm": "F3",
+      "status": "test_failed",
+      "test_class": "org.apache.commons.cli.ParserProcessArgsTest",
+      "xml_file": "/root/autodl-tmp/signature_live_20261110/F3/execution/commons-cli/commons-cli-commons-cli-org-apache-commons-cli-parser-processargs-org.apache.commons.cli.Parser/xml/jacoco.xml"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F3",
+      "status": "test_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": "/root/autodl-tmp/signature_live_20261110/F3/execution/jdom2/jdom2-jdom2-org-jdom2-element-getnamespacesinscope-org.jdom2.Element/xml/jacoco.xml"
+    },
+    {
+      "id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+      "arm": "F1",
+      "status": "compile_failed",
+      "test_class": "ElementGetNamespacesInScopeTest",
+      "xml_file": ""
+    }
+  ],
+  "api_costs": {
+    "kind": "api_cost_index_not_full_compute_budget",
+    "totals": {
+      "trace_events": 12,
+      "provider_attempts": 12,
+      "budget_blocked": 0,
+      "unknown_usage_attempts": 0,
+      "recorded_sdk_retries_not_zero": 0
+    },
+    "known_usage_totals": {
+      "prompt_tokens": 63835,
+      "completion_tokens": 27725,
+      "total_tokens": 91560,
+      "prompt_cache_hit_tokens": 3584,
+      "prompt_cache_miss_tokens": 60251
+    },
+    "legacy_events_with_inferred_attempt_flag": 0,
+    "monetary_cost": null,
+    "non_api_costs_measured": false,
+    "full_usage_known": true,
+    "notes": [
+      "Unknown usage is not zero cost",
+      "SDK retries must be zero for strict attempt accounting",
+      "No retrieval/compiler/JaCoCo runtime cost inferred from API elapsed time"
+    ],
+    "by_target_stage": [
+      {
+        "target_id": "commons-cli-commons-cli-org-apache-commons-cli-parser-processargs",
+        "stage": "source_context_development",
+        "trace_events": 6,
+        "provider_attempts": 6,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 26540,
+          "completion_tokens": 12601,
+          "total_tokens": 39141,
+          "prompt_cache_hit_tokens": 1024,
+          "prompt_cache_miss_tokens": 25516
+        },
+        "status_counts": {
+          "ok": 6
+        },
+        "provider_elapsed_seconds": 53.142317000000006
+      },
+      {
+        "target_id": "jdom2-jdom2-org-jdom2-element-getnamespacesinscope",
+        "stage": "source_context_development",
+        "trace_events": 6,
+        "provider_attempts": 6,
+        "budget_blocked": 0,
+        "unknown_usage_attempts": 0,
+        "recorded_sdk_retries_not_zero": 0,
+        "usage": {
+          "prompt_tokens": 37295,
+          "completion_tokens": 15124,
+          "total_tokens": 52419,
+          "prompt_cache_hit_tokens": 2560,
+          "prompt_cache_miss_tokens": 34735
+        },
+        "status_counts": {
+          "ok": 6
+        },
+        "provider_elapsed_seconds": 61.163565000000006
+      }
+    ]
+  },
+  "formal_run_ready": false
+}
